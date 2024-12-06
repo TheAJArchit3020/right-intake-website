@@ -92,7 +92,7 @@ const AboutUs = () => {
             <div className="about-us-second-img">
               <img src="/images/aboutUs/aboutus_second_mob_img.png" alt="" />
             </div>
-            <div className="about-us-paras about-us-second-content-para">
+            <div className="about-us-paras">
               <div className="about-us-first-para">
                 <div className="para-heading">
                   <span>Personalized Wellness</span>
