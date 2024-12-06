@@ -29,7 +29,7 @@ Button.letsGoButton {
 
 }
 
-input[type="text"] {
+.age-input {
      text-align: center;
      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
      width: 60px;
@@ -41,6 +41,93 @@ input[type="text"] {
 .text-danger {
      color: red;
      font-size: 14px;
+}
+
+.progress {
+     background-color: #FEC4C4 !important;
+     height: 5px !important;
+     width: 100% !important;
+}
+
+.progress-bar.bg-success {
+     background-color: #F59090 !important;
+}
+
+.grp-button p {
+     border: 1px solid black;
+}
+
+p.para1 {
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+
+}
+
+p.para2 {
+     border-top-right-radius: 10px;
+     border-bottom-right-radius: 10px;
+
+}
+
+/* Default styles for options */
+.para1,
+.para2 {
+     padding: 1px 20px;
+     cursor: pointer;
+     border: 1px solid #ccc;
+     background-color: #f9f9f9;
+     transition: background-color 0.3s, color 0.3s;
+     font-size: 10px;
+}
+
+/* Active state styles */
+.para1.active,
+.para2.active {
+     background-color: #4caf50;
+     /* Green for selected option */
+     color: white;
+     border-color: #4caf50;
+}
+
+.form {
+     margin-bottom: 10em;
+}
+
+.form1 {
+     margin-bottom: 5em;
+}
+
+.form input,
+.form1 input {
+     background-color: #FDF4F4;
+     border: 1px solid #F59090;
+     padding: 10px 14px;
+     border-radius: 10px;
+}
+
+button.btn-continue {
+     background-color: #000000;
+     outline: none;
+     border: none;
+     border-radius: 10px;
+}
+
+button.veg-button , button.nonveg-button {
+     border: none;
+     outline: none;
+     color: #000000;
+     width: 200px;
+     border-radius: 8px;
+}
+button.veg-button {
+     background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+}
+
+button.nonveg-button {
+     background-image: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+}
+.diet-ui-container {
+     margin-bottom: 9em;
 }
 
 @media (min-width: 768px) {

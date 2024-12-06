@@ -3,7 +3,7 @@ import "./form.css"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router'
 
-const FormLanding = () => {
+const FormLanding = ({ showprogresshandler }) => {
      const [age, setAge] = useState('');
      const [agree, setAgree] = useState(false);
      const [error, setError] = useState('');
@@ -21,6 +21,8 @@ const FormLanding = () => {
 
           setError(''); // Clear error if validation passes
           console.log('Form submitted successfully:', { age, agree });
+          showprogresshandler();
+
      };
 
      const handleAgeChange = (e) => {
@@ -50,7 +52,7 @@ const FormLanding = () => {
                </div>
                <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
                     <label htmlFor="age">Your Age</label>
-                    <input
+                    <input className='age-input'
                          type="text"
                          name="age"
                          value={age}

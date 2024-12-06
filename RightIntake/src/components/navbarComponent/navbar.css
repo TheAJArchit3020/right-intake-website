@@ -21,3 +21,16 @@ a.navbar-brand {
      }
     
 }
+
+.offcanvas.offcanvas-end.show {
+     width: 25% !important;
+}
+
+a {
+     text-decoration-line: none !important;
+     
+}
+
+/* span {
+     color: black !important;
+} */
