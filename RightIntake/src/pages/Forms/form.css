@@ -1,0 +1,51 @@
+.form-conatiner {
+     display: grid;
+     gap: 10px;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     margin: 1em;
+}
+
+.form-header h3,
+.form-header p {
+     text-transform: uppercase;
+     font-weight: bold;
+}
+
+.form-header p {
+     color: #3F3F3F;
+}
+
+Button.letsGoButton {
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+     text-align: center;
+     outline: none;
+     border: none;
+     width: auto;
+     align-self: center;
+     font-weight: 600;
+     padding: 10px 20px;
+
+}
+
+input[type="text"] {
+     text-align: center;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+     width: 60px;
+     outline: none;
+     border: none;
+     border-radius: 5px;
+}
+
+.text-danger {
+     color: red;
+     font-size: 14px;
+}
+
+@media (min-width: 768px) {
+
+     .form-conatiner {
+          margin: 3em;
+     }
+}
