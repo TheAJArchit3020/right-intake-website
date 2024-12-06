@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../components/navbarComponent/navbar'
 import Footer from '../components/footerComponent/footer'
+import NavbarComponent from '../components/navbarComponent/navbar'
 
 const Layout = ({ children }) => {
      return (
           <>
                {/* Navbar */}
-               <Navbar />
+               <NavbarComponent />
                {/* Components */}
                <div className='layout-wrapper'>
                     {children}

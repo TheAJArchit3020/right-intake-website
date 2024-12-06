@@ -1,0 +1,21 @@
+
+// Images ...
+
+export const realintakeslogo = "/images/realintakelogo.png"
+export const playstoreimage = "/images/playstorenew.png"
+export const appstoreimage = "/images/appstore.png"
+export const armswithdumbels = "/images/armswithdumbels.png"
+export const diet = "/images/diet.png"
+export const dietitems = "/images/dietitems.png"
+export const dumbels = "/images/dumbels.png"
+export const intakenavigation = "/images/intakenavigation.png"
+export const proteinintakes = "/images/proteinintakes.png"
+export const rightintakemobileimage = "/images/rightintakemobileimage.png"
+export const rightintakemobilemeals = "/images/rightintakemobilemeals.png"
+export const workoutplan = "/images/workoutplan.png"
+export const hammerimage = "/images/hammer.png"
+export const analysis = "/images/analysis.png"
+export const cheatmeal1 = "/images/cheatmeal1.png"
+export const cheatmeal2 = "/images/cheatmeal2.png"
+export const cheatmeal3 = "/images/cheatmeal3.png"
+export const gymworkout = "/images/gymworkout.png"

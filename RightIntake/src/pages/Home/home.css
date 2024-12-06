@@ -1,0 +1,283 @@
+/* General Styles */
+button {
+     outline: none;
+     border: none;
+     cursor: pointer;
+     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+p {
+     margin-top: 0;
+     margin-bottom: 0 !important;
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+}
+
+.roww {
+     padding: 20px;
+}
+
+/* Section 1 Styles */
+.section1 h4 {
+     font-size: 2rem;
+     font-weight: bold;
+}
+
+.section1 p {
+     font-size: 1.2em;
+}
+
+.section1 button {
+     background: linear-gradient(to right, #9FEB9F 0%, #85CB85 100%);
+     margin-top: 1em;
+}
+
+.storeimage {
+     width: 40px;
+}
+
+.store p {
+     font-size: 1rem;
+     font-weight: bold;
+     margin-bottom: 0;
+     text-align: left;
+     line-height: 1;
+}
+
+/* Section 2 Styles */
+.home-section2,
+.home-section4 {
+     display: grid;
+     gap: 20px;
+}
+
+.section2-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     padding: 1rem;
+}
+
+.group-images {
+     padding: 0em 3em;
+}
+
+.section2-props {
+     width: 80px;
+     height: 80px;
+}
+
+
+.section2-props-mobile {
+     width: 80%;
+     height: 400px;
+}
+
+.navi-image {
+     width: 150px;
+     z-index: 2;
+}
+
+.store {
+     display: flex;
+     align-items: center;
+     gap: 2rem;
+}
+
+.store p {
+     font-size: 1rem;
+     font-weight: bold;
+     text-align: left;
+     line-height: 1;
+}
+
+/* Layout Section */
+.roww {
+     display: flex;
+     justify-content: space-between;
+     gap: 2rem;
+}
+
+.section1-container {
+     flex: 1 1 50%;
+     text-align: center;
+}
+
+.section2-container {
+     flex: 1 1 50%;
+     text-align: center;
+}
+
+img.cheat-meal-main {
+     width: 110px;
+}
+
+img.cheat-meal-image {
+     width: 120px;
+     max-width: 250px !important;
+}
+
+.track-section,
+.cheat-meals {
+     gap: 20px;
+}
+
+.home-section3 {
+     padding: 2em;
+     background: linear-gradient(180deg, #BDEBBD 20%, #FFFFFF 100%);
+}
+
+.cheat-meals-wrapper {
+     gap: 30px;
+}
+
+.home-section4 {
+     padding: 2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+     /* Stack the sections on smaller screens */
+     .roww {
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .section1-container,
+     .section2-container {
+          flex: 1 1 100%;
+     }
+
+
+     .section2-props {
+          width: 80px;
+          /* Adjust image size for mobile */
+     }
+
+     .section2-props-mobile {
+          width: 100%;
+          height: 300px;
+     }
+
+     .store {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+     }
+
+     .home-section2 {
+          padding: 2em;
+          display: grid;
+          align-items: center;
+          gap: 20px;
+          justify-content: space-around;
+     }
+
+     .home-section3 {
+          justify-content: space-around;
+     }
+
+
+
+}
+
+@media (min-width: 768px) {
+     .roww {
+          flex-direction: row;
+          align-items: center;
+     }
+
+     .section1-container {
+          text-align: left;
+     }
+
+     .section2-container {
+          display: flex;
+          justify-content: space-between;
+     }
+
+     .section2-props {
+          width: 80px;
+          height: 80px;
+     }
+
+     .section2-props-mobile {
+          width: 60%;
+          height: 350px;
+     }
+
+     .home-section2 {
+          padding: 2em;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          justify-content: space-around;
+     }
+
+     img.workout-plan-image {
+          width: 350px;
+     }
+
+
+
+}
+
+@media (min-width: 992px) {
+
+     .roww {
+          padding: 0em 6em;
+     }
+
+     /* Larger screens - adjust widths and layout */
+     .section1 h4 {
+          font-size: 3rem;
+     }
+
+     .section1 p {
+          font-size: 1.5rem;
+     }
+
+     .section2-props {
+          width: 80px;
+          height: 80px;
+     }
+
+     .section2-props-mobile {
+          width: 50%;
+     }
+
+     .store {
+          gap: 3rem;
+     }
+
+     .home-section2 {
+          padding: 2em;
+          justify-content: space-around;
+     }
+
+     .home-section3 {
+          padding: 2em;
+          justify-content: space-around;
+     }
+
+     img.cheat-meal-main {
+          width: 220px;
+     }
+
+     img.cheat-meal-image {
+          width: 250px;
+     }
+
+     img.workout-plan-image {
+          width: 350px;
+     }
+}
+
+p {
+     margin-bottom: 0;
+}
