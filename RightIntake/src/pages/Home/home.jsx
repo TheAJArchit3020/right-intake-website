@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./home.css"
-import { analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheatmeal3, diet, dietitems, dumbels, gymworkout, intakenavigation, playstoreimage, proteinintakes, rightintakemobileimage, rightintakemobilemeals, workoutplan } from '../../components/Images'
+import { aifitness, analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheatmeal3, diet, dietitems, dumbels, gymworkout, intakenavigation, playstoreimage, proteinintakes, realintakegrp, realintakenut, rightintakemobileimage, rightintakemobilemeals, workoutplan } from '../../components/Images'
 
 // import gsap from "gsap";
 // import { useGSAP } from '@gsap/react';
@@ -8,7 +8,7 @@ import { analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheat
 // gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
-    
+
 
 
      return (
@@ -31,12 +31,8 @@ const HomePage = () => {
                     {/* Right Section */}
                     <div className="section2-container d-flex flex-column justify-content-center align-items-center ">
                          <div className="section2 text-center">
-                              <img src={diet} alt="diet" className="section2-props" />
                               <div className="group-images d-flex justify-content-center">
-                                   <img src={armswithdumbels} alt="armswithdumbels" className="section2-props" />
-                                   <img src={rightintakemobileimage} alt="rightintakemobileimage" className="section2-props-mobile" style={{ zIndex: 1 }} />
-                                   <img src={rightintakemobilemeals} alt="rightintakemobilemeals" className="section2-props-mobile" style={{ marginLeft: -30 }} />
-                                   <img src={workoutplan} alt="workoutplan" className='section2-props mt-5' />
+                                   <img src={realintakegrp} alt="rightintakemobilemeals" className="section2-props-mobile" />
                               </div>
                               <div className="d-flex justify-content-center gap-5 mt-3">
                                    <div className='store d-flex align-items-center gap-2'>
@@ -74,15 +70,7 @@ const HomePage = () => {
 
                     {/* Right Section with Gradient */}
                     <div className='gradient-container d-flex position-relative'>
-                         {/* Images */}
-                         <div className='d-flex flex-column'>
-                              <img src={analysis} alt="analysis" className="section2-props" />
-                              <img src={dietitems} alt="dietitems" className="section2-props" />
-                         </div>
-                         <img src={intakenavigation} alt="intakenavigation" className='navi-image' />
-                         <img src={proteinintakes} alt="proteinintakes" className="section2-props" />
-
-                        
+                         <img src={realintakenut} alt="realintakenut" className='navi-image' />
                     </div>
                </div>
 
@@ -116,8 +104,8 @@ const HomePage = () => {
                     </div>
                </div>
 
-                {/* Section 4 */}
-                <div className="home-section4 d-flex flex-wrap">
+               {/* Section 4 */}
+               <div className="home-section4">
                     {/* workout plan Section */}
                     <div className="meal-plan-wrapper d-flex flex-column justify-content-center">
                          <h4 className="fw-bold text-center text-lg-start">Personalized workout routines</h4>
@@ -135,10 +123,19 @@ const HomePage = () => {
                          </div>
                     </div>
 
-                     {/* Cheat Meals Section */}
-                     <div className="cheat-meals-wrapper d-flex justify-content-center align-items-center">
+                    {/* Cheat Meals Section */}
+                    <div className="cheat-meals-wrapper d-flex justify-content-center align-items-center">
                          <img src={gymworkout} alt="gymworkout" className="workout-plan-image" />
                     </div>
+               </div>
+
+               {/* Section 5 */}
+               <div className="home-section5">
+                    <div className="track-section2">
+                         <img src={aifitness} alt="aifitness" width={50} />
+                         <h3>AI-Driven insights on your current level of fitness</h3>
+                    </div>
+
                </div>
 
 
