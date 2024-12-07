@@ -1,14 +1,31 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./form.css"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router'
+import DataContext from '../../components/Context/DataContext'
 
 const FormLanding = ({ showprogresshandler }) => {
+
      const [age, setAge] = useState('');
      const [agree, setAgree] = useState(false);
      const [error, setError] = useState('');
+     const { setFormData } = useContext(DataContext);
+
+
+     // formData handler .....
+     useEffect(() => {
+          setFormData(prev => ({
+               ...prev,
+               age: age,
+               agree: agree
+          }));
+     }, [age, agree]);
+
+
 
      const handleSubmit = () => {
+
+
           // Validation
           if (!age || isNaN(age)) {
                setError('Please enter a valid age.');
@@ -44,6 +61,10 @@ const FormLanding = ({ showprogresshandler }) => {
                setError('');
           }
      };
+
+
+
+
      return (
           <div className='form-conatiner'>
                <div className='form-header mt-0 mb-4'>

@@ -112,13 +112,15 @@ button.btn-continue {
      border-radius: 10px;
 }
 
-button.veg-button , button.nonveg-button {
+button.veg-button,
+button.nonveg-button {
      border: none;
      outline: none;
      color: #000000;
      width: 200px;
      border-radius: 8px;
 }
+
 button.veg-button {
      background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
 }
@@ -126,6 +128,7 @@ button.veg-button {
 button.nonveg-button {
      background-image: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
 }
+
 .diet-ui-container {
      margin-bottom: 9em;
 }
@@ -135,4 +138,141 @@ button.nonveg-button {
      .form-conatiner {
           margin: 3em;
      }
+}
+
+canvas {
+     max-width: 250px !important;
+     max-height: 250px !important;
+}
+
+.bmi-chart {
+     width: 250px;
+     height: 250px;
+}
+
+.bmi-ui-wrapper {
+     max-height: 250px !important;
+}
+
+.bmi-ui-section1,
+.bmi-ui-section2 {
+     height: 100%;
+}
+
+.bmi-category {
+     display: flex;
+     gap: 9em;
+     margin-top: -4.5em;
+}
+
+.bmi-category p {
+     font-size: 0.8em;
+}
+
+.bmi-content {
+     margin-top: -7em;
+}
+
+.bmi-ui-content {
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     padding: 10px;
+     height: 250px;
+
+}
+
+.bmi-content-para {
+     padding: 10px 30px;
+}
+
+.fitness-range {
+     width: 550px;
+}
+
+.range-with-lines {
+     height: 25px;
+}
+
+.fitness-newcommer-ui {
+     border-radius: 6px;
+     border: 1px solid #FFA7A7;
+     background-color: #FDF4F4;
+     padding: 10px;
+}
+
+.fitness-submit-btn {
+     margin-top: 8em;
+}
+
+.weekday-card,
+.goal-card,
+.workout-card,
+.equipment-card {
+     padding: 4px 12px;
+     border-radius: 6px;
+     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+     cursor: pointer;
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+}
+
+.nonveg-submit-btn {
+     margin-top: 12em;
+}
+
+.weekday-card-active,
+.goal-card-active,
+.workout-card-active,
+.equipment-card-active {
+     background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+}
+
+.goal-card,
+.workout-card {
+     height: 80px;
+     width: 300px;
+}
+
+
+.goalimages {
+     width: 90px;
+     margin-top: -0.8em;
+     height: 90px;
+     object-fit: fill;
+}
+
+.workoutimages {
+     width: 100px;
+     height: 100px;
+     object-fit: fill;
+     border-radius: 10px;
+}
+
+.equipment-card {
+     padding: 16px;
+     width: 300px;
+}
+
+span.equipment-card-para {
+     font-size: 12px;
+}
+
+.workoutinsight-image {
+     width: 300px;
+}
+
+.workoutinsight-list-image {
+     width: 20px;
+}
+
+.workout-insight-section2 {
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+     border-top-left-radius: 40px;
+     border-bottom-left-radius: 40px;
+     padding: 30px;
+     /* height: 250px; */
+}
+.workoutinsight-wrapper {
+     display: grid;
+     justify-content: center;
 }

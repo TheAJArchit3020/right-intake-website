@@ -1,14 +1,44 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
+import DataContext from '../../components/Context/DataContext';
 
 const FormHeight = ({ handleNext }) => {
 
      const [selectedOption, setSelectedOption] = useState('Cm');
+     const [heightValue, setHeightValue] = useState('');
+     const [feetValue, setFeetValue] = useState('');
+     const [inchValue, setInchValue] = useState('');
+     const {  setFormData } = useContext(DataContext);
 
-     // select handler ...
+     // FormData handler, will update the form data with height values
+     useEffect(() => {
+          setFormData(prev => ({
+               ...prev,
+               height: selectedOption === 'Cm' ? heightValue : `${feetValue}'${inchValue}"`,
+          }));
+     }, [heightValue, feetValue, inchValue, selectedOption, setFormData]); 
+
+     // Handle height input changes based on the selected option
+     const handleHeightChange = (e) => {
+          if (selectedOption === 'Cm') {
+               setHeightValue(e.target.value); 
+          } else {
+               // Update feet and inch values
+               const name = e.target.name;
+               if (name === 'Feet') {
+                    setFeetValue(e.target.value);
+               } else if (name === 'Inch') {
+                    setInchValue(e.target.value);
+               }
+          }
+     };
+
+     // Select handler for Cm/Feet
      const handleSelect = (option) => {
           setSelectedOption(option);
      };
+
+
      return (
           <div className='container'>
                <div className='height-ui-container'>
@@ -29,11 +59,31 @@ const FormHeight = ({ handleNext }) => {
                     </div>
 
                     <div className='form d-flex align-items-center justify-content-center gap-4'>
-                         {selectedOption === 'Cm' && <input type="text" name={selectedOption} placeholder={`_${selectedOption}`} />}
+                         {selectedOption === 'Cm' && (
+                              <input
+                                   type="number"
+                                   name={selectedOption}
+                                   value={heightValue}
+                                   onChange={handleHeightChange}
+                                   placeholder={`Enter height in ${selectedOption}`}
+                              />
+                         )}
                          {selectedOption === 'Feet' && (
                               <>
-                                   <input type="text" name={selectedOption} placeholder="_ft" />
-                                   <input type="text" name={selectedOption} placeholder="_in" />
+                                   <input
+                                        type="number"
+                                        name="Feet"
+                                        value={feetValue}
+                                        onChange={handleHeightChange}
+                                        placeholder="_ft"
+                                   />
+                                   <input
+                                        type="number"
+                                        name="Inch"
+                                        value={inchValue}
+                                        onChange={handleHeightChange}
+                                        placeholder="_in"
+                                   />
                               </>
                          )}
                     </div>

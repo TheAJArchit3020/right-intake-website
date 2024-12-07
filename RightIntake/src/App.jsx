@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-
-
 import RoutesComponent from './components/routeComponent/routes'
+import { DataProvider } from './components/Context/DataContext'
 
 
 function App() {
 
   return (
     <>
-      <RoutesComponent />
+      <DataProvider>
+        <RoutesComponent />
+      </DataProvider>
     </>
   )
 }
