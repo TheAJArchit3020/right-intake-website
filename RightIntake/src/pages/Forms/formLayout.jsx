@@ -15,6 +15,10 @@ import FormVegPreference from './formVegPreference';
 import FormWorkout from './formWorkout';
 import FormHomeWorkout from './formHomeWorkout';
 import FormHomeWorkoutInsight from './formHomeWorkoutInsight';
+import FormTrain from './formTrain';
+import FormSleepHour from './fromSleepHour';
+import FormWater from './formWater';
+import FormAboutSelf from './formAboutSelf';
 
 const FormLayout = () => {
      const [progress, setProgress] = useState(0);
@@ -55,9 +59,11 @@ const FormLayout = () => {
           <FormVegPreference handleNext={handleNext} />,
           <FormWorkout handleNext={handleNext} />,
           <FormHomeWorkout handleNext={handleNext} />,
-          <FormHomeWorkoutInsight handleNext={handleNext} />
-
-
+          <FormHomeWorkoutInsight handleNext={handleNext} />,
+          <FormTrain handleNext={handleNext} />,
+          <FormSleepHour handleNext={handleNext} />,
+          <FormWater handleNext={handleNext} />,
+          <FormAboutSelf handleNext={handleNext} />
      ];
 
 
