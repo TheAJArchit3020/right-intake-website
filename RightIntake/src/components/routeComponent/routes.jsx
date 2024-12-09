@@ -5,6 +5,7 @@ import Layout from "../../pages/layoutPage";
 import HomePage from "../../pages/Home/home";
 import AboutUs from "../../pages/AboutUs/aboutus";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
+import ContactUs from "../../pages/ContactUs/ContactUs";
 const RoutesComponent = () => {
   return (
     <BrowserRouter>
@@ -36,6 +37,16 @@ const RoutesComponent = () => {
             <Layout>
               {" "}
               <TermsandServices />{" "}
+            </Layout>
+          }
+        />
+        <Route
+          index
+          path="/contactus"
+          element={
+            <Layout>
+              {" "}
+              <ContactUs />{" "}
             </Layout>
           }
         />
