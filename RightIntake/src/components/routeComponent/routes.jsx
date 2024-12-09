@@ -1,11 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "../../pages/layoutPage";
-import HomePage from "../../pages/Home/home";
 import FormLayout from "../../pages/Forms/formLayout";
-
-import App from "../../App";
-import Layout from "../../pages/layoutPage";
 import HomePage from "../../pages/Home/home";
 import AboutUs from "../../pages/AboutUs/aboutus";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
