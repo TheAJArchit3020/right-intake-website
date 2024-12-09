@@ -48,6 +48,10 @@ img {
 }
 
 /* Section 2 Styles */
+.cheat-meals-wrapper {
+     margin-bottom: 1em;
+}
+
 .home-section2,
 .home-section4 {
      display: grid;
@@ -59,11 +63,6 @@ img {
      justify-content: center;
      align-items: center;
      flex-wrap: wrap;
-     padding: 1rem;
-}
-
-.group-images {
-     padding: 0em 3em;
 }
 
 .section2-props {
@@ -73,12 +72,12 @@ img {
 
 
 .section2-props-mobile {
-     width: 80%;
+     /* width: 80%; */
      height: 400px;
 }
 
 .navi-image {
-     width: 150px;
+     width: 100%;
      z-index: 2;
 }
 
@@ -137,6 +136,38 @@ img.cheat-meal-image {
 
 .home-section4 {
      padding: 2em;
+}
+
+.home-section5 {
+     background-image: url(/public/images/fitnessbackground2.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: 500px;
+
+     /* Center content */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+}
+
+.track-section2 img {
+     display: block;
+     margin: 0 auto;
+     /* Ensures horizontal centering if needed */
+     margin-bottom: 1em;
+     /* Space between the image and the text */
+}
+
+
+.track-section {
+     display: grid;
+}
+
+p {
+     margin-bottom: 0;
 }
 
 /* Responsive Styles */
@@ -201,13 +232,8 @@ img.cheat-meal-image {
           justify-content: space-between;
      }
 
-     .section2-props {
-          width: 80px;
-          height: 80px;
-     }
 
      .section2-props-mobile {
-          width: 60%;
           height: 350px;
      }
 
@@ -223,7 +249,16 @@ img.cheat-meal-image {
           width: 350px;
      }
 
+     .navi-image {
+          width: 300px;
+     }
 
+     .home-section4,
+     .home-section3 {
+          display: flex;
+          justify-content: space-around;
+
+     }
 
 }
 
@@ -234,12 +269,16 @@ img.cheat-meal-image {
      }
 
      /* Larger screens - adjust widths and layout */
-     .section1 h4 {
-          font-size: 3rem;
+     .section1 h4,
+     .home-section2 h4,
+     .meal-plan-wrapper h4 {
+          font-size: 2rem;
      }
 
-     .section1 p {
-          font-size: 1.5rem;
+     .section1 p,
+     .home-section2 p,
+     .meal-plan-wrapper p {
+          font-size: 1.2rem;
      }
 
      .section2-props {
@@ -247,37 +286,62 @@ img.cheat-meal-image {
           height: 80px;
      }
 
-     .section2-props-mobile {
-          width: 50%;
-     }
 
      .store {
           gap: 3rem;
      }
 
-     .home-section2 {
-          padding: 2em;
-          justify-content: space-around;
-     }
-
+     .home-section2,
      .home-section3 {
           padding: 2em;
           justify-content: space-around;
      }
 
+     .home-section3 {
+          display: flex;
+     }
+
      img.cheat-meal-main {
-          width: 220px;
+          width: 190px;
      }
 
      img.cheat-meal-image {
-          width: 250px;
+          width: 200px;
      }
 
      img.workout-plan-image {
           width: 350px;
      }
+
+     .navi-image {
+          width: 300px;
+     }
+
+     .home-section3,
+     .home-section4,
+     .home-section5 {
+          height: 350px;
+          margin-bottom: 0.5em;
+     }
+
+
 }
 
-p {
-     margin-bottom: 0;
+@media (min-width: 1440px) {
+
+     .section1 h4,
+     .home-section2 h4,
+     .meal-plan-wrapper h4 {
+          font-size: 3rem;
+     }
+
+     .section2-props-mobile {
+          height: 550px;
+     }
+
+     .section1 p,
+     .home-section2 p,
+     .meal-plan-wrapper p {
+          font-size: 1.8rem;
+     }
 }
