@@ -132,12 +132,15 @@ button.btn-continue {
 }
 
 button.veg-button,
-button.nonveg-button {
+button.nonveg-button,
+button.buttonTrained,
+button.occupationbutton{
      border: none;
      outline: none;
      color: #000000;
-     width: 200px;
+     width: 250px;  /* changed to 250px before it was 200px */
      border-radius: 8px;
+<<<<<<< HEAD
      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
      font-weight: bold;
 
@@ -145,12 +148,36 @@ button.nonveg-button {
 
 button.veg-button {
      background: linear-gradient(90deg, #9FEB9F 0%, #D7F9D7 100%);
+=======
+     text-align: left;
+     font-weight: bold;
+     box-shadow: none !important;
+    
+}
+
+button.selectedButton{
+     background-image: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+     width: 250px;
+     border-radius: 8px;
+     border: none;
+     outline: none;
+     text-align: left;
+     font-weight: bold;
+     box-shadow: none !important;
+}
+
+button.veg-button,button.occupationbutton {
+     background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+>>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
 }
 
 button.nonveg-button {
      background: linear-gradient(90deg, #FF9191 0%, #FFD0D0 100%);
 }
 
+button.buttonTrained{
+     background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+}
 .diet-ui-container {
      margin-bottom: 9em;
 }
@@ -194,9 +221,14 @@ canvas {
      background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
      border-top-left-radius: 20px;
      border-bottom-left-radius: 20px;
+<<<<<<< HEAD
      padding: 3rem;
      height: 350px;
 
+=======
+     padding: 10px;
+     height: 250px;
+>>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
 }
 
 
@@ -324,6 +356,7 @@ span.equipment-card-para {
      justify-content: center;
 }
 
+<<<<<<< HEAD
 .bodyfatimage {
      width: 300px;
 }
@@ -708,3 +741,174 @@ input[type="checkbox"]:checked+.custom-checkbox::before {
           margin: 3em;
      }
 }
+=======
+/* form */
+
+.max-w-400 {
+     max-width: 400px;
+   }
+   
+   label {
+     display: block;
+     margin-bottom: 1rem; /* Add margin-bottom to the label */
+     font-weight: bold;
+   }
+
+   .form-control {
+     border: 2px  #000;
+     border-radius: 0.25rem;
+     padding: 0.375rem 0.75rem ;
+     font-size: 1rem;
+     font-weight: bold;
+     margin-bottom: 1rem; 
+   }
+
+   /* gender page css */
+
+   .buttonContainergender{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     align-content: center;
+     gap: 6rem;
+     margin-top: 3rem;
+   }
+   
+   
+.selectedgenderButton{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     width: 120px;
+     height: 120px;
+     background-color: #000;
+     border-radius: 10px;
+}
+
+.genderbutton{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 120px;
+   height: 120px;
+   background-color: #ffffff;
+   border-radius: 10px;
+}
+
+.textContainer{
+   display: flex;
+   flex-direction: row;
+   justify-content:space-evenly ;
+   gap: 50px;
+}
+
+.maletext{
+   margin-top: 10px;
+   font-weight: bold;
+   margin-left: 30px;
+}
+
+.femaletext{
+     margin-top: 10px;
+   font-weight: bold;
+   margin-left: 18px;
+}
+
+
+/* occupation */
+.othercontainer{
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+  background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  border-radius: 8px;
+}
+
+.textTag{
+  font-size: 16px;
+  font-weight: bold;
+}
+.inputContainer{
+  width: 230px;
+  height: 50px;
+  display: flex;          
+  background-color: transparent;
+  border-radius: 8px;
+  color: #000;
+}
+
+/* health conditons */
+.healthConditionConatiner {
+     height: 15rem; 
+     width: 60rem;     
+     margin-bottom: 40px; 
+     margin-top: 30px;
+}
+
+.selectedConditionsContainer {
+     display: flex;
+     justify-content: flex-start;
+     margin-bottom: 15px;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+ 
+ .selectedCondition {
+     background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+     font-size: 16px; 
+     padding: 8px 12px;
+     border-radius: 4px;
+     color: #000; 
+     cursor: pointer; 
+     white-space: nowrap;
+     box-shadow: none !important;
+ }
+
+.allergyConatiner{
+     height: 6rem; 
+     width: 60rem;
+}
+
+.allergyInput{
+     height: 3rem;
+     width: 100%;
+     background-color: transparent;
+     color: #000;
+     border-radius: 10px;
+}
+
+.headerText{
+     font-weight: bold;
+}
+.buttonContainer{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     flex-wrap: wrap;
+     gap: 20px;
+     
+}
+
+.button{
+     font-size: 16px; 
+     padding: 8px 12px;
+     border-radius: 4px;
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+     color: #000; 
+     cursor: pointer; 
+     white-space: nowrap;
+     box-shadow: none !important;
+}
+/* .navbutton{
+     border: 5px solid #000;
+} */
+
+/* about self page */
+
+>>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02

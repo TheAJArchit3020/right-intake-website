@@ -1,6 +1,10 @@
 
 // Images ...
 
+
+export const male = "/images/male.svg"
+export const female = "/images/female.svg"
+
 export const realintakeslogo = "/images/realintakelogo.png"
 export const playstoreimage = "/images/playstorenew.png"
 export const appstoreimage = "/images/appstore.png"
@@ -35,6 +39,7 @@ export const workoutimg1 = "/images/workoutimg1.svg"
 export const workoutimg2 = "/images/workoutimg2.svg"
 export const workoutimg3 = "/images/workoutimg3.svg"
 export const workoutinsight = "/images/workoutinsight.svg"
+<<<<<<< HEAD
 export const bodyfat1 = "/images/bodyfat1.svg"
 export const bodyfat2 = "/images/bodyfat2.svg"
 export const bodyfat3 = "/images/bodyfat3.svg"
@@ -55,3 +60,20 @@ export const summaryicon3 = "/images/summaryicon3.svg"
 export const summaryicon4 = "/images/summaryicon4.svg"
 export const summaryicon5 = "/images/summaryicon5.svg"
 export const offerbackground = "/images/offerbackground.svg"
+=======
+
+//emojis
+export const cryemoji = "/images/emojis/cry.svg"
+export const fireemoji ="/images/emojis/fire.svg"
+export const shockemoji = "/images/emojis/shock.svg"
+export const crownemoji = "/images/emojis/crown.svg"
+
+export const batemoji = "/images/emojis/bat.svg"
+export const humanemoji ="/images/emojis/human.svg"
+export const catemoji = "/images/emojis/cat.svg"
+export const sunemoji = "/images/emojis/sun.svg"
+
+export const waterglassemoji = "/images/emojis/waterGlass.svg"
+export const wavemoji = "/images/emojis/wave.svg"
+
+>>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
