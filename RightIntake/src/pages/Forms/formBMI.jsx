@@ -70,68 +70,71 @@ const FormBMI = ({ handleNext }) => {
      }, []);
 
      return (
-          <div className='container-fluid'>
-               <Row className='bmi-ui-wrapper'>
-                    <Col sm={12} md={6} className="bmi-ui-section1 d-flex flex-column align-items-center justify-content-center gap-2 text-center">
-                         <div className='bmi-chart'>
-                              <Doughnut
-                                   data={chartData}
-                                   options={{
-                                        plugins: {
-                                             legend: false,
-                                             tooltip: {
-                                                  callbacks: {
-                                                       label: (tooltipItem) => {
-                                                            return `${tooltipItem.label}: ${tooltipItem.raw}%`;
+          <>
+
+               <div className='container-fluid'>
+                    <Row className='bmi-ui-wrapper'>
+                         <Col sm={12} md={5} className="bmi-ui-section1 d-flex flex-column align-items-center justify-content-center gap-2 text-center">
+                              <div className='bmi-chart'>
+                                   <Doughnut
+                                        data={chartData}
+                                        options={{
+                                             plugins: {
+                                                  legend: false,
+                                                  tooltip: {
+                                                       callbacks: {
+                                                            label: (tooltipItem) => {
+                                                                 return `${tooltipItem.label}: ${tooltipItem.raw}%`;
+                                                            },
+                                                       },
+                                                  },
+                                                  // Custom plugin to draw text in the center of the doughnut
+                                                  datalabels: {
+                                                       color: '#000',
+                                                       font: {
+                                                            size: 18,
+                                                            weight: 'bold',
+                                                       },
+                                                       align: 'center',
+                                                       anchor: 'center',
+                                                       formatter: () => {
+                                                            return `${bmi.toFixed(2)}\n${bmiCategory}`;
                                                        },
                                                   },
                                              },
-                                             // Custom plugin to draw text in the center of the doughnut
-                                             datalabels: {
-                                                  color: '#000',
-                                                  font: {
-                                                       size: 18,
-                                                       weight: 'bold',
-                                                  },
-                                                  align: 'center',
-                                                  anchor: 'center',
-                                                  formatter: () => {
-                                                       return `${bmi.toFixed(2)}\n${bmiCategory}`;
-                                                  },
-                                             },
-                                        },
-                                        cutout: '90%',
-                                        rotation: -90,
-                                        circumference: 180,
-                                   }}
-                              />
-                         </div>
-                         <div className='bmi-category'>
-                              <p>UnderWeight</p>
-                              <p>Obese</p>
-                         </div>
-                         <div className='bmi-content d-flex flex-column align-items-center justify-content-center gap-2'>
-                              <span className='mt-1 fw-bold'> BMI</span>
-                              <span className='mb-4'> {bmi.toFixed(2)}</span>
-                              <span className='mt-1 fw-bold'>{bmiCategory}</span>
-                              <span className='bmi-content-para'>you maintains a normal BMI, reflecting a healthy balance between his weight and height.</span>
+                                             cutout: '90%',
+                                             rotation: -90,
+                                             circumference: 180,
+                                        }}
+                                   />
+                              </div>
+                              <div className='bmi-category'>
+                                   <p>UnderWeight</p>
+                                   <p>Obese</p>
+                              </div>
+                              <div className='bmi-content d-flex flex-column align-items-center justify-content-center gap-2'>
+                                   <span className='mt-1 fw-bold'> BMI</span>
+                                   <span className='mb-4'> {bmi.toFixed(2)}</span>
+                                   <span className='mt-1 fw-bold'>{bmiCategory}</span>
+                                   <span className='bmi-content-para'>you maintains a normal BMI, reflecting a healthy balance between his weight and height.</span>
 
-                         </div>
-                    </Col>
+                              </div>
+                         </Col>
 
-                    <Col sm={12} md={6} className="bmi-ui-section2">
-                         <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center ">
-                              <img src={bmiimage} alt="bmiimage" width={50} />
-                              <span className='bmi-content-para fw-bold'>Keeping a normal BMI shows your dedication to staying healthy and taking great care of your well-being—well done!</span>
+                         <Col sm={12} md={7} className="bmi-ui-section2">
+                              <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center ">
+                                   <img src={bmiimage} alt="bmiimage" width={50} />
+                                   <span className='bmi-content-para2 fw-bold'>Keeping a normal BMI shows your dedication to staying healthy and taking great care of your well-being—well done!</span>
 
-                         </div>
-                    </Col>
-               </Row>
+                              </div>
+                         </Col>
+                    </Row>
 
-               <div className='d-flex align-items-center justify-content-center mt-5'>
+               </div>
+               <div className='bmi-submit-buttion d-flex align-items-center justify-content-center'>
                     <NavigationButton handleNext={handleNext} />
                </div>
-          </div>
+          </>
      );
 };
 

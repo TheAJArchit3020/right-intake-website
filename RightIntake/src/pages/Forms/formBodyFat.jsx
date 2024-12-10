@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavigationButton from "../../components/Button/navigationButton";
 import { bodyfat1, bodyfat2, bodyfat3, bodyfat4, bodyfat5, bodyfat6, bodyfat7, bodyfat8 } from "../../components/Images";
+import DataContext from "../../components/Context/DataContext";
 
 const FormBodyFat = ({ handleNext }) => {
      const [bodyFatLevel, setBodyFatLevel] = useState(0);
+     const { setFormData } = useContext(DataContext);
 
      const handleRangeChange = (event) => {
           setBodyFatLevel(parseInt(event.target.value));
+          setFormData(prev => ({
+               ...prev,
+               bodyfat: parseInt(event.target.value),
+          }));
      };
 
      const getRangeLabel = (value) => {
@@ -21,7 +27,6 @@ const FormBodyFat = ({ handleNext }) => {
      };
 
      const getImageForRange = (value) => {
-     console.log({ value })
 
           if (value <= 10) return bodyfat1;
           if (value <= 14) return bodyfat2;
@@ -79,7 +84,7 @@ const FormBodyFat = ({ handleNext }) => {
                                                   position: "absolute",
                                                   left: `${(index + 1) * 14.35}%`,
                                                   // top: "6px",
-                                                  top: "50%", 
+                                                  top: "50%",
                                                   transform: "translateY(-40%)",
                                                   height: "12px",
                                                   width: "1px",

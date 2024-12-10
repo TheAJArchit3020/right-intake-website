@@ -18,6 +18,9 @@ import FormHomeWorkoutInsight from './formHomeWorkoutInsight';
 import FormBodyFat from './formBodyFat';
 import FormBodyfatInsight from './formBodyfatInsight';
 import FormFoodPreference from './formFoodPreference';
+import FormCheatmeal from './formCheatmeal';
+import FormOverallSummary from './formOverallSummary';
+import FormBioLoigicalSex from './formBiologicalSex';
 
 const FormLayout = () => {
      const [progress, setProgress] = useState(0);
@@ -48,20 +51,32 @@ const FormLayout = () => {
      };
 
      const components = [
-          // <FormLanding showprogresshandler={showprogresshandler} />,
-          // <FormHeight handleNext={handleNext} />,
-          // <FormWeight handleNext={handleNext} />,
-          // <FormBMI handleNext={handleNext} />,
-          // <FormLevelFitness handleNext={handleNext} />,
-          // <FormDietPreference handleNext={handleNext} />,
-          // <FormNonvegPreference handleNext={handleNext} />,
-          // <FormVegPreference handleNext={handleNext} />,
-          // <FormWorkout handleNext={handleNext} />,
+          <FormLanding showprogresshandler={showprogresshandler} />,
+          // <FormBioLoigicalSex handleNext={handleNext} />,
+          <FormHeight handleNext={handleNext} />,
+          <FormWeight handleNext={handleNext} />,
+          <FormBMI handleNext={handleNext} />,
+          <FormLevelFitness handleNext={handleNext} />,
+          <FormDietPreference handleNext={handleNext} />,
+
+          ...(formData?.dietPreference === 'Non-Veg'
+               ? [<FormNonvegPreference handleNext={handleNext} />]
+               : []),
+
+          <FormVegPreference handleNext={handleNext} />,
+          <FormWorkout handleNext={handleNext} />,
+
+          ...(formData?.workout === 'HOME WORKOUT'
+               ? [<FormHomeWorkout handleNext={handleNext} />]
+               : []),
+
           // <FormHomeWorkout handleNext={handleNext} />,
-          // // <FormHomeWorkoutInsight handleNext={handleNext} />,
-          // <FormBodyFat handleNext={handleNext} />,
+          // <FormHomeWorkoutInsight handleNext={handleNext} />,
+          <FormBodyFat handleNext={handleNext} />,
           <FormBodyfatInsight handleNext={handleNext} />,
           <FormFoodPreference handleNext={handleNext} />,
+          <FormCheatmeal handleNext={handleNext} />,
+          <FormOverallSummary handleNext={handleNext} />
 
 
 
@@ -81,7 +96,7 @@ const FormLayout = () => {
                </div>}
 
                {/* Display current component */}
-               <div className="container">
+               <div>
                     {components[currentStep]}
                </div>
 

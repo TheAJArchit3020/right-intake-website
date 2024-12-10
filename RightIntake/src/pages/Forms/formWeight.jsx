@@ -58,7 +58,7 @@ const FormWeight = ({ handleNext }) => {
                               name="currentWeight"
                               value={currentWeight}
                               onChange={handleInputChange}
-                              placeholder={`Enter weight in ${selectedOption}`}
+                              placeholder={`_${selectedOption}`}
                          />
 
                          <h4 className='text-center fw-bold mt-3'>What’s your target weight?</h4>
@@ -67,7 +67,7 @@ const FormWeight = ({ handleNext }) => {
                               name="targetWeight"
                               value={targetWeight}
                               onChange={handleInputChange}
-                              placeholder={`Enter target weight in ${selectedOption}`}
+                              placeholder={`_${selectedOption}`}
                          />
                     </div>
                     <div className='d-flex align-items-center justify-content-center'>

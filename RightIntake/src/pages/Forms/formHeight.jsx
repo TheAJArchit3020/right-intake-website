@@ -8,7 +8,7 @@ const FormHeight = ({ handleNext }) => {
      const [heightValue, setHeightValue] = useState('');
      const [feetValue, setFeetValue] = useState('');
      const [inchValue, setInchValue] = useState('');
-     const {  setFormData } = useContext(DataContext);
+     const { setFormData } = useContext(DataContext);
 
      // FormData handler, will update the form data with height values
      useEffect(() => {

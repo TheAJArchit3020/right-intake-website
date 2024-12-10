@@ -8,6 +8,7 @@ const FormLanding = ({ showprogresshandler }) => {
 
      const [age, setAge] = useState('');
      const [agree, setAgree] = useState(false);
+     const [agree2, setAgree2] = useState(false);
      const [error, setError] = useState('');
      const { setFormData } = useContext(DataContext);
 
@@ -62,6 +63,12 @@ const FormLanding = ({ showprogresshandler }) => {
           }
      };
 
+     const handleAgreeChange2 = (e) => {
+          const isChecked = e.target.checked;
+          setAgree2(isChecked);
+
+     };
+
 
 
 
@@ -80,7 +87,7 @@ const FormLanding = ({ showprogresshandler }) => {
                          onChange={handleAgeChange}
                     />
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold'>
+               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold'>
                     <input
                          type="checkbox"
                          name="agree"
@@ -89,8 +96,9 @@ const FormLanding = ({ showprogresshandler }) => {
                     />
                     <p>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link>Privacy policy</p>
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <input type="checkbox" name="" id="" />
+               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
+                    <input type="checkbox" name="agree2" checked={agree2}
+                         onChange={handleAgreeChange2} />
                     <p>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
                </div>
                {error && (
@@ -99,7 +107,7 @@ const FormLanding = ({ showprogresshandler }) => {
                     </div>
                )}
                <div className='d-flex justify-content-center' >
-                    <Button className='letsGoButton text-black' onClick={handleSubmit}>Lets Go..</Button>
+                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go..</button>
                </div>
 
           </div>

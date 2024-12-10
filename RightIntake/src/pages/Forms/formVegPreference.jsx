@@ -5,20 +5,19 @@ import { goalbody1, goalbody2, goalbody3 } from '../../components/Images';
 
 const FormVegPreference = ({ handleNext }) => {
 
-     const [selectedOption, setSelectedOption] = useState('Loss Weight');
+     const [selectedOption, setSelectedOption] = useState('');
      const { setFormData } = useContext(DataContext);
 
-     // FormData handler, will update the form data with height values
-     useEffect(() => {
-          setFormData(prev => ({
-               ...prev,
-               weekdays: selectedOption,
-          }));
-     }, [selectedOption, setFormData]);
+
 
      // Select handler for week-day
      const handleSelect = (option) => {
           setSelectedOption(option);
+          setFormData(prev => ({
+               ...prev,
+               goal: option,
+          }));
+          handleNext();
      };
 
      let GOAL = [
@@ -27,11 +26,11 @@ const FormVegPreference = ({ handleNext }) => {
                imageUrl: goalbody1
           },
           {
-               label: 'Gain muscle',
+               label: 'Gain Muscle',
                imageUrl: goalbody2
           },
           {
-               label: 'Get shredded ',
+               label: 'Get Shredded ',
                imageUrl: goalbody3
           }
 
@@ -39,7 +38,7 @@ const FormVegPreference = ({ handleNext }) => {
 
      return (
           <div className='container'>
-               <div className='height-ui-container'>
+               <div className='goal-ui-container'>
                     <h4 className='text-center fw-bold mb-4'>What is your goal?</h4>
                     <div className='grp-button d-flex flex-column align-items-center justify-content-center gap-4 mb-4'>
                          {GOAL && GOAL.map((goal, index) => {
@@ -47,7 +46,7 @@ const FormVegPreference = ({ handleNext }) => {
                                    <div className={`d-flex align-items-center  goal-card ${selectedOption === goal.label ? 'goal-card-active' : ''}`}
                                         key={index + 1}
                                         onClick={() => handleSelect(goal.label)}>
-                                        <span className='w-100 text-center'>{goal.label} </span>
+                                        <span className='w-100 fw-bold text-center'>{goal.label} </span>
                                         <img src={goal.imageUrl} alt="bodyimage" className='goalimages' />
                                    </div>
                               )
@@ -55,9 +54,9 @@ const FormVegPreference = ({ handleNext }) => {
                     </div>
 
 
-                    <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
+                    {/* <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
                          <NavigationButton handleNext={handleNext} />
-                    </div>
+                    </div> */}
 
                </div>
           </div>

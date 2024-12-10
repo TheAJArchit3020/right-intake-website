@@ -1,24 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react'
-import NavigationButton from '../../components/Button/navigationButton';
+// import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
 import { workoutimg1, workoutimg2, workoutimg3 } from '../../components/Images';
 
 const FormWorkout = ({ handleNext }) => {
 
-     const [selectedOption, setSelectedOption] = useState('GYM');
+     const [selectedOption, setSelectedOption] = useState('');
      const { setFormData } = useContext(DataContext);
 
-     // FormData handler, will update the form data with height values
-     useEffect(() => {
-          setFormData(prev => ({
-               ...prev,
-               workout: selectedOption,
-          }));
-     }, [selectedOption, setFormData]);
 
      // Select handler for week-day
      const handleSelect = (option) => {
+          console.log(option)
           setSelectedOption(option);
+          setFormData(prev => ({
+               ...prev,
+               workout: option,
+          }));
+          handleNext();
      };
 
      let WORKOUT = [
@@ -47,7 +46,7 @@ const FormWorkout = ({ handleNext }) => {
                                    <div className={`d-flex align-items-center gap-3 workout-card ${selectedOption === workout.label ? 'workout-card-active' : ''}`}
                                         key={index + 1}
                                         onClick={() => handleSelect(workout.label)}>
-                                        <span className='w-100 text-center'>{workout.label} </span>
+                                        <span className='w-100 fw-bold text-center'>{workout.label} </span>
                                         <img src={workout.imageUrl} alt="bodyimage" className='workoutimages' />
                                    </div>
                               )
@@ -55,9 +54,9 @@ const FormWorkout = ({ handleNext }) => {
                     </div>
 
 
-                    <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
+                    {/* <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
                          <NavigationButton handleNext={handleNext} />
-                    </div>
+                    </div> */}
 
                </div>
           </div>
