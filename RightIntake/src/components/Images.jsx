@@ -1,6 +1,10 @@
 
 // Images ...
 
+
+export const male = "/images/male.svg"
+export const female = "/images/female.svg"
+
 export const realintakeslogo = "/images/realintakelogo.png"
 export const playstoreimage = "/images/playstorenew.png"
 export const appstoreimage = "/images/appstore.png"
@@ -35,3 +39,18 @@ export const workoutimg1 = "/images/workoutimg1.svg"
 export const workoutimg2 = "/images/workoutimg2.svg"
 export const workoutimg3 = "/images/workoutimg3.svg"
 export const workoutinsight = "/images/workoutinsight.svg"
+
+//emojis
+export const cryemoji = "/images/emojis/cry.svg"
+export const fireemoji ="/images/emojis/fire.svg"
+export const shockemoji = "/images/emojis/shock.svg"
+export const crownemoji = "/images/emojis/crown.svg"
+
+export const batemoji = "/images/emojis/bat.svg"
+export const humanemoji ="/images/emojis/human.svg"
+export const catemoji = "/images/emojis/cat.svg"
+export const sunemoji = "/images/emojis/sun.svg"
+
+export const waterglassemoji = "/images/emojis/waterGlass.svg"
+export const wavemoji = "/images/emojis/wave.svg"
+

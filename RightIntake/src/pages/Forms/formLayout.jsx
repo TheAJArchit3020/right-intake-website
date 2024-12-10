@@ -19,6 +19,9 @@ import FormTrain from './formTrain';
 import FormSleepHour from './fromSleepHour';
 import FormWater from './formWater';
 import FormAboutSelf from './formAboutSelf';
+import FormBioLoigicalSex from './formBiologicalSex';
+import FormHealthConditions from './formHealthConditions';
+import FormOccupation from './formOccupation';
 
 const FormLayout = () => {
      const [progress, setProgress] = useState(0);
@@ -50,6 +53,8 @@ const FormLayout = () => {
 
      const components = [
           <FormLanding showprogresshandler={showprogresshandler} />,
+          <FormBioLoigicalSex handleNext={handleNext}/>,
+          <FormOccupation  handleNext={handleNext} />,
           <FormHeight handleNext={handleNext} />,
           <FormWeight handleNext={handleNext} />,
           <FormBMI handleNext={handleNext} />,
@@ -61,6 +66,7 @@ const FormLayout = () => {
           <FormHomeWorkout handleNext={handleNext} />,
           <FormHomeWorkoutInsight handleNext={handleNext} />,
           <FormTrain handleNext={handleNext} />,
+          <FormHealthConditions handleNext={handleNext} />,
           <FormSleepHour handleNext={handleNext} />,
           <FormWater handleNext={handleNext} />,
           <FormAboutSelf handleNext={handleNext} />

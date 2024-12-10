@@ -114,23 +114,27 @@ button.btn-continue {
 
 button.veg-button,
 button.nonveg-button,
-button.buttonTrained {
+button.buttonTrained,
+button.occupationbutton{
      border: none;
      outline: none;
      color: #000000;
-     width: 230px;  /* changed to 230px before it was 200px */
+     width: 250px;  /* changed to 250px before it was 200px */
      border-radius: 8px;
+     text-align: left;
 }
 
 button.selectedButton{
      background-image: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
-     width: 230px;
+     width: 250px;
      border-radius: 8px;
      border: none;
      outline: none;
+     text-align: left;
 }
-button.veg-button {
-     background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+
+button.veg-button,button.occupationbutton {
+     background-image: linear-gradient(to right, #9FEB9F 0%, #ffffff 100%);
 }
 
 button.nonveg-button {
@@ -190,7 +194,6 @@ canvas {
      border-bottom-left-radius: 20px;
      padding: 10px;
      height: 250px;
-
 }
 
 .bmi-content-para {
@@ -309,9 +312,143 @@ span.equipment-card-para {
      margin-bottom: 1rem; 
    }
 
+   /* gender page css */
+
+   .buttonContainer{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     gap: 6rem;
+     margin-top: 3rem;
+   }
    
-   
+.selectedgenderButton{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     width: 120px;
+     height: 120px;
+     background-color: #000;
+     border-radius: 10px;
+}
+
+.genderbutton{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 120px;
+   height: 120px;
+   background-color: #ffffff;
+   border-radius: 10px;
+}
+
+.textContainer{
+   display: flex;
+   flex-direction: row;
+   justify-content:space-evenly ;
+   gap: 50px;
+}
+
+.maletext{
+   margin-top: 10px;
+   font-weight: bold;
+   margin-left: 30px;
+}
+
+.femaletext{
+     margin-top: 10px;
+   font-weight: bold;
+   margin-left: 18px;
+}
 
 
+/* occupation */
+.othercontainer{
+  width: 250px;
+  height: 90px;
+  padding: 10px;
+  background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  border-radius: 8px;
+}
 
+.textTag{
+  font-size: .8rem;
+  font-weight: bold;
+}
+.inputContainer{
+  width: 230px;
+  height: 50px;
+  display: flex;          
+  background-color: transparent;
+  border-radius: 8px;
+  color: #000;
+}
 
+/* health conditons */
+.healthConditionConatiner {
+     height: 15rem; 
+     width: 60rem;     
+     margin-bottom: 40px; 
+     margin-top: 30px;
+}
+
+.selectedConditionsContainer {
+     display: flex;
+     justify-content: flex-start;
+     margin-bottom: 15px;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+ 
+ .selectedCondition {
+     background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+     font-size: 16px; 
+     padding: 8px 12px;
+     border-radius: 4px;
+     color: #000; 
+     cursor: pointer; 
+     white-space: nowrap;
+ }
+
+.allergyConatiner{
+     height: 6rem; 
+     width: 60rem;
+}
+
+.allergyInput{
+     height: 3rem;
+     width: 100%;
+     background-color: transparent;
+     color: #000;
+     border-radius: 10px;
+}
+
+.headerText{
+     font-weight: bold;
+}
+.buttonContainer{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     flex-wrap: wrap;
+     gap: 20px;
+     
+}
+
+.button{
+     font-size: 16px; 
+     padding: 8px 12px;
+     border-radius: 4px;
+     background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+     color: #000; 
+     cursor: pointer; 
+     white-space: nowrap;
+}
+/* .navbutton{
+     border: 5px solid #000;
+} */
