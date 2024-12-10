@@ -18,14 +18,14 @@ const FormAboutSelf = ({ handleNext }) => {
   return (
     <div className='container'>
       <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
-        <h4 className='text-center fw-bold'>Let us know about yourself</h4>
+        <h4 className='text-center fw-bold'>Let us know about yourself?</h4>
         {/* form */}
         <div className='w-100 max-w-400'>
           <label htmlFor="fullName">Enter Your Full Name</label>
           <input id="fullName" className='form-control' type='text' />
           <label htmlFor="email">Enter Your Email Address</label>
           <input id="email" className='form-control' type='email' />
-          <label htmlFor="contact">Enter Your Contact</label>
+          <label htmlFor="contact">Enter Your Mobile Number</label>
           <div className='input-group'>
             <div className='input-group-prepend'>
               <button

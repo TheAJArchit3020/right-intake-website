@@ -16,7 +16,7 @@ const FormOccupation = ({ handleNext }) => {
      return (
           <div className='container'>
                <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
-                    <h4 className='text-center fw-bold'>What is Your Occupation</h4>
+                    <h4 className='text-center fw-bold'>What is Your Occupation?</h4>
 
                     <button type="button" className={getStyle('Student')} onClick={() => handleSelect('Student')}>Student</button>
                     <button type="button" className={getStyle('Home-maker')} onClick={() => handleSelect('Home-maker')}>Home maker</button>

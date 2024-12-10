@@ -22,7 +22,7 @@ const FormBioLoigicalSex = ({ handleNext }) => {
           <div className='container'>
                <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
                     <h4 className='text-center fw-bold'>Choose your biological sex</h4>
-                    <div className='buttonContainer'>
+                    <div className='buttonContainergender'>
 
                     <div className='genderOption'>
                     <button type="button"
@@ -51,6 +51,7 @@ const FormBioLoigicalSex = ({ handleNext }) => {
                     />
                     </button>
                     <h4 className='femaletext'>Female</h4>
+
                     </div>
 
                     </div>

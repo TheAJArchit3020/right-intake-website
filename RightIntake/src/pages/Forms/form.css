@@ -122,6 +122,8 @@ button.occupationbutton{
      width: 250px;  /* changed to 250px before it was 200px */
      border-radius: 8px;
      text-align: left;
+     font-weight: bold;
+     box-shadow: none !important;
 }
 
 button.selectedButton{
@@ -131,6 +133,8 @@ button.selectedButton{
      border: none;
      outline: none;
      text-align: left;
+     font-weight: bold;
+     box-shadow: none !important;
 }
 
 button.veg-button,button.occupationbutton {
@@ -314,13 +318,16 @@ span.equipment-card-para {
 
    /* gender page css */
 
-   .buttonContainer{
+   .buttonContainergender{
      display: flex;
      flex-direction: row;
      justify-content: space-between;
+     align-items: center;
+     align-content: center;
      gap: 6rem;
      margin-top: 3rem;
    }
+   
    
 .selectedgenderButton{
      display: flex;
@@ -366,9 +373,9 @@ span.equipment-card-para {
 /* occupation */
 .othercontainer{
   width: 250px;
-  height: 90px;
+  height: 100px;
   padding: 10px;
-  background: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
+  background-image: linear-gradient(to right, #9FEB9F 0%, #ffffff 100%);
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -377,7 +384,7 @@ span.equipment-card-para {
 }
 
 .textTag{
-  font-size: .8rem;
+  font-size: 16px;
   font-weight: bold;
 }
 .inputContainer{
@@ -452,3 +459,6 @@ span.equipment-card-para {
 /* .navbutton{
      border: 5px solid #000;
 } */
+
+/* about self page */
+
