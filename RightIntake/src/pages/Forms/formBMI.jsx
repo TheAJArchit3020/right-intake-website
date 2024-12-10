@@ -17,6 +17,7 @@ const FormBMI = ({ handleNext }) => {
 
      const [bmi, setBmi] = useState(0);
      const [bmiCategory, setBmiCategory] = useState('');
+
      const [chartData, setChartData] = useState({
           labels: ['Underweight', 'Obesity'],
           datasets: [{
@@ -51,6 +52,7 @@ const FormBMI = ({ handleNext }) => {
                     obesity = 100;
                }
 
+               console.log(underweight, obesity)
                // Update chart data with the calculated percentages
                setChartData({
                     ...chartData,

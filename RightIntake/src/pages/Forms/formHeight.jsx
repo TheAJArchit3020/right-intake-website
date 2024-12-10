@@ -65,7 +65,7 @@ const FormHeight = ({ handleNext }) => {
                                    name={selectedOption}
                                    value={heightValue}
                                    onChange={handleHeightChange}
-                                   placeholder={`Enter height in ${selectedOption}`}
+                                   placeholder={`_${selectedOption}`}
                               />
                          )}
                          {selectedOption === 'Feet' && (

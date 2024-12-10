@@ -72,7 +72,7 @@ const FormLanding = ({ showprogresshandler }) => {
                     <p>according to your preferences</p>
                </div>
                <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <label htmlFor="age">Your Age</label>
+                    <label htmlFor="age" className='fw-bold'>YOUR AGE</label>
                     <input className='age-input'
                          type="text"
                          name="age"

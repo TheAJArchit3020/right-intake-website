@@ -15,6 +15,9 @@ import FormVegPreference from './formVegPreference';
 import FormWorkout from './formWorkout';
 import FormHomeWorkout from './formHomeWorkout';
 import FormHomeWorkoutInsight from './formHomeWorkoutInsight';
+import FormBodyFat from './formBodyFat';
+import FormBodyfatInsight from './formBodyfatInsight';
+import FormFoodPreference from './formFoodPreference';
 
 const FormLayout = () => {
      const [progress, setProgress] = useState(0);
@@ -45,17 +48,21 @@ const FormLayout = () => {
      };
 
      const components = [
-          <FormLanding showprogresshandler={showprogresshandler} />,
-          <FormHeight handleNext={handleNext} />,
-          <FormWeight handleNext={handleNext} />,
-          <FormBMI handleNext={handleNext} />,
-          <FormLevelFitness handleNext={handleNext} />,
-          <FormDietPreference handleNext={handleNext} />,
-          <FormNonvegPreference handleNext={handleNext} />,
-          <FormVegPreference handleNext={handleNext} />,
-          <FormWorkout handleNext={handleNext} />,
-          <FormHomeWorkout handleNext={handleNext} />,
-          <FormHomeWorkoutInsight handleNext={handleNext} />
+          // <FormLanding showprogresshandler={showprogresshandler} />,
+          // <FormHeight handleNext={handleNext} />,
+          // <FormWeight handleNext={handleNext} />,
+          // <FormBMI handleNext={handleNext} />,
+          // <FormLevelFitness handleNext={handleNext} />,
+          // <FormDietPreference handleNext={handleNext} />,
+          // <FormNonvegPreference handleNext={handleNext} />,
+          // <FormVegPreference handleNext={handleNext} />,
+          // <FormWorkout handleNext={handleNext} />,
+          // <FormHomeWorkout handleNext={handleNext} />,
+          // // <FormHomeWorkoutInsight handleNext={handleNext} />,
+          // <FormBodyFat handleNext={handleNext} />,
+          <FormBodyfatInsight handleNext={handleNext} />,
+          <FormFoodPreference handleNext={handleNext} />,
+
 
 
      ];
