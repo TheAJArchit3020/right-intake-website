@@ -29,7 +29,7 @@ const FormAboutSelf = ({ handleNext }) => {
           <div className='input-group'>
             <div className='input-group-prepend'>
               <button
-                className='btn btn-outline-secondary dropdown-toggle'
+                className='btn dropdown-toggle'
                 type='button'
                 onClick={toggleDropdown} 
               >

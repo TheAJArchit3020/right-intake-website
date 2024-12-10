@@ -124,6 +124,7 @@ button.occupationbutton{
      text-align: left;
      font-weight: bold;
      box-shadow: none !important;
+    
 }
 
 button.selectedButton{
@@ -138,7 +139,7 @@ button.selectedButton{
 }
 
 button.veg-button,button.occupationbutton {
-     background-image: linear-gradient(to right, #9FEB9F 0%, #ffffff 100%);
+     background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
 }
 
 button.nonveg-button {
@@ -375,7 +376,7 @@ span.equipment-card-para {
   width: 250px;
   height: 100px;
   padding: 10px;
-  background-image: linear-gradient(to right, #9FEB9F 0%, #ffffff 100%);
+  background-image: linear-gradient(to right, #9FEB9F 0%, #D7F9D7 100%);
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -420,6 +421,7 @@ span.equipment-card-para {
      color: #000; 
      cursor: pointer; 
      white-space: nowrap;
+     box-shadow: none !important;
  }
 
 .allergyConatiner{
@@ -455,6 +457,7 @@ span.equipment-card-para {
      color: #000; 
      cursor: pointer; 
      white-space: nowrap;
+     box-shadow: none !important;
 }
 /* .navbutton{
      border: 5px solid #000;
