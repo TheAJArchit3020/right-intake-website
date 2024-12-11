@@ -263,6 +263,8 @@ span.bmi-content-para2 {
 
 .range-with-lines {
      height: 25px;
+     border-bottom: 1px solid #eeeeee;
+
 }
 
 .fitness-newcommer-ui {

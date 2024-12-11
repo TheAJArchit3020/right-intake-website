@@ -35,12 +35,12 @@ const FormLevelFitness = ({ handleNext }) => {
      let fitnessCategory = '';
      let fitnessText = '';
 
-     if (fitnessLevel == 0 && fitnessLevel < 1) {
+     if (fitnessLevel == 0) {
           fitnessCategory = 'Newcomer';
           fitnessText = fitnessDescriptions.newcomer[fitnessLevel];
      } else if (fitnessLevel >= 1 && fitnessLevel <= 5) {
           fitnessCategory = 'Newcomer';
-          fitnessText = fitnessDescriptions.newcomer[fitnessLevel - 1] || fitnessDescriptions.newcomer[fitnessLevel];
+          fitnessText = fitnessDescriptions.newcomer[fitnessLevel - 1];
      } else if (fitnessLevel >= 6 && fitnessLevel <= 9) {
           fitnessCategory = 'Amateur';
           fitnessText = fitnessDescriptions.amateur[fitnessLevel - 6] || '';
@@ -73,25 +73,31 @@ const FormLevelFitness = ({ handleNext }) => {
                                              style={{
                                                   position: 'absolute',
                                                   left: `${(index + 1) * 8.2}%`,
-                                                  top: '5px',
-                                                  bottom: '0',
-                                                  width: '1.5px',
-                                                  backgroundColor: '#000',
-                                                  height: '14px'
+                                                  top: "50%",
+                                                  transform: "translateY(-40%)",
+                                                  height: "12px",
+                                                  width: "1px",
+                                                  backgroundColor: "#000",
                                              }}
                                         />
                                    ))}
 
-                                   <Form.Range
+                                   <input type='range'
                                         value={fitnessLevel}
                                         onChange={handleRangeChange}
                                         min={0}
                                         max={12}
                                         step={1}
                                         style={{
-                                             position: 'relative',
-                                             width: '100%',
-                                             borderBottom: '1px solid rgba(211, 211, 211, 0.5)'
+                                             width: "100%",
+                                             height: "6px",
+                                             appearance: "none",
+                                             background: "#F1BABA",
+                                             borderRadius: "5px",
+                                             outline: "none",
+                                             cursor: "pointer",
+                                             // overflow: "hidden",
+                                             position: "relative",
                                         }}
                                    />
                               </div>
