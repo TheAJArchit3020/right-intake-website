@@ -87,7 +87,7 @@ const FormHeight = ({ handleNext }) => {
                               </>
                          )}
                     </div>
-                    <div className='d-flex align-items-center justify-content-center '>
+                    <div className='d-flex align-items-center justify-content-center mb-4 '>
                          <NavigationButton handleNext={handleNext} />
                     </div>
 
