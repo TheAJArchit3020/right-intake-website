@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
+import { useNavigate } from 'react-router';
 
 const FormAboutSelf = ({ handleNext }) => {
   const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
@@ -9,6 +10,11 @@ const FormAboutSelf = ({ handleNext }) => {
   const [email, setEmail] = useState('');
   const [contact, setContact] = useState('');
   const { setFormData } = useContext(DataContext);
+  const navigation = useNavigate();
+
+  const NavigationHandler = () => {
+    navigation('/overallsummary')
+  }
 
   // Set form data when any value is updated
   const updateFormData = () => {
@@ -118,7 +124,9 @@ const FormAboutSelf = ({ handleNext }) => {
       </div>
 
       <div className='d-flex align-items-center justify-content-center mb-4'>
-        <NavigationButton handleNext={handleNext} />
+        <NavigationButton handleNext={() => {
+          NavigationHandler(), handleNext()
+        }} />
       </div>
     </div>
   );

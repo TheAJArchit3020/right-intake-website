@@ -62,15 +62,18 @@ export const offerbackground = "/images/offerbackground.svg"
 
 //emojis
 export const cryemoji = "/images/emojis/cry.svg"
-export const fireemoji ="/images/emojis/fire.svg"
+export const fireemoji = "/images/emojis/fire.svg"
 export const shockemoji = "/images/emojis/shock.svg"
 export const crownemoji = "/images/emojis/crown.svg"
 
 export const batemoji = "/images/emojis/bat.svg"
-export const humanemoji ="/images/emojis/human.svg"
+export const humanemoji = "/images/emojis/human.svg"
 export const catemoji = "/images/emojis/cat.svg"
 export const sunemoji = "/images/emojis/sun.svg"
 
 export const waterglassemoji = "/images/emojis/waterGlass.svg"
 export const wavemoji = "/images/emojis/wave.svg"
+
+export const bodyfatshadow1 = "/images/bodyfatshadow1.png"
+export const bodyfatshadow2 = "/images/bodyfatshadow2.png"
 

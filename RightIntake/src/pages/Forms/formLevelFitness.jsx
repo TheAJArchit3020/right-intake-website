@@ -97,7 +97,7 @@ const FormLevelFitness = ({ handleNext }) => {
                                              outline: "none",
                                              cursor: "pointer",
                                              // overflow: "hidden",
-                                             position: "relative",
+                                             // position: "relative",
                                         }}
                                    />
                               </div>

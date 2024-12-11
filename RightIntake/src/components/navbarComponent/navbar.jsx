@@ -45,6 +45,10 @@ const NavbarComponent = () => {
           <Link to={'/'}>
             <span>About Us</span>
           </Link>
+
+          <Button className="btn footer-button mt-2 mt-3">
+            Get your personalised plan now &#128293;
+          </Button>
         </Offcanvas.Body>
       </Offcanvas>
 

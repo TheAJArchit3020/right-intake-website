@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./form.css"
+import "./responsive.css"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router'
 import DataContext from '../../components/Context/DataContext'
@@ -78,7 +79,7 @@ const FormLanding = ({ showprogresshandler }) => {
                     <h3>Build your personalized diet and workout routine</h3>
                     <p>according to your preferences</p>
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
+               <div className='age-input-group d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
                     <label htmlFor="age" className='fw-bold mb-0'>YOUR AGE</label>
                     <input className='age-input'
                          type="text"
@@ -96,12 +97,12 @@ const FormLanding = ({ showprogresshandler }) => {
                          onChange={handleAgreeChange}
                          id="agree-checkbox"
                     />
-                    <p>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link>Privacy policy</p>
+                    <p className='agree-terms-para'>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link></p>
                </div>
                <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
                     <input type="checkbox" className='agree-input' name="agree2" checked={agree2}
                          onChange={handleAgreeChange2} />
-                    <p>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
+                    <p className='agree-terms-para'>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
                </div>
                {error && (
                     <div className="text-danger mb-3 text-center">
