@@ -56,36 +56,36 @@ const FormLayout = () => {
      };
 
      const components = [
-          // <FormLanding showprogresshandler={showprogresshandler} />,
-          // <FormBioLoigicalSex handleNext={handleNext} />,
-          // <FormOccupation handleNext={handleNext} />,
-          // <FormHeight handleNext={handleNext} />,
-          // <FormWeight handleNext={handleNext} />,
+          <FormLanding showprogresshandler={showprogresshandler} />,
+          <FormBioLoigicalSex handleNext={handleNext} />,
+          <FormOccupation handleNext={handleNext} />,
+          <FormHeight handleNext={handleNext} />,
+          <FormWeight handleNext={handleNext} />,
           <FormBMI handleNext={handleNext} />,
-          // <FormLevelFitness handleNext={handleNext} />,
-          // <FormDietPreference handleNext={handleNext} />,
+          <FormLevelFitness handleNext={handleNext} />,
+          <FormDietPreference handleNext={handleNext} />,
 
-          // ...(formData?.dietPreference === 'Non-Veg'
-          //      ? [<FormNonvegPreference handleNext={handleNext} />]
-          //      : []),
+          ...(formData?.dietPreference === 'Non-Veg'
+               ? [<FormNonvegPreference handleNext={handleNext} />]
+               : []),
 
-          // <FormVegPreference handleNext={handleNext} />,
-          // <FormWorkout handleNext={handleNext} />,
+          <FormVegPreference handleNext={handleNext} />,
+          <FormWorkout handleNext={handleNext} />,
 
-          // ...(formData?.workout === 'HOME WORKOUT'
-          //      ? [<FormHomeWorkout handleNext={handleNext} />]
-          //      : []),
+          ...(formData?.workout === 'HOME WORKOUT'
+               ? [<FormHomeWorkout handleNext={handleNext} />]
+               : []),
 
-          // <FormBodyFat handleNext={handleNext} />,
-          // <FormBodyfatInsight handleNext={handleNext} />,
-          // <FormTrain handleNext={handleNext} />,
-          // <FormHealthConditions handleNext={handleNext} />,
-          // <FormFoodPreference handleNext={handleNext} />,
-          // <FormCheatmeal handleNext={handleNext} />,
-          // <FormSleepHour handleNext={handleNext} />,
-          // <FormWater handleNext={handleNext} />,
-          // <FormAboutSelf handleNext={handleNext} />,
-          // <FormOverallSummary handleNext={handleNext} />,
+          <FormBodyFat handleNext={handleNext} />,
+          <FormBodyfatInsight handleNext={handleNext} />,
+          <FormTrain handleNext={handleNext} />,
+          <FormHealthConditions handleNext={handleNext} />,
+          <FormFoodPreference handleNext={handleNext} />,
+          <FormCheatmeal handleNext={handleNext} />,
+          <FormSleepHour handleNext={handleNext} />,
+          <FormWater handleNext={handleNext} />,
+          <FormAboutSelf handleNext={handleNext} />,
+          <FormOverallSummary handleNext={handleNext} />,
      ];
 
 

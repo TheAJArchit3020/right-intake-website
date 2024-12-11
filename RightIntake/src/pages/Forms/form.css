@@ -244,7 +244,14 @@ span.bmi-status2 {
     text-transform: uppercase;
 }
 span.bmi-motivation {
-     font-size: 1.5rem;
+     font-size: 1.4rem;
+}
+span.bmi-description {
+     font-size: 1.2rem;
+}
+span.bmi-value {
+     font-family: 'Plus Jakarta Sans';
+     margin-top: -10px;
 }
 
 .bmi-content {
