@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import NavigationButton from '../../components/Button/navigationButton';
+import DataContext from '../../components/Context/DataContext';
 
 const FormAboutSelf = ({ handleNext }) => {
-  const [selectedOption, setSelectedOption] = useState('');
   const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [contact, setContact] = useState('');
+  const { setFormData } = useContext(DataContext);
 
-  const handleSelect = (option) => {
-    console.log(option);
-    setSelectedOption(option);
+  // Set form data when any value is updated
+  const updateFormData = () => {
+    setFormData(prev => ({
+      ...prev,
+      aboutself: {
+        name,
+        contact: selectedCountryCode + contact,
+        email,
+      },
+    }));
   };
 
   const toggleDropdown = () => {
@@ -22,16 +33,34 @@ const FormAboutSelf = ({ handleNext }) => {
         {/* form */}
         <div className='w-100 max-w-400'>
           <label htmlFor="fullName">Enter Your Full Name</label>
-          <input id="fullName" className='form-control' type='text' />
+          <input
+            id="fullName"
+            className='form-control'
+            type='text'
+            value={name} // Bind the input value to state
+            onChange={(e) => {
+              setName(e.target.value);
+              updateFormData(); // Update form data when name changes
+            }}
+          />
           <label htmlFor="email">Enter Your Email Address</label>
-          <input id="email" className='form-control' type='email' />
+          <input
+            id="email"
+            className='form-control'
+            type='email'
+            value={email} // Bind the input value to state
+            onChange={(e) => {
+              setEmail(e.target.value);
+              updateFormData(); // Update form data when email changes
+            }}
+          />
           <label htmlFor="contact">Enter Your Mobile Number</label>
           <div className='input-group'>
             <div className='input-group-prepend'>
               <button
                 className='btn dropdown-toggle'
                 type='button'
-                onClick={toggleDropdown} 
+                onClick={toggleDropdown}
               >
                 {selectedCountryCode || '+91'}
               </button>
@@ -42,7 +71,8 @@ const FormAboutSelf = ({ handleNext }) => {
                   onClick={(e) => {
                     e.preventDefault();
                     setSelectedCountryCode('+1');
-                    setIsDropdownOpen(false); 
+                    setIsDropdownOpen(false);
+                    updateFormData(); // Update form data when country code changes
                   }}
                 >
                   +1 (USA)
@@ -53,7 +83,8 @@ const FormAboutSelf = ({ handleNext }) => {
                   onClick={(e) => {
                     e.preventDefault();
                     setSelectedCountryCode('+44');
-                    setIsDropdownOpen(false); 
+                    setIsDropdownOpen(false);
+                    updateFormData(); // Update form data when country code changes
                   }}
                 >
                   +44 (UK)
@@ -65,18 +96,28 @@ const FormAboutSelf = ({ handleNext }) => {
                     e.preventDefault();
                     setSelectedCountryCode('+91');
                     setIsDropdownOpen(false);
+                    updateFormData(); // Update form data when country code changes
                   }}
                 >
                   +91 (India)
                 </a>
               </div>
             </div>
-            <input id="contact" className='form-control' type='tel' />
+            <input
+              id="contact"
+              className='form-control'
+              type='tel'
+              value={contact} // Bind the input value to state
+              onChange={(e) => {
+                setContact(e.target.value);
+                updateFormData(); // Update form data when contact changes
+              }}
+            />
           </div>
         </div>
       </div>
-      
-      <div className='d-flex align-items-center justify-content-center'>
+
+      <div className='d-flex align-items-center justify-content-center mb-4'>
         <NavigationButton handleNext={handleNext} />
       </div>
     </div>

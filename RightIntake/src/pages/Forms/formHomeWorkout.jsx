@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
 
 const FormHomeWorkout = ({ handleNext }) => {
 
-     const [selectedOption, setSelectedOption] = useState('All equipments');
+     const [selectedOption, setSelectedOption] = useState('');
      const { setFormData } = useContext(DataContext);
 
 
@@ -15,7 +14,9 @@ const FormHomeWorkout = ({ handleNext }) => {
                ...prev,
                equipments: selectedOption,
           }));
-          handleNext();
+          setTimeout(() => {
+               handleNext();
+          }, 500);
      };
 
      

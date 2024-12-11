@@ -89,15 +89,17 @@ const FormLanding = ({ showprogresshandler }) => {
                </div>
                <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold'>
                     <input
+                         className='agree-input'
                          type="checkbox"
                          name="agree"
                          checked={agree}
                          onChange={handleAgreeChange}
+                         id="agree-checkbox"
                     />
                     <p>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link>Privacy policy</p>
                </div>
                <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <input type="checkbox" name="agree2" checked={agree2}
+                    <input type="checkbox" className='agree-input' name="agree2" checked={agree2}
                          onChange={handleAgreeChange2} />
                     <p>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
                </div>

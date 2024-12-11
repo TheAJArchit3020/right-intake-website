@@ -16,12 +16,12 @@ const FormHeight = ({ handleNext }) => {
                ...prev,
                height: selectedOption === 'Cm' ? heightValue : `${feetValue}'${inchValue}"`,
           }));
-     }, [heightValue, feetValue, inchValue, selectedOption, setFormData]); 
+     }, [heightValue, feetValue, inchValue, selectedOption, setFormData]);
 
      // Handle height input changes based on the selected option
      const handleHeightChange = (e) => {
           if (selectedOption === 'Cm') {
-               setHeightValue(e.target.value); 
+               setHeightValue(e.target.value);
           } else {
                // Update feet and inch values
                const name = e.target.name;
@@ -65,7 +65,7 @@ const FormHeight = ({ handleNext }) => {
                                    name={selectedOption}
                                    value={heightValue}
                                    onChange={handleHeightChange}
-                                   placeholder={`_${selectedOption}`}
+                                   placeholder='_cm'
                               />
                          )}
                          {selectedOption === 'Feet' && (

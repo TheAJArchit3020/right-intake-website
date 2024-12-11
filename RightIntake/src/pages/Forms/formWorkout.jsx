@@ -17,7 +17,9 @@ const FormWorkout = ({ handleNext }) => {
                ...prev,
                workout: option,
           }));
-          handleNext();
+          setTimeout(() => {
+               handleNext();
+          }, 500);
      };
 
      let WORKOUT = [

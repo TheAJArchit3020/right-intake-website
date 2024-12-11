@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NavigationButton from '../../components/Button/navigationButton';
+import DataContext from '../../components/Context/DataContext';
 
 const FormHealthConditions = ({ handleNext }) => {
     const [selectedHealthConditons, setSelectedHealthConditons] = useState([]);
     const [allergies, setAllergies] = useState('');
+    const { setFormData } = useContext(DataContext);
 
     const healthConditionOptions = [
         { id: 1, label: 'None' },
@@ -30,27 +32,35 @@ const FormHealthConditions = ({ handleNext }) => {
         }
     };
 
+    // Update context when selection changes
+   useEffect(() => {
+        setFormData((prev) => ({
+            ...prev,
+            healthcondition: selectedHealthConditons, // Pass the updated selected conditions
+            allergies: allergies, // Pass the allergies input
+        }));
+    }, [selectedHealthConditons, allergies, setFormData]); // Re-run when healthconditions or allergies change
+
     const handleButtonClick = (condition) => {
         handleSelection(condition);
     };
 
     // Render the selected condition that should be moved to the top
     const renderSelectedConditions = () => {
+        if (selectedHealthConditons.length === 0) {
+            return (
+                <div className="selectedConditionsContainer">
+                    <button
+                        key="None"
+                        className="selectedCondition noneSelected"
+                        onClick={() => handleSelection('None')}
+                    >
+                        None
+                    </button>
+                </div>
+            );
+        }
 
-     if (selectedHealthConditons.length === 0) {
-          return (
-              <div className="selectedConditionsContainer">
-                  <button
-                      key="None"
-                      className="selectedCondition noneSelected"
-                      onClick={() => handleSelection('None')}
-                  >
-                      None
-                  </button>
-              </div>
-          );
-      }
-      
         return (
             <div className="selectedConditionsContainer">
                 {selectedHealthConditons.map((condition) => (

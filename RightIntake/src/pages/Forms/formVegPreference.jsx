@@ -17,7 +17,9 @@ const FormVegPreference = ({ handleNext }) => {
                ...prev,
                goal: option,
           }));
-          handleNext();
+          setTimeout(() => {
+               handleNext();
+          }, 500);
      };
 
      let GOAL = [

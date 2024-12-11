@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,  useState } from 'react';
 import "./form.css";
 import FormLanding from './formLanding';
 import NavbarComponent from '../../components/navbarComponent/navbar';
 import FormHeight from './formHeight';
-import { Button, ProgressBar } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 import { previcon } from '../../components/Images';
 import FormWeight from './formWeight';
 import FormDietPreference from './formDietPreference';
@@ -14,15 +14,6 @@ import FormNonvegPreference from './formNonvegPreference';
 import FormVegPreference from './formVegPreference';
 import FormWorkout from './formWorkout';
 import FormHomeWorkout from './formHomeWorkout';
-import FormHomeWorkoutInsight from './formHomeWorkoutInsight';
-<<<<<<< HEAD
-import FormBodyFat from './formBodyFat';
-import FormBodyfatInsight from './formBodyfatInsight';
-import FormFoodPreference from './formFoodPreference';
-import FormCheatmeal from './formCheatmeal';
-import FormOverallSummary from './formOverallSummary';
-import FormBioLoigicalSex from './formBiologicalSex';
-=======
 import FormTrain from './formTrain';
 import FormSleepHour from './fromSleepHour';
 import FormWater from './formWater';
@@ -30,7 +21,11 @@ import FormAboutSelf from './formAboutSelf';
 import FormBioLoigicalSex from './formBiologicalSex';
 import FormHealthConditions from './formHealthConditions';
 import FormOccupation from './formOccupation';
->>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
+import FormFoodPreference from './formFoodPreference';
+import FormBodyFat from './formBodyFat';
+import FormBodyfatInsight from './formBodyfatInsight';
+import FormCheatmeal from './formCheatmeal';
+import FormOverallSummary from './formOverallSummary';
 
 const FormLayout = () => {
      const [progress, setProgress] = useState(0);
@@ -62,12 +57,8 @@ const FormLayout = () => {
 
      const components = [
           <FormLanding showprogresshandler={showprogresshandler} />,
-<<<<<<< HEAD
-          // <FormBioLoigicalSex handleNext={handleNext} />,
-=======
-          <FormBioLoigicalSex handleNext={handleNext}/>,
-          <FormOccupation  handleNext={handleNext} />,
->>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
+          <FormBioLoigicalSex handleNext={handleNext} />,
+          <FormOccupation handleNext={handleNext} />,
           <FormHeight handleNext={handleNext} />,
           <FormWeight handleNext={handleNext} />,
           <FormBMI handleNext={handleNext} />,
@@ -80,31 +71,21 @@ const FormLayout = () => {
 
           <FormVegPreference handleNext={handleNext} />,
           <FormWorkout handleNext={handleNext} />,
-<<<<<<< HEAD
 
           ...(formData?.workout === 'HOME WORKOUT'
                ? [<FormHomeWorkout handleNext={handleNext} />]
                : []),
 
-          // <FormHomeWorkout handleNext={handleNext} />,
-          // <FormHomeWorkoutInsight handleNext={handleNext} />,
           <FormBodyFat handleNext={handleNext} />,
           <FormBodyfatInsight handleNext={handleNext} />,
-          <FormFoodPreference handleNext={handleNext} />,
-          <FormCheatmeal handleNext={handleNext} />,
-          <FormOverallSummary handleNext={handleNext} />
-
-
-
-=======
-          <FormHomeWorkout handleNext={handleNext} />,
-          <FormHomeWorkoutInsight handleNext={handleNext} />,
           <FormTrain handleNext={handleNext} />,
           <FormHealthConditions handleNext={handleNext} />,
+          <FormFoodPreference handleNext={handleNext} />,
+          <FormCheatmeal handleNext={handleNext} />,
           <FormSleepHour handleNext={handleNext} />,
           <FormWater handleNext={handleNext} />,
-          <FormAboutSelf handleNext={handleNext} />
->>>>>>> d7cb446216de705e258aab5c9fd96b90cb03cb02
+          <FormAboutSelf handleNext={handleNext} />,
+          <FormOverallSummary handleNext={handleNext} />,
      ];
 
 
