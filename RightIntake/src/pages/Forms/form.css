@@ -199,14 +199,14 @@ canvas {
      max-height: 250px !important;
 }
 
-.bmi-chart {
+/* .bmi-chart {
      width: 250px;
      height: 250px;
-}
+} */
 
-.bmi-ui-wrapper {
+/* .bmi-ui-wrapper {
      max-height: 250px !important;
-}
+} */
 
 .bmi-ui-section1,
 .bmi-ui-section2 {
@@ -214,17 +214,21 @@ canvas {
 }
 
 .bmi-category {
-     display: flex;
-     gap: 9em;
-     margin-top: -4.5em;
+     margin-top: -3.5em;
+     position: relative;
 }
 
 .bmi-category p {
      font-size: 0.8em;
 }
 
-.bmi-content {
-     margin-top: -7em;
+span.bmi-status1 {
+     padding-left: 0em;
+     font-size: 1rem;
+}
+span.bmi-status2 {
+     padding-left: 2em;
+     font-size: 1rem;
 }
 
 .bmi-ui-content {
@@ -235,9 +239,18 @@ canvas {
      height: 350px;
 
 }
+.bmi-category-name {
+     margin-top: 2.5em;
+    text-transform: uppercase;
+}
+span.bmi-motivation {
+     font-size: 1.5rem;
+}
 
-
-
+.bmi-content {
+     position: absolute;
+    top: 18em;
+}
 .bmi-content-para,
 .bmi-content-para2 {
      padding: 10px 30px;
