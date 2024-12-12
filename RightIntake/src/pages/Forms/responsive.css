@@ -94,4 +94,12 @@
      .diet-ui-container {
           margin-bottom: 0 !important;
      }
+
+     /* about-yourself css */
+     label.about-yourself-label {
+          font-size: 1rem;
+     }
+     .about-yourself-form {
+          padding: 20px;
+     }
 }

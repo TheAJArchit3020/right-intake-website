@@ -33,12 +33,12 @@ const FormAboutSelf = ({ handleNext }) => {
   };
 
   return (
-    <div className='container'>
+    <>
       <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
         <h4 className='text-center fw-bold'>Let us know about yourself?</h4>
         {/* form */}
-        <div className='w-100 max-w-400'>
-          <label htmlFor="fullName">Enter Your Full Name</label>
+        <div className='about-yourself-form w-100 max-w-400'>
+          <label htmlFor="fullName" className='about-yourself-label'>Enter Your Full Name</label>
           <input
             id="fullName"
             className='form-control'
@@ -123,12 +123,12 @@ const FormAboutSelf = ({ handleNext }) => {
         </div>
       </div>
 
-      <div className='d-flex align-items-center justify-content-center mb-4'>
+      <div className='mobile-button d-flex align-items-center'>
         <NavigationButton handleNext={() => {
           NavigationHandler(), handleNext()
         }} />
       </div>
-    </div>
+    </>
   );
 };
 
