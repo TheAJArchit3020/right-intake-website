@@ -99,7 +99,7 @@ const FormLanding = ({ showprogresshandler }) => {
                     />
                     <p className='agree-terms-para'>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link></p>
                </div>
-               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
+               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mt-0'>
                     <input type="checkbox" className='agree-input' name="agree2" checked={agree2}
                          onChange={handleAgreeChange2} />
                     <p className='agree-terms-para'>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
@@ -109,8 +109,8 @@ const FormLanding = ({ showprogresshandler }) => {
                          {error}
                     </div>
                )}
-               <div className='d-flex justify-content-center' >
-                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go..</button>
+               <div className='mobile-button d-flex' >
+                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go</button>
                </div>
 
           </div>

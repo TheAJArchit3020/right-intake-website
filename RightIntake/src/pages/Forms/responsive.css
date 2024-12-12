@@ -3,12 +3,32 @@
      .form-conatiner {
           margin: 3em;
      }
+
+     .mobile-button {
+          justify-content: center !important;
+          background: none !important;
+     }
+
+     .age-input-group {
+          flex-direction: row !important;
+     }
+
+     .agree-input {
+          width: 16px !important;
+          height: 16px !important;
+     }
 }
 
 @media (max-width: 768px) {
 
      /* landing page css */
 
+     .form-conatiner {
+          margin: 0em;
+     }
+     .form-header, .grp-input-check {
+          padding: 10px 20px !important;
+     }
      .form-header h3 {
           font-size: 1rem;
      }
@@ -30,5 +50,28 @@
 
           text-align: left;
           font-size: 0.7rem;
+     }
+
+     .mobile-button {
+          background: #DFDFDF;
+          justify-content: end;
+          padding: 6px;
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+     }
+
+     .grp-input-check {
+          padding: 0px 10px;
+     }
+     .agree-input:checked::before {
+          color: white !important;
+         
+     }
+     .age-input-group {
+          margin-top: 2rem;
+     }
+     .grp-input-check {
+          margin-top: 2rem;
      }
 }
