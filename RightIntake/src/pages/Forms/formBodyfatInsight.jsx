@@ -18,37 +18,44 @@ const FormBodyfatInsight = ({ handleNext }) => {
           return bodyfat8;
      };
      return (
-          <div className='body-insight-ui-conatiner d-flex align-items-center'>
-               <div className='body-insight-section1'>
-                    <div className="d-flex justify-content-center">
-                         <img
-                              src={getImageForRange(20)}
-                              alt="fitness"
-                              // width={447}
-                              // height={650}
-                              className="bodyfatinsight-image"
-                         />
+          <div className='body-insight-div'>
+
+               <div className='body-insight-ui-conatiner d-flex align-items-center'>
+                    <div className='body-insight-section1'>
+                         <div className="d-flex justify-content-center">
+                              <img
+                                   src={getImageForRange(20)}
+                                   alt="fitness"
+                                   className="bodyfatinsight-image"
+                              />
+                         </div>
+                    </div>
+                    <div className='body-insight-section2 '>
+                         <p className='section2-span fw-bold'>Your current body fat percentage is</p>
+                         <p className='section2-span2 fw-bold'>15 - 19 %</p>
+                         <div className='section2-para-grp'>
+                              <div className='body-fat-img-mobile'>
+                                   <img src={acheivmenticon} alt="acheivmenticon" width={60} />
+                              </div>
+                              <p className='section2-para1 mt-2'>“You're in fantastic shape—your dedication really shows!”</p>
+                              <p className='section2-para1'>“Your a little step away from reaching your goal push harder” <img src={acheivmenticon} alt="acheivmenticon" width={60} className='body-fat-img-desktop' /></p>
+                         </div>
+                         <p className='section2-para2 mt-4'>Congratulation you have acheived &nbsp;<span>
+                              <img src={congratsicon} alt="congratsicon" width={30} />
+                         </span>  </p>
+                         <div className='section2-para2-content d-flex align-items-center gap-2'>
+                              <img src={dumbels} alt="dumbels" width={26} />
+                              <p className='section2-para2'>Balanced Hormone Levels</p>
+                         </div>
+                         <div className='section2-para2-content d-flex align-items-center gap-2'>
+                              <img src={dumbels} alt="dumbels" width={26} />
+                              <p className='section2-para2'>Reduced Risk of Chronic Diseases</p>
+                         </div>
+
                     </div>
                </div>
-               <div className='body-insight-section2 '>
-                    <span className='section2-span fw-bold'>Your current body fat percentage is</span><br/>
-                    <span className='section2-span2 fw-bold'>15 - 19 %</span>
-                    <div className='section2-para-grp'>
-                         <p className='section2-para1 mt-2'>“You're in fantastic shape—your dedication really shows!”</p>
-                         <p className='section2-para1'>“Your a little step away from reaching your goal push harder” <img src={acheivmenticon} alt="acheivmenticon" width={60} /></p>
-                    </div>
-                    <p className='section2-para2 mt-4'>Congratulation you have acheived &nbsp;<img src={congratsicon} alt="congratsicon" width={30} />  </p>
-                    <div className='d-flex align-items-center gap-2'>
-                         <img src={dumbels} alt="dumbels" width={26} />
-                         <p className='section2-para2'>Reduced Risk of Chronic Diseases</p>
-                    </div>
-                    <div className='d-flex align-items-center gap-2'>
-                         <img src={dumbels} alt="dumbels" width={26} />
-                         <p className='section2-para2'>Balanced Hormone Levels</p>
-                    </div>
-                    <div className='body-insight-button d-flex align-items-center justify-content-start'>
-                         <NavigationButton handleNext={handleNext} />
-                    </div>
+               <div className='mobile-button d-flex align-items-center'>
+                    <NavigationButton handleNext={handleNext} />
                </div>
           </div>
      )

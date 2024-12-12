@@ -30,16 +30,44 @@
 
      /* health condition */
      .healthConditionConatiner {
-        
+
           padding: 20px 5rem !important;
           margin-bottom: 0 !important;
-          
-      }
-      .allergyConatiner {
+
+     }
+
+     .allergyConatiner {
           padding: 20px 5rem !important;
           margin-top: 0rem !important;
           margin-bottom: 4rem;
+     }
+
+     .body-fat-img-mobile {
+          display: none !important;
+     }
+
+     .body-insight-ui-conatiner {
+          flex-direction: row !important;
+     }
+
+     .section2-para2-content {
+          justify-content: start !important;
       }
+
+      p.section2-para1, p.section2-para2 {
+          font-size: 1rem !important;
+          text-align: left !important;
+      }
+      p.section2-span, p.section2-span2 {
+          font-size: 1.5rem !important;
+          text-align: left !important;
+      }
+      .body-fat-img-mobile {
+          display: none !important;
+     }
+     .body-fat-img-desktop {
+          display: block !important;
+     }
 }
 
 @media (max-width: 768px) {
@@ -129,6 +157,7 @@
           font-size: 1.375rem;
           margin-top: 1rem;
      }
+
      h4.sleep-hours-heading {
           font-size: 1.375rem;
           margin-top: 1rem;
@@ -138,55 +167,106 @@
      .cheatmeal-container {
           margin-top: 2rem;
           padding: 20px;
-      }
+     }
 
-      .cheatmeal-content, .foodprefer-ui-container, .health-ui-container {
+     .cheatmeal-content,
+     .foodprefer-ui-container,
+     .health-ui-container {
           height: calc(100vh - 150px) !important;
           overflow-y: auto;
-      }
+     }
 
-      /* food preference */
-      .vegg-div {
+     /* food preference */
+     .vegg-div {
           padding: 0px 1em;
           margin-bottom: 1rem;
-      }
+     }
 
-      .foodprefer-item-list {
+     .foodprefer-item-list {
           padding: 1em 0em;
-      }
+     }
 
-      span.foodprefer-item-span {
-        
+     span.foodprefer-item-span {
+
           padding: 0.4em 1em;
-        
-      }
-      .vegg-title {
+
+     }
+
+     .vegg-title {
           font-size: 1rem;
-      }
-      span.vegg-span {
+     }
+
+     span.vegg-span {
           font-size: 0.8rem;
-      }
+     }
 
 
-      /* health condition */
-      .healthConditionConatiner{
+     /* health condition */
+     .healthConditionConatiner {
           height: auto !important;
           width: auto !important;
           padding: 20px;
           margin-top: 1rem;
           margin-bottom: 0rem;
-      }
-      .allergyConatiner {
+     }
+
+     .allergyConatiner {
           height: auto !important;
           width: auto !important;
           padding: 20px;
           margin-bottom: 1rem;
-      }
+     }
 
-      .headerText {
+     .headerText {
           font-size: 1rem;
-      }
-      .buttonContainer button {
+     }
+
+     .buttonContainer button {
           font-size: 0.8rem;
-      }
+     }
+
+     /* body fat insight ... */
+     .body-insight-ui-conatiner {
+          flex-direction: column;
+     }
+
+     img.bodyfatinsight-image {
+          height: 300px;
+     }
+
+     p.section2-span,
+     p.section2-span2 {
+          font-size: 1.125rem;
+          text-align: center;
+     }
+
+     p.section2-para1, p.section2-para2 {
+          font-size: 0.75rem;
+          text-align: center;
+     }
+
+     .section2-para-grp {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+     }
+
+     .body-fat-img-desktop {
+          display: none;
+     }
+
+     .body-fat-img-mobile {
+          display: block;
+     }
+
+     .section2-para2-content {
+          justify-content: center;
+     }
+     .body-insight-div {
+          height: calc(100vh - 170px) !important;
+          overflow-y: auto;
+     }
+
+
 }

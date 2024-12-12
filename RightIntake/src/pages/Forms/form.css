@@ -427,11 +427,11 @@ input[type="range"]::-ms-thumb {
      cursor: pointer;
 }
 
-span.section2-span {
+p.section2-span {
      font-size: 2.25rem;
 }
 
-span.section2-span2 {
+p.section2-span2 {
      font-size: 2rem;
 }
 
