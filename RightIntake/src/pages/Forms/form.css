@@ -131,13 +131,10 @@ button.selectedButton{
      background-image: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
      width: 250px;
      border-radius: 8px;
-<<<<<<< Updated upstream
      border: none;
      outline: none;
-=======
      font-weight: bold;
      color: #000;
->>>>>>> Stashed changes
      text-align: left;
      font-weight: bold;
      box-shadow: none !important;
