@@ -79,7 +79,7 @@ const FormLayout = () => {
           // <FormBodyFat handleNext={handleNext} />,
           // <FormBodyfatInsight handleNext={handleNext} />,
           // <FormTrain handleNext={handleNext} />,
-          // <FormHealthConditions handleNext={handleNext} />,
+          <FormHealthConditions handleNext={handleNext} />,
           <FormFoodPreference handleNext={handleNext} />,
           <FormCheatmeal handleNext={handleNext} />,
           <FormSleepHour handleNext={handleNext} />,
