@@ -228,7 +228,7 @@ const FormFoodPreference = ({ handleNext }) => {
                     )}
                </div>
 
-               <div className="foodprefer-button d-flex align-items-center justify-content-center">
+               <div className="mobile-button d-flex align-items-center">
                     <NavigationButton
                          handleNext={() => {
                               if (validateSelections()) {

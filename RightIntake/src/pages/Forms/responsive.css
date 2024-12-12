@@ -126,8 +126,30 @@
           padding: 20px;
       }
 
-      .cheatmeal-content {
+      .cheatmeal-content, .foodprefer-ui-container {
           height: calc(100vh - 150px) !important;
           overflow-y: auto;
+      }
+
+      /* food preference */
+      .vegg-div {
+          padding: 0px 1em;
+          margin-bottom: 1rem;
+      }
+
+      .foodprefer-item-list {
+          padding: 1em 0em;
+      }
+
+      span.foodprefer-item-span {
+        
+          padding: 0.4em 1em;
+        
+      }
+      .vegg-title {
+          font-size: 1rem;
+      }
+      span.vegg-span {
+          font-size: 0.8rem;
       }
 }
