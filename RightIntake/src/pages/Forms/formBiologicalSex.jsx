@@ -2,12 +2,8 @@ import React, { useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
 import { male } from '../../components/Images';
 import { female } from '../../components/Images';
-<<<<<<< Updated upstream
-
-=======
 import DataContext from '../../components/Context/DataContext'; 
 import "./responsive.css"
->>>>>>> Stashed changes
 
 const FormBioLoigicalSex = ({ handleNext }) => {
 

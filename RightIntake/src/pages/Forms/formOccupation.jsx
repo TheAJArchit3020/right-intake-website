@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
-<<<<<<< Updated upstream
-=======
-import DataContext from '../../components/Context/DataContext';
 import "./responsive.css"
->>>>>>> Stashed changes
 
 const FormOccupation = ({ handleNext }) => {
 
