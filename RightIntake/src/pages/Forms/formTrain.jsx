@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import NavigationButton from '../../components/Button/navigationButton';
 import { cryemoji } from '../../components/Images';
 import { fireemoji } from '../../components/Images';
 import { shockemoji } from '../../components/Images';
@@ -56,8 +55,8 @@ const FormTrain = ({ handleNext }) => {
                <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
                     <h4 className='text-center fw-bold'>How many times in a week do you train?</h4>
                     <button type="button" className={getButtonStyle('I haven’t trained before 😢')} onClick={() => handleSelect('I haven’t trained before 😢')}>   {renderWithEmojiImages('I haven’t trained before 😢')}</button>
-                    <button type="button" className={getButtonStyle('2-3 days in a week 🔥')} onClick={() => handleSelect('2-3 days in a week 🔥')}>{renderWithEmojiImages('2-3 days in a week 🔥')}</button>
-                    <button type="button" className={getButtonStyle('4-5 days in a week 🔥😮')} onClick={() => handleSelect('4-5 days in a week 🔥😮')}>{renderWithEmojiImages('4-5 days in a week 🔥😮')}</button>
+                    <button type="button" className={getButtonStyle('2-3 days in a week 🔥 ')} onClick={() => handleSelect('2-3 days in a week 🔥 ')}>{renderWithEmojiImages('2-3 days in a week 🔥')}</button>
+                    <button type="button" className={getButtonStyle('4-5 days in a week 🔥 😮')} onClick={() => handleSelect('4-5 days in a week 🔥 😮')}>{renderWithEmojiImages('4-5 days in a week 🔥 😮')}</button>
                     <button type="button" className={getButtonStyle('6 days in a week 👑')} onClick={() => handleSelect('6 days in a week 👑')}> {renderWithEmojiImages('6 days in a week 👑')}</button>
                </div>
           </div>

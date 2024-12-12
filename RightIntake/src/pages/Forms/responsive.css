@@ -118,6 +118,7 @@
           position: fixed;
           width: 100%;
           bottom: 0;
+          z-index: 1;
      }
 
      .grp-input-check {
@@ -174,13 +175,13 @@
           padding: 20px;
      }
 
-     .cheatmeal-content,
-     .foodprefer-ui-container,
+     /* .cheatmeal-content, */
+     
      .health-ui-container {
-          height: calc(100vh - 150px) !important;
+          height: calc(100vh - 210px) !important;
           overflow-y: auto;
      }
-
+     
      /* food preference */
      .vegg-div {
           padding: 0px 1em;
@@ -275,9 +276,13 @@
           justify-content: center;
      }
 
-     .body-insight-div,
+    
      .bodyfat-ui-container {
           height: calc(100vh - 170px) !important;
+          overflow-y: auto;
+     }
+     .body-insight-div {
+          height: calc(100vh - 20px) !important;
           overflow-y: auto;
      }
 
@@ -289,13 +294,15 @@
           width: 80%;
      }
      .bodyfatimage {
-          width: 250px;
+          width: 220px;
      }
 
      /* fitness level .. */
      .range-wrapper,.fitness-new-commer {
           padding: 20px;
      }
+
+     
 
 
 }

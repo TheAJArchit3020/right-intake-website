@@ -46,7 +46,7 @@ const FormNonvegPreference = ({ handleNext }) => {
           ))}
         </div>
 
-        <div className='nonveg-submit-btn d-flex align-items-center justify-content-center'>
+        <div className='mobile-button d-flex align-items-center'>
           <NavigationButton handleNext={handleNext} />
         </div>
       </div>

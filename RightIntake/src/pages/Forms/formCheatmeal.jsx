@@ -20,6 +20,17 @@ const FormCheatmeal = ({ handleNext }) => {
           { meal: 'Maggi', imageUrl: cheatmealimage },
           { meal: 'Maggi', imageUrl: cheatmealimage },
           { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Apple', imageUrl: cheatmealimage },
+          { meal: 'Mango', imageUrl: cheatmealimage },
+          { meal: 'Panipuri', imageUrl: cheatmealimage },
+          { meal: 'Dosa', imageUrl: cheatmealimage },
+          { meal: 'Burger', imageUrl: cheatmealimage },
+          { meal: 'Pasta', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
      ];
 
      useEffect(() => {

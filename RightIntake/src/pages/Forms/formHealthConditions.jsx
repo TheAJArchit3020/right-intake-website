@@ -64,7 +64,7 @@ const FormHealthConditions = ({ handleNext }) => {
 
     return (
         <div className='health-ui-container'>
-            <div className=" d-flex flex-column align-items-center justify-content-center gap-3">
+            <div className="health-ui-wrapper d-flex flex-column align-items-center justify-content-center gap-3">
                 <h4 className="text-center fw-bold">Any Known Health Conditions and Food Allergy?</h4>
 
                 <div className="healthConditionConatiner">
