@@ -1,4 +1,4 @@
-import React, { useContext,  useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./form.css";
 import FormLanding from './formLanding';
 import NavbarComponent from '../../components/navbarComponent/navbar';
@@ -56,25 +56,25 @@ const FormLayout = () => {
      };
 
      const components = [
-          // <FormLanding showprogresshandler={showprogresshandler} />,
-          // <FormBioLoigicalSex handleNext={handleNext} />,
-          // <FormOccupation handleNext={handleNext} />,
-          // <FormHeight handleNext={handleNext} />,
-          // <FormWeight handleNext={handleNext} />,
-          // <FormBMI handleNext={handleNext} />,
-          // <FormLevelFitness handleNext={handleNext} />,
-          // <FormDietPreference handleNext={handleNext} />,
+          <FormLanding showprogresshandler={showprogresshandler} />,
+          <FormBioLoigicalSex handleNext={handleNext} />,
+          <FormOccupation handleNext={handleNext} />,
+          <FormHeight handleNext={handleNext} />,
+          <FormWeight handleNext={handleNext} />,
+          <FormBMI handleNext={handleNext} />,
+          <FormLevelFitness handleNext={handleNext} />,
+          <FormDietPreference handleNext={handleNext} />,
 
-          // ...(formData?.dietPreference === 'Non-Veg'
-          //      ? [<FormNonvegPreference handleNext={handleNext} />]
-          //      : []),
+          ...(formData?.dietPreference === 'Non-Veg'
+               ? [<FormNonvegPreference handleNext={handleNext} />]
+               : []),
 
-          // <FormVegPreference handleNext={handleNext} />,
-          // <FormWorkout handleNext={handleNext} />,
+          <FormVegPreference handleNext={handleNext} />,
+          <FormWorkout handleNext={handleNext} />,
 
-          // ...(formData?.workout === 'HOME WORKOUT'
-          //      ? [<FormHomeWorkout handleNext={handleNext} />]
-          //      : []),
+          ...(formData?.workout === 'HOME WORKOUT'
+               ? [<FormHomeWorkout handleNext={handleNext} />]
+               : []),
 
           <FormBodyFat handleNext={handleNext} />,
           <FormBodyfatInsight handleNext={handleNext} />,

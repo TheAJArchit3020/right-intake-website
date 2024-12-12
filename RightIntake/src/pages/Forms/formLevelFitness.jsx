@@ -59,8 +59,8 @@ const FormLevelFitness = ({ handleNext }) => {
      };
 
      return (
-          <div className='container'>
-               <div className='height-ui-container'>
+          <div>
+               <div className='fitness-ui-container'>
                     <h4 className='text-center fw-bold mb-4'>What’s your current level of fitness?</h4>
                     <div className='range-wrapper d-flex align-items-center justify-content-center'>
                          <div className='fitness-range d-flex align-items-center justify-content-center gap-3'>
@@ -110,7 +110,7 @@ const FormLevelFitness = ({ handleNext }) => {
                               <p>{fitnessText}</p>
                          </div>
                     </div>
-                    <div className='fitness-submit-btn d-flex align-items-center justify-content-center'>
+                    <div className='mobile-button d-flex align-items-center'>
                          <NavigationButton handleNext={handleNext} />
                     </div>
                </div>

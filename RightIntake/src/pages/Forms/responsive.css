@@ -211,7 +211,7 @@
           height: auto !important;
           width: auto !important;
           padding: 20px;
-          margin-top: 1rem;
+          margin-top: 0rem;
           margin-bottom: 0rem;
      }
 
@@ -236,12 +236,16 @@
      }
 
      img.bodyfatinsight-image {
-          height: 300px;
+          width: 210px;
+          height: auto;
      }
 
+     .body-insight-ui-conatiner {
+          gap: 0em;
+      }
      p.section2-span,
      p.section2-span2 {
-          font-size: 1.125rem;
+          font-size: 1rem;
           text-align: center;
      }
 
@@ -265,6 +269,7 @@
      .body-fat-img-mobile {
           display: block;
      }
+    
 
      .section2-para2-content {
           justify-content: center;
@@ -281,7 +286,15 @@
      }
 
      .bodyfat-range-div {
-          margin-bottom: 4rem;
+          width: 80%;
+     }
+     .bodyfatimage {
+          width: 250px;
+     }
+
+     /* fitness level .. */
+     .range-wrapper,.fitness-new-commer {
+          padding: 20px;
      }
 
 
