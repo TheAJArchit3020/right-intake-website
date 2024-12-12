@@ -68,7 +68,7 @@
           background: #DFDFDF;
           justify-content: end;
           padding: 10px;
-          position: absolute;
+          position: fixed;
           width: 100%;
           bottom: 0;
      }
@@ -119,4 +119,15 @@
           font-size: 1.375rem;
           margin-top: 1rem;
      }
+
+     /* cheat meal */
+     .cheatmeal-container {
+          margin-top: 2rem;
+          padding: 20px;
+      }
+
+      .cheatmeal-content {
+          height: calc(100vh - 150px) !important;
+          overflow-y: auto;
+      }
 }
