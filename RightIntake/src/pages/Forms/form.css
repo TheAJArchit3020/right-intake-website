@@ -131,11 +131,11 @@ p.para2 {
 }
 
 .form {
-     margin-bottom: 10em;
+     margin-bottom: 8em;
 }
 
 .form1 {
-     margin-bottom: 5em;
+     margin-bottom: 3em;
 }
 
 .form input,
@@ -179,12 +179,8 @@ button.occupationbutton {
      box-shadow: none;
 }
 
-button.veg-button {
+button.veg-button, button.nonveg-button {
      background: linear-gradient(90deg, #9FEB9F 0%, #D7F9D7 100%);
-}
-
-button.nonveg-button {
-     background: linear-gradient(90deg, #FF9191 0%, #FFD0D0 100%);
 }
 
 button.buttonTrained {
@@ -302,7 +298,7 @@ span.bmi-content-para2 {
 }
 
 .fitness-submit-btn {
-     margin-top: 8em;
+     margin-top: 6em;
 }
 
 .weekday-card {
@@ -331,7 +327,7 @@ span.bmi-content-para2 {
 .goal-card-active,
 .workout-card-active,
 .equipment-card-active,
-.cheatmeal-selected-item {
+.cheatmeal-selected-item, .dietpreference-active {
      background: linear-gradient(90deg, rgba(255, 145, 145, 60%) 0%, rgba(255, 208, 208, 60%) 100%);
 }
 
