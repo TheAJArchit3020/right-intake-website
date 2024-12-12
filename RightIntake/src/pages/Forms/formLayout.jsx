@@ -82,10 +82,10 @@ const FormLayout = () => {
           // <FormHealthConditions handleNext={handleNext} />,
           // <FormFoodPreference handleNext={handleNext} />,
           // <FormCheatmeal handleNext={handleNext} />,
-          // <FormSleepHour handleNext={handleNext} />,
-          // <FormWater handleNext={handleNext} />,
+          <FormSleepHour handleNext={handleNext} />,
+          <FormWater handleNext={handleNext} />,
           <FormAboutSelf handleNext={handleNext} />,
-          // <FormOverallSummary handleNext={handleNext} />,
+          <FormOverallSummary handleNext={handleNext} />,
      ];
 
 

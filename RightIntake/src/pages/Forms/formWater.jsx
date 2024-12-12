@@ -50,9 +50,9 @@ const FormWater = ({ handleNext }) => {
 
 
      return (
-          <div className='container'>
+          <>
                <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
-                    <h4 className='text-center fw-bold'>How much water do drink in a day?</h4>
+                    <h4 className='water-intake-heading text-center fw-bold'>How much water do drink in a day?</h4>
                     <button type="button" className={getButtonStyle('less than 1 litre 🥛')}
                          onClick={() => handleSelect('less than 1 litre 🥛')}>
                          {renderWithEmojiImages('less than 1 litre 🥛')}
@@ -80,7 +80,7 @@ const FormWater = ({ handleNext }) => {
                </div>
 
 
-          </div>
+          </>
      )
 }
 
