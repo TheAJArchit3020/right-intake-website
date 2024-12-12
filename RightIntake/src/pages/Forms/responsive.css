@@ -17,6 +17,15 @@
           width: 16px !important;
           height: 16px !important;
      }
+
+     /* gerder page css  */
+     .buttonContainergender {
+          flex-direction: row !important;
+     }
+
+     .diet-ui-container {
+          margin-bottom: 0 !important;
+     }
 }
 
 @media (max-width: 768px) {
@@ -55,7 +64,7 @@
      .mobile-button {
           background: #DFDFDF;
           justify-content: end;
-          padding: 6px;
+          padding: 10px;
           position: absolute;
           width: 100%;
           bottom: 0;
@@ -73,5 +82,16 @@
      }
      .grp-input-check {
           margin-top: 2rem;
+     }
+
+     /* gender page css  */
+     .buttonContainergender {
+          flex-direction: column;
+          gap: 1.5rem;
+          margin-top: 1rem;
+     }
+
+     .diet-ui-container {
+          margin-bottom: 0 !important;
      }
 }
