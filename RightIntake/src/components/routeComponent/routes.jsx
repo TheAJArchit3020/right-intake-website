@@ -6,6 +6,7 @@ import FormLayout from '../../pages/Forms/formLayout';
 import FormOverallSummary from '../../pages/Forms/formOverallSummary';
 import AboutUs from "../../pages/AboutUs/aboutus";
 import ContactUs from "../../pages/ContactUs/ContactUs";
+import TermsandServices from "../../pages/TermsandServices/TermsandServices";
 
 const RoutesComponent = () => {
   return (
@@ -16,6 +17,7 @@ const RoutesComponent = () => {
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/termsandservices" element={<TermsandServices />} />
       </Routes>
     </BrowserRouter>
   )

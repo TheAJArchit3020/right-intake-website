@@ -2,6 +2,7 @@ import React from 'react';
 import './footer.css';
 import { Button, Navbar } from 'react-bootstrap';
 import { realintakeslogo } from '../Images';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="footer-wrapper">
           {/* Left Section */}
           <div className="footer-section1">
-            <Navbar.Brand href="#" className="navbar-brand justify-content-lg-start">
+            <Navbar.Brand className="navbar-brand justify-content-lg-start">
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
@@ -27,8 +28,8 @@ const Footer = () => {
 
           {/* Right Section */}
           <div className="footer-section2">
-            <p className="mb-2">Terms and Conditions</p>
-            <p>About Us</p>
+            <Link to={'/termsandservices'}><p className="mb-2">Terms and Conditions</p></Link>
+            <Link to={'/aboutus'}><p>About Us</p></Link>
           </div>
         </div>
       </div>
