@@ -3,6 +3,7 @@ import "./form.css";
 import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
 import axios from 'axios';
+import { getfoodpreferences } from '../../components/apis';
 
 const FormFoodPreference = ({ handleNext }) => {
      const [locationStatus, setLocationStatus] = useState("Awaiting permission...");
@@ -77,18 +78,19 @@ const FormFoodPreference = ({ handleNext }) => {
           }
      };
 
-     const getFoodPreferenceHandler = async (cityname) => {
-          try {
-               await axios.post("", {
-                    location: cityname
-               }).then((response) => {
-                    console.log(response)
-               })
+     // getfoodpreferences handler ....
+     // const getFoodPreferenceHandler = async (cityname) => {
+     //      try {
+     //           await axios.post(getfoodpreferences, {
+     //                location: cityname
+     //           }).then((response) => {
+     //                console.log(response)
+     //           })
 
-          } catch (error) {
-               alert(`${error}`)
-          }
-     }
+     //      } catch (error) {
+     //           alert(`${error}`)
+     //      }
+     // }
      const CTYFOODITEMS = {
           Nagpur: {
                veggies: ["Carrot", "Potato", "Tomato"],
