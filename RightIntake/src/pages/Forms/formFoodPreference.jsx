@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import "./form.css";
 import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
+import axios from 'axios';
 
 const FormFoodPreference = ({ handleNext }) => {
      const [locationStatus, setLocationStatus] = useState("Awaiting permission...");
@@ -47,7 +48,7 @@ const FormFoodPreference = ({ handleNext }) => {
      };
 
      const fetchAddress = async (latitude, longitude) => {
-          const apiKey = "YOUR_GOOGLE_MAPS_API_KEY"; // Replace with your API key
+          const apiKey = "AIzaSyButhal1hfnTwt0pl1ehGTHKOVYA-3vVvM"; // Replace with your API key
           const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
 
           try {
@@ -63,6 +64,10 @@ const FormFoodPreference = ({ handleNext }) => {
                     );
                     if (cityComponent) {
                          setCity(cityComponent.long_name);
+                         getFoodPreferenceHandler(cityComponent.long_name);
+
+                         console.log(cityComponent.long_name)
+
                     }
                } else {
                     setAddress("Unable to fetch address. Try again later.");
@@ -72,6 +77,18 @@ const FormFoodPreference = ({ handleNext }) => {
           }
      };
 
+     const getFoodPreferenceHandler = async (cityname) => {
+          try {
+               await axios.post("", {
+                    location: cityname
+               }).then((response) => {
+                    console.log(response)
+               })
+
+          } catch (error) {
+               alert(`${error}`)
+          }
+     }
      const CTYFOODITEMS = {
           Nagpur: {
                veggies: ["Carrot", "Potato", "Tomato"],
