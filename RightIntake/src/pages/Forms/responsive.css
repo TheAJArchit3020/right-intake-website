@@ -1,3 +1,4 @@
+/* tab view css*/
 @media (min-width: 768px) {
 
      .form-conatiner {
@@ -213,6 +214,7 @@
         
       }
 
+     
 
 
 }
@@ -316,6 +318,7 @@
      .cheatmeal-container {
           margin-top: 2rem;
           padding: 20px;
+          margin-bottom: 4rem;
      }
 
      /* .cheatmeal-content, */
@@ -328,7 +331,7 @@
      /* food preference */
      .vegg-div {
           padding: 0px 1em;
-          margin-bottom: 1rem;
+          margin-bottom: 3.3rem;
      }
 
      .foodprefer-item-list {
@@ -336,9 +339,7 @@
      }
 
      span.foodprefer-item-span {
-
           padding: 0.4em 1em;
-
      }
 
      .vegg-title {
@@ -349,6 +350,25 @@
           font-size: 0.8rem;
      }
 
+      /* height */
+      .form input
+      {
+       width: 100px;
+       height: 30px;
+       background-color: #FDF4F4;
+       border: 1px solid #F59090;
+       padding: 10px 14px;
+       border-radius: 5px;
+      }  
+     
+    .form1 input {
+       width: 300px;
+       height: 35px;
+       background-color: #FDF4F4;
+       border: 1px solid #F59090;
+       padding: 10px 14px;
+       border-radius: 5px;
+    }
 
      /* health condition */
      .healthConditionConatiner {
@@ -691,9 +711,7 @@
      p.overall-summary-content2-grp-para2 {
           margin-left: 1.5rem;
      }
-
   
-
      .circle-chart {
           margin-left: 2rem;
      }
@@ -702,6 +720,118 @@
           font-size: 1rem;
      }
 
+     /* mobile view BMI */
+     .bmi-ui-section1,
+.bmi-ui-section2 {
+     height: 100%;
+}
+
+.progress-circle-svg{
+     width: 200px;
+     height: 200px;
+}
+.bmi-category {
+     margin-top: -3.5em;
+     position: relative;
+}
+ .bmi-progress{
+   margin-top: -50px;
+ }
+.bmi-category p {
+     font-size: 0.4em;
+}
+
+span.bmi-status1 {
+     padding-right: 50px;
+     font-size: 0.6rem;
+}
+span.bmi-status2 {
+     padding-left: 10px;
+     font-size: 0.6rem;
+}
+span.bmi-title, span.bmi-value{
+     font-size: 1rem;
+}
+
+.bmi-ui-content {
+     background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
+     border-top-left-radius: 20px;
+     border-bottom-left-radius: 20px;
+     padding: 3rem;
+     height: 200px;
+     margin-bottom: 4.3rem;
+}
+.bmi-category-name {
+     margin-top: 1em;
+    text-transform: uppercase;
+    font-size: .7rem;
+}
+span.bmi-motivation {
+     font-size: .7rem;
+}
+span.bmi-description {
+     font-size: .7rem;
+     margin-bottom: 1rem;
+}
+span.bmi-value {
+     font-family: 'Plus Jakarta Sans';
+     margin-top: -10px;
+}
+
+.bmi-content {
+     position: absolute;
+     top: 14em;
+}
+.bmi-content-para,
+.bmi-content-para2 {
+     padding: 10px 30px;
+}
+
+
+span.bmi-content-para {
+     font-size: 1.5rem;
+}
+
+span.bmi-content-para2 {
+     font-size: 1.5rem;
+}
+
+.bmi-submit-buttion {
+     margin-top: 10rem;
+     margin-bottom: 2rem;
+}
+
+/* occupation */
+button.occupationbutton {
+     width: 300px;
+     border-radius: 8px;
+     font-weight: bold;
+     color: #000;
+
+}
+
+.selectedButton {
+     width: 300px;
+     padding: 10px;
+     background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
+     text-align: left;
+}
+.othercontainer {
+     width: 300px;
+     height: 130px;
+     padding: 10px;
+     background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
+     margin-bottom: 30px;
+}
+
+.inputContainer {
+     width: 280px;
+     height: 80px;
+     background-color: transparent;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: bold;
+}
 }
 
 @media (min-width: 920px) {
@@ -944,125 +1074,6 @@ span.bmi-content-para2 {
      margin-bottom: 2rem;
 }
 }
-@media (min-width: 768px) {
 
-     .form-conatiner {
-          margin: 3em;
-     }
 
-     .mobile-button {
-          justify-content: center !important;
-          background: none !important;
-     }
 
-     .age-input-group {
-          flex-direction: row !important;
-     }
-
-     .agree-input {
-          width: 16px !important;
-          height: 16px !important;
-     }
-
-     /* gerder page css  */
-     .buttonContainergender {
-          flex-direction: row !important;
-     }
-
-     .diet-ui-container {
-          margin-bottom: 0 !important;
-     }
-}
-
-@media (max-width: 768px) {
-
-     /* landing page css */
-
-     .form-conatiner {
-          margin: 0em;
-     }
-
-     .form-header,
-     .grp-input-check {
-          padding: 10px 20px !important;
-     }
-
-     .form-header h3 {
-          font-size: 1rem;
-     }
-
-     .form-header p {
-          font-size: 0.9rem;
-     }
-
-     .age-input-group {
-          flex-direction: column;
-     }
-
-     .agree-input {
-          width: 20px;
-          height: 12px;
-     }
-
-     p.agree-terms-para {
-
-          text-align: left;
-          font-size: 0.7rem;
-     }
-
-     .mobile-button {
-          background: #DFDFDF;
-          justify-content: end;
-          padding: 10px;
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-     }
-
-     .grp-input-check {
-          padding: 0px 10px;
-     }
-
-     .agree-input:checked::before {
-          color: white !important;
-
-     }
-
-     .age-input-group {
-          margin-top: 2rem;
-     }
-
-     .grp-input-check {
-          margin-top: 2rem;
-     }
-
-     /* gender page css  */
-     .buttonContainergender {
-          flex-direction: column;
-          gap: 1.5rem;
-          margin-top: 1rem;
-     }
-
-     .diet-ui-container {
-          margin-bottom: 0 !important;
-     }
-
-     /* about-yourself css */
-     label.about-yourself-label {
-          font-size: 1rem;
-     }
-
-     .about-yourself-form {
-          padding: 20px;
-     }
-
-     /* water intake heading ... */
-     h4.water-intake-heading {
-          font-size: 1.375rem;
-          margin-top: 1rem;
-     }
-     h4.sleep-hours-heading {
-          font-size: 1.375rem;
-          margin-top: 1rem;
-     }
-}
