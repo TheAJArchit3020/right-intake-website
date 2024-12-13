@@ -16,6 +16,21 @@ const FormCheatmeal = ({ handleNext }) => {
           { meal: 'Burger', imageUrl: cheatmealimage },
           { meal: 'Pasta', imageUrl: cheatmealimage },
           { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Apple', imageUrl: cheatmealimage },
+          { meal: 'Mango', imageUrl: cheatmealimage },
+          { meal: 'Panipuri', imageUrl: cheatmealimage },
+          { meal: 'Dosa', imageUrl: cheatmealimage },
+          { meal: 'Burger', imageUrl: cheatmealimage },
+          { meal: 'Pasta', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
+          { meal: 'Maggi', imageUrl: cheatmealimage },
      ];
 
      useEffect(() => {
@@ -52,7 +67,7 @@ const FormCheatmeal = ({ handleNext }) => {
      };
 
      return (
-          <div className="container cheatmeal-ui-container">
+          <div className='cheatmeal-content'>
                <h4 className="cheatmeal-head fw-bold text-center">Select your cheat meal</h4>
                <p className="text-center">
                     (Select up to 5 cheat meals to treat yourself to a cheat meal and satisfy your cravings without the guilt!)
@@ -65,7 +80,7 @@ const FormCheatmeal = ({ handleNext }) => {
                                    key={index}
                                    onClick={() => handleSelection(item.meal)}
                               >
-                                   <img src={item.imageUrl} alt="cheatmeal-image" width={250} />
+                                   <img src={item.imageUrl} alt="cheatmeal-image" width={230} />
                                    <p>{item.meal}</p>
                               </div>
                          ))}
@@ -76,7 +91,7 @@ const FormCheatmeal = ({ handleNext }) => {
                     <p className="validation-error text-center">Please select at least one cheat meal.</p>
                )}
 
-               <div className="cheatmeal-button d-flex align-items-center justify-content-center mt-4 mb-5">
+               <div className="mobile-button d-flex align-items-center mt-4">
                     <NavigationButton
                          handleNext={() => {
                               if (validateSelections()) {

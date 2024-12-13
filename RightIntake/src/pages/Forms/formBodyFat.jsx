@@ -39,8 +39,8 @@ const FormBodyFat = ({ handleNext }) => {
      };
 
      return (
-          <div className="container">
-               <div className="height-ui-container">
+          <>
+               <div className="bodyfat-ui-container">
                     <h4 className="text-center fw-bold mb-4">
                          What is your current body fat?
                     </h4>
@@ -54,7 +54,7 @@ const FormBodyFat = ({ handleNext }) => {
                                    className="bodyfatimage"
                               />
                          </div>
-                         <div className="d-flex flex-wrap justify-content-start position-relative">
+                         <div className="bodyfat-range-div d-flex flex-wrap justify-content-start position-relative">
                               <div
                                    className="bubble"
                                    style={{
@@ -114,11 +114,11 @@ const FormBodyFat = ({ handleNext }) => {
                               </div>
                          </div>
                     </div>
-                    <div className="bodyfat-submit-btn d-flex align-items-center justify-content-center mt-3 mb-2">
+                    <div className="mobile-button d-flex align-items-center mt-3 ">
                          <NavigationButton handleNext={handleNext} />
                     </div>
                </div>
-          </div>
+          </>
      );
 };
 

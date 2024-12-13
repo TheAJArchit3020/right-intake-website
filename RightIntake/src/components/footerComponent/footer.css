@@ -9,13 +9,23 @@
      justify-content: space-between;
      align-items: center;
    }
-   
+   p.mt-3.text-left.text-lg-start {
+    text-align: left;
+  }
+  p.text-sm-start.text-lg-start {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  
+  
+  
    .footer-section1,
    .footer-section2 {
      flex: 1 1 100%; /* Default to full width */
      max-width: 100%;
      margin-bottom: 1rem;
-     text-align: center;
+     /* text-align: center; */
    }
    
    .footer-section2 {

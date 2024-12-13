@@ -55,11 +55,6 @@ const FormVegPreference = ({ handleNext }) => {
                          })}
                     </div>
 
-
-                    {/* <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
-                         <NavigationButton handleNext={handleNext} />
-                    </div> */}
-
                </div>
           </div>
      )

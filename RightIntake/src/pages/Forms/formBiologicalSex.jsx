@@ -5,6 +5,7 @@ import { female } from '../../components/Images';
 import DataContext from '../../components/Context/DataContext'; 
 import "./responsive.css"
 
+
 const FormBioLoigicalSex = ({ handleNext }) => {
 
      const [selectedOption, setSelectedOption] = useState('');

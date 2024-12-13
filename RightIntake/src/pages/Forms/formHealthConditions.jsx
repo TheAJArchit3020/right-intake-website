@@ -63,8 +63,8 @@ const FormHealthConditions = ({ handleNext }) => {
     };
 
     return (
-        <div className="container">
-            <div className="diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3">
+        <div className='health-ui-container'>
+            <div className="health-ui-wrapper d-flex flex-column align-items-center justify-content-center gap-3">
                 <h4 className="text-center fw-bold">Any Known Health Conditions and Food Allergy?</h4>
 
                 <div className="healthConditionConatiner">
@@ -96,8 +96,8 @@ const FormHealthConditions = ({ handleNext }) => {
                 </div>
             </div>
 
-            <div className="d-flex align-items-center justify-content-center navbutton">
-                <NavigationButton handleNext={handleNext} /> {/* Navigate to the next screen */}
+            <div className="mobile-button d-flex align-items-center">
+                <NavigationButton handleNext={handleNext} />
             </div>
         </div>
     );

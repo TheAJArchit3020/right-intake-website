@@ -1,4 +1,4 @@
-import React, { useContext,  useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./form.css";
 import FormLanding from './formLanding';
 import NavbarComponent from '../../components/navbarComponent/navbar';
