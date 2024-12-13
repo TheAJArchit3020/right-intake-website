@@ -73,6 +73,144 @@
      .body-fat-img-desktop {
           display: block !important;
      }
+
+     .summary-desktop-view {
+          display: block !important;
+     }
+
+     .mobile-summary-workout-diet-plan,
+     .summary-div {
+          display: none !important;
+     }
+
+     .maintain-div {
+          width: 50%;
+     }
+
+     .maintain-card {
+          width: 20rem;
+          height: 200px;
+     }
+
+     .maintain-card h4 {
+          font-size: 1.3rem;
+     }
+
+     .calories-group p {
+          font-size: 1.3rem;
+     }
+
+     .maintain-card span {
+          font-size: 0.6rem;
+     }
+
+     .calories-group {
+          justify-content: space-between;
+          align-items: baseline;
+          margin-bottom: 0px;
+     }
+
+     p.maintain-p {
+          font-size: 1.6rem;
+          width: auto;
+          line-height: 1.2em;
+          font-weight: bold;
+          margin-top: 6rem;
+     }
+
+     .grp-info span {
+          font-size: 1.2rem;
+     }
+
+     .grp-info-div {
+          margin-top: 6rem;
+     }
+
+     .app-image {
+          width: 150px !important;
+          height: 300px !important;
+     }
+
+     .grp-app-info img {
+          width: 50px !important;
+     }
+
+     .grp-app-info p {
+          font-size: 1rem !important;
+     }
+
+     .overall-summary-content2 {
+          display: flex;
+          justify-content: space-between;
+          gap: 2.3rem !important;
+     }
+
+     .overall-summary-content2-grp {
+          width: 100%;
+     }
+
+     img.goal-images {
+          width: 120px !important;
+     }
+
+     img.trans-images {
+          width: 100px !important;
+     }
+
+
+     .overall-summary-content1 h3 {
+          font-size: 1.5rem !important;
+     }
+
+     h5.overall-summary-content2-grp-heading1.fw-bold {
+          margin-left: 2rem !important;
+          font-size: 1.3rem;
+     }
+
+     h5.overall-summary-content2-grp-heading2.fw-bold {
+          margin-left: 2.1rem !important;
+          font-size: 1.3rem;
+     }
+
+     p.overall-summary-content2-grp-para1 {
+          margin-left: 2rem !important;
+      }
+
+     p.overall-summary-content2-grp-para2 {
+          margin-left: 2.1rem !important;
+     }
+     h5.overall-summary-content2-chart-heading2 {
+          font-size: 1.2rem !important;
+          margin-left: 2.2rem !important;
+      }
+     h5.overall-summary-content2-chart-heading.fw-bold {
+          margin-left: 2.1rem !important;
+          font-size: 1.2rem !important;
+     }
+
+     .desktop-workout-diet-plan {
+          display: block !important;
+     }
+
+     .desktop-workout-plan-paynow-div {
+          width: 75% !important;
+          padding-left: 12rem !important;
+     }
+
+     .offer-div {
+          
+          width: 180px !important;
+          height: 160px !important;
+          top: 93rem !important;
+      }
+
+      .offer-div h5 {
+          font-size: 1rem !important;
+        
+      }
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -176,12 +314,12 @@
      }
 
      /* .cheatmeal-content, */
-     
+
      .health-ui-container {
           height: calc(100vh - 210px) !important;
           overflow-y: auto;
      }
-     
+
      /* food preference */
      .vegg-div {
           padding: 0px 1em;
@@ -243,7 +381,8 @@
 
      .body-insight-ui-conatiner {
           gap: 0em;
-      }
+     }
+
      p.section2-span,
      p.section2-span2 {
           font-size: 1rem;
@@ -270,39 +409,369 @@
      .body-fat-img-mobile {
           display: block;
      }
-    
+
 
      .section2-para2-content {
           justify-content: center;
      }
 
-    
+
      .bodyfat-ui-container {
           height: calc(100vh - 170px) !important;
           overflow-y: auto;
      }
+
      .body-insight-div {
           height: calc(100vh - 20px) !important;
           overflow-y: auto;
      }
 
-     .bodyfat-ui-container h4{
+     .bodyfat-ui-container h4 {
           font-size: 1.375rem;
      }
 
      .bodyfat-range-div {
           width: 80%;
      }
+
      .bodyfatimage {
           width: 220px;
      }
 
      /* fitness level .. */
-     .range-wrapper,.fitness-new-commer {
+     .range-wrapper,
+     .fitness-new-commer {
           padding: 20px;
+     }
+
+     /* summary  */
+
+     .overall-summary-content1 {
+          gap: 1rem;
+     }
+
+     .summary-desktop-view {
+          display: none;
+     }
+
+     .summary-div {
+          display: flex;
+          flex-direction: column;
+     }
+
+     .summary-maintain-div {
+          padding: 1rem;
+     }
+
+     .summary-maintain-card {
+          padding: 1rem;
+          border: 1px solid;
+          border-radius: 10px;
+     }
+
+     .summary-maintain-card h4 {
+          font-size: 1.5rem;
+          font-weight: bold;
+     }
+
+     .summary-calories-group {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+     }
+
+     .summary-calories-group p,
+     .summary-maintain-card span {
+          font-size: 0.9rem;
+          font-weight: 500;
+     }
+
+     .workout-diet-plan h4,
+     .workout-diet-plan p,
+     .personalised-wrapper h3 {
+          font-size: 0.9rem;
+     }
+
+     .summary-maintain-div2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          font-size: 1rem;
+          gap: 20px;
+     }
+
+     p.summary-maintain-p {
+          font-weight: bold;
+          text-align: center;
+     }
+
+     .summary-maintain-grpinfo-div {
+          display: flex;
+          flex-direction: column;
+     }
+
+     .summary-maintain-grp-info {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+     }
+
+     .summary-maintain-grp-info p {
+          font-size: 1rem;
+     }
+
+     .summary-workout-diet-plan {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 200px;
+
+     }
+
+     .summary-plan-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 10px;
+          background-color: #9FEB9F;
+          border-radius: 12px;
+          gap: 10px;
+
+
+     }
+
+     input#custom-checkbox {
+          display: none;
+     }
+
+     .summary-offer-div {
+          background-image: url('./images/offerbackground.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 130px;
+          width: 160px;
+
+     }
+
+     .summary-offer-div h4 {
+          text-align: center;
+          font-size: 0.8rem;
+          margin-top: 2.6rem;
+          font-weight: bold;
+     }
+
+     .summary-offer-div h5 {
+          text-align: center;
+          font-size: 0.8rem;
+          font-weight: bold;
+     }
+
+     .desktop-workout-diet-plan {
+          display: none;
+     }
+
+     .mobile-summary-workout-diet-plan {
+          margin-top: 2rem;
+     }
+
+     .summary-workout-diet-plan-heading h4,
+     .summary-workout-diet-plan-heading p {
+          font-size: 0.9rem;
+     }
+
+     .app-info-wrapper h4 {
+          font-size: 1.4rem;
+     }
+
+     .app-image {
+          width: 100px;
+          height: 200px;
+     }
+
+     .grp-app-info {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin-bottom: 1rem;
+     }
+
+     .grp-app-info img {
+          width: 30px;
+     }
+
+     .app-div {
+          gap: 0.2rem;
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+     }
+
+     .grp-app-info p {
+          font-size: 0.6rem;
+          font-weight: 600;
+     }
+
+     .section-notes {
+          font-size: 0.6rem;
+     }
+
+     .overall-summary-content2 h4 {
+          font-size: 0.8rem;
+     }
+
+     img.goal-images {
+          width: 80px;
+     }
+
+     img.trans-images {
+          width: 60px;
+     }
+
+     h5.overall-summary-content2-grp-heading1.fw-bold {
+          margin-left: 1.6rem;
+     }
+
+     p.overall-summary-content2-grp-para1 {
+          margin-left: 1.6rem;
+     }
+
+     .overall-summary-content2-grp-heading1,
+     .overall-summary-content2-grp-heading2 {
+          font-size: 1rem;
      }
 
      
 
 
+     .overall-summary-content1 h3 {
+          font-size: 1rem;
+     }
+
+
+     .overall-summary-content2-grp {
+          width: 100%;
+     }
+
+     .section-notes {
+          font-size: 0.6rem;
+          text-align: center;
+          margin-top: 1rem;
+     }
+
+     .overall-summary-content2 {
+          display: flex;
+          justify-content: flex-start !important;
+          width: 100%;
+     }
+
+     .overall-summary-content2-chart-div {
+          width: 100% !important;
+     }
+
+    
+     h5.overall-summary-content2-chart-heading {
+          font-size: 1rem;
+          margin-left: 1.5rem;
+     }
+     h5.overall-summary-content2-chart-heading2 {
+          font-size: 1rem;
+          margin-left: 1.5rem;
+     }
+
+     h5.overall-summary-content2-grp-heading2.fw-bold {
+          margin-left: 1.5rem;
+     }
+
+     p.overall-summary-content2-grp-para2 {
+          margin-left: 1.5rem;
+     }
+
+  
+
+     .circle-chart {
+          margin-left: 2rem;
+     }
+   
+     button.btn-paynow {
+          font-size: 1rem;
+     }
+
+}
+
+@media (min-width: 920px) {
+     .section1-border {
+          width: 100% !important;
+     }
+
+    
+
+     h5.overall-summary-content2-chart-heading {
+          margin-left: 2rem !important;
+     }
+
+     .circle-chart {
+          margin-left: 2rem !important;
+     }
+
+     .maintain-card {
+          width: 100% !important;
+          height: 220px;
+     }
+
+     .maintain-card h4,
+     .calories-group p {
+          font-size: 2rem !important;
+     }
+
+     p.maintain-p {
+          font-size: 2.6rem !important;
+     }
+
+     .offer-div {
+          top: 100rem !important;
+     }
+
+     .grp-info span {
+          font-size: 2rem;
+     }
+
+     .grp-app-info img {
+          width: 70px !important;
+     }
+
+     .grp-app-info p {
+          font-size: 2rem !important;
+     }
+
+     .app-image {
+          width: 250px !important;
+          height: 450px !important;
+     }
+
+     .maintain-card span {
+          font-size: 1rem;
+     }
+
+     .section-notes {
+          text-align: center;
+          margin-top: 2rem;
+     }
+     h5.overall-summary-content2-grp-heading2.fw-bold {
+          margin-left: 8rem !important;
+          font-size: 1.3rem;
+      }
+      p.overall-summary-content2-grp-para2 {
+          margin-left: 8rem !important;
+      }
+
+      .offer-div {
+          width: 250px !important;
+          height: 225px !important;
+          top: 103rem !important;
+      }
+      .desktop-workout-plan-paynow-div {
+          width: 85% !important;
+      }
+     
 }

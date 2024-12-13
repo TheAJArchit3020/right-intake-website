@@ -21,7 +21,7 @@ a.navbar-brand {
      }
 
      .offcanvas.offcanvas-end.show {
-          width: 30% !important;
+          width: 40% !important;
      }
 }
 
@@ -29,12 +29,11 @@ a.navbar-brand {
      nav.bg-body.mb-3.navbar.navbar-light {
           padding: 2em 3em;
      }
-
+     .offcanvas.offcanvas-end.show {
+          width: 30% !important;
+     }
 }
 
-.offcanvas.offcanvas-end.show {
-     width: 25% !important;
-}
 
 a {
      text-decoration-line: none !important;

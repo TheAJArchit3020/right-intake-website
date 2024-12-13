@@ -65,200 +65,249 @@ const FormOverallSummary = ({ handleNext }) => {
 
      return (
           <>
-               <NavbarComponent/>
+               <NavbarComponent />
 
-               
+
                <div className='d-grid justify-content-center'>
-                    <div className='w-70'>
-                         <div className='overall-summary-content1 d-flex align-items-center justify-content-center'>
-                              <div className='d-flex flex-column'>
-                                   {/* <img src={getCurrentBodyStats(getPercentageForCircle(STATS.currentStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
-                                   <img src={bodyfatshadow1} alt="bodyfatimage" width={120} />
-                                   <h3 className='fw-bold text-center'>Now</h3>
-                              </div>
-                              <div className='d-flex flex-column'>
-                                   <img src={transitionarrow} alt="transitionarrow" width={100} />
-                              </div>
-                              <div className='d-flex flex-column'>
-                                   {/* <img src={getGoalBodyStats(getPercentageForCircle(STATS.goalStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
-                                   <img src={bodyfatshadow2} alt="bodyfatimage" width={120} />
-                                   <h3 className='fw-bold text-center'>6 Months</h3>
-                              </div>
+                    <div className='overall-summary-content1 d-flex align-items-center justify-content-center'>
+                         <div className='d-flex flex-column'>
+                              {/* <img src={getCurrentBodyStats(getPercentageForCircle(STATS.currentStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
+                              <img src={bodyfatshadow1} alt="bodyfatimage"  className='goal-images' />
+                              <h3 className='fw-bold text-center'>Now</h3>
                          </div>
-                         {/* border */}
-                         <div className='d-flex align-items-center justify-content-center'>
-                              <div className='section1-border'></div>
+                         <div className='d-flex flex-column'>
+                              <img src={transitionarrow} alt="transitionarrow" className='trans-images'   />
                          </div>
+                         <div className='d-flex flex-column'>
+                              {/* <img src={getGoalBodyStats(getPercentageForCircle(STATS.goalStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
+                              <img src={bodyfatshadow2} alt="bodyfatimage" width={120} className='goal-images' />
+                              <h3 className='fw-bold text-center'>6 Months</h3>
+                         </div>
+                    </div>
+                    {/* border */}
+                    <div className='d-flex align-items-center justify-content-center'>
+                         <div className='section1-border'></div>
+                    </div>
 
-                         <div className='overall-summary-content2 d-flex justify-content-center mt-4 '>
-                              <div className='d-flex justify-content-center w-100'>
-                                   <div className='d-flex flex-column'>
-                                        <h5 className='fw-bold' style={{ marginLeft: '-1em' }}>Body Fat</h5>
-                                        <p style={{ marginLeft: '-1.2em' }}>{STATS.goalStats.bodyFatPercentage}</p>
-                                   </div>
-                              </div>
-                              <div className='d-flex justify-content-center w-100'>
-                                   <div className='d-flex flex-column'>
-                                        <h5 className='fw-bold' style={{ marginLeft: '3em' }}>Body Fat</h5>
-                                        <p style={{ marginLeft: '3.8em' }}>{STATS.currentStats.bodyFatPercentage}</p>
-                                   </div>
-                              </div>
+                    <div className='overall-summary-content2'>
+                         <div className='overall-summary-content2-grp d-flex flex-column'>
+                              <h5 className='overall-summary-content2-grp-heading1 fw-bold'>Body Fat</h5>
+                              <p className="overall-summary-content2-grp-para1">{STATS.currentStats.bodyFatPercentage}</p>
                          </div>
+                         <div className='overall-summary-content2-grp d-flex flex-column'>
+                              <h5 className='overall-summary-content2-grp-heading2 fw-bold'>Body Fat</h5>
+                              <p className="overall-summary-content2-grp-para2" >{STATS.goalStats.bodyFatPercentage}</p>
+                         </div>
+                    </div>
 
-                         <div className='overall-summary-content2 d-flex mt-4'>
-                              <div className='d-flex justify-content-center w-100'>
-                                   <div className='d-flex flex-column'>
-                                        <h5 className='fw-bold' style={{ marginLeft: '1em' }}>Muscle Mass</h5>
-                                        {/* <div className="circle-chart" style={{ marginLeft: '1em' }} data-percent={STATS.currentStats.muscleMass}>
+                    <div className='overall-summary-content2 d-flex mt-4'>
+                         <div className='overall-summary-content2-chart-div d-flex flex-column'>
+                              <h5 className='overall-summary-content2-chart-heading fw-bold'>Muscle Mass</h5>
+                              {/* <div className="circle-chart" style={{ marginLeft: '1em' }} data-percent={STATS.currentStats.muscleMass}>
                                              <span>{STATS.currentStats.muscleMass}</span>
                                         </div> */}
-                                        <div className="circle-chart" style={{ marginLeft: '1em', position: 'relative', width: '50px', height: '50px' }}>
-                                             <svg
-                                                  className="circle-chart-svg"
-                                                  width="50"
-                                                  height="50"
-                                                  viewBox="0 0 36 36"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                             >
-                                                  <path
-                                                       className="circle-chart-bg"
-                                                       d="M18 2.0845
+                              <div className="circle-chart" style={{ position: 'relative', width: '50px', height: '50px' }}>
+                                   <svg
+                                        className="circle-chart-svg"
+                                        width="50"
+                                        height="50"
+                                        viewBox="0 0 36 36"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                   >
+                                        <path
+                                             className="circle-chart-bg"
+                                             d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.831
             a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                       fill="none"
-                                                       stroke="#e6e6e6"
-                                                       strokeWidth="4"
-                                                  />
-                                                  <path
-                                                       className="circle-chart-progress"
-                                                       d="M18 2.0845
+                                             fill="none"
+                                             stroke="#e6e6e6"
+                                             strokeWidth="4"
+                                        />
+                                        <path
+                                             className="circle-chart-progress"
+                                             d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.831
             a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                       fill="none"
-                                                       stroke="#F97979"
-                                                       strokeWidth="4"
-                                                       strokeDasharray={`${getPercentageForCircle(STATS.currentStats.muscleMass)} 100`}
-                                                  />
-                                             </svg>
-                                             <span
-                                                  className="circle-chart-text"
-                                                  style={{
-                                                       position: 'absolute',
-                                                       top: '50%',
-                                                       left: '50%',
-                                                       transform: 'translate(-50%, -50%)',
-                                                       fontSize: '12px',
-                                                       fontWeight: 'bold',
-                                                       textAlign: 'center',
-                                                  }}
-                                             >
-                                                  {STATS.currentStats.muscleMass}
-                                             </span>
-                                        </div>                                   </div>
+                                             fill="none"
+                                             stroke="#F97979"
+                                             strokeWidth="4"
+                                             strokeDasharray={`${getPercentageForCircle(STATS.currentStats.muscleMass)} 100`}
+                                        />
+                                   </svg>
+                                   <span
+                                        className="circle-chart-text"
+                                        style={{
+                                             position: 'absolute',
+                                             top: '50%',
+                                             left: '50%',
+                                             transform: 'translate(-50%, -50%)',
+                                             fontSize: '12px',
+                                             fontWeight: 'bold',
+                                             textAlign: 'center',
+                                        }}
+                                   >
+                                        {STATS.currentStats.muscleMass}
+                                   </span>
                               </div>
-                              <div className='d-flex justify-content-center w-100'>
-                                   <div className='d-flex flex-column'>
-                                        <h5 className='fw-bold' style={{ marginLeft: '5em' }}>Muscle Mass</h5>
-                                        {/* <div className="circle-chart" style={{ marginLeft: '6em' }} data-percent={STATS.goalStats.muscleMass}>
+                         </div>
+                         <div className='overall-summary-content2-chart-div d-flex flex-column'>
+                              <h5 className='overall-summary-content2-chart-heading2 fw-bold'>Muscle Mass</h5>
+                              {/* <div className="circle-chart" style={{ marginLeft: '6em' }} data-percent={STATS.goalStats.muscleMass}>
                                              <span>{STATS.goalStats.muscleMass}</span>
                                         </div> */}
-                                        <div className="circle-chart" style={{ marginLeft: '6em', position: 'relative', width: '50px', height: '50px' }}>
-                                             <svg
-                                                  className="circle-chart-svg"
-                                                  width="50"
-                                                  height="50"
-                                                  viewBox="0 0 36 36"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                             >
-                                                  <path
-                                                       className="circle-chart-bg"
-                                                       d="M18 2.0845
+                              <div className="circle-chart" style={{ position: 'relative', width: '50px', height: '50px' }}>
+                                   <svg
+                                        className="circle-chart-svg"
+                                        width="50"
+                                        height="50"
+                                        viewBox="0 0 36 36"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                   >
+                                        <path
+                                             className="circle-chart-bg"
+                                             d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.831
             a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                       fill="none"
-                                                       stroke="#e6e6e6"
-                                                       strokeWidth="4"
-                                                  />
-                                                  <path
-                                                       className="circle-chart-progress"
-                                                       d="M18 2.0845
+                                             fill="none"
+                                             stroke="#e6e6e6"
+                                             strokeWidth="4"
+                                        />
+                                        <path
+                                             className="circle-chart-progress"
+                                             d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.831
             a 15.9155 15.9155 0 0 1 0 -31.831"
-                                                       fill="none"
-                                                       stroke="#F97979"
-                                                       strokeWidth="4"
-                                                       strokeDasharray={`${getPercentageForCircle(STATS.goalStats.muscleMass)} 100`}
-                                                  />
-                                             </svg>
-                                             <span
-                                                  className="circle-chart-text"
-                                                  style={{
-                                                       position: 'absolute',
-                                                       top: '50%',
-                                                       left: '50%',
-                                                       transform: 'translate(-50%, -50%)',
-                                                       fontSize: '12px',
-                                                       fontWeight: 'bold',
-                                                       textAlign: 'center',
-                                                  }}
-                                             >
-                                                  {STATS.goalStats.muscleMass}
-                                             </span>
-                                        </div>
-                                   </div>
+                                             fill="none"
+                                             stroke="#F97979"
+                                             strokeWidth="4"
+                                             strokeDasharray={`${getPercentageForCircle(STATS.goalStats.muscleMass)} 100`}
+                                        />
+                                   </svg>
+                                   <span
+                                        className="circle-chart-text"
+                                        style={{
+                                             position: 'absolute',
+                                             top: '50%',
+                                             left: '50%',
+                                             transform: 'translate(-50%, -50%)',
+                                             fontSize: '12px',
+                                             fontWeight: 'bold',
+                                             textAlign: 'center',
+                                        }}
+                                   >
+                                        {STATS.goalStats.muscleMass}
+                                   </span>
                               </div>
                          </div>
                     </div>
-                    <div className='mt-5 mb-5'>
-                         <span>*The image shown is for representation purposes only and may vary based on individual differences.</span>
-                    </div>
+               </div>
+               <div className='section-notes'>
+                    <p>*The image shown is for representation purposes only and may vary based on individual differences.</p>
                </div>
 
                <div className='personalised-wrapper'>
                     <h3 className='text-center'>Personalised Insights based on your data</h3>
                     <div className='personalised-content'>
-                         <div className='d-flex justify-content-center gap-5 p-5'>
-                              <div className="maintain-div">
-                                   <div className='maintain-card'>
+
+
+                         {/* for mobile */}
+                         <div className='summary-div'>
+                              <div className="summary-maintain-div">
+                                   <div className='summary-maintain-card'>
                                         <h4>Maintenance calories</h4>
-                                        <div className="calories-group d-flex  mt-5">
+                                        <div className="summary-calories-group">
                                              <p>{STATS.personalizedInsights.maintenanceCalories}</p>
                                              <img src={caloriesicon} alt="caloriesicon" width={50} />
                                         </div>
                                         <span className="mt-4">*This may vary based on your physical activity </span>
                                    </div>
-
-                                   <p className='maintain-p'>If you are focusing on Goal Selected remember these Points</p>
                               </div>
-                              <div className="maintain-div">
-                                   <div className='maintain-card'>
+
+                              <div className="summary-maintain-div">
+                                   <div className='summary-maintain-card'>
                                         <h4>Daily water intake</h4>
-                                        <div className="calories-group d-flex mt-5">
-                                             <p>{STATS.personalizedInsights.dailyWaterIntake}</p>
-                                             <div className="waterglass-drp-img d-flex gap-2">
+                                        <div className="summary-calories-group">
+                                             <p>{STATS.personalizedInsights.maintenanceCalories}</p>
+                                             <div className="summary-waterglass-drp-img d-flex gap-2">
                                                   <img src={waterglassicon} alt="waterglassicon" width={40} />
                                                   <img src={waterglassicon} alt="waterglassicon" width={40} />
                                                   <img src={waterglassicon} alt="waterglassicon" width={40} />
                                              </div>
                                         </div>
-                                        <span className="mt-4">*Make sure to take adequate water intake per day </span>
+                                        <span className="mt-4">*This may vary based on your physical activity </span>
                                    </div>
-                                   <div className="grp-info-div">
-                                        <div className="grp-info d-flex align-items-center gap-2">
-                                             <img src={dumbels} alt="dumbels" width={30} />
-                                             <span>High-Protein Diet</span>
+                              </div>
+
+                              <div className='summary-maintain-div2'>
+                                   <p className='summary-maintain-p'>If you are focusing on Goal Selected remember these Points</p>
+                                   <div className="summary-maintain-grpinfo-div">
+                                        <div className="summary-maintain-grp-info">
+                                             <img src={dumbels} alt="dumbels" width={25} />
+                                             <p>High-Protein Diet</p>
                                         </div>
-                                        <div className="grp-info d-flex align-items-center gap-2">
-                                             <img src={dumbels} alt="dumbels" width={30} />
-                                             <span>Caloric Deficit</span>
+                                        <div className="summary-maintain-grp-info">
+                                             <img src={dumbels} alt="dumbels" width={25} />
+                                             <p>Caloric Deficit</p>
                                         </div>
-                                        <div className="grp-info d-flex align-items-center gap-2">
-                                             <img src={dumbels} alt="dumbels" width={30} />
-                                             <span>Focus more on cardio Workouts</span>
+                                        <div className="summary-maintain-grp-info">
+                                             <img src={dumbels} alt="dumbels" width={25} />
+                                             <p>Focus more on cardio Workouts</p>
                                         </div>
-                                        <div className="grp-info d-flex align-items-center gap-2">
-                                             <img src={dumbels} alt="dumbels" width={30} />
-                                             <span>Drink plenty of water</span>
+                                        <div className="summary-maintain-grp-info">
+                                             <img src={dumbels} alt="dumbels" width={25} />
+                                             <p>Drink plenty of water</p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+
+                         {/* mobile end */}
+
+                         <div className='summary-desktop-view'>
+                              <div className=' d-flex justify-content-center gap-5 p-5'>
+                                   <div className="maintain-div">
+                                        <div className='maintain-card'>
+                                             <h4>Maintenance calories</h4>
+                                             <div className="calories-group d-flex  mt-5">
+                                                  <p>{STATS.personalizedInsights.maintenanceCalories}</p>
+                                                  <img src={caloriesicon} alt="caloriesicon" width={50} />
+                                             </div>
+                                             <span className="mt-4">*This may vary based on your physical activity </span>
+                                        </div>
+
+                                        <p className='maintain-p'>If you are focusing on Goal Selected remember these Points</p>
+                                   </div>
+                                   <div className="maintain-div">
+                                        <div className='maintain-card'>
+                                             <h4>Daily water intake</h4>
+                                             <div className="calories-group d-flex mt-5">
+                                                  <p>{STATS.personalizedInsights.dailyWaterIntake}</p>
+                                                  <div className="waterglass-drp-img d-flex gap-2">
+                                                       <img src={waterglassicon} alt="waterglassicon" width={40} />
+                                                       <img src={waterglassicon} alt="waterglassicon" width={40} />
+                                                       <img src={waterglassicon} alt="waterglassicon" width={40} />
+                                                  </div>
+                                             </div>
+                                             <span className="mt-4">*Make sure to take adequate water intake per day </span>
+                                        </div>
+                                        <div className="grp-info-div">
+                                             <div className="grp-info d-flex align-items-center gap-2">
+                                                  <img src={dumbels} alt="dumbels" width={30} />
+                                                  <span>High-Protein Diet</span>
+                                             </div>
+                                             <div className="grp-info d-flex align-items-center gap-2">
+                                                  <img src={dumbels} alt="dumbels" width={30} />
+                                                  <span>Caloric Deficit</span>
+                                             </div>
+                                             <div className="grp-info d-flex align-items-center gap-2">
+                                                  <img src={dumbels} alt="dumbels" width={30} />
+                                                  <span>Focus more on cardio Workouts</span>
+                                             </div>
+                                             <div className="grp-info d-flex align-items-center gap-2">
+                                                  <img src={dumbels} alt="dumbels" width={30} />
+                                                  <span>Drink plenty of water</span>
+                                             </div>
                                         </div>
                                    </div>
                               </div>
@@ -266,13 +315,16 @@ const FormOverallSummary = ({ handleNext }) => {
                     </div>
                </div>
 
-               <div className="workout-diet-plan mt-5">
-                    <h4 className="fw-bold text-center">Get you 30 days workout and diet plan now</h4>
-                    <p className="text-center mt-3">(After payment you receive the plan via Pdf.)</p>
-                    <div className='d-flex align-items-center justify-content-center'>
 
-                         <div className="plan-div d-flex align-items-center">
-                              <div className='d-flex align-items-center gap-4'>
+               {/* for mobile */}
+               <div className='mobile-summary-workout-diet-plan'>
+                    <div className='summary-workout-diet-plan-heading'>
+                         <h4 className="fw-bold text-center">Get you 30 days workout and diet plan now</h4>
+                         <p className="text-center mt-3">(After payment you receive the plan via Pdf.)</p>
+                    </div>
+                    <div className="summary-workout-diet-plan">
+                         <div className="summary-plan-div">
+                              <div className='summary-group'>
                                    <input
                                         type="checkbox"
                                         id="custom-checkbox"
@@ -282,20 +334,59 @@ const FormOverallSummary = ({ handleNext }) => {
                                    <label htmlFor="custom-checkbox" className="custom-checkbox"></label>
                                    <div>
                                         <p className='fw-bold'>One Month Plan</p>
-                                        <span>Rs.99/-</span>
+                                        <p>Rs.99/-</p>
                                    </div>
                               </div>
-                              <span>Rs.3.3 Per Day </span>
+                              <p>Rs.3.3 Per Day </p>
                          </div>
-                         <div className='offer-div'>
+                         <div className='summary-offer-div'>
                               <h4>Offer ends in</h4>
                               <h5>3hr:59min:59sec</h5>
                          </div>
+
                     </div>
                     <div className='d-flex align-items-center justify-content-center'>
-                         <button type='button' className='btn-paynow'>Pay now</button>
+                              <button type='button' className='btn-paynow'>Pay now</button>
+                         </div>
+               </div>
+               {/* for mobile end*/}
+
+               {/* for desktop */}
+               <div className='desktop-workout-diet-plan'>
+                    <div className="workout-diet-plan mt-5">
+                         <h4 className="fw-bold text-center">Get you 30 days workout and diet plan now</h4>
+                         <p className="text-center mt-3">(After payment you receive the plan via Pdf.)</p>
+                         <div className='desktop-workout-plan-paynow-div d-flex align-items-center justify-content-center'>
+                              <div className="plan-div d-flex align-items-center">
+                                   <div className='d-flex align-items-center gap-4'>
+                                        <input
+                                             type="checkbox"
+                                             id="custom-checkbox"
+                                             onChange={handleCheckboxChange}
+                                             checked={isChecked}
+                                        />
+                                        <label htmlFor="custom-checkbox" className="custom-checkbox"></label>
+                                        <div>
+                                             <p className='fw-bold'>One Month Plan</p>
+                                             <span>Rs.99/-</span>
+                                        </div>
+                                   </div>
+                                   <span>Rs.3.3 Per Day </span>
+                              </div>
+                              <div className='offer-div'>
+                                   <h4>Offer ends in</h4>
+                                   <h5>3hr:59min:59sec</h5>
+                              </div>
+                         </div>
+                         <div className='d-flex align-items-center justify-content-center'>
+                              <button type='button' className='btn-paynow'>Pay now</button>
+                         </div>
                     </div>
                </div>
+
+               {/* for desktop ends*/}
+
+
                <div className="app-info-wrapper mt-5">
                     <h4 className='fw-bold text-center'>What you get with this app:</h4>
                     <div className='app-div d-flex align-items-center justify-content-center mt-5' >
