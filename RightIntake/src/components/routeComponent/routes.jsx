@@ -1,20 +1,24 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from '../../pages/layoutPage';
 import HomePage from '../../pages/Home/home';
 import FormLayout from '../../pages/Forms/formLayout';
 import FormOverallSummary from '../../pages/Forms/formOverallSummary';
+import AboutUs from "../../pages/AboutUs/aboutus";
+import ContactUs from "../../pages/ContactUs/ContactUs";
 
 const RoutesComponent = () => {
-     return (
-          <BrowserRouter>
-               <Routes>
-                    <Route index path="/" element={<Layout> <HomePage />  </Layout>} />
-                    <Route path="/basicform" element={<FormLayout />} />
-                    <Route path="/overallsummary" element={<FormOverallSummary />} />
-               </Routes>
-          </BrowserRouter>
-     )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<Layout> <HomePage />  </Layout>} />
+        <Route path="/basicform" element={<FormLayout />} />
+        <Route path="/overallsummary" element={<FormOverallSummary />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default RoutesComponent
+export default RoutesComponent;
