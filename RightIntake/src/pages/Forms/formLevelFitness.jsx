@@ -59,7 +59,7 @@ const FormLevelFitness = ({ handleNext }) => {
      };
 
      return (
-          <div>
+          <>
                <div className='fitness-ui-container'>
                     <h4 className='text-center fw-bold mb-4'>What’s your current level of fitness?</h4>
                     <div className='range-wrapper d-flex align-items-center justify-content-center'>
@@ -114,7 +114,7 @@ const FormLevelFitness = ({ handleNext }) => {
                          <NavigationButton handleNext={handleNext} />
                     </div>
                </div>
-          </div>
+          </>
      );
 };
 

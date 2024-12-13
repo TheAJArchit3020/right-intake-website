@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
 import { male } from '../../components/Images';
 import { female } from '../../components/Images';
-import DataContext from '../../components/Context/DataContext'; 
+import DataContext from '../../components/Context/DataContext';
 import "./responsive.css"
 
 
@@ -16,7 +16,7 @@ const FormBioLoigicalSex = ({ handleNext }) => {
           setSelectedOption(option);
           setFormData(prev => ({
                ...prev,
-               sex: option,
+               gender: option,
           }));
      };
 
@@ -33,13 +33,13 @@ const FormBioLoigicalSex = ({ handleNext }) => {
 
                          <div className='genderOption'>
                               <button type="button"
-                                   className={getButtonStyle('male')}
-                                   onClick={() => handleSelect('male')}>
+                                   className={getButtonStyle('Male')}
+                                   onClick={() => handleSelect('Male')}>
                                    <img src={male}
                                         style={{
                                              width: 70,
                                              height: 70,
-                                             filter: selectedOption === 'male' ? 'invert(100%)' : 'none'
+                                             filter: selectedOption === 'Male' ? 'invert(100%)' : 'none'
                                         }}
                                    />
                               </button>
@@ -48,13 +48,13 @@ const FormBioLoigicalSex = ({ handleNext }) => {
 
                          <div className='genderOption'>
                               <button type="button"
-                                   className={getButtonStyle('female')}
-                                   onClick={() => handleSelect('female')}>
+                                   className={getButtonStyle('Female')}
+                                   onClick={() => handleSelect('Female')}>
                                    <img src={female}
                                         style={{
                                              width: 70,
                                              height: 70,
-                                             filter: selectedOption === 'female' ? 'invert(100%)' : 'none'
+                                             filter: selectedOption === 'Female' ? 'invert(100%)' : 'none'
                                         }}
                                    />
                               </button>

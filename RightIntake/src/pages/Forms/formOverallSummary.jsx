@@ -59,6 +59,23 @@ const FormOverallSummary = ({ handleNext }) => {
           return bodyfat8;
      };
 
+     const getGoalBodyRange = (value) => {
+          console.log(value);
+
+          if (value >= 6 && value <= 10) return '6-10%';
+          if (value >= 11 && value <= 14) return '11-14%';
+          if (value >= 15 && value <= 19) return '15-19%';
+          if (value >= 20 && value <= 24) return '20-24%';
+          if (value >= 25 && value <= 29) return '25-29%';
+          if (value >= 30 && value <= 34) return '30-34%';
+          if (value >= 35 && value <= 39) return '35-39%';
+          if (value >= 40) return '40%';
+
+          // Default return for values less than 6
+          return 'Below 6%';
+     };
+
+
      const getPercentageForCircle = (value) => {
           return parseInt(value.replace('%', ''), 10);
      }
@@ -72,11 +89,11 @@ const FormOverallSummary = ({ handleNext }) => {
                     <div className='overall-summary-content1 d-flex align-items-center justify-content-center'>
                          <div className='d-flex flex-column'>
                               {/* <img src={getCurrentBodyStats(getPercentageForCircle(STATS.currentStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
-                              <img src={bodyfatshadow1} alt="bodyfatimage"  className='goal-images' />
+                              <img src={bodyfatshadow1} alt="bodyfatimage" className='goal-images' />
                               <h3 className='fw-bold text-center'>Now</h3>
                          </div>
                          <div className='d-flex flex-column'>
-                              <img src={transitionarrow} alt="transitionarrow" className='trans-images'   />
+                              <img src={transitionarrow} alt="transitionarrow" className='trans-images' />
                          </div>
                          <div className='d-flex flex-column'>
                               {/* <img src={getGoalBodyStats(getPercentageForCircle(STATS.goalStats.bodyFatPercentage))} alt="bodyfatimage" width={320} /> */}
@@ -92,11 +109,11 @@ const FormOverallSummary = ({ handleNext }) => {
                     <div className='overall-summary-content2'>
                          <div className='overall-summary-content2-grp d-flex flex-column'>
                               <h5 className='overall-summary-content2-grp-heading1 fw-bold'>Body Fat</h5>
-                              <p className="overall-summary-content2-grp-para1">{STATS.currentStats.bodyFatPercentage}</p>
+                              <p className="overall-summary-content2-grp-para1">{getGoalBodyRange(parseInt(STATS.currentStats.bodyFatPercentage), 10)}</p>
                          </div>
                          <div className='overall-summary-content2-grp d-flex flex-column'>
                               <h5 className='overall-summary-content2-grp-heading2 fw-bold'>Body Fat</h5>
-                              <p className="overall-summary-content2-grp-para2" >{STATS.goalStats.bodyFatPercentage}</p>
+                              <p className="overall-summary-content2-grp-para2" >{getGoalBodyRange(parseInt(STATS.goalStats.bodyFatPercentage), 10)}</p>
                          </div>
                     </div>
 
@@ -346,8 +363,8 @@ const FormOverallSummary = ({ handleNext }) => {
 
                     </div>
                     <div className='d-flex align-items-center justify-content-center'>
-                              <button type='button' className='btn-paynow'>Pay now</button>
-                         </div>
+                         <button type='button' className='btn-paynow'>Pay now</button>
+                    </div>
                </div>
                {/* for mobile end*/}
 

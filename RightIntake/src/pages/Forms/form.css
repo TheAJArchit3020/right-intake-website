@@ -131,7 +131,7 @@ p.para2 {
 }
 
 .form {
-     margin-bottom: 8em; 
+     margin-bottom: 8em;
 }
 
 .form1 {
@@ -155,7 +155,8 @@ button.btn-continue {
 
 button.veg-button,
 button.nonveg-button,
-button.buttonTrained {
+button.buttonTrained,
+button.selectedButton {
      border: none;
      outline: none;
      color: #000000;
@@ -166,13 +167,15 @@ button.buttonTrained {
      font-weight: bold;
 
 }
-button.buttonTrained , button.selectedButton{
+
+button.buttonTrained,
+button.selectedButton {
      text-align: left;
 }
 
 /* occupation */
 button.occupationbutton {
-     width: 250px;
+     /* width: 250px; */
      border-radius: 8px;
      font-weight: bold;
      text-align: left;
@@ -180,7 +183,8 @@ button.occupationbutton {
      box-shadow: none;
 }
 
-button.veg-button, button.nonveg-button {
+button.veg-button,
+button.nonveg-button {
      background: linear-gradient(90deg, #9FEB9F 0%, #D7F9D7 100%);
 }
 
@@ -226,11 +230,14 @@ span.bmi-status1 {
      padding-left: 0em;
      font-size: 0.8rem;
 }
+
 span.bmi-status2 {
      padding-left: 2em;
      font-size: 0.8rem;
 }
-span.bmi-title, span.bmi-value{
+
+span.bmi-title,
+span.bmi-value {
      font-size: 1.5rem;
 }
 
@@ -242,17 +249,21 @@ span.bmi-title, span.bmi-value{
      height: 350px;
 
 }
+
 .bmi-category-name {
      margin-top: 1em;
-    text-transform: uppercase;
-    font-size: 1rem;
+     text-transform: uppercase;
+     font-size: 1rem;
 }
+
 span.bmi-motivation {
      font-size: 1.4rem;
 }
+
 span.bmi-description {
      font-size: 1.2rem;
 }
+
 span.bmi-value {
      font-family: 'Plus Jakarta Sans';
      margin-top: -10px;
@@ -262,6 +273,7 @@ span.bmi-value {
      position: absolute;
      top: 21em;
 }
+
 .bmi-content-para,
 .bmi-content-para2 {
      padding: 10px 30px;
@@ -328,7 +340,8 @@ span.bmi-content-para2 {
 .goal-card-active,
 .workout-card-active,
 .equipment-card-active,
-.cheatmeal-selected-item, .dietpreference-active {
+.cheatmeal-selected-item,
+.dietpreference-active {
      background: linear-gradient(90deg, rgba(255, 145, 145, 60%) 0%, rgba(255, 208, 208, 60%) 100%);
 }
 
@@ -399,9 +412,11 @@ span.equipment-card-para {
      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
 }
+
 input[type="range"] {
      padding: 0px;
 }
+
 input[type="range"]::-webkit-slider-thumb {
      appearance: none;
      width: 20px;
@@ -536,6 +551,7 @@ span.selected-item {
 .overall-summary-content1 {
      gap: 6rem;
 }
+
 .section1-border {
      border: 1px solid;
      width: 100%;
@@ -585,9 +601,11 @@ span.selected-item {
      font-weight: bold;
      font-size: 1.5rem;
 }
+
 .personalised-wrapper {
      margin-top: 4rem;
 }
+
 .personalised-wrapper h3 {
      font-size: 1.8rem;
      margin-bottom: 1em;
@@ -602,7 +620,7 @@ p.maintain-p {
      margin-top: 10rem;
 }
 
-.overall-summary-content2 p{
+.overall-summary-content2 p {
      font-family: 'Plus Jakarta Sans';
 }
 
@@ -820,8 +838,8 @@ label {
      border-radius: 8px;
 }
 
-.selectedButton {
-     width: 250px;
+button.selectedButton {
+     /* width: 250px; */
      padding: 10px;
      background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
      text-align: left;
@@ -919,11 +937,14 @@ label {
      justify-content: center;
      align-items: center;
 }
-.summary-fat-trans-wrapper, .summary-bodyfat-count-div {
+
+.summary-fat-trans-wrapper,
+.summary-bodyfat-count-div {
      display: flex;
      justify-content: center;
      align-items: center;
 }
+
 .summary-fat-trans {
      width: 375px;
      display: flex;
@@ -932,4 +953,3 @@ label {
      font-size: 1.5rem;
      font-weight: bold;
 }
-

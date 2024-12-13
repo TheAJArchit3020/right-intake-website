@@ -15,9 +15,11 @@ const Footer = () => {
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
-            <Button className="btn footer-button mt-2 mt-3">
-              Get your personalised plan now &#128293;
-            </Button>
+            <Link to={'/basicform'}>
+              <Button className="btn footer-button mt-2 mt-3">
+                Get your personalised plan now &#128293;
+              </Button>
+            </Link>
             <p className="mt-3 text-left text-lg-start">
               Address: Kineticscape Studios, plot no.64, Shivaji housing society,<br />
               near Shivaji stadium,<br />
