@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import NavigationButton from '../../components/Button/navigationButton';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, Title, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Col, Row } from 'react-bootstrap';
 import { bmiimage } from '../../components/Images';
-
-// Register the necessary Chart.js components
-ChartJS.register(Title, ArcElement, Tooltip, Legend);
+import DataContext from '../../components/Context/DataContext';
+import "./responsive.css"
 
 const FormBMI = ({ handleNext }) => {
-     // Static data (instead of using formData)
      const currentWeight = 110;   // Weight in lbs
      const heightInFeet = 5;      // Height in feet
      const heightInInches = 9;    // Height in inches
@@ -17,119 +13,91 @@ const FormBMI = ({ handleNext }) => {
 
      const [bmi, setBmi] = useState(0);
      const [bmiCategory, setBmiCategory] = useState('');
-     const [chartData, setChartData] = useState({
-          labels: ['Underweight', 'Obesity'],
-          datasets: [{
-               label: 'BMI Progress',
-               data: [0, 0], // Dynamic data based on the BMI value
-               backgroundColor: ['#F97979', '#F97979'], // Colors for Underweight and Obesity
-          }]
-     });
+     const { setFormData } = useContext(DataContext);
 
-     // BMI calculation logic
      const calculateBMI = () => {
           if (currentWeight && heightInFeet && heightInInches) {
-               // Convert height to meters
                const heightInMeters = (parseInt(heightInFeet) * 0.3048) + (parseInt(heightInInches) * 0.0254);
-
-               // Convert weight to kg if it's in lbs
                const weightInKg = weightUnit === 'lb' ? parseInt(currentWeight) * 0.453592 : parseInt(currentWeight);
-
-               // Calculate BMI
                const bmiValue = weightInKg / (heightInMeters * heightInMeters);
                setBmi(bmiValue);
 
-               // Calculate the percentage for the chart based on BMI value
-               let underweight = 0;
-               let obesity = 0;
-
+               let category = '';
                if (bmiValue < 18.5) {
-                    setBmiCategory('Underweight');
-                    underweight = 100;
+                    category = 'Under Weight';
                } else if (bmiValue >= 30) {
-                    setBmiCategory('Obesity');
-                    obesity = 100;
+                    category = 'Obesity';
+               } else {
+                    category = 'Normal';
                }
 
-               // Update chart data with the calculated percentages
-               setChartData({
-                    ...chartData,
-                    datasets: [{
-                         ...chartData.datasets[0],
-                         data: [underweight, obesity],  // Update with values for Underweight and Obesity
-                    }]
-               });
+               setBmiCategory(category);
           }
      };
 
-     // Run BMI calculation whenever the component mounts or the weight/height changes
      useEffect(() => {
           calculateBMI();
      }, []);
 
+
+   
+
      return (
-          <div className='container-fluid'>
-               <Row className='bmi-ui-wrapper'>
-                    <Col sm={12} md={6} className="bmi-ui-section1 d-flex flex-column align-items-center justify-content-center gap-2 text-center">
-                         <div className='bmi-chart'>
-                              <Doughnut
-                                   data={chartData}
-                                   options={{
-                                        plugins: {
-                                             legend: false,
-                                             tooltip: {
-                                                  callbacks: {
-                                                       label: (tooltipItem) => {
-                                                            return `${tooltipItem.label}: ${tooltipItem.raw}%`;
-                                                       },
-                                                  },
-                                             },
-                                             // Custom plugin to draw text in the center of the doughnut
-                                             datalabels: {
-                                                  color: '#000',
-                                                  font: {
-                                                       size: 18,
-                                                       weight: 'bold',
-                                                  },
-                                                  align: 'center',
-                                                  anchor: 'center',
-                                                  formatter: () => {
-                                                       return `${bmi.toFixed(2)}\n${bmiCategory}`;
-                                                  },
-                                             },
-                                        },
-                                        cutout: '90%',
-                                        rotation: -90,
-                                        circumference: 180,
-                                   }}
-                              />
-                         </div>
-                         <div className='bmi-category'>
-                              <p>UnderWeight</p>
-                              <p>Obese</p>
-                         </div>
-                         <div className='bmi-content d-flex flex-column align-items-center justify-content-center gap-2'>
-                              <span className='mt-1 fw-bold'> BMI</span>
-                              <span className='mb-4'> {bmi.toFixed(2)}</span>
-                              <span className='mt-1 fw-bold'>{bmiCategory}</span>
-                              <span className='bmi-content-para'>you maintains a normal BMI, reflecting a healthy balance between his weight and height.</span>
+          <>
+              <div className='mobileBmi'>
+               <div className='container-fluid'>
+                    <Row className='bmi-ui-wrapper'>
+                         <Col sm={12} md={5} className="bmi-ui-section1 d-flex flex-column align-items-center justify-content-center gap-2 text-center">
+                              <div className='bmi-progress'>
+                                   <div className="progress-circle">
+                                        <svg className="progress-circle-svg" width="300" height="250" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                  className="progress-circle-bg"
+                                                  d="M10,90 A90,90 0 0,1 190,90"
+                                                  fill="none"
+                                                  stroke="#e6e6e6"
+                                                  strokeWidth="10"
+                                                  strokeLinecap="round"
+                                             />
+                                             <path
+                                                  className="progress-circle-bar"
+                                                  d="M10,90 A90,90 0 0,1 190,90"
+                                                  fill="none"
+                                                  stroke="#F97979"
+                                                  strokeWidth="10"
+                                                  strokeDasharray="283"
+                                                  strokeDashoffset={(1 - bmi.toFixed(1) / 100) * 283} // Static progress value of 20%
+                                                  strokeLinecap="round"
+                                             />
+                                        </svg>
+                                   </div>
+                              </div>
+                              <div className='bmi-category d-flex justify-content-between align-items-center w-100'>
+                                   <span className='bmi-status1 text-center w-100'>Under Weight</span>
+                                   <span className='bmi-status2 text-center w-100'>Obese</span>
+                              </div>
 
-                         </div>
-                    </Col>
+                              <div className='bmi-content d-flex flex-column align-items-center justify-content-center gap-2 w-75'>
+                                   <span className='bmi-title fw-bold'>BMI</span>
+                                   <span className='bmi-value'>{bmi.toFixed(1)}</span>
+                                   <span className='bmi-category-name fw-bold'>{bmiCategory}</span>
+                              </div>
+                              <span className='bmi-description w-75 mt-5'>You maintain a normal BMI, reflecting a healthy balance between your weight and height.</span>
+                         </Col>
 
-                    <Col sm={12} md={6} className="bmi-ui-section2">
-                         <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center ">
-                              <img src={bmiimage} alt="bmiimage" width={50} />
-                              <span className='bmi-content-para fw-bold'>Keeping a normal BMI shows your dedication to staying healthy and taking great care of your well-being—well done!</span>
-
-                         </div>
-                    </Col>
-               </Row>
-
-               <div className='d-flex align-items-center justify-content-center mt-5'>
+                         <Col sm={12} md={7} className="bmi-ui-section2">
+                              <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center">
+                                   <img src={bmiimage} alt="BMI illustration" width={50} />
+                                   <span className='bmi-motivation fw-bold'>Keeping a normal BMI shows your dedication to staying healthy and taking great care of your well-being—well done!</span>
+                              </div>
+                         </Col>
+                    </Row>
+               </div>
+               <div className='mobile-button bmi-submit-button d-flex align-items-center'>
                     <NavigationButton handleNext={handleNext} />
                </div>
-          </div>
+               </div>
+          </>
      );
 };
 

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./form.css"
+import "./responsive.css"
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router'
 import DataContext from '../../components/Context/DataContext'
@@ -8,6 +9,7 @@ const FormLanding = ({ showprogresshandler }) => {
 
      const [age, setAge] = useState('');
      const [agree, setAgree] = useState(false);
+     const [agree2, setAgree2] = useState(false);
      const [error, setError] = useState('');
      const { setFormData } = useContext(DataContext);
 
@@ -62,6 +64,12 @@ const FormLanding = ({ showprogresshandler }) => {
           }
      };
 
+     const handleAgreeChange2 = (e) => {
+          const isChecked = e.target.checked;
+          setAgree2(isChecked);
+
+     };
+
 
 
 
@@ -71,8 +79,8 @@ const FormLanding = ({ showprogresshandler }) => {
                     <h3>Build your personalized diet and workout routine</h3>
                     <p>according to your preferences</p>
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <label htmlFor="age">Your Age</label>
+               <div className='age-input-group d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
+                    <label htmlFor="age" className='fw-bold mb-0'>YOUR AGE</label>
                     <input className='age-input'
                          type="text"
                          name="age"
@@ -80,26 +88,29 @@ const FormLanding = ({ showprogresshandler }) => {
                          onChange={handleAgeChange}
                     />
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold'>
+               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold'>
                     <input
+                         className='agree-input'
                          type="checkbox"
                          name="agree"
                          checked={agree}
                          onChange={handleAgreeChange}
+                         id="agree-checkbox"
                     />
-                    <p>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link>Privacy policy</p>
+                    <p className='agree-terms-para'>By continuing, you agree to our <Link to={'/termsandservices'}> Terms of service </Link> and acknowledge our <Link to={'/termsandservices'}> Privacy policy </Link></p>
                </div>
-               <div className='d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <input type="checkbox" name="" id="" />
-                    <p>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
+               <div className='grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mt-0'>
+                    <input type="checkbox" className='agree-input' name="agree2" checked={agree2}
+                         onChange={handleAgreeChange2} />
+                    <p className='agree-terms-para'>I would like to receive updates about products, services, and special offers from RightIntake via email</p>
                </div>
                {error && (
                     <div className="text-danger mb-3 text-center">
                          {error}
                     </div>
                )}
-               <div className='d-flex justify-content-center' >
-                    <Button className='letsGoButton text-black' onClick={handleSubmit}>Lets Go..</Button>
+               <div className='mobile-button d-flex' >
+                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go</button>
                </div>
 
           </div>

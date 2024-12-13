@@ -8,7 +8,7 @@ const FormHeight = ({ handleNext }) => {
      const [heightValue, setHeightValue] = useState('');
      const [feetValue, setFeetValue] = useState('');
      const [inchValue, setInchValue] = useState('');
-     const {  setFormData } = useContext(DataContext);
+     const { setFormData } = useContext(DataContext);
 
      // FormData handler, will update the form data with height values
      useEffect(() => {
@@ -16,12 +16,12 @@ const FormHeight = ({ handleNext }) => {
                ...prev,
                height: selectedOption === 'Cm' ? heightValue : `${feetValue}'${inchValue}"`,
           }));
-     }, [heightValue, feetValue, inchValue, selectedOption, setFormData]); 
+     }, [heightValue, feetValue, inchValue, selectedOption, setFormData]);
 
      // Handle height input changes based on the selected option
      const handleHeightChange = (e) => {
           if (selectedOption === 'Cm') {
-               setHeightValue(e.target.value); 
+               setHeightValue(e.target.value);
           } else {
                // Update feet and inch values
                const name = e.target.name;
@@ -40,7 +40,7 @@ const FormHeight = ({ handleNext }) => {
 
 
      return (
-          <div className='container'>
+          <div>
                <div className='height-ui-container'>
                     <h4 className='text-center fw-bold mb-4'>What’s your height ?</h4>
                     <div className='grp-button d-flex align-items-center justify-content-center mb-4'>
@@ -65,7 +65,7 @@ const FormHeight = ({ handleNext }) => {
                                    name={selectedOption}
                                    value={heightValue}
                                    onChange={handleHeightChange}
-                                   placeholder={`Enter height in ${selectedOption}`}
+                                   placeholder='_cm'
                               />
                          )}
                          {selectedOption === 'Feet' && (
@@ -87,7 +87,7 @@ const FormHeight = ({ handleNext }) => {
                               </>
                          )}
                     </div>
-                    <div className='d-flex align-items-center justify-content-center '>
+                    <div className='mobile-button d-flex align-items-center'>
                          <NavigationButton handleNext={handleNext} />
                     </div>
 

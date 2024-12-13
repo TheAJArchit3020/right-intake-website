@@ -2,10 +2,7 @@ import React, { useEffect } from 'react'
 import "./home.css"
 import { aifitness, analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheatmeal3, diet, dietitems, dumbels, gymworkout, intakenavigation, playstoreimage, proteinintakes, realintakegrp, realintakenut, rightintakemobileimage, rightintakemobilemeals, workoutplan } from '../../components/Images'
 
-// import gsap from "gsap";
-// import { useGSAP } from '@gsap/react';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
+
 
 const HomePage = () => {
 
@@ -13,35 +10,66 @@ const HomePage = () => {
 
      return (
           <div>
-               <div className="roww d-flex mb-5">
-                    {/* Left Section */}
-                    <div className="d-flex flex-column justify-content-center align-items-center text-center text-lg-start section1-container">
-                         <div className="section1">
-                              <h4>Right Intake</h4>
-                              <p>
-                                   is a comprehensive app that provides personalized diet plans, calorie
-                                   tracking, and workout routines for achieving health goals.
-                              </p>
-                              <button type="button" className="btn fw-bold w-100 px-2 fs-4">
-                                   Get your personalised plan now &#128293;
-                              </button>
+               <div className='mobile-home-page-section1'>
+                    {/* mobile view code */}
+                    <div className=" d-flex flex-column mb-5">
+                         {/* Right Section */}
+                         <div className="section2-container d-flex flex-column justify-content-center align-items-center ">
+                              <div className="section2 text-center">
+                                   <div className="group-images d-flex justify-content-center">
+                                        <img src={realintakegrp} alt="rightintakemobilemeals" className="section2-props-mobile" />
+                                   </div>
+                                  
+                              </div>
+                         </div>
+                         {/* Left Section */}
+                         <div className="section1-container d-flex flex-column align-items-center  mt-3">
+                              <div className="section1 mt-4">
+                                   <h4>Right Intake</h4>
+                                   <p className='mt-3'>
+                                        is a comprehensive app that provides personalized diet plans, calorie
+                                        tracking, and workout routines for achieving health goals.
+                                   </p>
+                                   <button type="button" className="btn fw-bold w-75 px-2 fs-5">
+                                        Get your personalised plan now &#128293;
+                                   </button>
+                              </div>
                          </div>
                     </div>
+               </div>
 
-                    {/* Right Section */}
-                    <div className="section2-container d-flex flex-column justify-content-center align-items-center ">
-                         <div className="section2 text-center">
-                              <div className="group-images d-flex justify-content-center">
-                                   <img src={realintakegrp} alt="rightintakemobilemeals" className="section2-props-mobile" />
+               <div className='largescreen-home-page-section1'>
+
+                    <div className="roww d-flex mb-5">
+                         {/* Left Section */}
+                         <div className="d-flex flex-column justify-content-center align-items-center text-center text-lg-start section1-container">
+                              <div className="section1">
+                                   <h4>Right Intake</h4>
+                                   <p>
+                                        is a comprehensive app that provides personalized diet plans, calorie
+                                        tracking, and workout routines for achieving health goals.
+                                   </p>
+                                   <button type="button" className="btn fw-bold w-100 px-2 fs-4">
+                                        Get your personalised plan now &#128293;
+                                   </button>
                               </div>
-                              <div className="d-flex justify-content-center gap-5 mt-3">
-                                   <div className='store d-flex align-items-center gap-2'>
-                                        <img src={appstoreimage} alt="playstore" className='storeimage' />
-                                        <p>Download on the<br /> App store</p>
+                         </div>
+
+                         {/* Right Section */}
+                         <div className="section2-container d-flex flex-column justify-content-center align-items-center ">
+                              <div className="section2 text-center">
+                                   <div className="group-images d-flex justify-content-center">
+                                        <img src={realintakegrp} alt="rightintakemobilemeals" className="section2-props-mobile" />
                                    </div>
-                                   <div className='store d-flex align-items-center gap-2'>
-                                        <img src={playstoreimage} alt="playstore" className='storeimage' />
-                                        <p>Get it on <br />Google Play</p>
+                                   <div className="d-flex justify-content-center gap-5 mt-3">
+                                        <div className='store d-flex align-items-center gap-2'>
+                                             <img src={appstoreimage} alt="playstore" className='storeimage' />
+                                             <p>Download on the<br /> App store</p>
+                                        </div>
+                                        <div className='store d-flex align-items-center gap-2'>
+                                             <img src={playstoreimage} alt="playstore" className='storeimage' />
+                                             <p>Get it on <br />Google Play</p>
+                                        </div>
                                    </div>
                               </div>
                          </div>
@@ -76,9 +104,9 @@ const HomePage = () => {
 
 
                {/* Section 3 */}
-               <div className="home-section3 d-flex flex-wrap">
+               <div className="home-section3">
                     {/* Cheat Meals Section */}
-                    <div className="cheat-meals-wrapper d-flex justify-content-center align-items-center">
+                    <div className="cheat-meals-wrapper d-flex justify-content-center align-items-center w-100">
                          <div className="cheat-meals d-flex flex-column">
                               <img src={cheatmeal1} alt="cheatmeal1" className="cheat-meal-image" />
                               <img src={cheatmeal2} alt="cheatmeal2" className="cheat-meal-image" />
@@ -87,7 +115,7 @@ const HomePage = () => {
                     </div>
 
                     {/* Personalized Meal Plan Section */}
-                    <div className="meal-plan-wrapper d-flex flex-column justify-content-center">
+                    <div className="meal-plan-wrapper d-flex flex-column justify-content-center w-100">
                          <h4 className="fw-bold text-center text-lg-start">Get a Personalized Meal Plan</h4>
                          <div className="track-section d-flex align-items-center">
                               <img src={dumbels} alt="dumbels" width={20} />
@@ -99,7 +127,7 @@ const HomePage = () => {
                          </div>
                          <div className="track-section d-flex align-items-center">
                               <img src={dumbels} alt="dumbels" width={20} />
-                              <p>Get daily insights on your current nutrition</p>
+                              <p>Get all your preferred food items in your meal plan to make it easy</p>
                          </div>
                     </div>
                </div>

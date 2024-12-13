@@ -1,24 +1,25 @@
 import React, { useContext, useEffect, useState } from 'react'
-import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
 
 const FormHomeWorkout = ({ handleNext }) => {
 
-     const [selectedOption, setSelectedOption] = useState('All equipments');
+     const [selectedOption, setSelectedOption] = useState('');
      const { setFormData } = useContext(DataContext);
 
-     // FormData handler, will update the form data with height values
-     useEffect(() => {
-          setFormData(prev => ({
-               ...prev,
-               equipments: selectedOption,
-          }));
-     }, [selectedOption, setFormData]);
 
      // Select handler for week-day
      const handleSelect = (option) => {
           setSelectedOption(option);
+          setFormData(prev => ({
+               ...prev,
+               equipments: selectedOption,
+          }));
+          setTimeout(() => {
+               handleNext();
+          }, 500);
      };
+
+     
 
      let EQUIPMENTS = [
           {
@@ -54,9 +55,9 @@ const FormHomeWorkout = ({ handleNext }) => {
                     </div>
 
 
-                    <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
+                    {/* <div className='goal-submit-btn d-flex align-items-center justify-content-center mb-2'>
                          <NavigationButton handleNext={handleNext} />
-                    </div>
+                    </div> */}
 
                </div>
           </div>

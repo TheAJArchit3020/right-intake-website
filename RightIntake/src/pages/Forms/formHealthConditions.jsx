@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NavigationButton from '../../components/Button/navigationButton';
+import DataContext from '../../components/Context/DataContext';
 
 const FormHealthConditions = ({ handleNext }) => {
     const [selectedHealthConditons, setSelectedHealthConditons] = useState([]);
     const [allergies, setAllergies] = useState('');
+    const { setFormData } = useContext(DataContext);
 
     const healthConditionOptions = [
         { id: 1, label: 'None' },
@@ -19,7 +21,7 @@ const FormHealthConditions = ({ handleNext }) => {
 
     const handleSelection = (label) => {
         if (label === 'None') {
-            setSelectedHealthConditons([label]); // If "None" is selected, clear all other selections
+            setSelectedHealthConditons(['None']); // If "None" is selected, clear all other selections
         } else {
             setSelectedHealthConditons((prev) => {
                 const newSelections = prev.includes(label)
@@ -30,27 +32,21 @@ const FormHealthConditions = ({ handleNext }) => {
         }
     };
 
+    // Update context when selection changes
+    useEffect(() => {
+        setFormData((prev) => ({
+            ...prev,
+            healthcondition: selectedHealthConditons, // Pass the updated selected conditions
+            allergies: allergies, // Pass the allergies input
+        }));
+    }, [selectedHealthConditons, allergies, setFormData]); // Re-run when health conditions or allergies change
+
     const handleButtonClick = (condition) => {
         handleSelection(condition);
     };
 
     // Render the selected condition that should be moved to the top
     const renderSelectedConditions = () => {
-
-     if (selectedHealthConditons.length === 0) {
-          return (
-              <div className="selectedConditionsContainer">
-                  <button
-                      key="None"
-                      className="selectedCondition noneSelected"
-                      onClick={() => handleSelection('None')}
-                  >
-                      None
-                  </button>
-              </div>
-          );
-      }
-      
         return (
             <div className="selectedConditionsContainer">
                 {selectedHealthConditons.map((condition) => (
@@ -67,43 +63,40 @@ const FormHealthConditions = ({ handleNext }) => {
     };
 
     return (
-        <div className='container'>
-            <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
-                <h4 className='text-center fw-bold'>Any Known Health Conditions and Food Allergy?</h4>
+        <div className="container">
+            <div className="diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3">
+                <h4 className="text-center fw-bold">Any Known Health Conditions and Food Allergy?</h4>
 
-                <div className='healthConditionConatiner'>
-                    <h4 className='headerText'>Select any following health condition</h4>
+                <div className="healthConditionConatiner">
+                    <h4 className="headerText">Select any following health condition</h4>
 
                     {/* Render the selected conditions (buttons) above the list */}
                     {renderSelectedConditions()}
 
-                    <div className='buttonContainer'>
-                        {healthConditionOptions
-                            .filter((option) => !selectedHealthConditons.includes(option.label))
-                            .map((option) => (
-                                <button
-                                    key={option.id}
-                                    className={`button ${selectedHealthConditons.includes(option.label) ? 'selected' : ''}`}
-                                    onClick={() => handleButtonClick(option.label)}
-                                >
-                                    {option.label}
-                                </button>
-                            ))}
+                    <div className="buttonContainer">
+                        {healthConditionOptions.map((option) => (
+                            <button
+                                key={option.id}
+                                className={`button ${selectedHealthConditons.includes(option.label) ? 'selected' : ''}`}
+                                onClick={() => handleButtonClick(option.label)}
+                            >
+                                {option.label}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                <div className='allergyConatiner'>
-                    <h4 className='headerText'>Do you have any allergies or intolerances to specific foods we should be aware of?</h4>
+                <div className="allergyConatiner">
+                    <h4 className="headerText">Do you have any allergies or intolerances to specific foods we should be aware of?</h4>
                     <input
                         className="allergyInput"
-                        placeholder="Enter your allergies or intolerances"
                         value={allergies}
                         onChange={(e) => setAllergies(e.target.value)} // Store allergies input
                     />
                 </div>
             </div>
 
-            <div className='d-flex align-items-center justify-content-center navbutton'>
+            <div className="d-flex align-items-center justify-content-center navbutton">
                 <NavigationButton handleNext={handleNext} /> {/* Navigate to the next screen */}
             </div>
         </div>
