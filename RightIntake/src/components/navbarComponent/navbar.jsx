@@ -36,13 +36,13 @@ const NavbarComponent = () => {
           <Link to={'/'}>
             <span>Home</span>
           </Link>
-          <Link to={'/'}>
+          <Link to={'/termsandservices'}>
             <span>Tearms and Condition</span>
           </Link>
-          <Link to={'/'}>
+          <Link to={'/contactus'}>
             <span>Contact Us</span>
           </Link>
-          <Link to={'/'}>
+          <Link to={'/aboutus'}>
             <span>About Us</span>
           </Link>
 
