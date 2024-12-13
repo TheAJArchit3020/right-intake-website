@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
 import DataContext from '../../components/Context/DataContext';
+import "./responsive.css"
 
 const FormOccupation = ({ handleNext }) => {
 
@@ -21,10 +22,9 @@ const FormOccupation = ({ handleNext }) => {
      };
      return (
           <>
-          
-               <div className='d-flex flex-column align-items-center justify-content-center gap-3 mb-5'>
+           <div className='mobile'>
+               <div className='d-flex flex-column align-items-center justify-content-center gap-3 mb-5'>                  
                     <h4 className='text-center fw-bold'>What is Your Occupation?</h4>
-
                     <button type="button" className={getStyle('Student')} onClick={() => handleSelect('Student')}>Student</button>
                     <button type="button" className={getStyle('Home-maker')} onClick={() => handleSelect('Home-maker')}>Home maker</button>
                     <button type="button" className={getStyle('Medical professional')} onClick={() => handleSelect('Medical professional')}>Medical professional</button>
@@ -39,9 +39,9 @@ const FormOccupation = ({ handleNext }) => {
                               placeholder="Enter your text"
                          />
                     </div>
-               </div>
-
-               <div className='d-flex align-items-center justify-content-center mb-5'>
+                    </div>
+                    </div>
+               <div className='mobile-button d-flex align-items-center'>
                     <NavigationButton handleNext={handleNext} />
                </div>
           </>

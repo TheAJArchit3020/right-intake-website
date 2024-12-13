@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react'
 import NavigationButton from '../../components/Button/navigationButton';
 import { male } from '../../components/Images';
 import { female } from '../../components/Images';
-import DataContext from '../../components/Context/DataContext';
+import DataContext from '../../components/Context/DataContext'; 
+import "./responsive.css"
 
 
 const FormBioLoigicalSex = ({ handleNext }) => {

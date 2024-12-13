@@ -131,7 +131,7 @@ p.para2 {
 }
 
 .form {
-     margin-bottom: 8em;
+     margin-bottom: 8em; 
 }
 
 .form1 {
@@ -170,6 +170,7 @@ button.buttonTrained , button.selectedButton{
      text-align: left;
 }
 
+/* occupation */
 button.occupationbutton {
      width: 250px;
      border-radius: 8px;
@@ -244,7 +245,7 @@ span.bmi-title, span.bmi-value{
 .bmi-category-name {
      margin-top: 1em;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 span.bmi-motivation {
      font-size: 1.4rem;

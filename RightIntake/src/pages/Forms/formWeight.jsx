@@ -34,7 +34,7 @@ const FormWeight = ({ handleNext }) => {
      };
 
      return (
-          <div className='container'>
+          <div>
                <div className='height-ui-container'>
                     <div className='grp-button d-flex align-items-center justify-content-center mb-4'>
                          <p
@@ -70,7 +70,7 @@ const FormWeight = ({ handleNext }) => {
                               placeholder={`_${selectedOption}`}
                          />
                     </div>
-                    <div className='d-flex align-items-center justify-content-center mb-4 '>
+                    <div className='mobile-button d-flex align-items-center'>
                          <NavigationButton handleNext={handleNext} />
                     </div>
                </div>

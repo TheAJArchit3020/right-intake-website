@@ -40,7 +40,7 @@ const FormHeight = ({ handleNext }) => {
 
 
      return (
-          <div className='container'>
+          <div>
                <div className='height-ui-container'>
                     <h4 className='text-center fw-bold mb-4'>What’s your height ?</h4>
                     <div className='grp-button d-flex align-items-center justify-content-center mb-4'>
@@ -87,7 +87,7 @@ const FormHeight = ({ handleNext }) => {
                               </>
                          )}
                     </div>
-                    <div className='d-flex align-items-center justify-content-center mb-5 '>
+                    <div className='mobile-button d-flex align-items-center'>
                          <NavigationButton handleNext={handleNext} />
                     </div>
 

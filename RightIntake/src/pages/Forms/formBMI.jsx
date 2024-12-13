@@ -3,6 +3,7 @@ import NavigationButton from '../../components/Button/navigationButton';
 import { Col, Row } from 'react-bootstrap';
 import { bmiimage } from '../../components/Images';
 import DataContext from '../../components/Context/DataContext';
+import "./responsive.css"
 
 const FormBMI = ({ handleNext }) => {
      const currentWeight = 110;   // Weight in lbs
@@ -13,9 +14,6 @@ const FormBMI = ({ handleNext }) => {
      const [bmi, setBmi] = useState(0);
      const [bmiCategory, setBmiCategory] = useState('');
      const { setFormData } = useContext(DataContext);
-
-
-
 
      const calculateBMI = () => {
           if (currentWeight && heightInFeet && heightInInches) {
@@ -46,6 +44,7 @@ const FormBMI = ({ handleNext }) => {
 
      return (
           <>
+              <div className='mobileBmi'>
                <div className='container-fluid'>
                     <Row className='bmi-ui-wrapper'>
                          <Col sm={12} md={5} className="bmi-ui-section1 d-flex flex-column align-items-center justify-content-center gap-2 text-center">
@@ -94,8 +93,9 @@ const FormBMI = ({ handleNext }) => {
                          </Col>
                     </Row>
                </div>
-               <div className='bmi-submit-button d-flex align-items-center justify-content-center mt-5 mb-5'>
+               <div className='mobile-button bmi-submit-button d-flex align-items-center'>
                     <NavigationButton handleNext={handleNext} />
+               </div>
                </div>
           </>
      );
