@@ -16,7 +16,6 @@
   flex: 1 1 100%; /* Default to full width */
   max-width: 100%;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .footer-section2 {
@@ -61,4 +60,10 @@
     font-size: 0.9rem;
     padding: 8px;
   }
+}
+
+
+.navbar-brand  {
+  display: flex;
+  align-items: center;
 }
