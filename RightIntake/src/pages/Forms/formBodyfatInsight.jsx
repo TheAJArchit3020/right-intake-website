@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./form.css"
 import { dumbels, bodyfat1, bodyfat2, bodyfat3, bodyfat4, bodyfat5, bodyfat6, bodyfat7, bodyfat8, acheivmenticon, congratsicon } from '../../components/Images';
 import NavigationButton from '../../components/Button/navigationButton';
+import DataContext from '../../components/Context/DataContext';
 
 const FormBodyfatInsight = ({ handleNext }) => {
 
+     const { formData } = useContext(DataContext);
+
+     let BODYFAT = formData?.bodyFatPercentage;
+
      const getImageForRange = (value) => {
-          console.log({ value })
 
           if (value <= 10) return bodyfat1;
           if (value <= 14) return bodyfat2;
@@ -24,7 +28,7 @@ const FormBodyfatInsight = ({ handleNext }) => {
                     <div className='body-insight-section1'>
                          <div className="d-flex justify-content-center">
                               <img
-                                   src={getImageForRange(20)}
+                                   src={getImageForRange(BODYFAT)}
                                    alt="fitness"
                                    className="bodyfatinsight-image"
                               />
