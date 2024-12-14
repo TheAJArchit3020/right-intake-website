@@ -20,22 +20,18 @@ const FormBMI = ({ handleNext }) => {
      const calculateBMI = () => {
          if (currentWeight && height) {
 
-          console.log(currentWeight, height)
              // Convert height to meters
              const heightInMeters = parseFloat(height) / 100;
-             console.log("heightInMeters ; ",heightInMeters)
  
              // Convert weight to kilograms
              const weightInKg = weightUnit === 'lb' 
                  ? parseFloat(currentWeight) * 0.453592 
                  : parseFloat(currentWeight);
 
-                 console.log("weightInKg ; ",weightInKg)
  
              // Calculate BMI
              const bmiValue = weightInKg / (heightInMeters * heightInMeters);
 
-             console.log("bmiValue ; ",bmiValue)
  
              // Set calculated BMI
              setBmi(bmiValue);
@@ -61,7 +57,6 @@ const FormBMI = ({ handleNext }) => {
          calculateBMI();
      }, []);
  
-     console.log({ bmi, bmiData });
  
      return (
          <>
