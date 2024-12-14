@@ -31,6 +31,7 @@ const FormFoodPreference = ({ handleNext }) => {
                navigator.geolocation.getCurrentPosition(
                     (position) => {
                          const { latitude, longitude } = position.coords;
+                         console.log({latitude, longitude })
                          fetchAddress(latitude, longitude);
                     },
                     (error) => {

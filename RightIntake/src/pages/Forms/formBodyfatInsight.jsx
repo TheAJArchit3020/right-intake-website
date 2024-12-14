@@ -38,12 +38,12 @@ const FormBodyfatInsight = ({ handleNext }) => {
      };
 
      // get bodyfat insight data ...
-
      useEffect(() => {
-
-          getBodyFatInsightData();
-
-     }, formData?.bodyFatPercentage)
+          if (formData?.bodyFatPercentage) {
+              getBodyFatInsightData();
+          }
+      }, [formData?.bodyFatPercentage]);
+      
 
      const getBodyFatInsightData = async () => {
           try {
@@ -58,6 +58,7 @@ const FormBodyfatInsight = ({ handleNext }) => {
           }
      }
 
+     console.log({ bmiInsightData })
 
      return (
           <div className='body-insight-div'>
@@ -86,14 +87,25 @@ const FormBodyfatInsight = ({ handleNext }) => {
                               <img src={congratsicon} alt="congratsicon" width={30} />
                          </span>  </p>
 
-                         <div className='section2-para2-content d-flex align-items-center gap-2'>
+                         {bmiInsightData?.benefits?.length > 0 ? (
+                              bmiInsightData.benefits.map((list, index) => (
+                                   <div className='section2-para2-content d-flex align-items-center gap-2' key={index + 1}>
+                                        <img src={dumbels} alt="dumbels" width={26} />
+                                        <p className='section2-para2'>{list}</p>
+                                   </div>
+                              ))
+                         ) : (
+                              <p>No benefits available</p>
+                         )}
+
+                         {/* <div className='section2-para2-content d-flex align-items-center gap-2'>
                               <img src={dumbels} alt="dumbels" width={26} />
                               <p className='section2-para2'>{bmiInsightData?.benefits[0]}</p>
                          </div>
                          <div className='section2-para2-content d-flex align-items-center gap-2'>
                               <img src={dumbels} alt="dumbels" width={26} />
                               <p className='section2-para2'>{bmiInsightData?.benefits[1]}</p>
-                         </div>
+                         </div> */}
 
                     </div>
                </div>
