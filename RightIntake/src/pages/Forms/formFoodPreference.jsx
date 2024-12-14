@@ -84,7 +84,7 @@ const FormFoodPreference = ({ handleNext }) => {
           try {
                await axios.post(getfoodpreferences, {
                     location: {
-                         city: 'Nagpur',
+                         city: city,
                          state: state,
                          country: country
                     }
