@@ -55,6 +55,7 @@ const FormWeight = ({ handleNext }) => {
                          <h4 className='text-center fw-bold'>What’s your current weight?</h4>
                          <input
                               type="text"
+                              className='field-input'
                               name="currentWeight"
                               value={currentWeight}
                               onChange={handleInputChange}
@@ -64,6 +65,7 @@ const FormWeight = ({ handleNext }) => {
                          <h4 className='text-center fw-bold mt-3'>What’s your target weight?</h4>
                          <input
                               type="text"
+                              className='field-input'
                               name="targetWeight"
                               value={targetWeight}
                               onChange={handleInputChange}

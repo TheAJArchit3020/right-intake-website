@@ -61,6 +61,7 @@ const FormHeight = ({ handleNext }) => {
                     <div className='form d-flex align-items-center justify-content-center gap-4'>
                          {selectedOption === 'Cm' && (
                               <input
+                                   className='field-input'
                                    type="number"
                                    name={selectedOption}
                                    value={heightValue}
@@ -72,6 +73,7 @@ const FormHeight = ({ handleNext }) => {
                               <>
                                    <input
                                         type="number"
+                                        className='field-input'
                                         name="Feet"
                                         value={feetValue}
                                         onChange={handleHeightChange}
@@ -79,6 +81,7 @@ const FormHeight = ({ handleNext }) => {
                                    />
                                    <input
                                         type="number"
+                                        className='field-input'
                                         name="Inch"
                                         value={inchValue}
                                         onChange={handleHeightChange}

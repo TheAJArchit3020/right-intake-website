@@ -3,7 +3,9 @@ import NavigationButton from '../../components/Button/navigationButton';
 import { Col, Row } from 'react-bootstrap';
 import { bmiimage } from '../../components/Images';
 import DataContext from '../../components/Context/DataContext';
-import "./responsive.css"
+import "./responsive.css";
+import { getbmidata } from '../../components/apis';
+import axios from 'axios';
 
 const FormBMI = ({ handleNext }) => {
      const currentWeight = 110;   // Weight in lbs
@@ -11,27 +13,28 @@ const FormBMI = ({ handleNext }) => {
      const heightInInches = 9;    // Height in inches
      const weightUnit = 'lb';     // Unit of weight (lb or kg)
 
-     const [bmi, setBmi] = useState(0);
-     const [bmiCategory, setBmiCategory] = useState('');
-     const { setFormData } = useContext(DataContext);
+     const [bmi, setBmi] = useState(0); // Initialize as a number
+     const [bmiData, setBmiData] = useState([]);
+     // const { formData, setFormData } = useContext(DataContext);
 
      const calculateBMI = () => {
           if (currentWeight && heightInFeet && heightInInches) {
                const heightInMeters = (parseInt(heightInFeet) * 0.3048) + (parseInt(heightInInches) * 0.0254);
                const weightInKg = weightUnit === 'lb' ? parseInt(currentWeight) * 0.453592 : parseInt(currentWeight);
                const bmiValue = weightInKg / (heightInMeters * heightInMeters);
-               setBmi(bmiValue);
+               
+               getBmiValueHandler(bmiValue); // Pass calculated BMI to handler
+          }
+     };
 
-               let category = '';
-               if (bmiValue < 18.5) {
-                    category = 'Under Weight';
-               } else if (bmiValue >= 30) {
-                    category = 'Obesity';
-               } else {
-                    category = 'Normal';
-               }
-
-               setBmiCategory(category);
+     // bmi api handler ....
+     const getBmiValueHandler = async (bmiValue) => {
+          try {
+               const response = await axios.post(getbmidata, { bmi: bmiValue });
+               setBmi(response.data?.bmi || bmiValue);
+               setBmiData(response.data);
+          } catch (error) {
+               alert(`${error}`);
           }
      };
 
@@ -39,8 +42,7 @@ const FormBMI = ({ handleNext }) => {
           calculateBMI();
      }, []);
 
-
-
+     console.log({bmiData})
 
      return (
           <>
@@ -66,7 +68,7 @@ const FormBMI = ({ handleNext }) => {
                                                        stroke="#F97979"
                                                        strokeWidth="10"
                                                        strokeDasharray="283"
-                                                       strokeDashoffset={(1 - bmi.toFixed(1) / 100) * 283} // Static progress value of 20%
+                                                       strokeDashoffset={(1 - bmi.toFixed(1) / 100) * 283} // Ensure bmi is a number
                                                        strokeLinecap="round"
                                                   />
                                              </svg>
@@ -79,16 +81,16 @@ const FormBMI = ({ handleNext }) => {
 
                                    <div className='bmi-content d-flex flex-column align-items-center justify-content-center gap-2 w-75'>
                                         <span className='bmi-title fw-bold'>BMI</span>
-                                        <span className='bmi-value'>{bmi.toFixed(1)}</span>
-                                        <span className='bmi-category-name fw-bold'>{bmiCategory}</span>
+                                        <span className='bmi-value'>{bmi.toFixed(1)}</span> {/* Safely calls toFixed */}
+                                        <span className='bmi-category-name fw-bold'>{bmiData?.status}</span>
                                    </div>
-                                   <span className='bmi-description w-75 mt-5'>You maintain a normal BMI, reflecting a healthy balance between your weight and height.</span>
+                                   <span className='bmi-description w-75 mt-5'>{bmiData?.message}</span>
                               </Col>
 
                               <Col sm={12} md={7} className="bmi-ui-section2">
                                    <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center">
                                         <img src={bmiimage} alt="BMI illustration" width={50} />
-                                        <span className='bmi-motivation fw-bold'>Keeping a normal BMI shows your dedication to staying healthy and taking great care of your well-being—well done!</span>
+                                        <span className='bmi-motivation fw-bold'>{bmiData?.additionalInfo?.motivationalText}</span>
                                    </div>
                               </Col>
                          </Row>

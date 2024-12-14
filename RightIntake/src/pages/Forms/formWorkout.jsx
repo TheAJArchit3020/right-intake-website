@@ -45,9 +45,9 @@ const FormWorkout = ({ handleNext }) => {
                     <div className='grp-button d-flex flex-column align-items-center justify-content-center gap-4 mb-4'>
                          {WORKOUT && WORKOUT.map((workout, index) => {
                               return (
-                                   <div className={`d-flex align-items-center gap-3 workout-card ${selectedOption === workout.label ? 'workout-card-active' : ''}`}
+                                   <div className={`d-flex align-items-center gap-3 workout-card ${selectedOption === workout.label.toLowerCase() ? 'workout-card-active' : ''}`}
                                         key={index + 1}
-                                        onClick={() => handleSelect(workout.label)}>
+                                        onClick={() => handleSelect(workout.label.toLowerCase())}>
                                         <span className='w-100 fw-bold text-center'>{workout.label} </span>
                                         <img src={workout.imageUrl} alt="bodyimage" className='workoutimages' />
                                    </div>
