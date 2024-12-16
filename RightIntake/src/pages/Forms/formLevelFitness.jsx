@@ -35,13 +35,15 @@ const FormLevelFitness = ({ handleNext }) => {
   let fitnessCategory = "";
   let fitnessText = "";
 
-  if (fitnessLevel == 0) {
+  if (fitnessLevel >= 0 && fitnessLevel <= 5) {
     fitnessCategory = "Newcomer";
     fitnessText = fitnessDescriptions.newcomer[fitnessLevel];
-  } else if (fitnessLevel >= 1 && fitnessLevel <= 5) {
-    fitnessCategory = "Newcomer";
-    fitnessText = fitnessDescriptions.newcomer[fitnessLevel - 1];
-  } else if (fitnessLevel >= 6 && fitnessLevel <= 9) {
+  }
+  // } else if (fitnessLevel >= 1 && fitnessLevel <= 5) {
+  //   fitnessCategory = "Newcomer";
+  //   fitnessText = fitnessDescriptions.newcomer[fitnessLevel - 1];
+  //}
+  else if (fitnessLevel >= 6 && fitnessLevel <= 9) {
     fitnessCategory = "Amateur";
     fitnessText = fitnessDescriptions.amateur[fitnessLevel - 6] || "";
   } else if (fitnessLevel >= 10 && fitnessLevel <= 12) {

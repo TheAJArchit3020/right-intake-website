@@ -67,7 +67,7 @@ const FormAboutSelf = ({ handleNext }) => {
               updateFormData(); // Update form data when name changes
             }}
           />
-          <label htmlFor="email">Enter Your Email Address</label>
+          <label htmlFor="email" className="about-yourself-label">Enter Your Email Address</label>
           <input
             id="email"
             className="form-control"
@@ -78,11 +78,11 @@ const FormAboutSelf = ({ handleNext }) => {
               updateFormData(); // Update form data when email changes
             }}
           />
-          <label htmlFor="contact">Enter Your Mobile Number</label>
+          <label htmlFor="contact" className="about-yourself-label">Enter Your Mobile Number</label>
           <div className="input-group">
             <div className="input-group-prepend">
               <button
-                className="btn dropdown-toggle"
+                className="dropdown-toggle"
                 type="button"
                 onClick={toggleDropdown}
               >

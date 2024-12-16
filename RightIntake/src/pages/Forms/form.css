@@ -168,7 +168,7 @@ button.selectedButton {
      border-radius: 8px;
      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
      font-weight: bold;
-
+     box-shadow: none;
 }
 
 button.buttonTrained,
@@ -750,9 +750,6 @@ input[type="checkbox"]:checked+.custom-checkbox::before {
      z-index: -1;
 }
 
-
-
-
 /* form */
 
 .max-w-400 {
@@ -761,7 +758,7 @@ input[type="checkbox"]:checked+.custom-checkbox::before {
 
 label {
      display: block;
-     margin-bottom: 1rem;
+     margin-bottom: 5rem;
      /* Add margin-bottom to the label */
      font-weight: bold;
 }
@@ -773,6 +770,7 @@ label {
      font-size: 1rem;
      font-weight: bold;
      margin-bottom: 1rem;
+     height:40px;
 }
 
 /* gender page css */
@@ -956,8 +954,19 @@ button.selectedButton {
 }
 
 /* about self page */
+.dropdown-toggle{
+     box-shadow: none;
+     border: 1px solid #dee2e6 !important;
+     border-radius:  0.375rem;
+     background-color: #ffffff;
+     height: 40px;
+}
 
+.about-yourself-label{
+     margin-bottom: 10px;
+}
 
+/* summary */
 .summary-part1 {
      justify-content: center;
      align-items: center;

@@ -19,6 +19,7 @@ const FormFoodPreference = ({ handleNext }) => {
     carbs: false,
     fruits_berries: false,
   });
+  
   const handleSelection = (category, item) => {
     setSelectedItems((prevSelected) => {
       const updatedSelected = {
