@@ -1,48 +1,66 @@
-import React, { useContext, useState } from 'react';
-import NavigationButton from '../../components/Button/navigationButton';
-import DataContext from '../../components/Context/DataContext';
-import { useNavigate } from 'react-router';
+import React, { useContext, useState } from "react";
+import NavigationButton from "../../components/Button/navigationButton";
+import DataContext from "../../components/Context/DataContext";
+import { useNavigate } from "react-router";
 
 const FormAboutSelf = ({ handleNext }) => {
-  const [selectedCountryCode, setSelectedCountryCode] = useState('+91');
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [contact, setContact] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
   const { setFormData } = useContext(DataContext);
   const navigation = useNavigate();
-
+  const [errors, setErrors] = useState({});
   const NavigationHandler = () => {
-    navigation('/overallsummary')
-  }
-
+    navigation("/overallsummary");
+  };
+  const validateForm = () => {
+    const newErrors = {};
+    if (!name.trim()) {
+      newErrors.name = "Full name is required.";
+    }
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "A valid email address is required.";
+    }
+    if (!contact.trim() || !/^\d{10}$/.test(contact)) {
+      newErrors.contact = "Mobile number must be 10 digits long.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
+  };
   // Set form data when any value is updated
   const updateFormData = () => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      aboutself: {
-        fullName,
-        mobileNumber: selectedCountryCode + contact,
-        email,
-      },
+      fullName: name,
+      email: email,
+      mobileNumber: selectedCountryCode + contact,
     }));
   };
-
+  const handleSubmit = () => {
+    if (validateForm()) {
+      updateFormData();
+      handleNext();
+    }
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen); // Toggle the dropdown visibility
   };
 
   return (
     <>
-      <div className='diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3'>
-        <h4 className='text-center fw-bold'>Let us know about yourself?</h4>
+      <div className="diet-ui-container d-flex flex-column align-items-center justify-content-center gap-3">
+        <h4 className="text-center fw-bold">Let us know about yourself?</h4>
         {/* form */}
-        <div className='about-yourself-form w-100 max-w-400'>
-          <label htmlFor="fullName" className='about-yourself-label'>Enter Your Full Name</label>
+        <div className="about-yourself-form w-100 max-w-400">
+          <label htmlFor="fullName" className="about-yourself-label">
+            Enter Your Full Name
+          </label>
           <input
             id="fullName"
-            className='form-control'
-            type='text'
+            className="form-control"
+            type="text"
             value={name} // Bind the input value to state
             onChange={(e) => {
               setName(e.target.value);
@@ -52,8 +70,8 @@ const FormAboutSelf = ({ handleNext }) => {
           <label htmlFor="email">Enter Your Email Address</label>
           <input
             id="email"
-            className='form-control'
-            type='email'
+            className="form-control"
+            type="email"
             value={email} // Bind the input value to state
             onChange={(e) => {
               setEmail(e.target.value);
@@ -61,22 +79,22 @@ const FormAboutSelf = ({ handleNext }) => {
             }}
           />
           <label htmlFor="contact">Enter Your Mobile Number</label>
-          <div className='input-group'>
-            <div className='input-group-prepend'>
+          <div className="input-group">
+            <div className="input-group-prepend">
               <button
-                className='btn dropdown-toggle'
-                type='button'
+                className="btn dropdown-toggle"
+                type="button"
                 onClick={toggleDropdown}
               >
-                {selectedCountryCode || '+91'}
+                {selectedCountryCode || "+91"}
               </button>
-              <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+              <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
                 <a
-                  className='dropdown-item'
-                  href='#'
+                  className="dropdown-item"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setSelectedCountryCode('+1');
+                    setSelectedCountryCode("+1");
                     setIsDropdownOpen(false);
                     updateFormData(); // Update form data when country code changes
                   }}
@@ -84,11 +102,11 @@ const FormAboutSelf = ({ handleNext }) => {
                   +1 (USA)
                 </a>
                 <a
-                  className='dropdown-item'
-                  href='#'
+                  className="dropdown-item"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setSelectedCountryCode('+44');
+                    setSelectedCountryCode("+44");
                     setIsDropdownOpen(false);
                     updateFormData(); // Update form data when country code changes
                   }}
@@ -96,11 +114,11 @@ const FormAboutSelf = ({ handleNext }) => {
                   +44 (UK)
                 </a>
                 <a
-                  className='dropdown-item'
-                  href='#'
+                  className="dropdown-item"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setSelectedCountryCode('+91');
+                    setSelectedCountryCode("+91");
                     setIsDropdownOpen(false);
                     updateFormData(); // Update form data when country code changes
                   }}
@@ -111,22 +129,24 @@ const FormAboutSelf = ({ handleNext }) => {
             </div>
             <input
               id="contact"
-              className='form-control'
-              type='tel'
+              className="form-control"
+              type="number"
               value={contact} // Bind the input value to state
               onChange={(e) => {
                 setContact(e.target.value);
+                console.log(contact);
                 updateFormData(); // Update form data when contact changes
               }}
             />
           </div>
+          {errors.contact && (
+            <div className="invalid-feedback">{errors.contact}</div>
+          )}
         </div>
       </div>
 
-      <div className='mobile-button d-flex align-items-center'>
-        <NavigationButton handleNext={() => {
-          NavigationHandler(), handleNext()
-        }} />
+      <div className="mobile-button d-flex align-items-center">
+        <NavigationButton handleNext={handleSubmit} />
       </div>
     </>
   );

@@ -8,7 +8,6 @@ import { previcon } from "../../components/Images";
 import FormWeight from "./formWeight";
 import FormDietPreference from "./formDietPreference";
 import DataContext from "../../components/Context/DataContext";
-import FormBMI from "./formBMI";
 import FormLevelFitness from "./formLevelFitness";
 import FormNonvegPreference from "./formNonvegPreference";
 import FormVegPreference from "./formVegPreference";
@@ -23,7 +22,6 @@ import FormHealthConditions from "./formHealthConditions";
 import FormOccupation from "./formOccupation";
 import FormFoodPreference from "./formFoodPreference";
 import FormBodyFat from "./formBodyFat";
-import FormBodyfatInsight from "./formBodyfatInsight";
 import FormCheatmeal from "./formCheatmeal";
 import FormOverallSummary from "./formOverallSummary";
 
@@ -60,18 +58,17 @@ const FormLayout = () => {
     <FormOccupation handleNext={handleNext} />,
     <FormHeight handleNext={handleNext} />,
     <FormWeight handleNext={handleNext} />,
-    // <FormBMI handleNext={handleNext} />,
     <FormLevelFitness handleNext={handleNext} />,
     <FormDietPreference handleNext={handleNext} />,
 
-    ...(formData?.dietPreference === "Non-Veg"
+    ...(formData?.dietType === "Non-Veg"
       ? [<FormNonvegPreference handleNext={handleNext} />]
       : []),
 
     <FormVegPreference handleNext={handleNext} />,
     <FormWorkout handleNext={handleNext} />,
 
-    ...(formData?.workout === "HOME WORKOUT"
+    ...(formData?.workoutPreference === "home workout"
       ? [<FormHomeWorkout handleNext={handleNext} />]
       : []),
 
