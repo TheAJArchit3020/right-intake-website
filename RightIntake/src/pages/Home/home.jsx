@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import "./home.css"
 import { aifitness, analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheatmeal3, diet, dietitems, dumbels, gymworkout, intakenavigation, playstoreimage, proteinintakes, realintakegrp, realintakenut, rightintakemobileimage, rightintakemobilemeals, workoutplan } from '../../components/Images'
+import { Link } from 'react-router'
+import { Button } from 'react-bootstrap'
 
 
 
@@ -19,7 +21,7 @@ const HomePage = () => {
                                    <div className="group-images d-flex justify-content-center">
                                         <img src={realintakegrp} alt="rightintakemobilemeals" className="section2-props-mobile" />
                                    </div>
-                                  
+
                               </div>
                          </div>
                          {/* Left Section */}
@@ -30,9 +32,11 @@ const HomePage = () => {
                                         is a comprehensive app that provides personalized diet plans, calorie
                                         tracking, and workout routines for achieving health goals.
                                    </p>
-                                   <button type="button" className="btn fw-bold w-75 px-2 fs-5">
-                                        Get your personalised plan now &#128293;
-                                   </button>
+                                   <Link to={'/basicform'}>
+                                        <Button type="button" className="btn fw-bold w-75 px-2 fs-5">
+                                             Get your personalised plan now &#128293;
+                                        </Button>
+                                   </Link>
                               </div>
                          </div>
                     </div>

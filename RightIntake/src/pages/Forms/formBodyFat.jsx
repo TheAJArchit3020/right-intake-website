@@ -11,7 +11,7 @@ const FormBodyFat = ({ handleNext }) => {
           setBodyFatLevel(parseInt(event.target.value));
           setFormData(prev => ({
                ...prev,
-               bodyfat: parseInt(event.target.value),
+               bodyFatPercentage: parseInt(event.target.value),
           }));
      };
 

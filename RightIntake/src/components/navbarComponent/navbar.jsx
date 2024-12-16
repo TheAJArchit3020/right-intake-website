@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './navbar.css'
-import { Button, Container, Navbar,  Offcanvas } from 'react-bootstrap'
+import { Button, Container, Navbar, Offcanvas } from 'react-bootstrap'
 import { hammerimage, realintakeslogo } from '../Images'
 import { Link } from 'react-router'
 
@@ -45,10 +45,12 @@ const NavbarComponent = () => {
           <Link to={'/aboutus'}>
             <span>About Us</span>
           </Link>
+          <Link to={'/basicform'}>
 
-          <Button className="btn footer-button mt-2 mt-3">
-            Get your personalised plan now &#128293;
-          </Button>
+            <Button className="btn footer-button mt-2 mt-3">
+              Get your personalised plan now &#128293;
+            </Button>
+          </Link>
         </Offcanvas.Body>
       </Offcanvas>
 

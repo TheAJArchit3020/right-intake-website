@@ -5,11 +5,12 @@ import DataContext from '../../components/Context/DataContext';
 import axios from 'axios';
 import { getfoodpreferences } from '../../components/apis';
 
+
 const FormFoodPreference = ({ handleNext }) => {
      const [locationStatus, setLocationStatus] = useState("Awaiting permission...");
      const [address, setAddress] = useState(null);
      const { setFormData } = useContext(DataContext);
-     const [city, setCity] = useState('Nagpur');
+     const [foodpreferenceData, setFoodpreferenceData] = useState(null);
      const [selectedItems, setSelectedItems] = useState({
           veggies: [],
           carbs: [],
@@ -31,6 +32,7 @@ const FormFoodPreference = ({ handleNext }) => {
                navigator.geolocation.getCurrentPosition(
                     (position) => {
                          const { latitude, longitude } = position.coords;
+                         console.log({ latitude, longitude });
                          fetchAddress(latitude, longitude);
                     },
                     (error) => {
@@ -49,27 +51,26 @@ const FormFoodPreference = ({ handleNext }) => {
      };
 
      const fetchAddress = async (latitude, longitude) => {
-          const apiKey = "AIzaSyButhal1hfnTwt0pl1ehGTHKOVYA-3vVvM"; // Replace with your API key
+          const apiKey = "AIzaSyButhal1hfnTwt0pl1ehGTHKOVYA-3vVvM"; 
           const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
 
           try {
                const response = await fetch(geocodingUrl);
                const data = await response.json();
+               console.log({data})
 
                if (data.status === "OK") {
-                    const results = data.results[0];
-                    setAddress(results.formatted_address);
+                    const components = data.results[0]?.address_components;
+                    console.log({components})
+                    const city = components.find((c) => c.types.includes("locality"))?.long_name || "Unknown City";
+                    console.log(city)
+                    const state = components.find((c) => c.types.includes("administrative_area_level_1"))?.long_name || "Unknown State";
+                    console.log(state)
+                    const country = components.find((c) => c.types.includes("country"))?.long_name || "Unknown Country";
+                    console.log(country)
 
-                    const cityComponent = results.address_components.find((component) =>
-                         component.types.includes("locality")
-                    );
-                    if (cityComponent) {
-                         setCity(cityComponent.long_name);
-                         getFoodPreferenceHandler(cityComponent.long_name);
-
-                         console.log(cityComponent.long_name)
-
-                    }
+                    setCity(city);
+                    getFoodPreferenceHandler(city, state, country);
                } else {
                     setAddress("Unable to fetch address. Try again later.");
                }
@@ -78,38 +79,30 @@ const FormFoodPreference = ({ handleNext }) => {
           }
      };
 
-     // getfoodpreferences handler ....
-     // const getFoodPreferenceHandler = async (cityname) => {
-     //      try {
-     //           await axios.post(getfoodpreferences, {
-     //                location: cityname
-     //           }).then((response) => {
-     //                console.log(response)
-     //           })
+     const getFoodPreferenceHandler = async (city, state, country) => {
+          console.log(city, state, country)
+          try {
+               await axios.post(getfoodpreferences, {
+                    location: {
+                         city: city,
+                         state: state,
+                         country: country
+                    }
+               }).then((response) => {
+                    console.log({response})
+                    const mappedData = response.data.reduce((acc, categoryData) => {
+                         const { category, items } = categoryData;
+                         const key = category.toLowerCase().replace("andberries", "_berries"); // Adjust keys
+                         acc[key] = items;
+                         return acc;
+                    }, {});
 
-     //      } catch (error) {
-     //           alert(`${error}`)
-     //      }
-     // }
-     const CTYFOODITEMS = {
-          Nagpur: {
-               veggies: ["Carrot", "Potato", "Tomato"],
-               carbs: ["Rice", "Wheat", "Bread"],
-               meat: ["Chicken", "Mutton"],
-               fruits_berries: ["Orange", "Banana", "Papaya", "Strawberry", "Gooseberry"],
-          },
-          Pune: {
-               veggies: ["Spinach", "Cabbage", "Peas"],
-               carbs: ["Oats", "Quinoa", "Pasta"],
-               meat: ["Fish", "Prawns"],
-               fruits_berries: ["Apple", "Grapes", "Guava", "Blueberry", "Raspberry"],
-          },
-          Mumbai: {
-               veggies: ["Capsicum", "Cauliflower", "Pumpkin"],
-               carbs: ["Idli", "Dosa", "Roti"],
-               meat: ["Crab", "Lobster"],
-               fruits_berries: ["Mango", "Pineapple", "Kiwi", "Blackberry", "Mulberry"],
-          },
+                    console.log({ mappedData });
+                    setFoodpreferenceData(mappedData)
+               });
+          } catch (error) {
+               alert(`${error}`);
+          }
      };
 
      const handleSelection = (category, item) => {
@@ -117,11 +110,10 @@ const FormFoodPreference = ({ handleNext }) => {
                const updatedSelected = {
                     ...prevSelected,
                     [category]: prevSelected[category].includes(item)
-                         ? prevSelected[category].filter((i) => i !== item) // Remove if already selected
-                         : [...prevSelected[category], item], // Add if not selected
+                         ? prevSelected[category].filter((i) => i !== item)
+                         : [...prevSelected[category], item],
                };
 
-               // Update formData with the selected items
                setFormData(prev => ({
                     ...prev,
                     foodPreference: {
@@ -133,7 +125,6 @@ const FormFoodPreference = ({ handleNext }) => {
                return updatedSelected;
           });
 
-          // Clear validation error for the category when an item is selected
           if (validationErrors[category]) {
                setValidationErrors((prevErrors) => ({
                     ...prevErrors,
@@ -141,9 +132,6 @@ const FormFoodPreference = ({ handleNext }) => {
                }));
           }
      };
-
-     const isItemSelected = (category, item) =>
-          selectedItems[category]?.includes(item) || false;
 
      const validateSelections = () => {
           const errors = {
@@ -154,7 +142,6 @@ const FormFoodPreference = ({ handleNext }) => {
 
           setValidationErrors(errors);
 
-          // Check if there are no validation errors
           return !Object.values(errors).some((error) => error);
      };
 
@@ -165,85 +152,97 @@ const FormFoodPreference = ({ handleNext }) => {
                </h4>
 
                <div className="vegg-div">
-                    {city && CTYFOODITEMS[city] ? (
+                    {foodpreferenceData && (
                          <>
-                              <h4 className="vegg-title fw-bold">
-                                   Veggies &nbsp;
-                                   <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
-                              </h4>
-                              <div className="foodprefer-item-list">
-                                   {CTYFOODITEMS[city].veggies.map((veggie, index) => (
-                                        <span
-                                             className={`foodprefer-item-span ${isItemSelected('veggies', veggie) ? "selected-item" : ""
-                                                  }`}
-                                             key={index}
-                                             onClick={() => handleSelection('veggies', veggie)}
-                                        >
-                                             {veggie}
-                                        </span>
-                                   ))}
-                              </div>
-                              {validationErrors.veggies && (
-                                   <p className="validation-error">Please select at least one veggie.</p>
+                              {foodpreferenceData.veggies && (
+                                   <div>
+                                        <h4 className="vegg-title fw-bold">
+                                             Veggies &nbsp;
+                                             <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
+                                        </h4>
+                                        <div className="foodprefer-item-list">
+                                             {foodpreferenceData.veggies.map((veggie, index) => (
+                                                  <span
+                                                       className={`foodprefer-item-span ${selectedItems.veggies.includes(veggie) ? "selected-item" : ""}`}
+                                                       key={index}
+                                                       onClick={() => handleSelection('veggies', veggie)}
+                                                  >
+                                                       {veggie}
+                                                  </span>
+                                             ))}
+                                        </div>
+                                        {validationErrors.veggies && (
+                                             <p className="validation-error">Please select at least one veggie.</p>
+                                        )}
+                                   </div>
                               )}
 
-                              <h4 className="vegg-title fw-bold">Carbs &nbsp;
-                                   <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
-                              </h4>
-                              <div className="foodprefer-item-list">
-                                   {CTYFOODITEMS[city].carbs.map((carb, index) => (
-                                        <span
-                                             className={`foodprefer-item-span ${isItemSelected('carbs', carb) ? "selected-item" : ""
-                                                  }`}
-                                             key={index}
-                                             onClick={() => handleSelection('carbs', carb)}
-                                        >
-                                             {carb}
-                                        </span>
-                                   ))}
-                              </div>
-                              {validationErrors.carbs && (
-                                   <p className="validation-error">Please select at least one carb item.</p>
+                              {foodpreferenceData.carbs && (
+                                   <div>
+                                        <h4 className="vegg-title fw-bold">
+                                             Carbs &nbsp;
+                                             <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
+                                        </h4>
+                                        <div className="foodprefer-item-list">
+                                             {foodpreferenceData.carbs.map((carb, index) => (
+                                                  <span
+                                                       className={`foodprefer-item-span ${selectedItems.carbs.includes(carb) ? "selected-item" : ""}`}
+                                                       key={index}
+                                                       onClick={() => handleSelection('carbs', carb)}
+                                                  >
+                                                       {carb}
+                                                  </span>
+                                             ))}
+                                        </div>
+                                        {validationErrors.carbs && (
+                                             <p className="validation-error">Please select at least one carb item.</p>
+                                        )}
+                                   </div>
                               )}
 
-                              <h4 className="vegg-title fw-bold">Fruits & Berries &nbsp;
-                                   <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
-                              </h4>
-                              <div className="foodprefer-item-list">
-                                   {CTYFOODITEMS[city].fruits_berries.map((fruit, index) => (
-                                        <span
-                                             className={`foodprefer-item-span ${isItemSelected('fruits_berries', fruit) ? "selected-item" : ""
-                                                  }`}
-                                             key={index}
-                                             onClick={() => handleSelection('fruits_berries', fruit)}
-                                        >
-                                             {fruit}
-                                        </span>
-                                   ))}
-                              </div>
-                              {validationErrors.fruits_berries && (
-                                   <p className="validation-error">Please select at least one fruit or berry.</p>
+                              {foodpreferenceData.fruits_berries && (
+                                   <div>
+                                        <h4 className="vegg-title fw-bold">
+                                             Fruits & Berries &nbsp;
+                                             <span className="fw-normal vegg-span">(Select at least any one from the given items)</span>
+                                        </h4>
+                                        <div className="foodprefer-item-list">
+                                             {foodpreferenceData.fruits_berries.map((fruit, index) => (
+                                                  <span
+                                                       className={`foodprefer-item-span ${selectedItems.fruits_berries.includes(fruit) ? "selected-item" : ""}`}
+                                                       key={index}
+                                                       onClick={() => handleSelection('fruits_berries', fruit)}
+                                                  >
+                                                       {fruit}
+                                                  </span>
+                                             ))}
+                                        </div>
+                                        {validationErrors.fruits_berries && (
+                                             <p className="validation-error">Please select at least one fruit or berry.</p>
+                                        )}
+                                   </div>
                               )}
 
-                              <h4 className="vegg-title fw-bold">Meat &nbsp;
-                                   <span className="fw-normal vegg-span">(Optional)</span>
-                              </h4>
-                              <div className="foodprefer-item-list">
-                                   {CTYFOODITEMS[city].meat.map((meat, index) => (
-                                        <span
-                                             className={`foodprefer-item-span ${isItemSelected('meat', meat) ? "selected-item" : ""
-                                                  }`}
-                                             key={index}
-                                             onClick={() => handleSelection('meat', meat)}
-                                        >
-                                             {meat}
-                                        </span>
-                                   ))}
-                              </div>
-
+                              {foodpreferenceData.meat && (
+                                   <div>
+                                        <h4 className="vegg-title fw-bold">
+                                             Meat &nbsp;
+                                             <span className="fw-normal vegg-span">(Optional)</span>
+                                        </h4>
+                                        <div className="foodprefer-item-list">
+                                             {foodpreferenceData.meat.map((meat, index) => (
+                                                  <span
+                                                       className={`foodprefer-item-span ${selectedItems.meat.includes(meat) ? "selected-item" : ""}`}
+                                                       key={index}
+                                                       onClick={() => handleSelection('meat', meat)}
+                                                  >
+                                                       {meat}
+                                                  </span>
+                                             ))}
+                                        </div>
+                                   </div>
+                              )}
                          </>
-                    ) : (
-                         <p>{address ? "City not found in food items list." : locationStatus}</p>
                     )}
                </div>
 
@@ -261,5 +260,6 @@ const FormFoodPreference = ({ handleNext }) => {
           </div>
      );
 };
+
 
 export default FormFoodPreference;

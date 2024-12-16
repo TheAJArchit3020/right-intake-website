@@ -21,8 +21,8 @@ const FormAboutSelf = ({ handleNext }) => {
     setFormData(prev => ({
       ...prev,
       aboutself: {
-        name,
-        contact: selectedCountryCode + contact,
+        fullName,
+        mobileNumber: selectedCountryCode + contact,
         email,
       },
     }));

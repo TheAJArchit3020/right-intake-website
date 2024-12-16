@@ -10,7 +10,7 @@ const FormNonvegPreference = ({ handleNext }) => {
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
-      weekdays: selectedOptions,
+      nonVegDays: selectedOptions,
     }));
   }, [selectedOptions, setFormData]);
 
@@ -21,10 +21,10 @@ const FormNonvegPreference = ({ handleNext }) => {
         ? prev.filter((day) => day !== option) // Remove if already selected
         : [...prev, option] // Add if not selected
     );
-    
+
   };
 
-  const WEEKS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   return (
     <div className='container'>
@@ -33,15 +33,14 @@ const FormNonvegPreference = ({ handleNext }) => {
           Which Days of the week you prefer to eat Non-Vegetarian Food
         </h4>
         <div className='grp-button d-flex flex-wrap align-items-center justify-content-center gap-4 mb-4'>
-          {WEEKS.map((week, index) => (
+          {DAYS.map((day, index) => (
             <div
-              className={`weekday-card ${
-                selectedOptions.includes(week) ? 'weekday-card-active' : ''
-              }`}
+              className={`weekday-card ${selectedOptions.includes(day) ? 'weekday-card-active' : ''
+                }`}
               key={index}
-              onClick={() => handleSelect(week)}
+              onClick={() => handleSelect(day)}
             >
-              <span>{week}</span>
+              <span>{day.slice(0, 3)}</span>
             </div>
           ))}
         </div>
