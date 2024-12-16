@@ -103,7 +103,7 @@ const FormBMI = ({ handleNext }) => {
  
                          <Col sm={12} md={7} className="bmi-ui-section2">
                              <div className="bmi-ui-content d-flex flex-column align-items-center justify-content-center gap-2 text-center">
-                                 <img src={bmiimage} alt="BMI illustration" width={50} />
+                                 <img src={bmiimage} alt="BMI illustration" width={80} height={80} />
                                  <span className='bmi-motivation fw-bold'>{bmiData?.additionalInfo?.motivationalText}</span>
                              </div>
                          </Col>

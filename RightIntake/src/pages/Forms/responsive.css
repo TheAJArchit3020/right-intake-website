@@ -9,7 +9,7 @@ input.field-input {
 }
 
 @media (min-width: 768px) {
-
+     
      .form-conatiner {
           margin: 3em;
      }
@@ -233,10 +233,16 @@ input.field-input {
 
 @media (max-width: 768px) {
 
+     button.veg-button,
+     button.nonveg-button{
+      width: 200px;
+     }
      /* landing page css */
 
      .form-conatiner {
           margin: 0em;
+          max-height: 450px;
+          overflow-y: auto;
      }
 
      .form-header,
@@ -298,14 +304,27 @@ input.field-input {
      /* gender page css  */
      .buttonContainergender {
           flex-direction: column;
-          gap: 1.5rem;
+          gap: 1rem;
           margin-top: 1rem;
      }
 
-     .diet-ui-container {
-          margin-bottom: 0 !important;
+     .genderbutton {
+          width: 100px;
+          height: 100px;
+     }
+     
+     .selectedgenderButton{
+          width: 100px;
+          height: 100px;
      }
 
+     .diet-ui-container {
+       margin-bottom: 0 !important;
+     }
+
+     .maletext{
+          margin-left: 25px;
+     }
      /* about-yourself css */
      label.about-yourself-label {
           font-size: 1rem;
@@ -458,12 +477,13 @@ input.field-input {
      }
 
      .body-insight-div {
-          height: calc(100vh - 20px) !important;
+          height: calc(100vh - 250px) !important;
           overflow-y: auto;
      }
 
      .bodyfat-ui-container h4 {
-          font-size: 1.375rem;
+          font-size: 1.275rem;
+          font-weight: bold;
      }
 
      .bodyfat-range-div {
@@ -471,9 +491,11 @@ input.field-input {
      }
 
      .bodyfatimage {
-          width: 220px;
+          width: 180px;
      }
-
+     .bodyfitness-range{
+          gap: 1rem;
+     }
      /* fitness level .. */
      .range-wrapper,
      .fitness-new-commer {
@@ -825,6 +847,15 @@ input.field-input {
      }
 
      /* occupation */
+
+     .mobile {
+          height: calc(100vh - 150px) !important;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+     }
+
      button.occupationbutton {
           width: 300px;
           border-radius: 8px;
@@ -842,7 +873,7 @@ input.field-input {
 
      .othercontainer {
           width: 300px;
-          height: 130px;
+          height: 80px;
           padding: 10px;
           background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
           margin-bottom: 30px;
@@ -850,7 +881,7 @@ input.field-input {
 
      .inputContainer {
           width: 280px;
-          height: 80px;
+          height: 35px;
           background-color: transparent;
           border-radius: 8px;
           font-size: 16px;
@@ -862,8 +893,7 @@ input.field-input {
       }
 
 }
-
-@media (min-width: 920px) {
+@media (min-width: 768px) and (max-width: 1024px){
 
      .agree-input {
           width: 12px !important;
@@ -873,8 +903,6 @@ input.field-input {
      .section1-border {
           width: 100% !important;
      }
-
-
 
      h5.overall-summary-content2-chart-heading {
           margin-left: 2rem !important;
@@ -957,8 +985,8 @@ input.field-input {
 
      /* occupation */
      .mobile {
-          height: calc(100vh - 200px) !important;
-          overflow: auto;
+          height: calc(100vh - 180px) !important;
+          overflow-y: auto;
           -webkit-overflow-scrolling: touch;
           scrollbar-width: none;
           -ms-overflow-style: none;
@@ -986,15 +1014,16 @@ input.field-input {
 
      .othercontainer {
           width: 300px;
-          height: 150px;
+          height: 80px;
           padding: 10px;
           background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
           border-radius: 8px;
      }
 
      .inputContainer {
+          padding: 10px;
           width: 280px;
-          height: 100px;
+          height: 35px;
           background-color: transparent;
           border-radius: 8px;
           color: #000;
@@ -1008,11 +1037,12 @@ input.field-input {
      /* height */
 
      .form input {
-          width: 200px;
+          width: 100px;
           height: 30px;
           background-color: #FDF4F4;
           border: 1px solid #F59090;
           border-radius: 5px;
+          color: #000;
      }
 
      .form1 input {
@@ -1021,6 +1051,7 @@ input.field-input {
           background-color: #FDF4F4;
           border: 1px solid #F59090;
           border-radius: 5px;
+          
      }
 
 
@@ -1125,6 +1156,33 @@ input.field-input {
      .bmi-submit-buttion {
           margin-top: 10rem;
           margin-bottom: 2rem;
+     }
+
+      .bodyfat-ui-container {
+          height: calc(100vh - 180px) !important;
+          overflow-y: auto;
+     }
+
+     .bodyfat-ui-container h4 {
+          font-size: 1.275rem;
+          font-weight: bold;
+     }
+
+     .bodyfitness-range{
+       display: flex;
+       flex-direction: column;
+     }
+     .bodyfat-range-div {
+          width: 30%;
+     }
+     
+.bodyfitness-range{
+     gap: 1rem;
+}
+
+
+     .bodyfatimage {
+          width: 190px;
      }
 }
 

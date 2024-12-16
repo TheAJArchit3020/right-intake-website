@@ -44,13 +44,11 @@ const FormBodyFat = ({ handleNext }) => {
                     <h4 className="text-center fw-bold mb-4">
                          What is your current body fat?
                     </h4>
-                    <div className="bodyfitness-range d-flex flex-wrap align-items-center justify-content-center gap-3">
-                         <div className="d-flex justify-content-center">
+                    <div className="bodyfitness-range d-flex flex-wrap align-items-center justify-content-center gap-6">
+                         <div className="bodyimg-container d-flex justify-content-center">
                               <img
                                    src={getImageForRange(bodyFatLevel)}
                                    alt="fitness"
-                                   width={280}
-                                   height={400}
                                    className="bodyfatimage"
                               />
                          </div>
@@ -114,7 +112,7 @@ const FormBodyFat = ({ handleNext }) => {
                               </div>
                          </div>
                     </div>
-                    <div className="mobile-button d-flex align-items-center mt-3 ">
+                    <div className="mobile-button d-flex align-items-center mt-3 submitbutton">
                          <NavigationButton handleNext={handleNext} />
                     </div>
                </div>

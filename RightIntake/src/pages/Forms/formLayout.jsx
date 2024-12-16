@@ -60,7 +60,7 @@ const FormLayout = () => {
     <FormOccupation handleNext={handleNext} />,
     <FormHeight handleNext={handleNext} />,
     <FormWeight handleNext={handleNext} />,
-    <FormBMI handleNext={handleNext} />,
+    // <FormBMI handleNext={handleNext} />,
     <FormLevelFitness handleNext={handleNext} />,
     <FormDietPreference handleNext={handleNext} />,
 
@@ -76,7 +76,7 @@ const FormLayout = () => {
       : []),
 
     <FormBodyFat handleNext={handleNext} />,
-    <FormBodyfatInsight handleNext={handleNext} />,
+    // <FormBodyfatInsight handleNext={handleNext} />,
     <FormTrain handleNext={handleNext} />,
     <FormHealthConditions handleNext={handleNext} />,
     <FormFoodPreference handleNext={handleNext} />,

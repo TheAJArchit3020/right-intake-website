@@ -80,7 +80,7 @@ const FormLanding = ({ showprogresshandler }) => {
                     <p>according to your preferences</p>
                </div>
                <div className='age-input-group d-flex justify-content-center gap-4 align-items-center fw-bold mb-4'>
-                    <label htmlFor="age" className='fw-bold mb-0'>YOUR AGE</label>
+                    <label htmlFor="age" className='fw-bold mb-0'>YOUR AGE:</label>
                     <input className='age-input'
                          type="number"
                          name="age"
@@ -109,10 +109,10 @@ const FormLanding = ({ showprogresshandler }) => {
                          {error}
                     </div>
                )}
-               <div className='mobile-button d-flex' >
-                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go</button>
+               
+               <div className='mobile-button d-flex align-items-center'style={{ marginBottom: '20px' }}>
+                    <button className='letsGoButton' onClick={handleSubmit}>Lets Go...</button>
                </div>
-
           </div>
      )
 }

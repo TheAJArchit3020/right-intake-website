@@ -6,6 +6,7 @@ import FormLayout from '../../pages/Forms/formLayout';
 import FormOverallSummary from '../../pages/Forms/formOverallSummary';
 import AboutUs from "../../pages/AboutUs/aboutus";
 import ContactUs from "../../pages/ContactUs/ContactUs";
+import Loading from "../../pages/Loading";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
 
 const RoutesComponent = () => {
@@ -13,6 +14,7 @@ const RoutesComponent = () => {
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<Layout> <HomePage />  </Layout>} />
+        <Route path="/anim" element={<Loading/>} />
         <Route path="/basicform" element={<FormLayout />} />
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />

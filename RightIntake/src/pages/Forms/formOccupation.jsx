@@ -23,7 +23,7 @@ const FormOccupation = ({ handleNext }) => {
      return (
           <>
            <div className='mobile'>
-               <div className='d-flex flex-column align-items-center justify-content-center gap-3 mb-5'>                  
+               <div className='d-flex flex-column align-items-center justify-content-center gap-2 mb-5'>                  
                     <h4 className='text-center fw-bold'>What is Your Occupation?</h4>
                     <button type="button" className={getStyle('Student')} onClick={() => handleSelect('Student')}>Student</button>
                     <button type="button" className={getStyle('Home-maker')} onClick={() => handleSelect('Home-maker')}>Home maker</button>
@@ -39,11 +39,13 @@ const FormOccupation = ({ handleNext }) => {
                               placeholder="Enter your text"
                          />
                     </div>
+                    </div>      
                     </div>
-                    </div>
-               <div className='mobile-button d-flex align-items-center'>
+
+                    <div className='mobile-button d-flex align-items-center submitbutton'>
                     <NavigationButton handleNext={handleNext} />
                </div>
+        
           </>
      )
 }

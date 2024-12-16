@@ -41,7 +41,6 @@ const ContactUs = () => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                placeholder="Enter your full name"
                 required
               />
 
@@ -52,7 +51,6 @@ const ContactUs = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email address"
                 required
               />
 
@@ -69,7 +67,6 @@ const ContactUs = () => {
                   name="mobileNumber"
                   value={formData.mobileNumber}
                   onChange={handleChange}
-                  placeholder="Enter your mobile number"
                   required
                 />
               </div>
@@ -80,7 +77,6 @@ const ContactUs = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Have questions or feedback? Let us know!"
                 required
               ></textarea>
 

@@ -96,7 +96,7 @@ const FormHealthConditions = ({ handleNext }) => {
                 </div>
             </div>
 
-            <div className="mobile-button d-flex align-items-center">
+            <div className="mobile-button d-flex align-items-center submitbutton">
                 <NavigationButton handleNext={handleNext} />
             </div>
         </div>

@@ -66,7 +66,6 @@ button.letsGoButton {
      padding: 10px 20px;
      background-color: #000;
      color: #ffffff;
-
 }
 
 .age-input {
@@ -114,6 +113,10 @@ p.para2 {
 
 
 /* Default styles for options */
+
+.submitbutton{
+     height: 60px;
+}
 .para1,
 .para2 {
      padding: 1px 20px;
@@ -160,7 +163,7 @@ button.selectedButton {
      border: none;
      outline: none;
      color: #000000;
-     width: 250px;
+     width: 300px;
      /* changed to 250px before it was 200px */
      border-radius: 8px;
      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
@@ -173,15 +176,7 @@ button.selectedButton {
      text-align: left;
 }
 
-/* occupation */
-button.occupationbutton {
-     /* width: 250px; */
-     border-radius: 8px;
-     font-weight: bold;
-     text-align: left;
-     background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
-     box-shadow: none;
-}
+
 
 button.veg-button,
 button.nonveg-button {
@@ -227,18 +222,18 @@ canvas {
 }
 
 span.bmi-status1 {
-     padding-left: 0em;
+     padding-left: 3em;
      font-size: 0.8rem;
 }
 
 span.bmi-status2 {
-     padding-left: 2em;
+     padding-right: 3em;
      font-size: 0.8rem;
 }
 
 span.bmi-title,
 span.bmi-value {
-     font-size: 1.5rem;
+     font-size: 1.6rem;
 }
 
 .bmi-ui-content {
@@ -247,13 +242,12 @@ span.bmi-value {
      border-bottom-left-radius: 20px;
      padding: 3rem;
      height: 350px;
-
 }
 
 .bmi-category-name {
      margin-top: 1em;
      text-transform: uppercase;
-     font-size: 1rem;
+     font-size: 1.6rem;
 }
 
 span.bmi-motivation {
@@ -271,7 +265,7 @@ span.bmi-value {
 
 .bmi-content {
      position: absolute;
-     top: 21em;
+     margin-top: 70px;
 }
 
 .bmi-content-para,
@@ -299,8 +293,6 @@ span.bmi-content-para2 {
 
 .range-with-lines {
      height: 25px;
-     border-bottom: 1px solid #eeeeee;
-
 }
 
 .fitness-newcommer-ui {
@@ -403,8 +395,16 @@ span.equipment-card-para {
      justify-content: center;
 }
 
+.bodyfitness-range{
+     gap: 20rem;
+}
+
 .bodyfatimage {
      width: 300px;
+}
+
+.bodyfat-range-div {
+     width: 20%;
 }
 
 .bubble {
@@ -831,16 +831,26 @@ label {
 
 /* occupation */
 .othercontainer {
-     width: 250px;
-     height: 100px;
+     width: 300px;
+     height: 80px;
      padding: 10px;
      background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
      border-radius: 8px;
 }
 
+/* occupation */
+button.occupationbutton {
+     width: 300px;
+     border-radius: 8px;
+     font-weight: bold;
+     text-align: left;
+     background: linear-gradient(90deg, rgba(159, 235, 159, 60%) 0%, rgba(215, 249, 215, 60%) 100%);
+     box-shadow: none;
+     color: #000;
+}
+
 button.selectedButton {
-     /* width: 250px; */
-     padding: 10px;
+     width: 300px; 
      background: linear-gradient(to right, #FF9191 0%, #FFD0D0 100%);
      text-align: left;
      border-radius: 8px;
@@ -854,13 +864,14 @@ button.selectedButton {
 }
 
 .inputContainer {
-     width: 230px;
-     height: 50px;
+     width: 280px;
+     height: 35px;
      display: flex;
      background-color: transparent;
      border-radius: 8px;
      color: #000;
 }
+
 
 /* health conditons */
 .healthConditionConatiner {
@@ -929,6 +940,20 @@ button.selectedButton {
 /* .navbutton{
      border: 5px solid #000;
 } */
+
+/* height */
+.form input{
+  width: 180px;
+  height: 40px;
+  color: #000;
+}
+
+/* weight */
+
+.form1 input{
+     height: 40px;   
+      color: #000;
+}
 
 /* about self page */
 

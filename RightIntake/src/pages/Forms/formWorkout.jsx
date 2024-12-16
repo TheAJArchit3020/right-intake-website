@@ -8,7 +8,6 @@ const FormWorkout = ({ handleNext }) => {
      const [selectedOption, setSelectedOption] = useState('');
      const { setFormData } = useContext(DataContext);
 
-
      // Select handler for week-day
      const handleSelect = (option) => {
           console.log(option)
