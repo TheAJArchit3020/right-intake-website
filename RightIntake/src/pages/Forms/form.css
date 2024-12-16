@@ -738,7 +738,7 @@ input[type="checkbox"]:checked+.custom-checkbox::before {
 /* form */
 
 .max-w-400 {
-     max-width: 400px;
+     max-width: 400px;  
 }
 
 label {
@@ -749,6 +749,7 @@ label {
 }
 
 .form-control {
+     height: 40px;
      border: 2px #000;
      border-radius: 0.25rem;
      padding: 0.375rem 0.75rem;
@@ -913,8 +914,6 @@ label {
 } */
 
 /* about self page */
-
-
 .summary-part1 {
      justify-content: center;
      align-items: center;
