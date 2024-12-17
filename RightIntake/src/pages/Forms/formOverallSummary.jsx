@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   dumbels,
   bodyfat1,
@@ -24,32 +24,73 @@ import {
 } from "../../components/Images";
 import Footer from "../../components/footerComponent/footer";
 import NavbarComponent from "../../components/navbarComponent/navbar";
-import { saveUser } from "../../components/apis";
+import { saveUser, generateInsights } from "../../components/apis";
 import axios from "axios";
 import DataContext from "../../components/Context/DataContext";
+import Loading from "../LoadingAnimation/Loading";
+
 const FormOverallSummary = ({ handleNext }) => {
   const [isChecked, setIsChecked] = useState(true);
   const [STATS, setSTATS] = useState(null);
   const [loading, setLoading] = useState(true);
   const { formData } = useContext(DataContext);
+  //   const [formData, setFormData] = useState({
+  //     age: "25",
+  //     city: "Pimpri-Chinchwad",
+  //     state: "Maharashtra",
+  //     country: "India",
+  //     gender: "Male",
+  //     bodyFatPercentage: 30,
+  //     occupation: "CEO’s/Business owners",
+  //     height: "5feet'8inch'",
+  //     weight: "80Kg",
+  //     targetWeight: "70Kg",
+  //     dietType: "Non-Veg",
+  //     nonVegDays: ["Saturday", "Sunday"],
+  //     primaryGoal: "Weight Loss",
+  //     workoutPreference: "gym",
+  //     weeklyTrainingDays: "2-3 days in a week 🔥 ",
+  //     healthcondition: ["None"],
+  //     allergies: "",
+  //     foodPreference: {
+  //       veggies: ["Cauliflower", "Bhindi", "Brinjal", "Carrot", "Spinach"],
+  //       carbs: ["Poha", "Bhakri", "Rice", "Puran Poli", "Chapati"],
+  //       fruits_berries: ["Mango", "Banana", "Papaya", "Guava", "Chikoo"],
+  //       meat: ["Mutton", "Fish", "Chicken", "Prawns"],
+  //     },
+  //     meal: ["Apple"],
+  //     sleephours: "4-5 hours 🦇",
+  //     waterdrink: "2-3 litres a day 🥛🥛🥛",
+  //     fullName: "Archit Janugade",
+  //     email: "archit.kineticscapestudios@gmail.com",
+  //     mobileNumber: "+919561930878",
+  //   });
   const [error, setError] = useState(null);
   const handleCheckboxChange = () => {
     setIsChecked((prev) => !prev);
   };
+  const fetchExecuted = useRef(false);
   useEffect(() => {
-    fetchStats();
+    if (!fetchExecuted.current) {
+      console.log(formData);
+      fetchStats();
+      fetchExecuted.current = true;
+    }
   }, []);
   const fetchStats = async () => {
     console.log("the log");
     console.log(formData);
     try {
       const response = await axios.post(saveUser, formData);
-      setSTATS(response.data); // Assuming response.data contains the stats
+      console.log(response.data);
+      const insightsResponse = await axios.post(generateInsights, {
+        userId: response.data.userId,
+      });
+      setSTATS(insightsResponse.data); // Assuming response.data contains the stats
       setLoading(false); // Set loading to false after data is fetched
     } catch (err) {
       console.error("Error fetching stats:", err);
       setError("Failed to fetch stats. Please try again.");
-      setLoading(false);
     }
   };
 
@@ -94,13 +135,12 @@ const FormOverallSummary = ({ handleNext }) => {
   const getPercentageForCircle = (value) => {
     return parseInt(value.replace("%", ""), 10);
   };
-  if (!STATS) {
-    return <div>No data available.</div>;
+
+  if (loading) {
+    return <Loading />;
   }
   return (
     <>
-      <NavbarComponent />
-
       <div className="d-grid justify-content-center">
         <div className="overall-summary-content1 d-flex align-items-center justify-content-center">
           <div className="d-flex flex-column">
@@ -310,7 +350,7 @@ const FormOverallSummary = ({ handleNext }) => {
               <div className="summary-maintain-card">
                 <h4>Daily water intake</h4>
                 <div className="summary-calories-group">
-                  <p>{STATS.personalizedInsights.maintenanceCalories}</p>
+                  <p>{STATS.personalizedInsights.dailyWaterIntake}</p>
                   <div className="summary-waterglass-drp-img d-flex gap-2">
                     <img src={waterglassicon} alt="waterglassicon" width={40} />
                     <img src={waterglassicon} alt="waterglassicon" width={40} />
@@ -325,25 +365,20 @@ const FormOverallSummary = ({ handleNext }) => {
 
             <div className="summary-maintain-div2">
               <p className="summary-maintain-p">
-                If you are focusing on Goal Selected remember these Points
+                If you are focusing on {STATS.goalFocus?.selectedGoal} remember
+                these Points
               </p>
               <div className="summary-maintain-grpinfo-div">
-                <div className="summary-maintain-grp-info">
-                  <img src={dumbels} alt="dumbels" width={25} />
-                  <p>High-Protein Diet</p>
-                </div>
-                <div className="summary-maintain-grp-info">
-                  <img src={dumbels} alt="dumbels" width={25} />
-                  <p>Caloric Deficit</p>
-                </div>
-                <div className="summary-maintain-grp-info">
-                  <img src={dumbels} alt="dumbels" width={25} />
-                  <p>Focus more on cardio Workouts</p>
-                </div>
-                <div className="summary-maintain-grp-info">
-                  <img src={dumbels} alt="dumbels" width={25} />
-                  <p>Drink plenty of water</p>
-                </div>
+                {STATS.goalFocus?.keyPoints?.length > 0 ? (
+                  STATS.goalFocus.keyPoints.map((keyPoint, index) => (
+                    <div className="summary-maintain-grp-info" key={index}>
+                      <img src={dumbels} alt="dumbels" width={25} />
+                      <p>{keyPoint}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p>No key points available.</p>
+                )}
               </div>
             </div>
           </div>
