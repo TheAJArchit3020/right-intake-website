@@ -6,12 +6,14 @@ import { Link } from "react-router";
 import DataContext from "../../components/Context/DataContext";
 import { getfoodpreferences } from "../../components/apis";
 import axios from "axios";
+import Loading from "../LoadingAnimation/Loading";
 const FormLanding = ({ showprogresshandler }) => {
   const [age, setAge] = useState("");
   const [agree, setAgree] = useState(false);
   const [agree2, setAgree2] = useState(false);
   const [error, setError] = useState("");
   const { setFormData } = useContext(DataContext);
+  const [isLoading, setisLoading] = useState(false);
   const [locationStatus, setLocationStatus] = useState(
     "Awaiting permission..."
   );
@@ -123,6 +125,7 @@ const FormLanding = ({ showprogresshandler }) => {
           console.log({ mappedData });
           setfoodPreferenceData(mappedData);
           console.log("FoodPreference Data is set: " + foodPreferenceData);
+          setisLoading(false);
         });
     } catch (error) {
       alert(`${error}`);
@@ -147,6 +150,7 @@ const FormLanding = ({ showprogresshandler }) => {
       setError("You must agree to the terms and conditions.");
       return;
     }
+    setisLoading(true);
     await getFoodPreferenceHandler(
       address.city,
       address.state,
@@ -187,6 +191,11 @@ const FormLanding = ({ showprogresshandler }) => {
     const isChecked = e.target.checked;
     setAgree2(isChecked);
   };
+  if (isLoading) {
+    return (
+      <Loading message="Please wait a sec we are setting up some cool things."></Loading>
+    );
+  }
 
   return (
     <div className="form-conatiner">
