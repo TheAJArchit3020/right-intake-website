@@ -30,6 +30,7 @@ const FormLanding = ({ showprogresshandler }) => {
     console.log("requesting Location");
     requestLocation();
   }, []);
+
   const requestLocation = () => {
     if ("geolocation" in navigator) {
       console.log("Geolocation in navigator is there");
@@ -141,11 +142,6 @@ const FormLanding = ({ showprogresshandler }) => {
   }, [age]);
 
   const handleSubmit = async () => {
-    // Validation
-    if (!age || isNaN(age)) {
-      setError("Please enter a valid age.");
-      return;
-    }
     if (!agree) {
       setError("You must agree to the terms and conditions.");
       return;
@@ -197,6 +193,9 @@ const FormLanding = ({ showprogresshandler }) => {
     );
   }
 
+   const getButtonStyle=(isActive)=>{
+      return isActive ? 'letsGoButton' : 'deactivatedbutton';
+   };
   return (
     <div className="form-conatiner">
       <div className="form-header mt-0 mb-4">
@@ -245,7 +244,7 @@ const FormLanding = ({ showprogresshandler }) => {
       </div>
       {error && <div className="text-danger mb-3 text-center">{error}</div>}
       <div className="mobile-button d-flex">
-        <button className="letsGoButton" onClick={handleSubmit}>
+        <button disabled={!age} className={getButtonStyle(age)} onClick={handleSubmit}>
           Lets Go
         </button>
       </div>

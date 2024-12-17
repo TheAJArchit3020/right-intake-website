@@ -7,7 +7,7 @@ const FormWeight = ({ handleNext }) => {
   const [currentWeight, setCurrentWeight] = useState("");
   const [targetWeight, setTargetWeight] = useState("");
   const { setFormData } = useContext(DataContext);
-
+  const isFormValid = currentWeight && targetWeight;
   // FormData handler, will update the form data with weight values
   useEffect(() => {
     setFormData((prev) => ({
@@ -76,7 +76,7 @@ const FormWeight = ({ handleNext }) => {
           />
         </div>
         <div className="mobile-button d-flex align-items-center">
-          <NavigationButton handleNext={handleNext} />
+          <NavigationButton isActive={isFormValid} handleNext={handleNext} />
         </div>
       </div>
     </div>

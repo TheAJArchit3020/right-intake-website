@@ -29,6 +29,12 @@ const FormAboutSelf = ({ handleNext }) => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0; // Return true if no errors
   };
+
+  const isFormValid = 
+  name.trim() !== '' &&
+  /\S+@\S+\.\S+/.test(email) &&
+  /^\d{10}$/.test(contact);
+
   // Set form data when any value is updated
   const updateFormData = () => {
     setFormData((prev) => ({
@@ -146,7 +152,7 @@ const FormAboutSelf = ({ handleNext }) => {
       </div>
 
       <div className="mobile-button d-flex align-items-center">
-        <NavigationButton handleNext={handleSubmit} />
+        <NavigationButton isActive={isFormValid} handleNext={handleSubmit} />
       </div>
     </>
   );

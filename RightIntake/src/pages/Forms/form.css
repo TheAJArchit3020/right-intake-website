@@ -68,6 +68,18 @@ button.letsGoButton {
   color: #ffffff;
 }
 
+button.deactivatedbutton{
+     border-radius: 10px;
+     text-align: center;
+     outline: none;
+     border: none;
+     width: 150px;
+     align-self: center;
+     font-weight: bold;
+     padding: 10px 20px;
+     background-color: #B6B6B6;
+     color: #ffffff;
+}
 .age-input {
   text-align: center;
   box-shadow: inset 0px -8px 4px 0px rgba(230, 230, 230, 53%),

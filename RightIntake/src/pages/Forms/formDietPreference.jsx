@@ -54,5 +54,5 @@ const FormDietPreference = ({ handleNext }) => {
     </div>
   );
 };
-``;
+
 export default FormDietPreference;

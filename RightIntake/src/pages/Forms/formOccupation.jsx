@@ -43,7 +43,7 @@ const FormOccupation = ({ handleNext }) => {
                     </div>
 
                     <div className='mobile-button d-flex align-items-center submitbutton'>
-                    <NavigationButton handleNext={handleNext} />
+                    <NavigationButton isActive={selectedOption} handleNext={handleNext} />
                </div>
         
           </>

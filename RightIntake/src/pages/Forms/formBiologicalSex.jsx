@@ -66,7 +66,7 @@ const FormBioLoigicalSex = ({ handleNext }) => {
                </div>
 
                <div className='mobile-button d-flex align-items-center'>
-                    <NavigationButton handleNext={handleNext} />
+                    <NavigationButton isActive={selectedOption} handleNext={handleNext} />
                </div>
 
           </>

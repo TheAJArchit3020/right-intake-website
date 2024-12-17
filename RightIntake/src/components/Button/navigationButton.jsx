@@ -2,9 +2,12 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { rightarrow } from '../Images'
 
-const NavigationButton = ({ handleNext }) => {
+const NavigationButton = ({ handleNext,isActive }) => {
+     const getButtonStyle=(isActive)=>{
+          return isActive ? 'letsGoButton' : 'deactivatedbutton';
+       };
      return (
-          <button className='btn-continue d-flex align-items-center justify-content-center text-white gap-3 fw-bold' onClick={() => handleNext()}>
+          <button disabled={!isActive} className={getButtonStyle(isActive)} onClick={() => handleNext()}>
                <span>Continue</span>
                <img src={rightarrow} alt="rightarrow" width={20} />
           </button>

@@ -7,6 +7,7 @@ const FormHealthConditions = ({ handleNext }) => {
     const [allergies, setAllergies] = useState('');
     const { setFormData } = useContext(DataContext);
 
+    const isFormValid = selectedHealthConditons.length > 0 && allergies !== '';
     const healthConditionOptions = [
         { id: 1, label: 'None' },
         { id: 2, label: 'Diabetics' },
@@ -18,7 +19,7 @@ const FormHealthConditions = ({ handleNext }) => {
         { id: 8, label: 'Anger issues' },
         { id: 9, label: 'Thyroid' },
     ];
-
+  
     const handleSelection = (label) => {
         if (label === 'None') {
             setSelectedHealthConditons(['None']); // If "None" is selected, clear all other selections
@@ -66,7 +67,6 @@ const FormHealthConditions = ({ handleNext }) => {
         <div className='health-ui-container'>
             <div className="health-ui-wrapper d-flex flex-column align-items-center justify-content-center gap-3">
                 <h4 className="text-center fw-bold">Any Known Health Conditions and Food Allergy?</h4>
-
                 <div className="healthConditionConatiner">
                     <h4 className="headerText">Select any following health condition</h4>
 
@@ -88,6 +88,7 @@ const FormHealthConditions = ({ handleNext }) => {
 
                 <div className="allergyConatiner">
                     <h4 className="headerText">Do you have any allergies or intolerances to specific foods we should be aware of?</h4>
+                    <h6 className="text-left">Write "NONE" if No Allergies</h6>
                     <input
                         className="allergyInput"
                         value={allergies}
@@ -97,7 +98,7 @@ const FormHealthConditions = ({ handleNext }) => {
             </div>
 
             <div className="mobile-button d-flex align-items-center submitbutton">
-                <NavigationButton handleNext={handleNext} />
+                <NavigationButton isActive={isFormValid} handleNext={handleNext} />
             </div>
         </div>
     );

@@ -10,6 +10,7 @@ const FormCheatmeal = ({ handleNext }) => {
   const [validationError, setValidationError] = useState(false);
   const { setFormData } = useContext(DataContext);
 
+  const isFormValid = selectedItems.meal.length > 0 && selectedItems.meal.length <= 5;
   useEffect(() => {
     // Fetch cheat meal data from backend
     const fetchCheatMeals = async () => {
@@ -93,11 +94,13 @@ const FormCheatmeal = ({ handleNext }) => {
 
       <div className="mobile-button d-flex align-items-center mt-4">
         <NavigationButton
-          handleNext={() => {
-            if (validateSelections()) {
-              handleNext();
-            }
-          }}
+          // handleNext={() => {
+          //   if (validateSelections()) {
+          //     handleNext();
+          //   }
+          // }}
+          isActive={isFormValid}
+          handleNext={handleNext}
         />
       </div>
     </div>

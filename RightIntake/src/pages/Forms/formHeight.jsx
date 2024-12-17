@@ -8,7 +8,7 @@ const FormHeight = ({ handleNext }) => {
   const [feetValue, setFeetValue] = useState("");
   const [inchValue, setInchValue] = useState("");
   const { setFormData } = useContext(DataContext);
-
+  const isFormValid = heightValue || feetValue || inchValue;
   // FormData handler, will update the form data with height values
   useEffect(() => {
     setFormData((prev) => ({
@@ -89,7 +89,7 @@ const FormHeight = ({ handleNext }) => {
           )}
         </div>
         <div className="mobile-button d-flex align-items-center">
-          <NavigationButton handleNext={handleNext} />
+          <NavigationButton isActive={isFormValid} handleNext={handleNext} />
         </div>
       </div>
     </div>

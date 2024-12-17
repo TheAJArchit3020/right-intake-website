@@ -123,7 +123,7 @@ const FormBodyFat = ({ handleNext }) => {
           </div>
         </div>
         <div className="mobile-button d-flex align-items-center mt-3 submitbutton">
-          <NavigationButton handleNext={handleNext} />
+          <NavigationButton isActive={true} handleNext={handleNext} />
         </div>
       </div>
     </>
