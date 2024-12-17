@@ -28,12 +28,14 @@ import { saveUser, generateInsights } from "../../components/apis";
 import axios from "axios";
 import DataContext from "../../components/Context/DataContext";
 import Loading from "../LoadingAnimation/Loading";
+import './overallsummary.css';
 
 const FormOverallSummary = ({ handleNext }) => {
   const [isChecked, setIsChecked] = useState(true);
   const [STATS, setSTATS] = useState(null);
   const [loading, setLoading] = useState(true);
   const { formData } = useContext(DataContext);
+  const [currentTime,setTimer] = useState('3hr:59min:59sec');
   //   const [formData, setFormData] = useState({
   //     age: "25",
   //     city: "Pimpri-Chinchwad",
@@ -70,13 +72,49 @@ const FormOverallSummary = ({ handleNext }) => {
     setIsChecked((prev) => !prev);
   };
   const fetchExecuted = useRef(false);
+
+
+  const startTimer = () => {
+    let hours = 3;
+    let minutes = 59;
+    let seconds = 59;
+
+    const updateTimer = () => {
+      if (seconds > 0) {
+        seconds--;
+      } else if (minutes > 0) {
+        seconds = 59;
+        minutes--;
+      } else if (hours > 0) {
+        minutes = 59;
+        hours--;
+      }
+
+      const formattedTime = `${hours}hr:${minutes}min:${seconds}sec`;
+      setTimer(formattedTime);
+    };
+
+    // Set interval to decrease time every second
+    const intervalId = setInterval(() => {
+      updateTimer();
+    }, 1000);
+
+    // Cleanup interval when the component is unmounted or time is up
+    return intervalId;
+  };
+  
   useEffect(() => {
     if (!fetchExecuted.current) {
       console.log(formData);
       fetchStats();
       fetchExecuted.current = true;
     }
+
+    const intervalId = startTimer();
+    return () => clearInterval(intervalId);
+
   }, []);
+
   const fetchStats = async () => {
     console.log("the log");
     console.log(formData);
@@ -132,6 +170,7 @@ const FormOverallSummary = ({ handleNext }) => {
     return "Below 6%";
   };
 
+
   const getPercentageForCircle = (value) => {
     return parseInt(value.replace("%", ""), 10);
   };
@@ -154,7 +193,7 @@ const FormOverallSummary = ({ handleNext }) => {
 
             <h3 className="fw-bold text-center">Now</h3>
           </div>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column justify-content-center">
             <img
               src={transitionarrow}
               alt="transitionarrow"
@@ -180,6 +219,7 @@ const FormOverallSummary = ({ handleNext }) => {
         </div>
 
         <div className="overall-summary-content2">
+          <div className="stats">
           <div className="overall-summary-content2-grp d-flex flex-column">
             <h5 className="overall-summary-content2-grp-heading1 fw-bold">
               Body Fat
@@ -192,7 +232,7 @@ const FormOverallSummary = ({ handleNext }) => {
             </p>
           </div>
           <div className="overall-summary-content2-grp d-flex flex-column">
-            <h5 className="overall-summary-content2-grp-heading2 fw-bold">
+            <h5 className="overall-summary-content2-grp-heading1 fw-bold w-5">
               Body Fat
             </h5>
             <p className="overall-summary-content2-grp-para2">
@@ -203,9 +243,9 @@ const FormOverallSummary = ({ handleNext }) => {
             </p>
           </div>
         </div>
-
+        </div>
         <div className="overall-summary-content2 d-flex mt-4">
-          <div className="overall-summary-content2-chart-div d-flex flex-column">
+          <div className="overall-summary-content2-chart-div d-flex flex-column justify-content-center align-items-center me-10">
             <h5 className="overall-summary-content2-chart-heading fw-bold">
               Muscle Mass
             </h5>
@@ -261,7 +301,7 @@ const FormOverallSummary = ({ handleNext }) => {
               </span>
             </div>
           </div>
-          <div className="overall-summary-content2-chart-div d-flex flex-column">
+          <div className="overall-summary-content2-chart-div d-flex flex-column justify-content-center align-items-center">
             <h5 className="overall-summary-content2-chart-heading2 fw-bold">
               Muscle Mass
             </h5>
@@ -320,7 +360,7 @@ const FormOverallSummary = ({ handleNext }) => {
         </div>
       </div>
       <div className="section-notes">
-        <p>
+        <p className="description-text">
           *The image shown is for representation purposes only and may vary
           based on individual differences.
         </p>
@@ -386,11 +426,11 @@ const FormOverallSummary = ({ handleNext }) => {
           {/* mobile end */}
 
           <div className="summary-desktop-view">
-            <div className=" d-flex justify-content-center gap-5 p-5">
-              <div className="maintain-div">
+            <div className=" d-flex justify-content-center p-5">
+              <div className="maintain-div" style={{ marginLeft: "180px" }}>
                 <div className="maintain-card">
                   <h4>Maintenance calories</h4>
-                  <div className="calories-group d-flex  mt-5">
+                  <div className="calories-group d-flex mt-5">
                     <p>{STATS.personalizedInsights.maintenanceCalories}</p>
                     <img src={caloriesicon} alt="caloriesicon" width={50} />
                   </div>
@@ -478,15 +518,15 @@ const FormOverallSummary = ({ handleNext }) => {
                 className="custom-checkbox"
               ></label>
               <div>
-                <p className="fw-bold">One Month Plan</p>
+                <p className="fw-bold ">One Month Plan</p>
                 <p>Rs.99/-</p>
               </div>
             </div>
             <p>Rs.3.3 Per Day </p>
           </div>
           <div className="summary-offer-div">
-            <h4>Offer ends in</h4>
-            <h5>3hr:59min:59sec</h5>
+            <h5>Offer ends in</h5>
+            <h1>{currentTime}</h1>
           </div>
         </div>
         <div className="d-flex align-items-center justify-content-center">
@@ -508,7 +548,7 @@ const FormOverallSummary = ({ handleNext }) => {
           </p>
           <div className="desktop-workout-plan-paynow-div d-flex align-items-center justify-content-center">
             <div className="plan-div d-flex align-items-center">
-              <div className="d-flex align-items-center gap-4">
+              <div className="d-flex align-items-center ">
                 <input
                   type="checkbox"
                   id="custom-checkbox"
@@ -519,7 +559,7 @@ const FormOverallSummary = ({ handleNext }) => {
                   htmlFor="custom-checkbox"
                   className="custom-checkbox"
                 ></label>
-                <div>
+                <div className="ms-3">
                   <p className="fw-bold">One Month Plan</p>
                   <span>Rs.99/-</span>
                 </div>
@@ -528,7 +568,7 @@ const FormOverallSummary = ({ handleNext }) => {
             </div>
             <div className="offer-div">
               <h4>Offer ends in</h4>
-              <h5>3hr:59min:59sec</h5>
+              <h3>{currentTime}</h3>
             </div>
           </div>
           <div className="d-flex align-items-center justify-content-center">
