@@ -4,8 +4,6 @@ import NavbarComponent from '../components/navbarComponent/navbar'
 
 const Layout = ({ children }) => {
 
-
-
      return (
           <>
                {/* Navbar */}

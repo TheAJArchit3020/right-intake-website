@@ -3,8 +3,7 @@ import "./home.css"
 import { aifitness, analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatmeal2, cheatmeal3, diet, dietitems, dumbels, gymworkout, intakenavigation, playstoreimage, proteinintakes, realintakegrp, realintakenut, rightintakemobileimage, rightintakemobilemeals, workoutplan } from '../../components/Images'
 import { Link } from 'react-router'
 import { Button } from 'react-bootstrap'
-
-
+import { fireemoji } from "../../components/Images";
 
 const HomePage = () => {
 
@@ -33,8 +32,9 @@ const HomePage = () => {
                                         tracking, and workout routines for achieving health goals.
                                    </p>
                                    <Link to={'/basicform'}>
-                                        <Button type="button" className="btn fw-bold w-75 px-2 fs-5">
-                                             Get your personalised plan now &#128293;
+                                        <Button type="button" className="btn fw-bold w-80 px-2 fs-5 text-black">
+                                             Get your personalised plan now 
+                                             <img src={fireemoji} className='fire-emojimobile'/>
                                         </Button>
                                    </Link>
                               </div>
@@ -54,7 +54,8 @@ const HomePage = () => {
                                         tracking, and workout routines for achieving health goals.
                                    </p>
                                    <button type="button" className="btn fw-bold w-100 px-2 fs-4">
-                                        Get your personalised plan now &#128293;
+                                        Get your personalised plan now  
+                                        <img src={fireemoji} className='fire-emoji'/>
                                    </button>
                               </div>
                          </div>
@@ -164,8 +165,8 @@ const HomePage = () => {
                {/* Section 5 */}
                <div className="home-section5">
                     <div className="track-section2">
-                         <img src={aifitness} alt="aifitness" width={50} />
-                         <h3>AI-Driven insights on your current level of fitness</h3>
+                         <img src={aifitness} alt="aifitness" width={60} />
+                         <h3 className='ai-text fw-bold'>AI-Driven insights on your current level of fitness</h3>
                     </div>
 
                </div>

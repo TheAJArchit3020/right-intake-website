@@ -3,7 +3,7 @@ import './footer.css';
 import { Button, Navbar } from 'react-bootstrap';
 import { realintakeslogo } from '../Images';
 import { Link } from 'react-router';
-
+import { fireemoji } from "../../components/Images";
 const Footer = () => {
   return (
     <>
@@ -17,7 +17,8 @@ const Footer = () => {
             </Navbar.Brand>
             <Link to={'/basicform'}>
               <Button className="btn footer-button mt-2 mt-3">
-                Get your personalised plan now &#128293;
+                Get your personalised plan now 
+                <img src={fireemoji} className='fire-emoji'/>
               </Button>
             </Link>
             <p className="mt-3 text-left text-lg-start">
