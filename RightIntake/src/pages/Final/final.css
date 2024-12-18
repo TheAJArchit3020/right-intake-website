@@ -1,0 +1,74 @@
+
+.final-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    max-height: 100%;
+}
+
+.final-text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 300px;
+    background: linear-gradient(to bottom, #f5fcf5, #eef9ee);
+}
+
+.final-content-container{
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+    padding: 20px;
+    gap:10px;
+}
+
+.final-content-container-info{
+    width: 50%;
+    padding: 10px;
+}
+
+.final-content-container-image{
+    width: 50%;
+}
+
+.appstore-icons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+
+.appicon{
+    width: 90px;
+    height: 90px;
+}
+
+.final-container-userManual{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.final-userManual-info{
+    border: 2px solid red;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.final-userManual-image{
+    border: 2px solid black;
+    width: 40%;
+    margin-top: 20px;
+}
+
+.final-maual-heading{
+    display: inline-block;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.final-maual-def{
+    font-size:20px;
+    margi
+}

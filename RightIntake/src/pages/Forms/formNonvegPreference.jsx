@@ -5,7 +5,7 @@ import DataContext from '../../components/Context/DataContext';
 const FormNonvegPreference = ({ handleNext }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const { setFormData } = useContext(DataContext);
-
+  const isFormValid = selectedOptions.length >0;
   // Update formData whenever selectedOptions changes
   useEffect(() => {
     setFormData((prev) => ({
@@ -46,7 +46,7 @@ const FormNonvegPreference = ({ handleNext }) => {
         </div>
 
         <div className='mobile-button d-flex align-items-center'>
-          <NavigationButton handleNext={handleNext} />
+          <NavigationButton isActive={isFormValid} handleNext={handleNext} />
         </div>
       </div>
     </div>
