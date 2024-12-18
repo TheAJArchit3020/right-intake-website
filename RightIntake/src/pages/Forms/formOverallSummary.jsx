@@ -21,6 +21,7 @@ import {
 } from "../../components/Images";
 import Footer from "../../components/footerComponent/footer";
 import NavbarComponent from "../../components/navbarComponent/navbar";
+import { useNavigate } from "react-router";
 import { saveUser, generateInsights } from "../../components/apis";
 import axios from "axios";
 import DataContext from "../../components/Context/DataContext";
@@ -30,43 +31,14 @@ import { initiatePayment } from "../../components/apis";
 import { verifyPayment } from "../../components/apis";
 import { realintakeslogo } from "../../components/Images";
 const FormOverallSummary = ({ handleNext }) => {
+  const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(true);
   const [STATS, setSTATS] = useState(null);
   const [loading, setLoading] = useState(true);
   const { formData } = useContext(DataContext);
   const [currentTime, setTimer] = useState("3hr:59min:59sec");
-  const [userId,setUserId]=useState('');
-  // const [formData, setFormData] = useState({
-  //   age: "25",
-  //   city: "Pimpri-Chinchwad",
-  //   state: "Maharashtra",
-  //   country: "India",
-  //   gender: "Male",
-  //   bodyFatPercentage: 30,
-  //   occupation: "CEO’s/Business owners",
-  //   height: "5feet'8inch'",
-  //   weight: "80Kg",
-  //   targetWeight: "70Kg",
-  //   dietType: "Non-Veg",
-  //   nonVegDays: ["Saturday", "Sunday"],
-  //   primaryGoal: "Weight Loss",
-  //   workoutPreference: "gym",
-  //   weeklyTrainingDays: "2-3 days in a week 🔥 ",
-  //   healthcondition: ["None"],
-  //   allergies: "",
-  //   foodPreference: {
-  //     veggies: ["Cauliflower", "Bhindi", "Brinjal", "Carrot", "Spinach"],
-  //     carbs: ["Poha", "Bhakri", "Rice", "Puran Poli", "Chapati"],
-  //     fruits_berries: ["Mango", "Banana", "Papaya", "Guava", "Chikoo"],
-  //     meat: ["Mutton", "Fish", "Chicken", "Prawns"],
-  //   },
-  //   meal: ["Apple"],
-  //   sleephours: "4-5 hours 🦇",
-  //   waterdrink: "2-3 litres a day 🥛🥛🥛",
-  //   fullName: "Archit Janugade",
-  //   email: "archit.kineticscapestudios@gmail.com",
-  //   mobileNumber: "+919561930878",
-  // });
+  const [userId, setUserId] = useState("");
+
   const [error, setError] = useState(null);
   const handleCheckboxChange = () => {
     setIsChecked((prev) => !prev);
@@ -143,7 +115,6 @@ const FormOverallSummary = ({ handleNext }) => {
   };
 
   const getGoalBodyRange = (value) => {
-
     if (value >= 6 && value <= 10) return "6-10%";
     if (value >= 11 && value <= 14) return "11-14%";
     if (value >= 15 && value <= 19) return "15-19%";
@@ -157,71 +128,88 @@ const FormOverallSummary = ({ handleNext }) => {
     return "Below 6%";
   };
 
-  const handlepayment = async () => {  
+  const handlepayment = async () => {
     const data = {
-      userId: userId.toString(), 
-      amount: 99,  // Amount in subunits (e.g., 99 INR = 9900 paise)
+      userId: userId.toString(),
+      amount: 99, // Amount in subunits (e.g., 99 INR = 9900 paise)
     };
-  
+
     try {
       const response = await axios.post(initiatePayment, data);
       console.log("Payment initiated:", response.data);
-      
+
       //Test Mode of RazorPay
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
       script.onload = () => {
         // Step 2: Prepare the Razorpay payment options
         const options = {
-          key: "rzp_test_JO2AFlcNScJw24",  
+          key: "rzp_test_JO2AFlcNScJw24",
           amount: "9900", //99 INR = 9900 paise
           currency: "INR",
           name: "Right Intake",
-          description: "Laptop",
+          description: "Get your fitness plan now!",
           image: realintakeslogo,
           order_id: response.data.orderId, // Order ID generated from backend
 
           handler: async function (razorpayResponse) {
             console.log("Payment Response:", razorpayResponse);
-  
+
             const paymentData = {
               razorpay_order_id: razorpayResponse.razorpay_order_id,
               razorpay_payment_id: razorpayResponse.razorpay_payment_id,
               razorpay_signature: razorpayResponse.razorpay_signature,
-              userId: userId.toString(), 
+              userId: userId.toString(),
             };
 
             try {
-              const paymentVerificationResponse = await axios.post(verifyPayment, paymentData);
-              console.log("Payment verification response:", paymentVerificationResponse.data);
+              const paymentVerificationResponse = await axios.post(
+                verifyPayment,
+                paymentData
+              );
+              console.log(
+                "Payment verification response:",
+                paymentVerificationResponse.data
+              );
+              if (
+                paymentVerificationResponse.data.response.message ===
+                "Payment verified and diet plan generation started."
+              ) {
+                navigate("/final");
+              }
             } catch (error) {
-              console.error("Payment verification failed:", error.response || error.message);
+              console.error(
+                "Payment verification failed:",
+                error.response || error.message
+              );
             }
           },
           prefill: {
-            name: "Dummy Name",
-            email: "dummyemail@example.com",
-            contact: "9090909090",
+            name: formData.fullName,
+            email: formData.email,
+            contact: formData.mobileNumber,
           },
           notes: {
             address: "note value",
           },
           theme: {
-            color: "#F37254",
+            color: "#9FEB9F",
           },
         };
-  
+
         // Initialize Razorpay payment gateway
         const rzp1 = new Razorpay(options);
         rzp1.open();
       };
-  
+
       // Append the script to the document body to load it
       document.body.appendChild(script);
-  
     } catch (error) {
       if (error.response) {
-        console.log("Payment initiation failed with status:", error.response.status);
+        console.log(
+          "Payment initiation failed with status:",
+          error.response.status
+        );
         console.log("Error details:", error.response.data);
       } else {
         console.log("Payment initiation failed with error:", error.message);
@@ -503,7 +491,6 @@ const FormOverallSummary = ({ handleNext }) => {
         </div>
       </div>
 
-     
       {/* footer */}
       <Footer />
     </>

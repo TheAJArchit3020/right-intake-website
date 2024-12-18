@@ -4,7 +4,9 @@ import "./final.css";
 import { appstoreimage } from "../../components/Images";
 import { playstoreimage } from "../../components/Images";
 import { realintakegrp } from "../../components/Images";
+import { useNavigate } from "react-router";
 const PaymentSuccess = () => {
+  const navigate = useNavigate();
   return (
     <Layout>
       <div className="final-container">
@@ -97,7 +99,7 @@ const PaymentSuccess = () => {
               </span>
             </div>
 
-            <div className="final-c-u-btn">
+            <div className="final-c-u-btn" onClick={navigate("/contactus")}>
               <span>Contact-us</span>
             </div>
           </div>
