@@ -1,74 +1,293 @@
+.final-container {
+  position: relative;
+  width: 100%;
+}
 
-.final-container{
+.final-head-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  padding: 5% 15%;
+  height: 54.5vh;
+  background: linear-gradient(
+    180deg,
+    rgba(115, 115, 115, 0) 0%,
+    rgba(77, 221, 77, 0.2) 76%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.final-page-first-content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 5%;
+  gap: 10px;
+}
+
+.final-page-first-content-mob-img {
+  width: 50%;
+}
+.final-page-first-content-info {
+  width: 50%;
+  padding: 10% 0;
+}
+.first-content-info-1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.25rem;
+  font-weight: 700;
+  gap: 20px;
+}
+.first-content-info-1 span:nth-child(2) {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.app-store-wrapper,
+.play-store-wrapper {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+.store-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+}
+.store-thingy {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.app-store-wrapper img,
+.play-store-wrapper img {
+  width: 21%;
+}
+.first-content-info-2 {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.final-container-userManual {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 5%;
+}
+.final-userManual-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-userManual-info span {
+  font-size: 2rem;
+}
+.final-userManual-info span:nth-child(1) {
+  margin-bottom: 10px;
+  font-size: 2.25rem;
+}
+
+.final-userManual-image {
+  width: 40%;
+}
+
+.final-contact-us-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin: 10% 0;
+}
+.final-c-u-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.final-c-u-content {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.final-c-u-btn {
+  background-color: black;
+  padding: 20px 60px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 20px;
+  transition: 500ms ease;
+}
+.final-c-u-btn:hover {
+  cursor: pointer;
+  background-color: rgb(63, 63, 63);
+}
+
+@media (max-width: 1050px) {
+  .final-head-container {
+    height: 30vh;
+  }
+  .final-head-container {
+    font-size: 1.5rem;
+  }
+
+  .first-content-info-1 {
+    font-size: 1.3rem;
+  }
+  .first-content-info-1 span:nth-child(2) {
+    font-size: 1.1rem;
+  }
+
+  .app-store-wrapper,
+  .play-store-wrapper {
+    font-size: 1.1rem;
+  }
+  .first-content-info-2 {
+    font-size: 1.1rem;
+  }
+
+  .final-userManual-info span {
+    font-size: 1rem;
+  }
+  .final-userManual-info span:nth-child(1) {
+    font-size: 1.4rem;
+  }
+
+  .final-contact-us-container {
+    margin: 10% 7%;
+  }
+  .final-c-u-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .final-c-u-content {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .final-c-u-btn {
+    padding: 15px 40px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 780px) {
+  .final-head-container {
+    height: 30vh;
+  }
+  .final-head-container {
+    font-size: 1.3rem;
+  }
+
+  .first-content-info-1 {
+    font-size: 1rem;
+  }
+  .first-content-info-1 span:nth-child(2) {
+    font-size: 0.7rem;
+  }
+  .app-store-wrapper {
+    flex-wrap: nowrap;
+  }
+  .app-store-wrapper,
+  .play-store-wrapper {
+    font-size: 0.7rem;
+  }
+  .first-content-info-2 {
+    font-size: 0.7rem;
+  }
+
+  .final-userManual-info span {
+    font-size: 0.75rem;
+  }
+  .final-userManual-info span:nth-child(1) {
+    font-size: 1rem;
+  }
+
+  .final-contact-us-container {
+    margin: 10% 7%;
+  }
+  .final-c-u-heading {
+    font-size: 1.5rem;
+  }
+  .final-c-u-content {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .final-c-u-btn {
+    padding: 15px 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .final-head-container {
+    height: 30vh;
+  }
+  .final-head-container {
+    font-size: 1rem;
+  }
+  .final-page-first-content-wrapper {
+    flex-direction: column-reverse;
+  }
+  .final-page-first-content-mob-img {
+    width: 100%;
+  }
+  .final-page-first-content-info {
+    width: 100%;
+  }
+  .first-content-info-1 {
+    font-size: 1rem;
+  }
+  .first-content-info-1 span:nth-child(2) {
+    font-size: 0.7rem;
+  }
+  .app-store-wrapper {
+    flex-wrap: nowrap;
+  }
+  .app-store-wrapper,
+  .play-store-wrapper {
+    font-size: 0.7rem;
+  }
+  .first-content-info-2 {
+    font-size: 0.7rem;
+  }
+  .final-container-userManual {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .final-userManual-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    max-height: 100%;
-}
+    gap: 10px;
+  }
 
-.final-text-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    min-height: 300px;
-    background: linear-gradient(to bottom, #f5fcf5, #eef9ee);
-}
+  .final-userManual-info span {
+    font-size: 0.75rem;
+  }
+  .final-userManual-info span:nth-child(1) {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
 
-.final-content-container{
-    display: flex;
-    flex-direction: row;
-    min-height: 600px;
-    padding: 20px;
-    gap:10px;
-}
-
-.final-content-container-info{
-    width: 50%;
-    padding: 10px;
-}
-
-.final-content-container-image{
-    width: 50%;
-}
-
-.appstore-icons{
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
-}
-
-.appicon{
-    width: 90px;
-    height: 90px;
-}
-
-.final-container-userManual{
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.final-userManual-info{
-    border: 2px solid red;
-    width: 60%;
-    margin-top: 20px;
-}
-
-.final-userManual-image{
-    border: 2px solid black;
-    width: 40%;
-    margin-top: 20px;
-}
-
-.final-maual-heading{
-    display: inline-block;
-    font-weight: bold;
-    font-size:20px;
-}
-
-.final-maual-def{
-    font-size:20px;
-    margi
+  .final-contact-us-container {
+    margin: 10% 7%;
+  }
+  .final-c-u-heading {
+    font-size: 1.2rem;
+  }
+  .final-c-u-content {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .final-c-u-btn {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+  }
+  .final-userManual-image {
+    width: 100%;
+  }
 }
