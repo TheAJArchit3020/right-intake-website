@@ -30,10 +30,10 @@ const FormAboutSelf = ({ handleNext }) => {
     return Object.keys(newErrors).length === 0; // Return true if no errors
   };
 
-  const isFormValid = 
-  name.trim() !== '' &&
-  /\S+@\S+\.\S+/.test(email) &&
-  /^\d{10}$/.test(contact);
+  const isFormValid =
+    name.trim() !== "" &&
+    /\S+@\S+\.\S+/.test(email) &&
+    /^\d{10}$/.test(contact);
 
   // Set form data when any value is updated
   const updateFormData = () => {
@@ -47,7 +47,7 @@ const FormAboutSelf = ({ handleNext }) => {
   const handleSubmit = () => {
     if (validateForm()) {
       updateFormData();
-      handleNext();
+      NavigationHandler();
     }
   };
   const toggleDropdown = () => {
@@ -73,7 +73,9 @@ const FormAboutSelf = ({ handleNext }) => {
               updateFormData(); // Update form data when name changes
             }}
           />
-          <label htmlFor="email" className="about-yourself-label">Enter Your Email Address</label>
+          <label htmlFor="email" className="about-yourself-label">
+            Enter Your Email Address
+          </label>
           <input
             id="email"
             className="form-control"
@@ -84,7 +86,9 @@ const FormAboutSelf = ({ handleNext }) => {
               updateFormData(); // Update form data when email changes
             }}
           />
-          <label htmlFor="contact" className="about-yourself-label">Enter Your Mobile Number</label>
+          <label htmlFor="contact" className="about-yourself-label">
+            Enter Your Mobile Number
+          </label>
           <div className="input-group">
             <div className="input-group-prepend">
               <button
