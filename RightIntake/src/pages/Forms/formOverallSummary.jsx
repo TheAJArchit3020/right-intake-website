@@ -171,8 +171,9 @@ const FormOverallSummary = ({ handleNext }) => {
                 "Payment verification response:",
                 paymentVerificationResponse.data
               );
+
               if (
-                paymentVerificationResponse.data.response.message ===
+                paymentVerificationResponse.data.message ===
                 "Payment verified and diet plan generation started."
               ) {
                 navigate("/final");

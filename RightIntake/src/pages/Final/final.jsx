@@ -99,7 +99,7 @@ const PaymentSuccess = () => {
               </span>
             </div>
 
-            <div className="final-c-u-btn" onClick={navigate("/contactus")}>
+            <div className="final-c-u-btn"  onClick={() => navigate("/contactus")}>
               <span>Contact-us</span>
             </div>
           </div>

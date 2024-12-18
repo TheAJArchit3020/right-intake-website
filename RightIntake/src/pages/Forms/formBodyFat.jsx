@@ -13,7 +13,7 @@ import {
 import DataContext from "../../components/Context/DataContext";
 
 const FormBodyFat = ({ handleNext }) => {
-  const [bodyFatLevel, setBodyFatLevel] = useState(0);
+  const [bodyFatLevel, setBodyFatLevel] = useState(11);
   const { setFormData } = useContext(DataContext);
 
   const handleRangeChange = (event) => {

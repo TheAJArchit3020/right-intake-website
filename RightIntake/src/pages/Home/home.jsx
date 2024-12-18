@@ -4,11 +4,9 @@ import { aifitness, analysis, appstoreimage, armswithdumbels, cheatmeal1, cheatm
 import { Link } from 'react-router'
 import { Button } from 'react-bootstrap'
 import { fireemoji } from "../../components/Images";
-
+import { useNavigate } from 'react-router'
 const HomePage = () => {
-
-
-
+     const navigate = useNavigate();
      return (
           <div>
                <div className='mobile-home-page-section1'>
@@ -32,7 +30,7 @@ const HomePage = () => {
                                         tracking, and workout routines for achieving health goals.
                                    </p>
                                    <Link to={'/basicform'}>
-                                        <Button type="button" className="btn fw-bold w-80 px-2 fs-5 text-black">
+                                        <Button type="button" className="btn fw-bold w-80 px-2 fs-5 text-black" onClick={()=>{navigate('/basicform');}}>
                                              Get your personalised plan now 
                                              <img src={fireemoji} className='fire-emojimobile'/>
                                         </Button>
@@ -53,7 +51,7 @@ const HomePage = () => {
                                         is a comprehensive app that provides personalized diet plans, calorie
                                         tracking, and workout routines for achieving health goals.
                                    </p>
-                                   <button type="button" className="btn fw-bold w-100 px-2 fs-4">
+                                   <button type="button" className="btn fw-bold w-100 px-2 fs-4" onClick={()=>{navigate('/basicform')}}>
                                         Get your personalised plan now  
                                         <img src={fireemoji} className='fire-emoji'/>
                                    </button>

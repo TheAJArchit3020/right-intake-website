@@ -41,7 +41,10 @@ const FormAboutSelf = ({ handleNext }) => {
       ...prev,
       fullName: name,
       email: email,
-      mobileNumber: selectedCountryCode + contact,
+      //previous
+      // mobileNumber: selectedCountryCode + contact
+      //changed to 
+      mobileNumber:contact.toString(),
     }));
   };
   const handleSubmit = () => {
