@@ -32,22 +32,28 @@ const PaymentSuccess = () => {
               <div className="first-content-info-2">
                 <div className="store-container">
                   <div className="store-thingy app-store-wrapper">
-                    <img
-                      src={appstoreimage}
-                      alt="playstore"
-                      className="storeimage"
-                    />
+                    <div className="app-store-wrapper-image">
+                      <img
+                        src={appstoreimage}
+                        alt="playstore"
+                        className="storeimage"
+                      />
+                    </div>
+
                     <span>
                       Download on the
                       <br /> App store
                     </span>
                   </div>
                   <div className="store-thingy play-store-wrapper">
-                    <img
-                      src={playstoreimage}
-                      alt="playstore"
-                      className="storeimage"
-                    />
+                    <div className="play-store-wrapper-image">
+                      <img
+                        src={playstoreimage}
+                        alt="playstore"
+                        className="storeimage"
+                      />
+                    </div>
+
                     <span>
                       Get it on <br />
                       Google Play
@@ -99,7 +105,10 @@ const PaymentSuccess = () => {
               </span>
             </div>
 
-            <div className="final-c-u-btn"  onClick={() => navigate("/contactus")}>
+            <div
+              className="final-c-u-btn"
+              onClick={() => navigate("/contactus")}
+            >
               <span>Contact-us</span>
             </div>
           </div>

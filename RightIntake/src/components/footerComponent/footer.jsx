@@ -1,10 +1,12 @@
-import React from 'react';
-import './footer.css';
-import { Button, Navbar } from 'react-bootstrap';
-import { realintakeslogo } from '../Images';
-import { Link } from 'react-router';
+import React from "react";
+import "./footer.css";
+import { Button, Navbar } from "react-bootstrap";
+import { realintakeslogo } from "../Images";
+import { Link } from "react-router";
 import { fireemoji } from "../../components/Images";
+import { useNavigate } from "react-router";
 const Footer = () => {
+  const navigateFooter = useNavigate();
   return (
     <>
       <div className="footer-container">
@@ -15,24 +17,36 @@ const Footer = () => {
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
-            <Link to={'/basicform'}>
-              <Button className="btn footer-button mt-2 mt-3">
-                Get your personalised plan now 
-                <img src={fireemoji} className='fire-emoji'/>
-              </Button>
-            </Link>
-            <p className="mt-3 text-left text-lg-start">
-              Address: Kineticscape Studios, plot no.64, Shivaji housing society,<br />
-              near Shivaji stadium,<br />
+            <div
+              className="footer-cta mt-5"
+              onClick={() => navigate("/dietplanform")}
+            >
+              <span className="footer-btn-Text">
+                Get your personalized plan now
+              </span>
+              <img src={fireemoji} alt="" />
+            </div>
+            <p className="mt-4 text-left text-lg-start">
+              Address: Kineticscape Studios, plot no.64, Shivaji housing
+              society,
+              <br />
+              near Shivaji stadium,
+              <br />
               Karad, 415110.
             </p>
-            <p className="text-sm-start text-lg-start">contact@rightintake.com</p>
+            <p className="text-sm-start text-lg-start">
+              contact@rightintake.com
+            </p>
           </div>
 
           {/* Right Section */}
           <div className="footer-section2">
-            <Link to={'/termsandservices'}><p className="mb-2">Terms and Conditions</p></Link>
-            <Link to={'/aboutus'}><p>About Us</p></Link>
+            <Link to={"/termsandservices"}>
+              <p className="mb-2">Terms and Conditions</p>
+            </Link>
+            <Link to={"/aboutus"}>
+              <p>About Us</p>
+            </Link>
           </div>
         </div>
       </div>

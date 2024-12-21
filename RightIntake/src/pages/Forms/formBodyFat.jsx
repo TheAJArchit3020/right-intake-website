@@ -14,7 +14,7 @@ import DataContext from "../../components/Context/DataContext";
 
 const FormBodyFat = ({ handleNext }) => {
   const [bodyFatLevel, setBodyFatLevel] = useState(11);
-  const { setFormData } = useContext(DataContext);
+  const { formData, setFormData } = useContext(DataContext);
 
   const handleRangeChange = (event) => {
     setBodyFatLevel(parseInt(event.target.value));
@@ -22,6 +22,7 @@ const FormBodyFat = ({ handleNext }) => {
       ...prev,
       bodyFatPercentage: getRangeLabel(event.target.value),
     }));
+    console.log(formData);
   };
 
   const getRangeLabel = (value) => {

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./form.css";
-import FormLanding from "./formLanding";
+import FormLanding from "./FormLanding/formLanding";
 import NavbarComponent from "../../components/navbarComponent/navbar";
 import FormHeight from "./formHeight";
 import { ProgressBar } from "react-bootstrap";
@@ -24,8 +24,10 @@ import FormFoodPreference from "./formFoodPreference";
 import FormBodyFat from "./formBodyFat";
 import FormCheatmeal from "./formCheatmeal";
 import FormOverallSummary from "./formOverallSummary";
+import { useNavigate } from "react-router";
 
 const FormLayout = () => {
+  const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [isShown, setIsShown] = useState(false);
@@ -38,48 +40,88 @@ const FormLayout = () => {
   };
 
   const handleNext = () => {
-    console.log({ formData });
     if (currentStep < components.length - 1) {
+      const nextStep = components[currentStep + 1].path;
+      navigate(`/dietplanform/${nextStep}`);
       setCurrentStep(currentStep + 1);
       setProgress(((currentStep + 1) / (components.length - 1)) * 100);
+      console.log(progress);
     }
   };
 
   const handlePrev = () => {
     if (currentStep > 0) {
+      const prevStep = components[currentStep - 1].path;
       setCurrentStep(currentStep - 1);
+      navigate(`/dietplanform/${prevStep}`);
       setProgress(((currentStep - 1) / (components.length - 1)) * 100);
     }
   };
 
   const components = [
-    <FormLanding showprogresshandler={showprogresshandler} />,
-    <FormBioLoigicalSex handleNext={handleNext} />,
-    <FormOccupation handleNext={handleNext} />,
-    <FormHeight handleNext={handleNext} />,
-    <FormWeight handleNext={handleNext} />,
-    <FormLevelFitness handleNext={handleNext} />,
-    <FormDietPreference handleNext={handleNext} />,
-
+    {
+      path: "landing",
+      component: <FormLanding showprogresshandler={showprogresshandler} />,
+    },
+    {
+      path: "biological-sex",
+      component: <FormBioLoigicalSex handleNext={handleNext} />,
+    },
+    {
+      path: "occupation",
+      component: <FormOccupation handleNext={handleNext} />,
+    },
+    { path: "height", component: <FormHeight handleNext={handleNext} /> },
+    { path: "weight", component: <FormWeight handleNext={handleNext} /> },
+    {
+      path: "fitness-level",
+      component: <FormLevelFitness handleNext={handleNext} />,
+    },
+    {
+      path: "diet-preference",
+      component: <FormDietPreference handleNext={handleNext} />,
+    },
     ...(formData?.dietType === "Non-Veg"
-      ? [<FormNonvegPreference handleNext={handleNext} />]
+      ? [
+          {
+            path: "non-veg-preference",
+            component: <FormNonvegPreference handleNext={handleNext} />,
+          },
+        ]
       : []),
-
-    <FormVegPreference handleNext={handleNext} />,
-    <FormWorkout handleNext={handleNext} />,
-
+    {
+      path: "veg-preference",
+      component: <FormVegPreference handleNext={handleNext} />,
+    },
+    { path: "workout", component: <FormWorkout handleNext={handleNext} /> },
     ...(formData?.workoutPreference === "home workout"
-      ? [<FormHomeWorkout handleNext={handleNext} />]
+      ? [
+          {
+            path: "home-workout",
+            component: <FormHomeWorkout handleNext={handleNext} />,
+          },
+        ]
       : []),
-
-    <FormBodyFat handleNext={handleNext} />,
-    <FormTrain handleNext={handleNext} />,
-    <FormHealthConditions handleNext={handleNext} />,
-    <FormFoodPreference handleNext={handleNext} />,
-    <FormCheatmeal handleNext={handleNext} />,
-    <FormSleepHour handleNext={handleNext} />,
-    <FormWater handleNext={handleNext} />,
-    <FormAboutSelf handleNext={handleNext} />,
+    { path: "body-fat", component: <FormBodyFat handleNext={handleNext} /> },
+    { path: "train", component: <FormTrain handleNext={handleNext} /> },
+    {
+      path: "health-conditions",
+      component: <FormHealthConditions handleNext={handleNext} />,
+    },
+    {
+      path: "food-preference",
+      component: <FormFoodPreference handleNext={handleNext} />,
+    },
+    { path: "cheatmeal", component: <FormCheatmeal handleNext={handleNext} /> },
+    {
+      path: "sleep-hours",
+      component: <FormSleepHour handleNext={handleNext} />,
+    },
+    { path: "water-intake", component: <FormWater handleNext={handleNext} /> },
+    {
+      path: "about-self",
+      component: <FormAboutSelf handleNext={handleNext} />,
+    },
     // <FormOverallSummary handleNext={handleNext} />,
   ];
 
@@ -90,13 +132,22 @@ const FormLayout = () => {
       {/* Progress bar */}
       {isShown && (
         <div className="container my-4 d-flex align-items-center gap-2">
-          <img src={previcon} alt="previcon" width={20} onClick={handlePrev} />
+          <img
+            className="previous-btn"
+            src={previcon}
+            alt="previcon"
+            width={20}
+            onClick={handlePrev}
+          />
           <ProgressBar variant="success" now={progress} />
         </div>
       )}
 
       {/* Display current component */}
-      <div>{components[currentStep]}</div>
+      <div>
+        {console.log(currentStep)}
+        {components[currentStep].component}
+      </div>
     </>
   );
 };

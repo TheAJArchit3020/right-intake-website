@@ -1,61 +1,74 @@
-import React, { useState } from 'react'
-import './navbar.css'
-import { Button, Container, Navbar, Offcanvas } from 'react-bootstrap'
-import { hammerimage, realintakeslogo } from '../Images'
-import { Link } from 'react-router'
-
-
+import React, { useState } from "react";
+import "./navbar.css";
+import { Button, Container, Navbar, Offcanvas } from "react-bootstrap";
+import { hammerimage, realintakeslogo } from "../Images";
+import { Link } from "react-router";
+import { useNavigate } from "react-router";
+import { fireemoji } from "../../components/Images";
 const NavbarComponent = () => {
-
-
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
-    setShow(false)
+    setShow(false);
   };
   const handleShow = () => {
-    setShow(true)
+    setShow(true);
   };
 
   return (
     <>
       <Navbar key={false} expand={false} className="bg-body mb-3">
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img src={realintakeslogo} alt="realintakeslogo" width={60} />
             <h4>Right intake</h4>
           </Navbar.Brand>
-          <img src={hammerimage} alt="hammerimage" width={40} onClick={() => handleShow()} />
-
+          <img
+            src={hammerimage}
+            alt="hammerimage"
+            width={40}
+            onClick={() => handleShow()}
+            className="hamburger-nav-bar"
+          />
         </Container>
       </Navbar>
-      <Offcanvas show={show} onHide={handleClose} placement='end'>
-        <Offcanvas.Header closeButton>
-        </Offcanvas.Header>
-        <Offcanvas.Body className='sidebar-menu d-flex flex-column gap-4 '>
-          <Link to={'/'}>
-            <span>Home</span>
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton></Offcanvas.Header>
+        <Offcanvas.Body className="sidebar-menu d-flex flex-column gap-4 ">
+          <Link to={"/"}>
+            <div className="home-btn">
+              <span className="Heading2">Home</span>
+            </div>
           </Link>
-          <Link to={'/termsandservices'}>
-            <span>Tearms and Condition</span>
+          <Link to={"/termsandservices"}>
+            <div className="terms-a-c-btn">
+              <span className="Heading2">Terms and Services</span>
+            </div>
           </Link>
-          <Link to={'/contactus'}>
-            <span>Contact Us</span>
+          <Link to={"/contactus"}>
+            <div className="contact-us-btn">
+              <span className="Heading2">Contact Us</span>
+            </div>
           </Link>
-          <Link to={'/aboutus'}>
-            <span>About Us</span>
+          <Link to={"/aboutus"}>
+            <div className="about-us-btn">
+              <span className="Heading2">About Us</span>
+            </div>
           </Link>
-          <Link to={'/basicform'}>
-
-            <Button className="btn footer-button mt-2 mt-3">
-              Get your personalised plan now &#128293;
-            </Button>
-          </Link>
+          <div
+            className="nav-bar-cta mt-5"
+            onClick={() => navigate("/dietplanform")}
+          >
+            <span className="nav-bar-btn-Text">
+              Get your personalized plan now
+            </span>
+            <img src={fireemoji} alt="" />
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
-
     </>
-  )
-}
+  );
+};
 
-export default NavbarComponent
+export default NavbarComponent;

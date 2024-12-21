@@ -30,8 +30,8 @@ import "./overallsummary.css";
 import { initiatePayment } from "../../components/apis";
 import { verifyPayment } from "../../components/apis";
 import { realintakeslogo } from "../../components/Images";
-const FormOverallSummary = ({ handleNext }) => {
-  const navigate = useNavigate();
+const FormOverallSummary = () => {
+  const navigateOverall = useNavigate();
   const [isChecked, setIsChecked] = useState(true);
   const [STATS, setSTATS] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -176,7 +176,7 @@ const FormOverallSummary = ({ handleNext }) => {
                 paymentVerificationResponse.data.message ===
                 "Payment verified and diet plan generation started."
               ) {
-                navigate("/final");
+                navigateOverall("/final");
               }
             } catch (error) {
               console.error(
@@ -296,7 +296,7 @@ const FormOverallSummary = ({ handleNext }) => {
                       r="15.9155"
                       fill="none"
                       stroke="#E6E6E6"
-                      stroke-width="3.8"
+                      strokeWidth="3.8"
                     />
 
                     <circle
@@ -305,11 +305,11 @@ const FormOverallSummary = ({ handleNext }) => {
                       r="15.9155"
                       fill="none"
                       stroke="#F97979"
-                      stroke-width="3.8"
-                      stroke-dasharray={`${parseFloat(
+                      strokeWidth="3.8"
+                      strokeDasharray={`${parseFloat(
                         STATS.currentStats.muscleMass
                       )} 100`}
-                      stroke-linecap="round"
+                      strokeLinecap="round"
                       transform="rotate(-90 18 18)"
                     />
                     <text
@@ -339,7 +339,7 @@ const FormOverallSummary = ({ handleNext }) => {
                       r="15.9155"
                       fill="none"
                       stroke="#E6E6E6"
-                      stroke-width="3.8"
+                      strokeWidth="3.8"
                     />
 
                     <circle
@@ -348,11 +348,11 @@ const FormOverallSummary = ({ handleNext }) => {
                       r="15.9155"
                       fill="none"
                       stroke="#F97979"
-                      stroke-width="3.8"
-                      stroke-dasharray={`${parseFloat(
+                      strokeWidth="3.8"
+                      strokeDasharray={`${parseFloat(
                         STATS.goalStats.muscleMass
                       )} 100`}
-                      stroke-linecap="round"
+                      strokeLinecap="round"
                       transform="rotate(-90 18 18)"
                     />
                     <text

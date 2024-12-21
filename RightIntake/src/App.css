@@ -48,3 +48,17 @@ button:hover {
   outline: none !important;
   border: none !important;
 }
+
+.Heading1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.NormalText {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.btn-Text {
+  font-size: 2rem;
+  font-weight: 700;
+}

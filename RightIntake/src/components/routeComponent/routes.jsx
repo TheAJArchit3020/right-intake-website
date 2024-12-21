@@ -24,13 +24,13 @@ const RoutesComponent = () => {
             </Layout>
           }
         />
-        <Route path="/anim" element={<Loading />} />
-        <Route path="/basicform" element={<FormLayout />} />
+        <Route path="/dietplanform" element={<FormLayout />} />
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/termsandservices" element={<TermsandServices />} />
         <Route path="/final" element={<PaymentSuccess />} />
+        <Route path="/dietplanform/:step" element={<FormLayout />} />
       </Routes>
     </BrowserRouter>
   );

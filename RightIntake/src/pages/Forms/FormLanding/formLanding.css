@@ -1,0 +1,40 @@
+.form-landing-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.form-landing-header {
+  text-align: center;
+}
+.form-landing-header h3,
+.form-landing-header p {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.form-landing-header p {
+  color: #3f3f3f;
+}
+
+.age-input-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.grp-input-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.agree-terms-para {
+  font-weight: 700;
+}
+@media (max-width: 450px) {
+  .agree-terms-para {
+    font-size: 0.75rem;
+  }
+}

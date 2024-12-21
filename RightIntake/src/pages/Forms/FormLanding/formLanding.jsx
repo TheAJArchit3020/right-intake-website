@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./form.css";
-import "./responsive.css";
+import "./formLanding.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router";
-import DataContext from "../../components/Context/DataContext";
-import { getfoodpreferences } from "../../components/apis";
+import DataContext from "../../../components/Context/DataContext";
+import { getfoodpreferences } from "../../../components/apis";
 import axios from "axios";
-import Loading from "../LoadingAnimation/Loading";
+import Loading from "../../LoadingAnimation/Loading";
 const FormLanding = ({ showprogresshandler }) => {
   const [age, setAge] = useState("");
   const [agree, setAgree] = useState(false);
@@ -159,7 +158,7 @@ const FormLanding = ({ showprogresshandler }) => {
       country: address.country,
     }));
     setError(""); // Clear error if validation passes
-    console.log("Form submitted successfully:", { age, agree });
+
     showprogresshandler();
   };
 
@@ -193,18 +192,18 @@ const FormLanding = ({ showprogresshandler }) => {
     );
   }
 
-   const getButtonStyle=(isActive)=>{
-      return isActive ? 'letsGoButton' : 'deactivatedbutton';
-   };
+  const getButtonStyle = (isActive) => {
+    return isActive ? "letsGoButton" : "deactivatedbutton";
+  };
   return (
-    <div className="form-conatiner">
-      <div className="form-header mt-0 mb-4">
+    <div className="form-landing-conatiner">
+      <div className="form-landing-header">
         <h3>Build your personalized diet and workout routine</h3>
         <p>according to your preferences</p>
       </div>
-      <div className="age-input-group d-flex justify-content-center gap-4 align-items-center fw-bold mb-4">
+      <div className="age-input-group">
         <label htmlFor="age" className="fw-bold mb-0">
-          YOUR AGE
+          YOUR AGE:
         </label>
         <input
           className="age-input"
@@ -214,7 +213,7 @@ const FormLanding = ({ showprogresshandler }) => {
           onChange={handleAgeChange}
         />
       </div>
-      <div className="grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold">
+      <div className="grp-input-check">
         <input
           className="agree-input"
           type="checkbox"
@@ -223,13 +222,13 @@ const FormLanding = ({ showprogresshandler }) => {
           onChange={handleAgreeChange}
           id="agree-checkbox"
         />
-        <p className="agree-terms-para">
+        <span className="agree-terms-para">
           By continuing, you agree to our{" "}
           <Link to={"/termsandservices"}> Terms of service </Link> and
           acknowledge our <Link to={"/termsandservices"}> Privacy policy </Link>
-        </p>
+        </span>
       </div>
-      <div className="grp-input-check d-flex justify-content-center gap-4 align-items-center fw-bold mt-0">
+      <div className="grp-input-check">
         <input
           type="checkbox"
           className="agree-input"
@@ -237,14 +236,18 @@ const FormLanding = ({ showprogresshandler }) => {
           checked={agree2}
           onChange={handleAgreeChange2}
         />
-        <p className="agree-terms-para">
+        <span className="agree-terms-para">
           I would like to receive updates about products, services, and special
           offers from RightIntake via email
-        </p>
+        </span>
       </div>
       {error && <div className="text-danger mb-3 text-center">{error}</div>}
       <div className="mobile-button d-flex">
-        <button disabled={!age} className={getButtonStyle(age)} onClick={handleSubmit}>
+        <button
+          disabled={!age}
+          className={getButtonStyle(age)}
+          onClick={handleSubmit}
+        >
           Lets Go
         </button>
       </div>

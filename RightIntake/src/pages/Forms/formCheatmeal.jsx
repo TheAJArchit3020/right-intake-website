@@ -10,7 +10,7 @@ const FormCheatmeal = ({ handleNext }) => {
   const [validationError, setValidationError] = useState(false);
   const { setFormData } = useContext(DataContext);
 
-  const isFormValid = selectedItems.meal.length > 0 && selectedItems.meal.length <= 5;
+  const isFormValid = selectedItems.meal.length > 0;
   useEffect(() => {
     // Fetch cheat meal data from backend
     const fetchCheatMeals = async () => {

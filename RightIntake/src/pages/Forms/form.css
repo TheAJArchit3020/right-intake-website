@@ -37,12 +37,14 @@ a {
 }
 
 .form-conatiner {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 1em;
+  height: 100vh;
 }
 
 .form-header h3,
@@ -68,17 +70,17 @@ button.letsGoButton {
   color: #ffffff;
 }
 
-button.deactivatedbutton{
-     border-radius: 10px;
-     text-align: center;
-     outline: none;
-     border: none;
-     width: 150px;
-     align-self: center;
-     font-weight: bold;
-     padding: 10px 20px;
-     background-color: #B6B6B6;
-     color: #ffffff;
+button.deactivatedbutton {
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  border: none;
+  width: 150px;
+  align-self: center;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #b6b6b6;
+  color: #ffffff;
 }
 .age-input {
   text-align: center;
@@ -199,7 +201,9 @@ button.buttonTrained {
 .diet-ui-container {
   margin-bottom: 5em;
 }
-
+.previous-btn {
+  cursor: pointer;
+}
 canvas {
   max-width: 250px !important;
   max-height: 250px !important;
@@ -576,7 +580,6 @@ span.selected-item {
   background: linear-gradient(to right, #ff9191 0%, #ffd0d0 100%);
 }
 
-
 .section1-border {
   border: 1px solid;
   width: 100%;
@@ -644,7 +647,6 @@ span.selected-item {
   font-size: 2.25rem;
 }
 
-
 .plan-div p,
 .plan-div span {
   font-size: 1.5rem;
@@ -692,7 +694,6 @@ span.selected-item {
   align-items: center;
   justify-content: space-around;
 }
-
 
 .plan-div input[type="checkbox"] {
   display: none;

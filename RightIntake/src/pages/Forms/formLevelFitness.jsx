@@ -6,7 +6,7 @@ import DataContext from "../../components/Context/DataContext";
 
 const FormLevelFitness = ({ handleNext }) => {
   const [fitnessLevel, setFitnessLevel] = useState(0);
-  const { setFormData } = useContext(DataContext);
+  const { formData, setFormData } = useContext(DataContext);
 
   // Define descriptions for fitness levels
   const fitnessDescriptions = {
@@ -62,6 +62,7 @@ const FormLevelFitness = ({ handleNext }) => {
         "| Fitness Level: " +
         fitnessText,
     }));
+    console.log(formData);
   };
 
   return (

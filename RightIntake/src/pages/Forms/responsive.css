@@ -23,10 +23,6 @@ input.field-input {
     margin-top: 2rem;
   }
 
-  .age-input-group {
-    flex-direction: row !important;
-  }
-
   .agree-input {
     width: 16px !important;
     height: 16px !important;
@@ -254,18 +250,9 @@ input.field-input {
     font-size: 0.9rem;
   }
 
-  .age-input-group {
-    flex-direction: column;
-  }
-
   .agree-input {
     width: 20px;
     height: 12px;
-  }
-
-  p.agree-terms-para {
-    text-align: left;
-    font-size: 0.7rem;
   }
 
   /* common buttons */
@@ -285,10 +272,6 @@ input.field-input {
 
   .agree-input:checked::before {
     color: white !important;
-  }
-
-  .age-input-group {
-    margin-top: 2rem;
   }
 
   .grp-input-check {
