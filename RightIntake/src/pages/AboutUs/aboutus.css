@@ -57,7 +57,7 @@
   font-weight: 400;
 }
 .about-us-first-content {
-  background-image: url("/images/aboutUs/aboutus_first_bg.png");
+  background-image: url("/images/aboutUs/aboutus_first_bg.webp");
 }
 .about-us-first-content-wrapper {
   display: flex;
@@ -179,7 +179,7 @@
     font-size: 1.25rem;
   }
   .about-us-first-content {
-    background-image: url("/images/aboutUs/aboutus_first_bg.png");
+    background-image: url("/images/aboutUs/aboutus_first_bg.webp");
   }
   .about-us-first-content-wrapper {
     flex-direction: column-reverse;

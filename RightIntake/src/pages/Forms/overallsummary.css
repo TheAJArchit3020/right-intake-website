@@ -351,6 +351,27 @@
   }
 }
 @media (max-width: 450px) {
+  .summary-body-1 {
+    width: 50%;
+  }
+  .summary-body-1 img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .summary-body-seperator {
+    width: 20%;
+  }
+  .summary-body-seperator img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .summary-body-2 {
+    width: 50;
+  }
+  .summary-body-2 img {
+    width: 100%;
+    object-fit: cover;
+  }
   .summary-head-content-headings {
     gap: 150px;
   }

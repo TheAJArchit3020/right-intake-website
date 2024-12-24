@@ -15,7 +15,7 @@ const AboutUs = () => {
               #RightIntake #HealthyChoicesMadeSimple
             </span>
             <div className="about-us-mobile-image">
-              <img src="/images/aboutUs/about_us_mobile.png" alt="" />
+              <img src="/images/aboutUs/about_us_mobile.webp" alt="" />
             </div>
           </div>
 
@@ -25,10 +25,10 @@ const AboutUs = () => {
             </div>
             <div className="the-mission-content">
               <span>
-                At Right Intake, our mission is to empower individuals to achieve
-                their health and wellness goals by providing personalized diet and
-                workout plans tailored to their unique needs, lifestyle, and
-                preferences.
+                At Right Intake, our mission is to empower individuals to
+                achieve their health and wellness goals by providing
+                personalized diet and workout plans tailored to their unique
+                needs, lifestyle, and preferences.
               </span>
               <span>
                 We strive to make nutrition and fitness simple, accessible, and
@@ -42,7 +42,7 @@ const AboutUs = () => {
           <div className="about-us-first-content">
             <div className="about-us-first-content-wrapper">
               <div className="about-us-first-img">
-                <img src="/images/aboutUs/aboutus_first_mob_img.png" alt="" />
+                <img src="/images/aboutUs/aboutus_first_mob_img.webp" alt="" />
               </div>
               <div className="about-us-paras">
                 <div className="about-us-first-para">
@@ -74,7 +74,7 @@ const AboutUs = () => {
           <div className="about-us-second-content">
             <div className="about-us-second-content-wrapper">
               <div className="about-us-second-img">
-                <img src="/images/aboutUs/aboutus_second_mob_img.png" alt="" />
+                <img src="/images/aboutUs/aboutus_second_mob_img.webp" alt="" />
               </div>
               <div className="about-us-paras">
                 <div className="about-us-first-para">
@@ -96,9 +96,9 @@ const AboutUs = () => {
                   </div>
                   <div className="the-para">
                     <span>
-                      By integrating advanced technology and data-driven insights,
-                      we aim to deliver cutting-edge solutions that redefine
-                      health and wellness.
+                      By integrating advanced technology and data-driven
+                      insights, we aim to deliver cutting-edge solutions that
+                      redefine health and wellness.
                     </span>
                   </div>
                 </div>

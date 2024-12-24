@@ -91,7 +91,7 @@ const PaymentSuccess = () => {
               </span>
             </div>
             <div className="final-userManual-image">
-              <img src="/images/finalPagecontent2.png" alt="" />
+              <img src="/images/finalPagecontent2.webp" alt="" />
             </div>
           </div>
           <div className="final-contact-us-container">

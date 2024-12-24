@@ -19,7 +19,7 @@ const Footer = () => {
             </Navbar.Brand>
             <div
               className="footer-cta mt-5"
-              onClick={() => navigate("/dietplanform")}
+              onClick={() => navigateFooter("/dietplanform")}
             >
               <span className="footer-btn-Text">
                 Get your personalized plan now
