@@ -90,10 +90,10 @@ const FormOverallSummary = () => {
     console.log(formData);
     try {
       const response = await axios.post(saveUser, formData);
-      setUserId(response.data.userId);
+      setUserId(response.data.tempUserId);
       console.log(response.data);
       const insightsResponse = await axios.post(generateInsights, {
-        userId: response.data.userId,
+        userId: response.data.tempUserId,
       });
       setSTATS(insightsResponse.data); // Assuming response.data contains the stats
       setLoading(false); // Set loading to false after data is fetched
@@ -130,7 +130,7 @@ const FormOverallSummary = () => {
 
   const handlepayment = async () => {
     const data = {
-      userId: userId.toString(),
+      tempUserId: userId.toString(),
       amount: 99, // Amount in subunits (e.g., 99 INR = 9900 paise)
     };
 
@@ -138,14 +138,12 @@ const FormOverallSummary = () => {
       const response = await axios.post(initiatePayment, data);
       console.log("Payment initiated:", response.data);
 
-      //Test Mode of RazorPay
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
       script.onload = () => {
-        // Step 2: Prepare the Razorpay payment options
         const options = {
-          key: "rzp_test_JO2AFlcNScJw24",
-          amount: "9900", //99 INR = 9900 paise
+          key: response.data.razorpayKeyId,
+          amount: "9900",
           currency: "INR",
           name: "Right Intake",
           description: "Get your fitness plan now!",
@@ -159,7 +157,7 @@ const FormOverallSummary = () => {
               razorpay_order_id: razorpayResponse.razorpay_order_id,
               razorpay_payment_id: razorpayResponse.razorpay_payment_id,
               razorpay_signature: razorpayResponse.razorpay_signature,
-              userId: userId.toString(),
+              tempUserId: userId.toString(),
             };
 
             try {
@@ -172,11 +170,13 @@ const FormOverallSummary = () => {
                 paymentVerificationResponse.data
               );
 
-              if (
-                paymentVerificationResponse.data.message ===
-                "Payment verified and diet plan generation started."
-              ) {
+              if (paymentVerificationResponse.status === 200) {
                 navigateOverall("/final");
+              } else {
+                console.error(
+                  "Payment verification failed or unexpected response."
+                );
+                // Optionally, you can handle the error or unexpected response here
               }
             } catch (error) {
               console.error(
