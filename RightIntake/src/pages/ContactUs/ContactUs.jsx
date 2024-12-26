@@ -29,6 +29,7 @@ const ContactUs = () => {
             </div>
             <div className="contact-us-content">
               <span>Ask about our platform, pricing or anything else</span>
+              <span>Contact Number:+91 9561930878</span>
               <span>contact@rightintake.com</span>
             </div>
           </div>

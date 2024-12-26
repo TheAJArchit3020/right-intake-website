@@ -19,10 +19,11 @@ const FormFoodPreference = ({ handleNext }) => {
     carbs: false,
     fruits_berries: false,
   });
-  
-  const isFormValid = selectedItems.veggies.length > 0 &&
-                      selectedItems.carbs.length > 0 && 
-                      selectedItems.fruits_berries.length > 0;
+
+  const isFormValid =
+    selectedItems.veggies.length > 0 &&
+    selectedItems.carbs.length > 0 &&
+    selectedItems.fruits_berries.length > 0;
   const handleSelection = (category, item) => {
     setSelectedItems((prevSelected) => {
       const updatedSelected = {
@@ -46,8 +47,6 @@ const FormFoodPreference = ({ handleNext }) => {
       }));
     }
   };
-
-  
 
   const validateSelections = () => {
     const errors = {
@@ -190,19 +189,18 @@ const FormFoodPreference = ({ handleNext }) => {
 
       <div className="mobile-button d-flex align-items-center">
         <NavigationButton
-          // handleNext={() => {
-          //   if (validateSelections()) {
-          //     setFormData((prev) => ({
-          //       ...prev,
-          //       foodPreference: foodPreferences,
-          //     }));
-          //     handleNext();
-          //   } else {
-          //     alert("Please complete all required selections.");
-          //   }
-          // }}
+          handleNext={() => {
+            if (validateSelections()) {
+              setFormData((prev) => ({
+                ...prev,
+                foodPreference: foodPreferences,
+              }));
+              handleNext();
+            } else {
+              alert("Please complete all required selections.");
+            }
+          }}
           isActive={isFormValid}
-          handleNext={handleNext}
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavigationButton from "../../components/Button/navigationButton";
 import { Form } from "react-bootstrap";
 import { fitnessimg1, fitnessimg2 } from "../../components/Images";
@@ -64,6 +64,17 @@ const FormLevelFitness = ({ handleNext }) => {
     }));
     console.log(formData);
   };
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      fitnesslevel:
+        "Fitness Category: " +
+        "newcomer" +
+        "| Fitness Level: " +
+        "Whenever I sit on the floor, it's hard for me to stand up.",
+    }));
+  }, []);
 
   return (
     <>
