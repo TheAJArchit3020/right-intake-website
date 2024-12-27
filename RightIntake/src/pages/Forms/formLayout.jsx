@@ -24,6 +24,7 @@ import FormFoodPreference from "./formFoodPreference";
 import FormBodyFat from "./formBodyFat";
 import FormCheatmeal from "./formCheatmeal";
 import FormOverallSummary from "./formOverallSummary";
+import FormLocationRequest from "./FormLocationRequest/formLocationRequest";
 import { useNavigate } from "react-router";
 
 const FormLayout = () => {
@@ -31,7 +32,7 @@ const FormLayout = () => {
   const [progress, setProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [isShown, setIsShown] = useState(false);
-  const { formData } = useContext(DataContext);
+  const { isLocationData, formData } = useContext(DataContext);
 
   // toggle progress bar ...
   const showprogresshandler = () => {
@@ -63,6 +64,14 @@ const FormLayout = () => {
       path: "landing",
       component: <FormLanding showprogresshandler={showprogresshandler} />,
     },
+    ...(isLocationData === false
+      ? [
+          {
+            path: "location-request",
+            component: <FormLocationRequest handleNext={handleNext} />,
+          },
+        ]
+      : []),
     {
       path: "biological-sex",
       component: <FormBioLoigicalSex handleNext={handleNext} />,

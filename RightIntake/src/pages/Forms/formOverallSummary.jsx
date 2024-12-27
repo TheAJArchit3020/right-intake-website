@@ -444,7 +444,7 @@ const FormOverallSummary = () => {
                 </div>
                 <div className="payment-amount">
                   <span>
-                    Just for <span className="low-font-weight">Rs</span> 99 |{" "}
+                    Just for <span className="low-font-weight">INR</span> 99 |{" "}
                     <span className="scratched-out-font">750/-</span>
                   </span>
                 </div>

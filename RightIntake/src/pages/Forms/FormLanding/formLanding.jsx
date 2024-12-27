@@ -12,7 +12,9 @@ const FormLanding = ({ showprogresshandler }) => {
   const [agree2, setAgree2] = useState(false);
   const [error, setError] = useState("");
   const { setFormData } = useContext(DataContext);
+  const { setIsLocationData } = useContext(DataContext);
   const [isLoading, setisLoading] = useState(false);
+  const [isLocation, setisLocation] = useState(false);
   const [locationStatus, setLocationStatus] = useState(
     "Awaiting permission..."
   );
@@ -38,6 +40,9 @@ const FormLanding = ({ showprogresshandler }) => {
           const { latitude, longitude } = position.coords;
           console.log({ latitude, longitude });
           fetchAddress(latitude, longitude);
+          setisLocation(true);
+          setIsLocationData(true);
+          console.log("SettingLocation to True");
         },
         (error) => {
           if (error.code === error.PERMISSION_DENIED) {
@@ -49,13 +54,20 @@ const FormLanding = ({ showprogresshandler }) => {
           } else {
             setLocationStatus("An error occurred while fetching location.");
           }
+          fallbackOnLocationError();
         }
       );
     } else {
       setLocationStatus("Geolocation is not supported by your browser.");
+      fallbackOnLocationError();
     }
   };
 
+  const fallbackOnLocationError = () => {
+    console.log("SettingLocation to false");
+    setisLocation(false);
+    setIsLocationData(false);
+  };
   const fetchAddress = async (latitude, longitude) => {
     const apiKey = "AIzaSyButhal1hfnTwt0pl1ehGTHKOVYA-3vVvM";
     const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
@@ -146,17 +158,19 @@ const FormLanding = ({ showprogresshandler }) => {
       return;
     }
     setisLoading(true);
-    await getFoodPreferenceHandler(
-      address.city,
-      address.state,
-      address.country
-    );
-    setFormData((prev) => ({
-      ...prev,
-      city: address.city,
-      state: address.state,
-      country: address.country,
-    }));
+    if (isLocation) {
+      await getFoodPreferenceHandler(
+        address.city,
+        address.state,
+        address.country
+      );
+      setFormData((prev) => ({
+        ...prev,
+        city: address.city,
+        state: address.state,
+        country: address.country,
+      }));
+    }
     setError(""); // Clear error if validation passes
 
     showprogresshandler();
