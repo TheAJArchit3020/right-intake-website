@@ -74,3 +74,12 @@ export const wavemoji = "/images/emojis/wave.svg";
 
 export const bodyfatshadow1 = "/images/bodyfatshadow1.webp";
 export const bodyfatshadow2 = "/images/bodyfatshadow2.webp";
+
+export const homescreenimage1 = "/images/homePage/homescreenimage1.png";
+export const homescreenimage2 = "/images/homePage/homescreenimage2.png";
+export const homescreenimage3 = "/images/homePage/homescreenimage3.png";
+export const homescreenimage4 = "/images/homePage/homescreenimage4.png";
+export const homescreenimage5 = "/images/homePage/homescreenimage5.png";
+export const homescreenimage6 = "/images/homePage/homescreenimage6.png";
+export const smartmeal1 = "/images/homePage/smartmeal1.png";
+export const smartmeal2 = "/images/homePage/smartmeal2.png";

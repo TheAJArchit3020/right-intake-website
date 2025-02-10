@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./home.css";
 import {
-  aifitness,
-  analysis,
+
   appstoreimage,
-  armswithdumbels,
-  cheatmeal1,
-  cheatmeal2,
-  cheatmeal3,
-  diet,
-  dietitems,
-  dumbels,
-  fitnessbackground,
-  gymworkout,
+  smartmeal1,
+  smartmeal2,
+ 
+  homescreenimage1,
+  homescreenimage2,
+  homescreenimage3,
+  homescreenimage4,
+  homescreenimage5,
+  homescreenimage6,
   intakenavigation,
   playstoreimage,
   proteinintakes,
@@ -21,136 +20,370 @@ import {
   rightintakemobileimage,
   rightintakemobilemeals,
   workoutplan,
+  realintakeslogo,
 } from "../../components/Images";
 import { Link } from "react-router";
 import { Button } from "react-bootstrap";
 import { fireemoji } from "../../components/Images";
 import { useNavigate } from "react-router";
 import { logEvent } from "../../Utilities/analytics";
+import Layout from "../layoutPage";
+import NavbarComponent from "../../components/navbarComponent/navbar";
+
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    logEvent("get_personalized_plan", {
-      category: "User Actions",
-      label: "Get Plan Button",
-    });
-    navigate("/dietplanform");
+  // const handleClick = () => {
+  //   logEvent("get_personalized_plan", {
+  //     category: "User Actions",
+  //     label: "Get Plan Button",
+  //   });
+  //   navigate("/dietplanform");
+  // };
+
+  const [isVisible, setIsVisible] = useState({
+    homeref: false,
+    trackingref: false,
+    foodmealref: false,
+    nutriplanref: false,
+    reviewref: false,
+    smartmealref: false,
+  });
+
+  const homeref = useRef(null);
+  const trackingref = useRef(null);
+  const foodmealref = useRef(null);
+  const nutriplanref = useRef(null);
+  const reviewref = useRef(null);
+  const smartmealref = useRef(null);
+
+  // A mapping of section names to refs
+  const sectionRefs = {
+    home: homeref,
+    tracking: trackingref,
+    foodmeal: foodmealref,
+    nutriplans: nutriplanref,
+    reviews: reviewref,
+    smartmeal: smartmealref,
   };
+
+  // Dynamic scroll function
+  const scrollToSection = (sectionName) => {
+    const sectionRef = sectionRefs[sectionName];
+    if (sectionRef && sectionRef.current) {
+      console.log({ sectionRef, ...sectionRef.current });
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Trigger when 50% of the element is visible
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prevState) => ({
+            ...prevState,
+            [entry.target.dataset.ref]: true,
+          }));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    Object.values(sectionRefs).forEach((ref) => {
+      observer.observe(ref.current);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="landing-page-container">
-      <div className="landing-page-wrapper">
-        <div className="landing-page-head">
-          <div className="landing-head-left">
-            <div className="landing-head-content">
-              <span className="Heading1">Right Intake</span>
-              <span className="NormalText">
-                is a comprehensive app which provides personalized diet plans,
-                calorie tracking, and workout routines for achieving health
-                goals.
-              </span>
+    <Layout>
+      <div className="newNavbarContainer">
+        <div className="navBarBrand">
+          <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+          <span className="Rightintake-Logo-Name">Right Intake</span>
+        </div>
+        <div className="navTabs">
+          <p className="navTabs-p" onClick={() => homeref.current.scrollIntoView({ behavior: "smooth" })}>Home</p>
+          <p className="navTabs-p" onClick={() => trackingref.current.scrollIntoView({ behavior: "smooth" })}>Tracking</p>
+          <p className="navTabs-p" onClick={() => foodmealref.current.scrollIntoView({ behavior: "smooth" })}>FoodLens</p>
+          <p className="navTabs-p" onClick={() => smartmealref.current.scrollIntoView({ behavior: "smooth" })}>Smartmeal</p>
+          <p className="navTabs-p" onClick={() => nutriplanref.current.scrollIntoView({ behavior: "smooth" })}>NutriPlans</p>
+          <p className="navTabs-p" onClick={() => reviewref.current.scrollIntoView({ behavior: "smooth" })}>Reviews</p>
+        </div>
+        <div className="getappbutton">
+          <p className="getappbutton-p">Get rightintake app</p>
+        </div>
+      </div>
+      <div className="landing-page-container">
+        <div className="landing-page-wrapper">
+          {/* section 1 */}
+          <div ref={homeref} className="landing-page-section1">
+            <div className="landing-page-head">
+              <div className="landing-head-content left-content">
+                <span className="Heading1">Right</span>
+                <img src={homescreenimage1} alt="" />
+              </div>
+              <div className="landing-head-content">
+                <img
+                  src={homescreenimage2}
+                  alt="homesection1image3"
+                  className="centerImage"
+                  style={{ marginLeft: "19% !important" }}
+                />
+              </div>
+              <div className="landing-head-content right-content">
+                <img src={homescreenimage3} alt="" />
+                <span className="Heading1">Intake</span>
+              </div>
             </div>
-            <div className="landing-head-cta" onClick={handleClick}>
-              <span className="btn-Text">Get your personalized plan now</span>
-              <img src={fireemoji} alt="" />
-            </div>
-          </div>
-          <div className="landing-head-right">
-            <img src={realintakegrp} alt="" />
-            <div className="store-container">
-              <div className="store-thingy app-store-wrapper">
-                <div className="app-store-wrapper-image">
-                  <img
-                    src={appstoreimage}
-                    alt="playstore"
-                    className="storeimage"
-                  />
+            <p className="landing-head-para">
+              <b>Right Intake</b> is your ultimate AI-powered nutrition app,
+              designed to track your diet, count calories, and provide
+              personalized meal plans with expert guidance from certified
+              nutritionists.
+            </p>
+            <div className="storeGrp">
+              <div className="store-ios">
+                <img src={appstoreimage} alt="appstoreimage" />
+                <div>
+                  <p>Download on the </p>
+                  <p>App store</p>
                 </div>
-
-                <span>
-                  Download on the
-                  <br /> App store
-                </span>
               </div>
-              <div className="store-thingy play-store-wrapper">
-                <div className="play-store-wrapper-image">
-                  <img
-                    src={playstoreimage}
-                    alt="playstore"
-                    className="storeimage"
-                  />
+              <div className="store-android">
+                <img src={playstoreimage} alt="playstoreimage" />
+                <div>
+                  <p>Get it on </p>
+                  <p>Play store</p>
                 </div>
-
-                <span>
-                  Get it on <br />
-                  Google Play
-                </span>
               </div>
             </div>
           </div>
-        </div>
-        <div className="landing-page-nutrition">
-          <div className="landing-page-nutrition-left">
-            <span className="Heading1">Track your Nutrition</span>
-            <div className="nutrition-key-points NormalText">
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>Track your daily calories</span>
+
+          {/* section 2 */}
+          <div ref={trackingref} className="landing-page-trackingWrapper">
+            <div className="landing-page-tracking">
+              <div className="landing-page-tracking-leftcontent">
+                <img
+                  src={homescreenimage4}
+                  alt="homescreenimage4"
+                  className="tracking-image"
+                />
               </div>
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>Get your daily insights on your nutrition</span>
-              </div>
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>Get daily insights on your current nutrition</span>
+              <div className="landing-page-tracking-section">
+                <div className="landing-page-tracking-rightcontent">
+                  <div className="dot"></div>
+                  <p className="landing-page-tracking-rightcontent-para">
+                    Tracking
+                  </p>
+                </div>
+                <p className="landing-page-tracking-rightcontent-span">
+                  Easily log your meals and monitor daily calorie intake to stay
+                  on track.
+                </p>
               </div>
             </div>
           </div>
-          <div className="landing-page-nutrition-right">
-            <img src={intakenavigation} alt="" />
-          </div>
-        </div>
 
-        <div className="landing-page-personalized-meal-plan">
-          <div className="l-p-p-m-p-left">
-            <span className="Heading1">Get a Personalized Meal plan</span>
-            <div className="nutrition-key-points NormalText">
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>Meal plan based on your goals.</span>
-              </div>
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>Meal plan is adjusted to your current condition.</span>
-              </div>
-              <div>
-                <img className="dumbelsicon" src={dumbels} alt="" />
-                <span>
-                  Get all your preferred food items in your meal plan to make it
-                  easy
-                </span>
-              </div>
+          {/* section 3 */}
+          <div ref={foodmealref} className="landing-page-foodLens">
+            <div className="landing-page-foodLens-section">
+              <div className="dot"></div>
+              <p>FoodLens</p>
+            </div>
+            <p className="foodlens-para">
+               Simply snap a picture of your meal, and our advanced AI instantly
+              detects ingredients, provides calorie estimates, and breaks down
+              macros.
+            </p>
+            <div className="landing-page-foodLens-grpimage">
+              <img src={homescreenimage5} alt="" />
+              <img src={homescreenimage5} alt="" />
+              <img src={homescreenimage6} alt="" />
             </div>
           </div>
-          <div className="l-p-p-m-p-right">
-            <img src={rightintakemobilemeals} alt="" />
-          </div>
-        </div>
 
-        <div className="landing-page-AI-sec">
-          <div className="fitness-bg">
-            <img src={fitnessbackground} alt="" />
+          {/* section 4 */}
+          <div ref={smartmealref} className="landing-page-smartmeal">
+            <div className="smartmeal-leftcontent">
+              <div className="landing-page-smartmeal-section">
+                <div className="dot"></div>
+                <p>Smart meal</p>
+              </div>
+              <p className="smartmeal-para">
+                 Simply snap a picture of your meal, and our advanced AI
+                instantly detects ingredients, provides calorie estimates, and
+                breaks down macros.
+              </p>
+            </div>
+            <div className="smartmeal-backgroundimage">
+              <img src={smartmeal1} className="smartmealimage" />
+              <img src={smartmeal2} className="smartmealimage2" />
+            </div>
           </div>
-          <div className="landing-page-AI-sec-content">
-            <img src={aifitness} alt="" />
-            <span className="Heading1">
-              AI-Driven insights on your current level of fitness
-            </span>
+
+          {/* section 3 */}
+          <div ref={nutriplanref} className="landing-page-nutri">
+            <div className="landing-page-nutri-section">
+              <div className="dot"></div>
+              <p>Nutriplans</p>
+            </div>
+            <p className="nutri-para">
+              Get custom diet plans based on your goals, body type, activity
+              level, and dietary preferences, tailored by a personalized
+              nutritionist to acheive best health and results.
+            </p>
+            <div className="landing-page-nutri-grpimage">
+              <p>Comming Soon...!</p>
+            </div>
+          </div>
+          {/* section 5 */}
+          <div ref={reviewref} className="landing-page-review">
+            <div className="landing-page-foodLens-section">
+              <div className="dot"></div>
+              <p>Review</p>
+            </div>
+            <p className="review-para">
+              Trusted by many, loved by all—see what our users say!
+            </p>
+            <div className="scrollcard">
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="review-card">
+                <div className="review-card-body">
+                  <div className="review-card-avatar"></div>
+                  <div className="review-card-bodyContent">
+                    <div className="bodyContent-grp">
+                      <p>Name</p>
+                      <div></div>
+                    </div>
+                    <p>05/02/25</p>
+                    <p className="review-body-para">
+                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                      nullam dui est a neque. Laoreet et molestie tellus sed
+                      pulvinar erat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -5,7 +5,9 @@ import { hammerimage, realintakeslogo } from "../Images";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { fireemoji } from "../../components/Images";
-const NavbarComponent = () => {
+
+
+const NavbarComponent = ({scrollToSection}) => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
@@ -15,6 +17,12 @@ const NavbarComponent = () => {
   const handleShow = () => {
     setShow(true);
   };
+
+
+
+
+
+
 
   return (
     <>
@@ -75,12 +83,12 @@ const NavbarComponent = () => {
           <span className="Rightintake-Logo-Name">Right Intake</span>
         </div>
         <div className="navTabs">
-          <p className="navTabs-p" >Home</p>
-          <p className="navTabs-p" >Tracking</p>
-          <p className="navTabs-p" >FoodLens</p>
-          <p className="navTabs-p" >Smartmeal</p>
-          <p className="navTabs-p" >NutriPlans</p>
-          <p className="navTabs-p" >Reviews</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('home')} >Home</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('tracking')}>Tracking</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('foodlens')}>FoodLens</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('smartmeal')}>Smartmeal</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('nutriplans')}>NutriPlans</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('reviews')}>Reviews</p>
         </div>
         <div className="getappbutton">
           <p className="getappbutton-p">Get rightintake app</p>

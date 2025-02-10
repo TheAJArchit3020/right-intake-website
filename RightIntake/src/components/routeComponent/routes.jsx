@@ -14,16 +14,7 @@ const RoutesComponent = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          index
-          path="/"
-          element={
-            <Layout>
-              {" "}
-              <HomePage />{" "}
-            </Layout>
-          }
-        />
+        <Route index path="/" element={<HomePage />} />
         <Route path="/dietplanform" element={<FormLayout />} />
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />
