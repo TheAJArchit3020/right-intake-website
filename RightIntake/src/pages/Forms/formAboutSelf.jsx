@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import NavigationButton from "../../components/Button/navigationButton";
 import DataContext from "../../components/Context/DataContext";
 import { useNavigate } from "react-router";
-
+import { logEvent } from "../../Utilities/analytics";
 const FormAboutSelf = ({ handleNext }) => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -43,13 +43,17 @@ const FormAboutSelf = ({ handleNext }) => {
       email: email,
       //previous
       // mobileNumber: selectedCountryCode + contact
-      //changed to 
-      mobileNumber:contact.toString(),
+      //changed to
+      mobileNumber: contact.toString(),
     }));
   };
   const handleSubmit = () => {
     if (validateForm()) {
       updateFormData();
+      logEvent("details_submitted", {
+        category: "Form Submission",
+        label: "User Details",
+      });
       NavigationHandler();
     }
   };

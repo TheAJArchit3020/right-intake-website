@@ -198,8 +198,40 @@
 }
 
 .get-diet-plan-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 2.25rem;
   font-weight: 700;
+
+  gap: 20px;
+}
+
+.blinking-text {
+  background: radial-gradient(circle at bottom, white, transparent 80%);
+  animation: bg 30s infinite;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+@keyframes bg {
+  0%,
+  100% {
+    background-color: rgb(188, 188, 255);
+  }
+  25% {
+    background-color: rgb(177, 255, 177);
+  }
+  50% {
+    background-color: rgb(255, 255, 144);
+  }
+  75% {
+    background-color: pink;
+  }
+}
+.get-diet-plan-second-head {
+  font-weight: 400;
 }
 .payment-plan-wrapper {
   display: flex;

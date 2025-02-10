@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /api/
+Allow: /termsandservices
+Allow: /contactus
+Allow: /aboutus
+Allow: /dietplanform
+Allow: /
+
+Sitemap: https://rightintake.com/sitemap.xml

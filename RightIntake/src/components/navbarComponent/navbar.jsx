@@ -21,8 +21,8 @@ const NavbarComponent = () => {
       <Navbar key={false} expand={false} className="bg-body mb-3">
         <Container fluid>
           <Navbar.Brand href="/">
-            <img src={realintakeslogo} alt="realintakeslogo" width={60} />
-            <h4>Right intake</h4>
+            <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+            <span className="Rightintake-Logo-Name">Right Intake</span>
           </Navbar.Brand>
           <img
             src={hammerimage}

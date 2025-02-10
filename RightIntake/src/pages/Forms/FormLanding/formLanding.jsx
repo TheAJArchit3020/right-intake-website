@@ -6,6 +6,7 @@ import DataContext from "../../../components/Context/DataContext";
 import { getfoodpreferences } from "../../../components/apis";
 import axios from "axios";
 import Loading from "../../LoadingAnimation/Loading";
+import { logEvent } from "../../../Utilities/analytics";
 const FormLanding = ({ showprogresshandler }) => {
   const [age, setAge] = useState("");
   const [agree, setAgree] = useState(false);
@@ -157,6 +158,10 @@ const FormLanding = ({ showprogresshandler }) => {
       setError("You must agree to the terms and conditions.");
       return;
     }
+    logEvent("age_submitted", {
+      category: "Form Submission",
+      label: "Age Submission",
+    });
     setisLoading(true);
     if (isLocation) {
       await getFoodPreferenceHandler(
@@ -213,7 +218,14 @@ const FormLanding = ({ showprogresshandler }) => {
     <div className="form-landing-conatiner">
       <div className="form-landing-header">
         <h3>Build your personalized diet and workout routine</h3>
-        <p>according to your preferences</p>
+        {/* <p>
+          according to your preferences <br></br>
+          Register Now! and get a chance to win{" "}
+          <span className="blinking-text">15,000 rs</span>
+        </p> */}
+        {/* <div className="register-now-cta">
+          <img src="/images/CTA_GIF.gif" alt="" />
+        </div> */}
       </div>
       <div className="age-input-group">
         <label htmlFor="age" className="fw-bold mb-0">

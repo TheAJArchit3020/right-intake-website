@@ -26,8 +26,17 @@ import { Link } from "react-router";
 import { Button } from "react-bootstrap";
 import { fireemoji } from "../../components/Images";
 import { useNavigate } from "react-router";
+import { logEvent } from "../../Utilities/analytics";
 const HomePage = () => {
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    logEvent("get_personalized_plan", {
+      category: "User Actions",
+      label: "Get Plan Button",
+    });
+    navigate("/dietplanform");
+  };
   return (
     <div className="landing-page-container">
       <div className="landing-page-wrapper">
@@ -41,10 +50,7 @@ const HomePage = () => {
                 goals.
               </span>
             </div>
-            <div
-              className="landing-head-cta"
-              onClick={() => navigate("/dietplanform")}
-            >
+            <div className="landing-head-cta" onClick={handleClick}>
               <span className="btn-Text">Get your personalized plan now</span>
               <img src={fireemoji} alt="" />
             </div>

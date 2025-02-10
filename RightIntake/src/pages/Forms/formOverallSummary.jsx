@@ -30,6 +30,7 @@ import "./overallsummary.css";
 import { initiatePayment } from "../../components/apis";
 import { verifyPayment } from "../../components/apis";
 import { realintakeslogo } from "../../components/Images";
+import { logEvent } from "../../Utilities/analytics";
 const FormOverallSummary = () => {
   const navigateOverall = useNavigate();
   const [isChecked, setIsChecked] = useState(true);
@@ -129,6 +130,10 @@ const FormOverallSummary = () => {
   };
 
   const handlepayment = async () => {
+    logEvent("pay_now_clicked", {
+      category: "Payment",
+      label: "Pay Now",
+    });
     const data = {
       tempUserId: userId.toString(),
       amount: 99, // Amount in subunits (e.g., 99 INR = 9900 paise)
@@ -436,6 +441,9 @@ const FormOverallSummary = () => {
             </div>
             <div className="get-diet-plan-head">
               <span>Get you 30 days workout and diet plan now</span>
+              <span className="get-diet-plan-second-head">
+                (After payment you receive the plan via Pdf.)
+              </span>
             </div>
             <div className="payment-wrapper">
               <div className="payment-plan-wrapper">

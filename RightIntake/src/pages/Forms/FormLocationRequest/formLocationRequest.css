@@ -16,6 +16,7 @@
 .location-request-head {
   font-size: 2rem;
   font-weight: 700;
+  text-align: center;
 }
 .custom-select {
   width: 500px;
@@ -47,4 +48,14 @@
 .custom-select .react-select__option--is-selected {
   background-color: #0056b3;
   color: #fff;
+}
+
+@media (max-width: 450px) {
+  .custom-select {
+    width: 300px;
+  }
+
+  .location-request-head {
+    text-align: center;
+  }
 }

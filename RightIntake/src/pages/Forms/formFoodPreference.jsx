@@ -4,7 +4,7 @@ import NavigationButton from "../../components/Button/navigationButton";
 import DataContext from "../../components/Context/DataContext";
 import axios from "axios";
 import { getfoodpreferences } from "../../components/apis";
-
+import { logEvent } from "../../Utilities/analytics";
 const FormFoodPreference = ({ handleNext }) => {
   const { foodPreferenceData, setFormData } = useContext(DataContext);
   const [foodPreferences, setFoodPreferences] = useState({});
@@ -191,6 +191,10 @@ const FormFoodPreference = ({ handleNext }) => {
         <NavigationButton
           handleNext={() => {
             if (validateSelections()) {
+              logEvent("food_preferences_selected", {
+                category: "User Actions",
+                label: "Food Preferences",
+              });
               setFormData((prev) => ({
                 ...prev,
                 foodPreference: foodPreferences,
