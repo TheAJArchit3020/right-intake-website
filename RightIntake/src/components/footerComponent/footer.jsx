@@ -17,7 +17,7 @@ const Footer = () => {
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
-            <div
+            {/* <div
               className="footer-cta mt-5"
               onClick={() => navigateFooter("/dietplanform")}
             >
@@ -25,7 +25,7 @@ const Footer = () => {
                 Get your personalized plan now
               </span>
               <img src={fireemoji} alt="" />
-            </div>
+            </div> */}
             <p className="mt-4 text-left text-lg-start">
               Address: Kineticscape Studios, plot no.64, Shivaji housing
               society,

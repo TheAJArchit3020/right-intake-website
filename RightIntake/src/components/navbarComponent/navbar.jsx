@@ -18,7 +18,7 @@ const NavbarComponent = () => {
 
   return (
     <>
-      <Navbar key={false} expand={false} className="bg-body mb-3">
+      {/* <Navbar key={false} expand={false} className="bg-body mb-3">
         <Container fluid>
           <Navbar.Brand href="/">
             <img src={realintakeslogo} alt="realintakeslogo" width={40} />
@@ -66,7 +66,26 @@ const NavbarComponent = () => {
             <img src={fireemoji} alt="" />
           </div>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
+
+      {/* new code */}
+      <div className="newNavbarContainer">
+        <div className="navBarBrand">
+          <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+          <span className="Rightintake-Logo-Name">Right Intake</span>
+        </div>
+        <div className="navTabs">
+          <p className="navTabs-p" >Home</p>
+          <p className="navTabs-p" >Tracking</p>
+          <p className="navTabs-p" >FoodLens</p>
+          <p className="navTabs-p" >Smartmeal</p>
+          <p className="navTabs-p" >NutriPlans</p>
+          <p className="navTabs-p" >Reviews</p>
+        </div>
+        <div className="getappbutton">
+          <p className="getappbutton-p">Get rightintake app</p>
+        </div>
+      </div>
     </>
   );
 };

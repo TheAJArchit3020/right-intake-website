@@ -1,12 +1,12 @@
-a.navbar-brand {
+/* a.navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
 }
-.Rightintake-Logo-Name {
-  font-weight: 700;
-}
+
+
+
 .Heading2 {
   font-size: 2.25rem;
   font-weight: 700;
@@ -29,16 +29,19 @@ a.navbar-brand {
   cursor: pointer;
   background: linear-gradient(to left, #9feb9f 0%, #85cb85 100%);
 }
+
 .home-btn {
   border-bottom: 2px solid #7c7c7c8f;
   margin: 0 20px 0;
   padding: 0 0 20px;
 }
+
 .terms-a-c-btn {
   border-bottom: 2px solid #7c7c7c8f;
   margin: 0 20px 0;
   padding: 0 0 20px;
 }
+
 .contact-us-btn {
   border-bottom: 2px solid #7c7c7c8f;
   margin: 0 20px 0;
@@ -48,18 +51,20 @@ a.navbar-brand {
 .hamburger-nav-bar:hover {
   cursor: pointer;
 }
+
 .about-us-btn {
   margin: 0 20px 0;
   padding: 0 0 20px;
-}
+} */
+
 @media (min-width: 992px) {
-  nav.bg-body.mb-3.navbar.navbar-light {
+  /* nav.bg-body.mb-3.navbar.navbar-light {
     padding: 2em 3em;
   }
 
   .offcanvas.offcanvas-end.show {
     width: 30% !important;
-  }
+  } */
 }
 
 a {
@@ -71,38 +76,59 @@ h4.ms-2 {
 }
 
 @media (max-width: 768px) {
-  .offcanvas.offcanvas-end.show {
-    width: 100% !important;
-  }
-
-  .Heading2 {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .nav-bar-cta {
-    font-size: 0.8rem;
-  }
-
-  h4 {
-    font-size: 2rem;
-  }
+  
 }
 
 @media (min-width: 768px) {
-  nav.bg-body.mb-3.navbar.navbar-light {
-    padding: 2em 3em;
-  }
 
-  .section1 {
-    text-align: left;
-  }
+}
 
-  .offcanvas.offcanvas-end.show {
-    width: 40% !important;
-  }
-  .Heading2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-  }
+
+
+/* new css */
+.newNavbarContainer {
+  background-color: #FFFFFF;
+  border-radius: 64px;
+  padding: 10px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 15%);
+  gap: 20px;
+  width: 80%;
+  margin-top: 30px;
+  display: inline-flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-between;
+  padding: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+ 
+}
+.navBarBrand{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.navTabs{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.getappbutton {
+  background: linear-gradient(112.218deg, #B0BEC5 0%, #D6E3EA 100%);
+  padding: 10px;
+  border-radius: 10px;
+}
+p {
+  margin-bottom: 0 !important;
+}
+p.getappbutton-p {
+  color: #095846;
+  font-weight: bold;
+}
+.navTabs p{
+  color: #6C8688;
+  font-weight: bold;
+}
+.Rightintake-Logo-Name {
+  font-weight: 700;
 }

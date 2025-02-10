@@ -5,7 +5,7 @@ import NavbarComponent from '../components/navbarComponent/navbar'
 const Layout = ({ children }) => {
 
      return (
-          <>
+          <div className='layoutbackground'>
                {/* Navbar */}
                <NavbarComponent  />
 
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 
                {/* Footer */}
                <Footer />
-          </>
+          </div>
      )
 }
 
