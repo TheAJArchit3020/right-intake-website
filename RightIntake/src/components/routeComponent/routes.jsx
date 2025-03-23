@@ -9,6 +9,9 @@ import ContactUs from "../../pages/ContactUs/ContactUs";
 import Loading from "../../pages/LoadingAnimation/Loading";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
 import PaymentSuccess from "../../pages/Final/final";
+import PrivacyPolicyPage from "../../pages/PrivacyPolicyPage/PrivacyPolicyPage";
+import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage/TermsAndConditionsPage";
+import RefundPolicyPage from "../../pages/RefundPolicyPage/RefundPolicyPage";
 
 const RoutesComponent = () => {
   return (
@@ -19,8 +22,7 @@ const RoutesComponent = () => {
           path="/"
           element={
             <Layout>
-              {" "}
-              <HomePage />{" "}
+              <HomePage />
             </Layout>
           }
         />
@@ -31,6 +33,9 @@ const RoutesComponent = () => {
         <Route path="/termsandservices" element={<TermsandServices />} />
         <Route path="/final" element={<PaymentSuccess />} />
         <Route path="/dietplanform/:step" element={<FormLayout />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-services" element={<TermsAndConditionsPage />} />
+        <Route path="/refund-policy" element={<RefundPolicyPage />} />
       </Routes>
     </BrowserRouter>
   );
