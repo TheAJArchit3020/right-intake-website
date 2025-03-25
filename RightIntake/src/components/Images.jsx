@@ -88,6 +88,13 @@ export const homescreenimage10 = "/images/homePage/image96.png";
 export const homescreenimage11 = "/images/homePage/image97.png";
 export const homescreenimage12 = "/images/homePage/reviewbg.png";
 
+export const homescreenimage13 = "/images/homePage/nup1.png";
+export const homescreenimage14 = "/images/homePage/nup2.png";
+export const homescreenimage15 = "/images/homePage/nup3.png";
+export const homescreenimage16 = "/images/homePage/herobg.png";
+export const homescreenimage17 = "/images/homePage/trackingnup1.png";
+export const homescreenimage18 = "/images/homePage/trackingnup2.png";
+
 
 export const smartmeal1 = "/images/homePage/smartmeal1.png";
 export const smartmeal2 = "/images/homePage/smartmeal2.png";

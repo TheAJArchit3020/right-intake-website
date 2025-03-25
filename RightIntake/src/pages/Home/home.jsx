@@ -5,20 +5,37 @@ import {
   homescreenimage1,
   homescreenimage2,
   homescreenimage3,
-  homescreenimage4,
-  homescreenimage5,
-  homescreenimage6,
+
   playstoreimage,
   realintakeslogo,
-  homescreenimage7,
   homescreenimage8,
   homescreenimage9,
   homescreenimage10,
   homescreenimage11,
+  homescreenimage13,
+  homescreenimage14,
+  homescreenimage15,
+  homescreenimage17,
+  homescreenimage18,
 } from "../../components/Images";
 
 import { useNavigate } from "react-router";
 import Layout from "../layoutPage";
+
+const StarRating = ({ rating }) => {
+  return (
+    <div>
+      {[...Array(5)].map((_, index) => (
+        <span
+          key={index}
+          style={{ color: index < rating ? "gold" : "gray", fontSize: "24px" }}
+        >
+          ★
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -34,14 +51,12 @@ const HomePage = () => {
   const [isVisible, setIsVisible] = useState({
     homeref: false,
     trackingref: false,
-    foodmealref: false,
     nutriplanref: false,
     reviewref: false,
   });
 
   const homeref = useRef(null);
   const trackingref = useRef(null);
-  const foodmealref = useRef(null);
   const nutriplanref = useRef(null);
   const reviewref = useRef(null);
 
@@ -49,7 +64,6 @@ const HomePage = () => {
   const sectionRefs = {
     home: homeref,
     tracking: trackingref,
-    foodmeal: foodmealref,
     nutriplans: nutriplanref,
     reviews: reviewref,
   };
@@ -127,14 +141,6 @@ const HomePage = () => {
           >
             NutriPlans
           </p>
-          <p
-            className="navTabs-p"
-            onClick={() =>
-              foodmealref.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Blogs
-          </p>
 
           <p
             className="navTabs-p"
@@ -202,9 +208,14 @@ const HomePage = () => {
             <div className="landing-page-tracking">
               <div className="landing-page-tracking-leftcontent">
                 <img
-                  src={homescreenimage4}
+                  src={homescreenimage17}
                   alt="homescreenimage4"
                   className="tracking-image"
+                />
+                <img
+                  src={homescreenimage18}
+                  alt="homescreenimage4"
+                  className="tracking-sub-image"
                 />
               </div>
               <div className="landing-page-tracking-section">
@@ -249,7 +260,7 @@ const HomePage = () => {
                 </div>
                 <div className="foodlendcontent2">
                   <img
-                    src={homescreenimage5}
+                    src={homescreenimage13}
                     alt=""
                     className="foodcontent-image"
                   />
@@ -258,7 +269,7 @@ const HomePage = () => {
               <div className="foodlens2">
                 <div className="foodlendcontent2">
                   <img
-                    src={homescreenimage6}
+                    src={homescreenimage14}
                     alt=""
                     className="foodcontent-image"
                   />
@@ -291,7 +302,7 @@ const HomePage = () => {
                 </div>
                 <div className="foodlendcontent2">
                   <img
-                    src={homescreenimage7}
+                    src={homescreenimage15}
                     alt=""
                     className="foodcontent-image"
                   />
@@ -300,13 +311,8 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* section 4 */}
-          {/* <div ref={smartmealref} className="landing-page-smartmeal">
-            
-          </div> */}
-
           {/* section 3 */}
-          <div ref={foodmealref} className="landing-page-nutri">
+          <div className="landing-page-nutri">
             <div className="landing-page-blog-wrapper">
               <div className="blogs-card">
                 <p>
@@ -350,7 +356,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={4} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -367,7 +373,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={4} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -384,7 +390,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={3} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -401,7 +407,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={3} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -418,7 +424,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={4} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -435,7 +441,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={4} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">
@@ -452,7 +458,7 @@ const HomePage = () => {
                   <div className="review-card-bodyContent">
                     <div className="bodyContent-grp">
                       <p>Name</p>
-                      <div></div>
+                      <StarRating rating={4} />
                     </div>
                     <p>05/02/25</p>
                     <p className="review-body-para">

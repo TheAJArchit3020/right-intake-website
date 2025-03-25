@@ -146,6 +146,8 @@
   font-size: 150px;
   color: rgba(0, 0, 0, 5%);
   margin-bottom: 2rem;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: bold;
 }
 
 @media (max-width: 1440px) {
@@ -482,7 +484,10 @@ p.review-para {
 }
 
 .bodyContent-grp {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 p.review-body-para {
@@ -509,8 +514,7 @@ p.review-body-para {
   padding: 2rem;
   max-width: 500px;
   font-family: 'Plus Jakarta Sans';
-  display: flex
-;
+  display: flex;
   flex-direction: column;
   align-items: end;
   font-size: 24px;
@@ -518,7 +522,7 @@ p.review-body-para {
   justify-content: center;
 }
 
-.landing-page-blog-wrapper2{
+.landing-page-blog-wrapper2 {
   gap: 3rem;
   padding-right: 3rem;
 
@@ -597,8 +601,25 @@ p.nutri-para {
   right: 16.5rem;
 }
 
-.foodlens1 {
-  margin-left: 5rem
+.foodlens1,.foodlens3{
+  background-image: url(/public/images/homePage/herobg.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.foodlens2 {
+  background-image: url(/public/images/homePage/herobg.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tracking-sub-image {
+  width: 400px;
+  position: absolute;
+  left: 6rem;
+  top: 15.5rem;
+  animation: slideInFromTop 1.5s ease-out forwards;
 }
 
 .foodlens1,
@@ -608,7 +629,9 @@ p.nutri-para {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* gap: 40px; */
+  gap: 80px;
+ 
+
 }
 
 .foodlensgrp {
@@ -622,17 +645,8 @@ p.nutri-para {
   text-align: left !important;
 }
 
-.foodlens2 {
-  /* justify-content: center;
-  margin-left: 15rem; */
-  margin-right: 10rem
-}
 
-.foodlens3 {
-  /* /* justify-content: flex-end; */
-  /* margin-right: 15rem;  */
-  margin-right: -5rem;
-}
+
 
 @keyframes slideInFromLeft {
   0% {
@@ -674,6 +688,20 @@ p.nutri-para {
   }
 }
 
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    /* Start from above the screen */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Move to its original position */
+    opacity: 1;
+  }
+}
+
 .left-content {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
@@ -683,7 +711,8 @@ p.nutri-para {
 }
 
 .landing-page-tracking-leftcontent {
-  animation: slideInFromBottom 1.5s ease-out forwards;
+  
+  position: relative;
 
 }
 

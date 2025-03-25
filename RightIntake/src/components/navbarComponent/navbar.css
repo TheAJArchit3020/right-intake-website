@@ -75,13 +75,9 @@ h4.ms-2 {
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
-  
-}
+@media (max-width: 768px) {}
 
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 
 
@@ -89,46 +85,63 @@ h4.ms-2 {
 .newNavbarContainer {
   background-color: #FFFFFF;
   border-radius: 64px;
-  padding: 10px;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 15%);
   gap: 20px;
-  width: 90%;
+  width: 95%;
   margin-top: 30px;
   display: inline-flex;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
   justify-content: space-between;
   padding: 1%;
   padding-left: 2%;
   padding-right: 2%;
- 
+  font-family: 'Plus Jakarta Sans';
+
 }
-.navBarBrand{
+
+.navBarBrand {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.navTabs{
+
+.navTabs {
   display: flex;
   align-items: center;
   gap: 26px;
 }
+
 .getappbutton {
   background: linear-gradient(112.218deg, #B0BEC5 0%, #D6E3EA 100%);
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
+
 p {
   margin-bottom: 0 !important;
 }
+
 p.getappbutton-p {
   color: #095846;
   font-weight: bold;
+  font-family: 'Plus Jakarta Sans';
 }
-.navTabs p{
+
+.navTabs p {
   color: #6C8688;
   font-weight: bold;
+  font-family: 'Plus Jakarta Sans';
+  cursor: pointer;
 }
+
+.navTabs p:hover {
+  background-color: #f4f4f4;
+  padding: 6px 15px;
+  border-radius: 1rem;
+}
+
 .Rightintake-Logo-Name {
   font-weight: 700;
+  font-family: 'Plus Jakarta Sans';
 }

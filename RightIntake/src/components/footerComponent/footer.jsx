@@ -45,7 +45,7 @@ const Footer = () => {
               <p className="mb-2">Terms and Conditions</p>
             </Link>
             <Link to={"/aboutus"}>
-              <p>About Us</p>
+              <p>Contact Us</p>
             </Link>
           </div>
         </div>
