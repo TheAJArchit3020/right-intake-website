@@ -143,8 +143,9 @@
 }
 
 .Heading1 {
-  font-size: 180px;
+  font-size: 150px;
   color: rgba(0, 0, 0, 5%);
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1440px) {
@@ -321,8 +322,8 @@
 }
 
 img.centerImage {
-  width: 288px;
-  height: 590px;
+  width: 240px;
+  height: 475px;
 }
 
 p.landing-head-para {
@@ -352,8 +353,7 @@ p.landing-head-para {
 }
 
 .tracking-image {
-  width: 300px;
-  height: 400px;
+  height: 900px;
 }
 
 .dot {
@@ -366,10 +366,9 @@ p.landing-head-para {
 .landing-page-tracking {
   display: flex;
   justify-content: center;
-  /* margin-top: 120px;
-  margin-bottom: 120px; */
-  gap: 10rem;
-  padding: 0px 16rem
+  gap: 5rem;
+  padding: 0px 10rem;
+  align-items: center;
 }
 
 /* .landing-page-tracking-leftcontent {
@@ -419,15 +418,20 @@ p.landing-head-para {
   text-align: center;
 }
 
-.landing-page-foodLens-grpimage {
+.foodlens1,
+.foodlens2,
+.foodlens3 .landing-page-foodLens-grpimage {
   display: flex;
   justify-content: center;
-  gap: 2rem
+  flex-direction: column;
+  gap: 2rem;
+  padding: 50px;
+
 }
 
 .landing-page-foodLens-grpimage img {
   height: 600px;
-  width: 300px;
+  /* width: 200px; */
 }
 
 p.smartmeal-para {
@@ -491,12 +495,6 @@ p.review-body-para {
   overflow-y: hidden;
 }
 
-.landing-page-tracking-leftcontent {
-  /* background-image: url(/images/homePage/trackingbg.png);
-  background-repeat: no-repeat;
-  background-size: 600px; */
-  /* background-position: ce; */
-}
 
 .landing-page-trackingWrapper,
 .landing-page-smartmeal {
@@ -505,8 +503,40 @@ p.review-body-para {
   display: flex;
 }
 
-.landing-page-nutri {
-  height: 600px;
+.blogs-card {
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 10%);
+  padding: 2rem;
+  max-width: 500px;
+  font-family: 'Plus Jakarta Sans';
+  display: flex
+;
+  flex-direction: column;
+  align-items: end;
+  font-size: 24px;
+  height: 220px;
+  justify-content: center;
+}
+
+.landing-page-blog-wrapper2{
+  gap: 3rem;
+  padding-right: 3rem;
+
+}
+
+.landing-page-blog-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-small-image {
+  width: 50px;
+}
+
+.blogimage {
+  width: 600px;
+
 }
 
 .landing-page-nutri-section {
@@ -530,7 +560,7 @@ p.nutri-para {
   padding: 0px 180px;
 }
 
-.landing-page-nutri-grpimage {
+/* .landing-page-nutri-grpimage {
   background-image: url(/public/images/homePage/comingsoonbg.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -542,37 +572,74 @@ p.nutri-para {
   font-size: 5rem;
   font-weight: 600;
   text-align: center;
-}
+} */
 
-.smartmeal-backgroundimage{
-  background-image: url(/public/images/homePage/smartmealbg.png);
+/* .smartmeal-backgroundimage {
+  background-image: url(/public/images/homePage/rewiewbg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 700px 450px;
-  /* padding: 5rem; */
-}
+} */
 
-.landing-page-tracking-leftcontent{
-  /* background-image: url(/public/images/homePage/smartmealbg.png);
+.landing-page-review {
+  height: 500px;
+  padding-top: 8rem;
+  background-image: url('/public/images/homePage/rewiewbg.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 700px 450px; */
+  background-size: 700px 450px;
 }
 
-.smartmealimage2{
+.smartmealimage2 {
   width: 480px;
   height: 300px;
   position: absolute;
   right: 16.5rem;
 }
 
+.foodlens1 {
+  margin-left: 5rem
+}
 
+.foodlens1,
+.foodlens2,
+.foodlens3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* gap: 40px; */
+}
+
+.foodlensgrp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.foodlespara {
+  width: 300px;
+  text-align: left !important;
+}
+
+.foodlens2 {
+  /* justify-content: center;
+  margin-left: 15rem; */
+  margin-right: 10rem
+}
+
+.foodlens3 {
+  /* /* justify-content: flex-end; */
+  /* margin-right: 15rem;  */
+  margin-right: -5rem;
+}
 
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -581,22 +648,28 @@ p.nutri-para {
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%); /* Start from the right */
+    transform: translateX(100%);
+    /* Start from the right */
     opacity: 0;
   }
+
   100% {
-    transform: translateX(0); /* Move to its original position */
+    transform: translateX(0);
+    /* Move to its original position */
     opacity: 1;
   }
 }
 
 @keyframes slideInFromBottom {
   0% {
-    transform: translateY(100%); /* Start from below the screen */
+    transform: translateY(100%);
+    /* Start from below the screen */
     opacity: 0;
   }
+
   100% {
-    transform: translateY(0); /* Move to its original position */
+    transform: translateY(0);
+    /* Move to its original position */
     opacity: 1;
   }
 }
@@ -609,12 +682,12 @@ p.nutri-para {
   animation: slideInFromRight 1.5s ease-out forwards;
 }
 
-.landing-page-tracking-leftcontent{
+.landing-page-tracking-leftcontent {
   animation: slideInFromBottom 1.5s ease-out forwards;
 
 }
 
-.smartmealimage2{
+.smartmealimage2 {
   animation: slideInFromBottom 1.5s ease-out forwards;
 
 }
@@ -622,5 +695,3 @@ p.nutri-para {
 .animate-on-scroll {
   animation: slideInFromLeft 1.5s ease-out forwards;
 }
-
-

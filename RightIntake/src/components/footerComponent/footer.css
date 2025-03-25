@@ -2,6 +2,9 @@
   /* background-color: #faeafc; */
   padding: 2rem;
   position: relative;
+  border-top: 0.5px solid #9E9E9E;
+  width: '90%';
+
 }
 
 .footer-wrapper {
