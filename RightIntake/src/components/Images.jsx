@@ -95,6 +95,15 @@ export const homescreenimage16 = "/images/homePage/herobg.png";
 export const homescreenimage17 = "/images/homePage/trackingnup1.png";
 export const homescreenimage18 = "/images/homePage/trackingnup2.png";
 
+export const contactusimage = "/images/contactUs/Frame.svg";
+export const contactusimage2 = "/images/contactUs/backicon.svg";
+export const contactusimage3 = "/images/contactUs/callicon.svg";
+export const contactusimage4 = "/images/contactUs/mailicon.svg";
+export const contactusimage5 = "/images/contactUs/locationicon.svg";
+export const contactusimage6 = "/images/contactUs/contactusbg.svg";
+export const eyeopen = "/images/contactUs/eyes.svg";
+export const eyeclosed = "/images/contactUs/crossedeyes.svg";
+
 
 export const smartmeal1 = "/images/homePage/smartmeal1.png";
 export const smartmeal2 = "/images/homePage/smartmeal2.png";

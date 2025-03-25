@@ -9,6 +9,7 @@ import ContactUs from "../../pages/ContactUs/ContactUs";
 import Loading from "../../pages/LoadingAnimation/Loading";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
 import PaymentSuccess from "../../pages/Final/final";
+import DeleteAccount from "../../pages/DeleteAccount/DeleteAccount";
 
 const RoutesComponent = () => {
   return (
@@ -19,6 +20,7 @@ const RoutesComponent = () => {
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/deleteaccount" element={<DeleteAccount />} />
         <Route path="/termsandservices" element={<TermsandServices />} />
         <Route path="/final" element={<PaymentSuccess />} />
         <Route path="/dietplanform/:step" element={<FormLayout />} />

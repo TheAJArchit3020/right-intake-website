@@ -4,19 +4,22 @@
   position: relative;
   border-top: 0.5px solid #9E9E9E;
   width: '90%';
+  font-family: 'Plus Jakarta Sans';
 
 }
 
 .footer-wrapper {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
   justify-content: space-between;
   align-items: center;
 }
 
 .footer-section1,
 .footer-section2 {
-  flex: 1 1 100%; /* Default to full width */
+  flex: 1 1 100%;
+  /* Default to full width */
   max-width: 100%;
   margin-bottom: 1rem;
 }
@@ -24,6 +27,12 @@
 .footer-section2 {
   font-weight: bold;
   font-size: 1.25rem;
+  font-family: 'Plus Jakarta Sans';
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+  font-size: 16px;
 }
 
 .footer-button {
@@ -34,6 +43,7 @@
   outline: none !important;
   border: none !important;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  font-family: 'Plus Jakarta Sans';
 }
 
 .footer-cta {
@@ -47,16 +57,20 @@
   border-radius: 10px;
   padding: 2% 5%;
 }
+
 .footer-cta:hover {
   cursor: pointer;
   background-color: #9feb9f;
   background: #9feb9f;
   transition: 200ms ease;
 }
+
 .footer-btn-Text {
   font-size: 1.25rem;
   font-weight: 700;
+  font-family: 'Plus Jakarta Sans';
 }
+
 .fire-emoji {
   width: 5px;
   height: 5px;
@@ -65,22 +79,30 @@
 
 .footer-section1 {
   font-size: 1.25rem;
+  font-family: 'Plus Jakarta Sans';
+}
+
+.footer-section2 p {
+  cursor: pointer;
 }
 
 /* Larger screens */
 @media (min-width: 992px) {
   .footer-wrapper {
-    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+    flex-wrap: nowrap;
+    /* Prevent wrapping on large screens */
   }
 
   .footer-section1 {
-    flex: 1; /* Left section takes equal space */
+    flex: 1;
+    /* Left section takes equal space */
     text-align: left;
     margin-right: 2rem;
   }
 
   .footer-section2 {
-    flex: 1; /* Right section adjusts automatically */
+    flex: 1;
+    /* Right section adjusts automatically */
     text-align: right;
   }
 }
@@ -94,13 +116,30 @@
   .footer-button {
     font-size: 0.9rem;
     padding: 8px;
+    font-family: 'Plus Jakarta Sans';
   }
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  font-family: 'Plus Jakarta Sans';
 }
 
 
+.footer-getappbutton {
+  background: linear-gradient(112.218deg, #B0BEC5 0%, #D6E3EA 100%);
+  padding: 4px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+  float: inline-end;
+  cursor: pointer;
+}
 
+.footer-getappbutton-p {
+  color: #095846;
+  font-weight: bold;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 14px;
+}

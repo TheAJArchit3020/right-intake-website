@@ -564,31 +564,12 @@ p.nutri-para {
   padding: 0px 180px;
 }
 
-/* .landing-page-nutri-grpimage {
-  background-image: url(/public/images/homePage/comingsoonbg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1400px 330px;
-  padding: 5rem;
-}
 
-.landing-page-nutri-grpimage p {
-  font-size: 5rem;
-  font-weight: 600;
-  text-align: center;
-} */
-
-/* .smartmeal-backgroundimage {
-  background-image: url(/public/images/homePage/rewiewbg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 700px 450px;
-} */
 
 .landing-page-review {
   height: 500px;
   padding-top: 8rem;
-  background-image: url('/public/images/homePage/rewiewbg.png');
+  background-image: url(/public/images/homePage/rewiewbg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 700px 450px;
