@@ -11,12 +11,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 10%;
-  /* background: linear-gradient(
-    180deg,
-    rgba(115, 115, 115, 0%) 0%,
-    rgba(145, 216, 145, 12%) 73%,
-    rgba(255, 255, 255, 13%) 100%
-  ); */
+
   gap: 40px;
 }
 
@@ -150,158 +145,6 @@
   font-weight: bold;
 }
 
-@media (max-width: 1440px) {
-  .landing-head-right {
-    width: 50%;
-  }
-
-  .landing-head-left {
-    width: 50%;
-  }
-
-  .Heading1 {
-    font-size: 3rem;
-  }
-
-  .NormalText {
-    font-size: 1.5rem;
-  }
-
-  .btn-Text {
-    font-size: 1.3rem;
-  }
-
-  .store-thingy span {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 1044px) {
-  .Heading1 {
-    font-size: 2.5rem;
-  }
-
-  .NormalText {
-    font-size: 1.35rem;
-  }
-
-  .btn-Text {
-    font-size: 1rem;
-  }
-
-  .store-thingy span {
-    font-size: 1.1rem;
-  }
-
-  .dumbelsicon {
-    width: 7%;
-  }
-}
-
-@media (max-width: 780px) {
-  .Heading1 {
-    font-size: 2rem;
-  }
-
-  .NormalText {
-    font-size: 1rem;
-  }
-
-  .btn-Text {
-    font-size: 0.72rem;
-  }
-
-  .store-thingy span {
-    font-size: 0.72rem;
-  }
-
-  .landing-head-cta img {
-    width: 10%;
-  }
-
-  .fitness-bg img {
-    width: 1412px;
-    height: 711px;
-  }
-}
-
-@media (max-width: 440px) {
-  .landing-page-head {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .landing-head-right {
-    width: 100%;
-  }
-
-  .landing-head-left {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .Heading1 {
-    font-size: 1.5rem;
-  }
-
-  .NormalText {
-    font-size: 0.75rem;
-  }
-
-  .btn-Text {
-    font-size: 0.6rem;
-  }
-
-  .store-thingy span {
-    font-size: 0.55rem;
-  }
-
-  .landing-page-nutrition {
-    flex-direction: column;
-    padding: 10% 0 0;
-  }
-
-  .landing-page-nutrition-left {
-    align-items: center;
-  }
-
-  .nutrition-key-points {
-    align-items: center;
-    text-align: center;
-  }
-
-  .landing-page-nutrition-right {
-    width: 100%;
-  }
-
-  .l-p-p-m-p-left {
-    align-items: center;
-    text-align: center;
-  }
-
-  .landing-page-personalized-meal-plan {
-    flex-direction: column;
-    padding: 5% 5%;
-  }
-
-  .l-p-p-m-p-right {
-    width: 100%;
-  }
-
-  .landing-page-AI-sec-content {
-    text-align: center;
-  }
-
-  .landing-page-AI-sec-content img {
-    width: 10%;
-  }
-
-  .fitness-bg img {
-    width: 1412px;
-    height: 711px;
-  }
-}
 
 
 
@@ -582,12 +425,14 @@ p.nutri-para {
   right: 16.5rem;
 }
 
-.foodlens1,.foodlens3{
+.foodlens1,
+.foodlens3 {
   background-image: url(/public/images/homePage/herobg.png);
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .foodlens2 {
   background-image: url(/public/images/homePage/herobg.png);
   background-position: left;
@@ -611,7 +456,7 @@ p.nutri-para {
   justify-content: center;
   align-items: center;
   gap: 80px;
- 
+
 
 }
 
@@ -692,7 +537,7 @@ p.nutri-para {
 }
 
 .landing-page-tracking-leftcontent {
-  
+
   position: relative;
 
 }
@@ -704,4 +549,345 @@ p.nutri-para {
 
 .animate-on-scroll {
   animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.navBarBrand-mobile {
+  display: none;
+}
+
+
+
+@media (max-width: 1440px) {
+  .landing-head-right {
+    width: 50%;
+  }
+
+  .landing-head-left {
+    width: 50%;
+  }
+
+  .Heading1 {
+    font-size: 3rem;
+  }
+
+  .NormalText {
+    font-size: 1.5rem;
+  }
+
+  .btn-Text {
+    font-size: 1.3rem;
+  }
+
+  .store-thingy span {
+    font-size: 1.5rem;
+  }
+
+  .Heading1 {
+    font-size: 2.5rem;
+  }
+
+  .NormalText {
+    font-size: 1.35rem;
+  }
+
+  .btn-Text {
+    font-size: 1rem;
+  }
+
+  .store-thingy span {
+    font-size: 1.1rem;
+  }
+
+  .dumbelsicon {
+    width: 7%;
+  }
+}
+
+
+@media (max-width: 780px) {
+  .Heading1 {
+    font-size: 2rem;
+  }
+
+  .NormalText {
+    font-size: 1rem;
+  }
+
+  .btn-Text {
+    font-size: 0.72rem;
+  }
+
+  .store-thingy span {
+    font-size: 0.72rem;
+  }
+
+  .landing-head-cta img {
+    width: 10%;
+  }
+
+  .fitness-bg img {
+    width: 1412px;
+    height: 711px;
+  }
+
+  img.centerImage {
+    width: 120px !important;
+    ;
+    height: 180px;
+  }
+
+  .landing-head-content img {
+    width: 260px;
+  }
+
+
+  .landing-page-section1 {
+    padding: 60px 20px;
+  }
+
+  .landing-page-tracking {
+
+    padding: 0px 1rem;
+    gap: 0rem;
+  }
+
+  .tracking-image {
+    height: 600px;
+  }
+
+  .tracking-sub-image {
+    width: 270px;
+    left: 4rem;
+    top: 10.5rem;
+  }
+
+  p.foodlens-para {
+    padding: 0px 20px;
+  }
+
+  .landing-page-foodLens-grpimage img {
+    height: 400px;
+  }
+
+  .blogs-card {
+    max-width: 320px;
+
+  }
+
+  .blogs-card p {
+    font-size: 18px;
+
+  }
+
+  .blogimage {
+    width: 400px;
+  }
+
+  .landing-page-blog-wrapper2 {
+    padding-right: 0rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .landing-page-head {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-head-right {
+    width: 100%;
+  }
+
+  .landing-head-left {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .Heading1 {
+    font-size: 1.5rem;
+  }
+
+  .NormalText {
+    font-size: 0.75rem;
+  }
+
+  .btn-Text {
+    font-size: 0.6rem;
+  }
+
+  .store-thingy span {
+    font-size: 0.55rem;
+  }
+
+  .landing-page-nutrition {
+    flex-direction: column;
+    padding: 10% 0 0;
+  }
+
+  .landing-page-nutrition-left {
+    align-items: center;
+  }
+
+  .nutrition-key-points {
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing-page-nutrition-right {
+    width: 100%;
+  }
+
+  .l-p-p-m-p-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing-page-personalized-meal-plan {
+    flex-direction: column;
+    padding: 5% 5%;
+  }
+
+  .l-p-p-m-p-right {
+    width: 100%;
+  }
+
+  .landing-page-AI-sec-content {
+    text-align: center;
+  }
+
+  .landing-page-AI-sec-content img {
+    width: 10%;
+  }
+
+  .fitness-bg img {
+    width: 1412px;
+    height: 711px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .navBarBrand-mobile {
+    display: block;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .newNavbarContainer {
+    display: none !important;
+  }
+
+  .Heading1 {
+    font-size: 3.5rem;
+  }
+
+  .landing-head-content img {
+    width: 280px;
+  }
+
+  .landing-page-section1 {
+    padding: 20px;
+  }
+
+  img.centerImage {
+    height: auto;
+  }
+
+
+  p.landing-head-para {
+    text-align: left;
+  }
+
+  .storeGrp {
+    flex-direction: column;
+  }
+
+  .landing-page-tracking {
+
+    padding: 0px 0rem;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+
+  .landing-page-trackingWrapper,
+  .landing-page-smartmeal {
+
+    flex-direction: column;
+  }
+
+  .tracking-image {
+    height: 600px;
+  }
+
+  .tracking-sub-image {
+    width: 260px;
+    position: absolute;
+    left: 4.5rem;
+    top: 10.5rem;
+    animation: slideInFromTop 1.5s ease-out forwards;
+  }
+
+  .landing-page-tracking-section {
+    width: 280px;
+  }
+
+  .landing-page-tracking-rightcontent-span {
+    font-size: 24px;
+    margin-top: 30px !important;
+  }
+
+  p.foodlens-para {
+    padding: 0px 20px;
+    text-align: left;
+  }
+
+  .landing-page-foodLens-grpimage img {
+    height: 400px;
+  }
+
+  .foodlens1,
+  .foodlens2,
+  .foodlens3 {
+
+    flex-direction: column;
+
+    gap: 60px;
+  }
+
+  .foodlenscontent {
+    padding: 0px 70px;
+  }
+
+  .landing-page-blog-wrapper {
+
+    flex-direction: column;
+  }
+
+  .blogs-card {
+    height: 200px;
+    width: 300px;
+  }
+
+  .blogs-card p {
+    font-size: 18px;
+  }
+
+  .blogimage {
+    width: 350px;
+  }
+
+
+  .landing-page-blog-wrapper2 {
+    gap: 2rem;
+    padding-right: 0rem;
+  }
+
+
+
 }

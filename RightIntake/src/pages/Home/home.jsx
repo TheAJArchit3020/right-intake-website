@@ -5,7 +5,6 @@ import {
   homescreenimage1,
   homescreenimage2,
   homescreenimage3,
-
   playstoreimage,
   realintakeslogo,
   homescreenimage8,
@@ -38,23 +37,6 @@ const StarRating = ({ rating }) => {
 };
 
 const HomePage = () => {
-  const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   logEvent("get_personalized_plan", {
-  //     category: "User Actions",
-  //     label: "Get Plan Button",
-  //   });
-  //   navigate("/dietplanform");
-  // };
-
-  const [isVisible, setIsVisible] = useState({
-    homeref: false,
-    trackingref: false,
-    nutriplanref: false,
-    reviewref: false,
-  });
-
   const homeref = useRef(null);
   const trackingref = useRef(null);
   const nutriplanref = useRef(null);
@@ -77,40 +59,14 @@ const HomePage = () => {
     }
   };
 
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible((prevState) => ({
-            ...prevState,
-            [entry.target.dataset.ref]: true,
-          }));
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-
-    Object.values(sectionRefs).forEach((ref) => {
-      observer.observe(ref.current);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <Layout>
+      {/* for mobile */}
+
+      <div className="navBarBrand-mobile">
+        <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+        <span className="Rightintake-Logo-Name">Right Intake</span>
+      </div>
       <div className="newNavbarContainer">
         <div className="navBarBrand">
           <img src={realintakeslogo} alt="realintakeslogo" width={40} />
@@ -155,6 +111,7 @@ const HomePage = () => {
           <p className="getappbutton-p">Get rightintake app</p>
         </div>
       </div>
+
       <div className="landing-page-container">
         <div className="landing-page-wrapper">
           {/* section 1 */}

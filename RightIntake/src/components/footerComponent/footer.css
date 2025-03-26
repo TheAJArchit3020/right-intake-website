@@ -10,7 +10,6 @@
 
 .footer-wrapper {
   display: flex;
-  flex-wrap: wrap;
   /* Allow wrapping on smaller screens */
   justify-content: space-between;
   align-items: center;
