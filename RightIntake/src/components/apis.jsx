@@ -8,3 +8,4 @@ export const getCheatMeal = `${baseurl}/cheat-meal`;
 export const initiatePayment = `${baseurl}/initiate-payment`;
 export const verifyPayment = `${baseurl}/verify-payment`;
 export const contactUs = `${baseurl}/contact`;
+export const deleteAccount = `${baseurl}/user/delete`;
