@@ -12,24 +12,18 @@ import PaymentSuccess from "../../pages/Final/final";
 import PrivacyPolicyPage from "../../pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage/TermsAndConditionsPage";
 import RefundPolicyPage from "../../pages/RefundPolicyPage/RefundPolicyPage";
+import DeleteAccount from "../../pages/DeleteAccount/DeleteAccount";
 
 const RoutesComponent = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          index
-          path="/"
-          element={
-            <Layout>
-              <HomePage />
-            </Layout>
-          }
-        />
+        <Route index path="/" element={<HomePage />} />
         <Route path="/dietplanform" element={<FormLayout />} />
         <Route path="/overallsummary" element={<FormOverallSummary />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/deleteaccount" element={<DeleteAccount />} />
         <Route path="/termsandservices" element={<TermsandServices />} />
         <Route path="/final" element={<PaymentSuccess />} />
         <Route path="/dietplanform/:step" element={<FormLayout />} />

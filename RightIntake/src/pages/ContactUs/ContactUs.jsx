@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 
-import Layout from "../layoutPage";
+import { Navbar } from "react-bootstrap";
+import {
+  contactusimage2,
+  contactusimage3,
+  contactusimage4,
+  contactusimage5,
+  realintakeslogo,
+} from "../../components/Images";
+import { Link } from "react-router";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    mobileNumber: "",
+    subject: "",
     message: "",
   });
   const handleChange = (e) => {
@@ -19,76 +27,115 @@ const ContactUs = () => {
     e.preventDefault();
     console.log("Form submitted", formData);
   };
+
   return (
-    <Layout>
-      <div className="contact-us-container">
-        <div className="contact-us-wrapper">
-          <div className="contact-us-heading">
-            <div className="contact-us-head">
-              <span>Contact us</span>
+    <div className="contact-us-container">
+      <div className="contact-us-header">
+        <div className="contact-us-header1">
+          <Navbar.Brand className="navbar-brand justify-content-lg-start">
+            <img src={realintakeslogo} alt="realintakeslogo" width={50}  />
+            <h4 className="ms-2">Right Intake</h4>
+          </Navbar.Brand>
+
+          <div className="contact-us-header2">
+            <div className="contact-us-header2-content">
+              <Link to={'/'}>
+              <img src={contactusimage2} alt="contactusimage2" width={50} />
+              </Link>
+              <p>Get in touch</p>
             </div>
-            <div className="contact-us-content">
-              <span>Ask about our platform, pricing or anything else</span>
-              <span>Contact Number:+91 9561930878</span>
-              <span>contact@rightintake.com</span>
+            <p className="contact-us-header-detail">
+              Whether you have questions, need support, or want to learn more
+              about our services, we're here to help! Reach out to us, and our
+              team will get back to you as soon as possible.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="contact-us-wrapper">
+        <div className="contact-us-card">
+          <div className="contact-us-card-section1">
+            <p className="contact-us-card-section1-para">Contact information</p>
+            <div className="contact-us-card-section1-wrapper">
+              <div className="contact-us-card-section1-groupcontent">
+                <img src={contactusimage3} alt="contactusimage3" width={16} />
+                <p></p>
+              </div>
+              <div className="contact-us-card-section1-groupcontent">
+                <img src={contactusimage4} alt="contactusimage3" width={16} />
+                <p>contact@rightintake.com</p>
+              </div>
+              <div className="contact-us-card-section1-groupcontent">
+                <img src={contactusimage5} alt="contactusimage3" width={16} />
+                <p>Karad, Maharastra</p>
+              </div>
             </div>
           </div>
-          <div className="contact-us-form">
+
+          <div className="contact-us-card-section2">
             <form className="contact-form" onSubmit={handleSubmit}>
-              <label htmlFor="fullName">Enter your full name</label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-              />
-
-              <label htmlFor="email">Your email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-
-              <label htmlFor="mobileNumber">Your mobile number</label>
-              <div className="mobile-input">
-                <select name="countryCode" defaultValue="+91">
-                  <option value="+91">+91</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                </select>
-                <input
-                  type="tel"
-                  id="mobileNumber"
-                  name="mobileNumber"
-                  value={formData.mobileNumber}
-                  onChange={handleChange}
-                  required
-                />
+              <div className="contact-form-wrapper1">
+                <div className="contact-form-group">
+                  <label htmlFor="fullName">Full name</label>
+                  <input
+                    className="contact-input"
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="contact-form-group">
+                  <label htmlFor="email">Email Id</label>
+                  <input
+                    className="contact-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
 
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
+              <div className="contact-form-group">
+                <label htmlFor="subject">Subject</label>
+                <textarea
+                  className="contact-input"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Enquiry"
+                  required
+                ></textarea>
+              </div>
 
-              <button type="submit" className="submit-button">
-                Send message
-              </button>
+              <div className="contact-form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  className="contact-input"
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Please  explain the issue briefly"
+                  required
+                ></textarea>
+              </div>
+              <div className="submitbutton-div">
+                <button type="submit" className="submit-button">
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

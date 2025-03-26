@@ -74,3 +74,36 @@ export const wavemoji = "/images/emojis/wave.svg";
 
 export const bodyfatshadow1 = "/images/bodyfatshadow1.webp";
 export const bodyfatshadow2 = "/images/bodyfatshadow2.webp";
+
+export const homescreenimage1 = "/images/homePage/hero2.png";
+export const homescreenimage2 = "/images/homePage/herowithoutbg.png";
+export const homescreenimage3 = "/images/homePage/hero3.png";
+export const homescreenimage4 = "/images/homePage/Tracking.png";
+export const homescreenimage5 = "/images/homePage/nutriplan1.png";
+export const homescreenimage6 = "/images/homePage/nutriplan2.png";
+export const homescreenimage7 = "/images/homePage/nutriplan3.png";
+export const homescreenimage8 = "/images/homePage/nutriplan4.png";
+export const homescreenimage9 = "/images/homePage/image94.png";
+export const homescreenimage10 = "/images/homePage/image96.png";
+export const homescreenimage11 = "/images/homePage/image97.png";
+export const homescreenimage12 = "/images/homePage/reviewbg.png";
+
+export const homescreenimage13 = "/images/homePage/nup1.png";
+export const homescreenimage14 = "/images/homePage/nup2.png";
+export const homescreenimage15 = "/images/homePage/nup3.png";
+export const homescreenimage16 = "/images/homePage/herobg.png";
+export const homescreenimage17 = "/images/homePage/trackingnup1.png";
+export const homescreenimage18 = "/images/homePage/trackingnup2.png";
+
+export const contactusimage = "/images/contactUs/Frame.svg";
+export const contactusimage2 = "/images/contactUs/backicon.svg";
+export const contactusimage3 = "/images/contactUs/callicon.svg";
+export const contactusimage4 = "/images/contactUs/mailicon.svg";
+export const contactusimage5 = "/images/contactUs/locationicon.svg";
+export const contactusimage6 = "/images/contactUs/contactusbg.svg";
+export const eyeopen = "/images/contactUs/eyes.svg";
+export const eyeclosed = "/images/contactUs/crossedeyes.svg";
+
+
+export const smartmeal1 = "/images/homePage/smartmeal1.png";
+export const smartmeal2 = "/images/homePage/smartmeal2.png";

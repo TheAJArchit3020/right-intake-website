@@ -5,7 +5,9 @@ import { hammerimage, realintakeslogo } from "../Images";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { fireemoji } from "../../components/Images";
-const NavbarComponent = () => {
+
+
+const NavbarComponent = ({scrollToSection}) => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
@@ -16,9 +18,15 @@ const NavbarComponent = () => {
     setShow(true);
   };
 
+
+
+
+
+
+
   return (
     <>
-      <Navbar key={false} expand={false} className="bg-body mb-3">
+      {/* <Navbar key={false} expand={false} className="bg-body mb-3">
         <Container fluid>
           <Navbar.Brand href="/">
             <img src={realintakeslogo} alt="realintakeslogo" width={40} />
@@ -66,7 +74,26 @@ const NavbarComponent = () => {
             <img src={fireemoji} alt="" />
           </div>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
+
+      {/* new code */}
+      <div className="newNavbarContainer">
+        <div className="navBarBrand">
+          <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+          <span className="Rightintake-Logo-Name">Right Intake</span>
+        </div>
+        <div className="navTabs">
+          <p className="navTabs-p" onClick={()=> scrollToSection('home')} >Home</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('tracking')}>Tracking</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('foodlens')}>FoodLens</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('smartmeal')}>Smartmeal</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('nutriplans')}>NutriPlans</p>
+          <p className="navTabs-p" onClick={()=> scrollToSection('reviews')}>Reviews</p>
+        </div>
+        <div className="getappbutton">
+          <p className="getappbutton-p">Get rightintake app</p>
+        </div>
+      </div>
     </>
   );
 };

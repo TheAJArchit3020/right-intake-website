@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { Button, Navbar } from "react-bootstrap";
-import { realintakeslogo } from "../Images";
+import { contactusimage, homescreenimage1, realintakeslogo } from "../Images";
 import { Link } from "react-router";
 import { fireemoji } from "../../components/Images";
 import { useNavigate } from "react-router";
@@ -17,7 +17,7 @@ const Footer = () => {
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
-            <div
+            {/* <div
               className="footer-cta mt-5"
               onClick={() => navigateFooter("/dietplanform")}
             >
@@ -25,7 +25,7 @@ const Footer = () => {
                 Get your personalized plan now
               </span>
               <img src={fireemoji} alt="" />
-            </div>
+            </div> */}
             <p className="mt-4 text-left text-lg-start">
               Address: Kineticscape Studios, plot no.64, Shivaji housing
               society,
@@ -44,8 +44,13 @@ const Footer = () => {
             <Link to={"/termsandservices"}>
               <p className="mb-2">Terms and Conditions</p>
             </Link>
-            <Link to={"/aboutus"}>
-              <p>About Us</p>
+            <div className="footer-getappbutton">
+              <p className="footer-getappbutton-p">Get rightintake app</p>
+            </div>
+            <Link to={"/contactus"}>
+              <p>
+                <img src={contactusimage} alt="message" width={20} /> Contact Us
+              </p>
             </Link>
           </div>
         </div>
