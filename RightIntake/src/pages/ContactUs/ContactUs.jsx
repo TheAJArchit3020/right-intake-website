@@ -10,11 +10,14 @@ import {
   realintakeslogo,
 } from "../../components/Images";
 import { Link } from "react-router";
+import { contactUs } from "../../components/apis";
+import axios from "axios";
+import { Alert } from "bootstrap";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
+    emailId: "",
     subject: "",
     message: "",
   });
@@ -23,9 +26,26 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
+    try {
+      const response = await axios.post(contactUs, formData);
+      console.log(response.data);
+      const { status, message } = response.data;
+      if (status === 200) {
+        Alert.alert(message);
+        setFormData({
+          fullName: "",
+          emailId: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
   };
 
   return (
@@ -33,14 +53,14 @@ const ContactUs = () => {
       <div className="contact-us-header">
         <div className="contact-us-header1">
           <Navbar.Brand className="navbar-brand justify-content-lg-start">
-            <img src={realintakeslogo} alt="realintakeslogo" width={50}  />
+            <img src={realintakeslogo} alt="realintakeslogo" width={50} />
             <h4 className="ms-2">Right Intake</h4>
           </Navbar.Brand>
 
           <div className="contact-us-header2">
             <div className="contact-us-header2-content">
               <Link to={'/'}>
-              <img src={contactusimage2} alt="contactusimage2" width={50} />
+                <img src={contactusimage2} alt="contactusimage2" width={50} />
               </Link>
               <p>Get in touch</p>
             </div>
@@ -92,9 +112,9 @@ const ContactUs = () => {
                   <input
                     className="contact-input"
                     type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                    id="emailId"
+                    name="emailId"
+                    value={formData.emailId}
                     onChange={handleChange}
                     required
                   />

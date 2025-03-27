@@ -9,6 +9,7 @@ import {
   realintakeslogo,
 } from "../../components/Images";
 import { Link } from "react-router";
+import { deleteAccount } from "../../components/apis";
 
 const DeleteAccount = () => {
   const [formData, setFormData] = useState({
@@ -27,9 +28,19 @@ const DeleteAccount = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
+    try {
+      const response = await axios.post(deleteAccount, formData);
+      console.log(response.data);
+      const { status, message } = response.data;
+      if (status === 200) {
+        Alert.alert(message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
