@@ -141,12 +141,9 @@
   font-size: 150px;
   color: rgba(0, 0, 0, 5%);
   margin-bottom: 2rem;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   font-weight: bold;
 }
-
-
-
 
 /* new css */
 .landing-page-section1 {
@@ -158,7 +155,6 @@
 }
 
 .store-ios img {
-
   width: 50px;
 }
 
@@ -204,7 +200,7 @@ p.landing-head-para {
 .dot {
   width: 20px;
   height: 20px;
-  background: linear-gradient(113.077deg, #B0BEC5 36%, #D6E3EA 77%);
+  background: linear-gradient(113.077deg, #b0bec5 36%, #d6e3ea 77%);
   border-radius: 100px;
 }
 
@@ -271,7 +267,6 @@ p.landing-head-para {
   flex-direction: column;
   gap: 2rem;
   padding: 50px;
-
 }
 
 .landing-page-foodLens-grpimage img {
@@ -307,7 +302,7 @@ p.review-para {
 }
 
 .review-card {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
   min-width: 460px;
   padding: 20px;
@@ -315,7 +310,7 @@ p.review-para {
 }
 
 .review-card-avatar {
-  background-color: #B0BEC5;
+  background-color: #b0bec5;
   width: 150px;
   height: 60px;
   border-radius: 100px;
@@ -343,7 +338,6 @@ p.review-body-para {
   overflow-y: hidden;
 }
 
-
 .landing-page-trackingWrapper,
 .landing-page-smartmeal {
   height: 800px;
@@ -356,7 +350,7 @@ p.review-body-para {
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 10%);
   padding: 2rem;
   max-width: 500px;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -368,7 +362,6 @@ p.review-body-para {
 .landing-page-blog-wrapper2 {
   gap: 3rem;
   padding-right: 3rem;
-
 }
 
 .landing-page-blog-wrapper {
@@ -383,7 +376,6 @@ p.review-body-para {
 
 .blogimage {
   width: 600px;
-
 }
 
 .landing-page-nutri-section {
@@ -406,8 +398,6 @@ p.nutri-para {
   margin-bottom: 50px !important;
   padding: 0px 180px;
 }
-
-
 
 .landing-page-review {
   height: 500px;
@@ -456,8 +446,6 @@ p.nutri-para {
   justify-content: center;
   align-items: center;
   gap: 80px;
-
-
 }
 
 .foodlensgrp {
@@ -471,9 +459,85 @@ p.nutri-para {
   text-align: left !important;
 }
 
+.navTabs {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
 
+.navTabs-p {
+  color: #6c8688;
+  font-weight: bold;
+  font-family: "Plus Jakarta Sans";
+  cursor: pointer;
+  padding: 6px 15px;
+  transition: 0.5s ease;
+  border-radius: 1rem;
+}
 
+.navTabs-p:hover {
+  background-color: #f4f4f4;
+  color: #3b8388;
+}
 
+.getappbutton {
+  background: linear-gradient(112.218deg, #b0bec5 0%, #d6e3ea 100%);
+  padding: 2px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+.getappbutton:hover {
+  background: linear-gradient(112.218deg, #9eb8c5 0%, #dee2e4 100%);
+}
+
+.getappbutton-p {
+  color: #095846;
+  font-weight: bold;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1rem;
+}
+
+.newNavbarContainer {
+  justify-content: space-around;
+
+  font-family: "Plus Jakarta Sans";
+  width: 100%;
+  padding: 50px;
+  display: flex;
+}
+
+.navbar-wrapper {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 15%);
+  border-radius: 64px;
+  display: flex;
+  padding: 18px 40px;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.navBarBrand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Rightintake-Logo-Name {
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1.25rem;
+}
+
+.nav-bar-brand-img {
+  width: 50px;
+  height: 50px;
+}
+.nav-bar-brand-img img {
+  width: 100%;
+  object-fit: fill;
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -537,14 +601,11 @@ p.nutri-para {
 }
 
 .landing-page-tracking-leftcontent {
-
   position: relative;
-
 }
 
 .smartmealimage2 {
   animation: slideInFromBottom 1.5s ease-out forwards;
-
 }
 
 .animate-on-scroll {
@@ -554,8 +615,6 @@ p.nutri-para {
 .navBarBrand-mobile {
   display: none;
 }
-
-
 
 @media (max-width: 1440px) {
   .landing-head-right {
@@ -603,7 +662,6 @@ p.nutri-para {
   }
 }
 
-
 @media (max-width: 780px) {
   .Heading1 {
     font-size: 2rem;
@@ -632,7 +690,6 @@ p.nutri-para {
 
   img.centerImage {
     width: 120px !important;
-    ;
     height: 180px;
   }
 
@@ -640,13 +697,11 @@ p.nutri-para {
     width: 260px;
   }
 
-
   .landing-page-section1 {
     padding: 60px 20px;
   }
 
   .landing-page-tracking {
-
     padding: 0px 1rem;
     gap: 0rem;
   }
@@ -671,12 +726,10 @@ p.nutri-para {
 
   .blogs-card {
     max-width: 320px;
-
   }
 
   .blogs-card p {
     font-size: 18px;
-
   }
 
   .blogimage {
@@ -768,7 +821,6 @@ p.nutri-para {
 }
 
 @media (max-width: 500px) {
-
   .navBarBrand-mobile {
     display: block;
     padding: 2rem;
@@ -798,7 +850,6 @@ p.nutri-para {
     height: auto;
   }
 
-
   p.landing-head-para {
     text-align: left;
   }
@@ -808,16 +859,13 @@ p.nutri-para {
   }
 
   .landing-page-tracking {
-
     padding: 0px 0rem;
     flex-direction: column;
     gap: 0rem;
   }
 
-
   .landing-page-trackingWrapper,
   .landing-page-smartmeal {
-
     flex-direction: column;
   }
 
@@ -854,7 +902,6 @@ p.nutri-para {
   .foodlens1,
   .foodlens2,
   .foodlens3 {
-
     flex-direction: column;
 
     gap: 60px;
@@ -865,7 +912,6 @@ p.nutri-para {
   }
 
   .landing-page-blog-wrapper {
-
     flex-direction: column;
   }
 
@@ -882,12 +928,8 @@ p.nutri-para {
     width: 350px;
   }
 
-
   .landing-page-blog-wrapper2 {
     gap: 2rem;
     padding-right: 0rem;
   }
-
-
-
 }
