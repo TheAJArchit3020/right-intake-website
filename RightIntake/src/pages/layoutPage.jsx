@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Footer from "../components/footerComponent/footer";
 
 const Layout = ({ children }) => {

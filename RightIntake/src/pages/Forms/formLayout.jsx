@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./form.css";
 import FormLanding from "./FormLanding/formLanding";
-import NavbarComponent from "../../components/navbarComponent/navbar";
 import FormHeight from "./formHeight";
 import { ProgressBar } from "react-bootstrap";
 import { previcon } from "../../components/Images";
@@ -136,7 +135,6 @@ const FormLayout = () => {
 
   return (
     <>
-      <NavbarComponent />
 
       {/* Progress bar */}
       {isShown && (

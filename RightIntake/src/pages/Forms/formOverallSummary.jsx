@@ -20,7 +20,6 @@ import {
   summaryicon5,
 } from "../../components/Images";
 import Footer from "../../components/footerComponent/footer";
-import NavbarComponent from "../../components/navbarComponent/navbar";
 import { useNavigate } from "react-router";
 import { saveUser, generateInsights } from "../../components/apis";
 import axios from "axios";
@@ -227,7 +226,6 @@ const FormOverallSummary = () => {
   }
   return (
     <>
-      <NavbarComponent />
       <div className="overall-summary-container">
         <div className="overall-summary-wrapper">
           <div className="overall-summary-head">
