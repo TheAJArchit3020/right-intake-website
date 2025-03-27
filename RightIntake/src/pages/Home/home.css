@@ -489,6 +489,7 @@ p.nutri-para {
   display: flex;
   align-items: center;
 }
+
 .getappbutton:hover {
   background: linear-gradient(112.218deg, #9eb8c5 0%, #dee2e4 100%);
 }
@@ -524,6 +525,7 @@ p.nutri-para {
   gap: 10px;
   align-items: center;
 }
+
 .Rightintake-Logo-Name {
   font-weight: 600;
   font-family: "Plus Jakarta Sans";
@@ -534,10 +536,12 @@ p.nutri-para {
   width: 50px;
   height: 50px;
 }
+
 .nav-bar-brand-img img {
   width: 100%;
   object-fit: fill;
 }
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -745,7 +749,12 @@ p.nutri-para {
 @media (max-width: 440px) {
   .landing-page-head {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .landing-head-content img {
+    width: 100px !important;
   }
 
   .landing-head-right {
@@ -759,8 +768,32 @@ p.nutri-para {
   }
 
   .Heading1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
+
+  p.landing-head-para {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .storeGrp p {
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+  .storeGrp {
+    flex-direction: row !important;
+  }
+
+  .store-ios img {
+    width: 30px;
+  }
+
+  .store-android img {
+    width: 30px;
+  }
+
 
   .NormalText {
     font-size: 0.75rem;
@@ -817,6 +850,11 @@ p.nutri-para {
   .fitness-bg img {
     width: 1412px;
     height: 711px;
+  }
+
+  img.centerImage {
+    width: 65px !important;
+    height: 180px;
   }
 }
 
@@ -931,5 +969,54 @@ p.nutri-para {
   .landing-page-blog-wrapper2 {
     gap: 2rem;
     padding-right: 0rem;
+  }
+}
+
+
+
+
+
+.scroll-content {
+  display: flex;
+  gap: 20px;
+  animation: scroll-right 35s linear infinite;
+  width: max-content;
+}
+
+.review-card {
+  width: 250px;
+  height: auto;
+  max-height: 180px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  white-space: normal;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .footer-section2 {
+    align-items: flex-start;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
   }
 }

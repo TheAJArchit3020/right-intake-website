@@ -59,6 +59,58 @@ const HomePage = () => {
     }
   };
 
+  const reviews = [
+    {
+      id: 1,
+      name: "Name",
+      rating: 4,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 2,
+      name: "Name",
+      rating: 4,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 3,
+      name: "Name",
+      rating: 3,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 4,
+      name: "Name",
+      rating: 3,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 5,
+      name: "Name",
+      rating: 4,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 6,
+      name: "Name",
+      rating: 4,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+    {
+      id: 7,
+      name: "Name",
+      rating: 4,
+      date: "05/02/25",
+      text: "Lorem ipsum dolor sit amet consectetur...",
+    },
+  ];
+
   return (
     <Layout>
       {/* for mobile */}
@@ -314,123 +366,126 @@ const HomePage = () => {
             <p className="review-para">
               Trusted by many, loved by all—see what our users say!
             </p>
+
             <div className="scrollcard">
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={4} />
+              <div className="scroll-content">
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={4} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={4} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={4} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={3} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={3} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={3} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={3} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={4} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={4} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={4} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={4} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="review-card">
-                <div className="review-card-body">
-                  <div className="review-card-avatar"></div>
-                  <div className="review-card-bodyContent">
-                    <div className="bodyContent-grp">
-                      <p>Name</p>
-                      <StarRating rating={4} />
+                <div className="review-card">
+                  <div className="review-card-body">
+                    <div className="review-card-avatar"></div>
+                    <div className="review-card-bodyContent">
+                      <div className="bodyContent-grp">
+                        <p>Name</p>
+                        <StarRating rating={4} />
+                      </div>
+                      <p>05/02/25</p>
+                      <p className="review-body-para">
+                        Lorem ipsum dolor sit amet consectetur. Vitae volutpat
+                        nullam dui est a neque. Laoreet et molestie tellus sed
+                        pulvinar erat.
+                      </p>
                     </div>
-                    <p>05/02/25</p>
-                    <p className="review-body-para">
-                      Lorem ipsum dolor sit amet consectetur. Vitae volutpat
-                      nullam dui est a neque. Laoreet et molestie tellus sed
-                      pulvinar erat.
-                    </p>
                   </div>
                 </div>
               </div>

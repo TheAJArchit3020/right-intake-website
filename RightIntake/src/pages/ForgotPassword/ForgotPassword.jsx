@@ -54,10 +54,13 @@ const ForgotPassword = () => {
             navigate("/verifyotp", { state: { email: formData?.email } });
           }, 1000);
       } else {
-        setMessage("Failed to send OTP. Please try again.");
+        setMessage(response?.data.message);
       }
     } catch (error) {
-      setMessage("Error sending OTP. Please check your email.");
+      setMessage(error.response.data.message);
+      setTimeout(() => {
+        setMessage('');
+      }, 3000);
       console.error("Error:", error);
     }
   };

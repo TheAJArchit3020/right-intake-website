@@ -1,7 +1,14 @@
 #root {
   margin: 0 auto;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Plus Jakarta Sans';
   font-optical-sizing: auto;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+a {
+  text-decoration: none !important;
 }
 
 .logo {

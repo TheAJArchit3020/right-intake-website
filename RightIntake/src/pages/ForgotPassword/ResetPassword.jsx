@@ -55,17 +55,12 @@ const ResetPassword = () => {
 
     setMessage(""); // Reset message
 
-    console.log({
-      email: email,
-      newPassword: formData?.password,
-    });
 
     try {
       const response = await axios.post(resetpassword, {
         email: email,
         newPassword: formData?.password,
       });
-
 
       if (response) {
         setMessage("Password reset successfully!");
@@ -120,6 +115,10 @@ const ResetPassword = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="eye-icon"
               />
+              <span className="pass-note">
+                Password must contain 8 characters includes 1 capital letter and
+                1 symbol
+              </span>
             </div>
             {errors.password && (
               <p className="forgotpassword-error-text">{errors.password}</p>
