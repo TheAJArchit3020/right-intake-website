@@ -9,3 +9,6 @@ export const initiatePayment = `${baseurl}/initiate-payment`;
 export const verifyPayment = `${baseurl}/verify-payment`;
 export const contactUs = `${baseurl}/contact`;
 export const deleteAccount = `${baseurl}/user/delete`;
+export const forgotpassword = `${baseurl}/auth/forgot-password`;
+export const verifyforgotpassword = `${baseurl}/auth/verify-forgot-otp`;
+export const resetpassword = `${baseurl}/auth/reset-password`;

@@ -10,6 +10,7 @@ import {
 } from "../../components/Images";
 import { Link } from "react-router";
 import { deleteAccount } from "../../components/apis";
+import axios from "axios";
 
 const DeleteAccount = () => {
   const [formData, setFormData] = useState({
@@ -35,8 +36,12 @@ const DeleteAccount = () => {
       const response = await axios.post(deleteAccount, formData);
       console.log(response.data);
       const { status, message } = response.data;
-      if (status === 200) {
+      if (status === true) {
         Alert.alert(message);
+        setFormData({
+          email: "",
+          password: "",
+        });
       }
     } catch (error) {
       console.log(error);
