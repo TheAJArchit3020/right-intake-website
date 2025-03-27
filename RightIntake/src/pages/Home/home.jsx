@@ -68,47 +68,55 @@ const HomePage = () => {
         <span className="Rightintake-Logo-Name">Right Intake</span>
       </div>
       <div className="newNavbarContainer">
-        <div className="navBarBrand">
-          <img src={realintakeslogo} alt="realintakeslogo" width={40} />
-          <span className="Rightintake-Logo-Name">Right Intake</span>
-        </div>
-        <div className="navTabs">
-          <p
-            className="navTabs-p"
-            onClick={() =>
-              homeref.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Home
-          </p>
-          <p
-            className="navTabs-p"
-            onClick={() =>
-              trackingref.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Tracking
-          </p>
-          <p
-            className="navTabs-p"
-            onClick={() =>
-              nutriplanref.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            NutriPlans
-          </p>
+        <div className="navbar-wrapper">
+          <div className="navBarBrand">
+            <div className="nav-bar-brand-img">
+              <img src={realintakeslogo} alt="realintakeslogo" width={40} />
+            </div>
+            <div className="nav-bar-brand-name">
+              <span className="Rightintake-Logo-Name">Right Intake</span>
+            </div>
+          </div>
+          <div className="navTabs">
+            <div
+              className="navTabs-p"
+              onClick={() =>
+                homeref.current.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <span>Home</span>
+            </div>
+            <div
+              className="navTabs-p"
+              onClick={() =>
+                trackingref.current.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <span>Tracking</span>
+            </div>
+            <div
+              className="navTabs-p"
+              onClick={() =>
+                nutriplanref.current.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <span>NutriPlans</span>
+            </div>
 
-          <p
-            className="navTabs-p"
-            onClick={() =>
-              reviewref.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Reviews
-          </p>
-        </div>
-        <div className="getappbutton">
-          <p className="getappbutton-p">Get rightintake app</p>
+            <div
+              className="navTabs-p"
+              onClick={() =>
+                reviewref.current.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <span>Reviews</span>
+            </div>
+          </div>
+          <div className="getappbutton">
+            <div className="getappbutton-p">
+              <span>Get rightintake app</span>
+            </div>
+          </div>
         </div>
       </div>
 
