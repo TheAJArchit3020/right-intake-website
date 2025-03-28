@@ -10,9 +10,7 @@
 
 .footer-wrapper {
   display: flex;
-  /* Allow wrapping on smaller screens */
   justify-content: space-between;
-  align-items: center;
 }
 
 
@@ -96,11 +94,7 @@
 
 /* Larger screens */
 @media (min-width: 992px) {
-  .footer-wrapper {
-    flex-wrap: nowrap;
-    /* Prevent wrapping on large screens */
-  }
-
+ 
   .footer-section1 {
     flex: 1;
     /* Left section takes equal space */
