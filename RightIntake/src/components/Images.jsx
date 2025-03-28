@@ -95,6 +95,13 @@ export const homescreenimage16 = "/images/homePage/herobg.webp";
 export const homescreenimage17 = "/images/homePage/trackingnup1.webp";
 export const homescreenimage18 = "/images/homePage/trackingnup2.webp";
 
+export const reviewimage1 = "/images/homePage/ayush.webp";
+export const reviewimage2 = "/images/homePage/srujan.webp";
+export const reviewimage3 = "/images/homePage/priyankamitra.webp";
+export const reviewimage4 = "/images/homePage/adityashah.webp";
+export const reviewimage5 = "/images/homePage/adityashah.webp";
+export const reviewimage6 = "/images/homePage/adityashah.webp";
+
 export const contactusimage = "/images/contactUs/Frame.svg";
 export const contactusimage2 = "/images/contactUs/backicon.svg";
 export const contactusimage3 = "/images/contactUs/callicon.svg";

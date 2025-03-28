@@ -16,6 +16,7 @@ import {
   homescreenimage15,
   homescreenimage17,
   homescreenimage18,
+  reviewimage1,
 } from "../../components/Images";
 
 import { useNavigate } from "react-router";
@@ -371,7 +372,9 @@ const HomePage = () => {
               <div className="scroll-content">
                 <div className="review-card">
                   <div className="review-card-body">
-                    <div className="review-card-avatar"></div>
+                    <div className="review-card-avatar">
+                      <img src={reviewimage1} alt="" width={40} />
+                    </div>
                     <div className="review-card-bodyContent">
                       <div className="bodyContent-grp">
                         <p>Name</p>
