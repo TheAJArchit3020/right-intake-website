@@ -856,6 +856,27 @@ p.nutri-para {
     width: 65px !important;
     height: 180px;
   }
+
+  .landing-page-tracking-rightcontent-para {
+    font-weight: 700;
+    font-size: 22px;
+  }
+/* 
+  .landing-page-tracking-rightcontent-span {
+    font-size: 20px !important;
+  } */
+
+  .landing-page-foodLens p {
+
+    font-size: 18px !important;
+  }
+
+  .landing-page-foodLens-section p {
+    font-size: 20px !important;
+  }
+
+
+
 }
 
 @media (max-width: 500px) {
@@ -898,33 +919,35 @@ p.nutri-para {
 
   .landing-page-tracking {
     padding: 0px 0rem;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 0rem;
   }
 
-  .landing-page-trackingWrapper,
+  /* .landing-page-trackingWrapper,
   .landing-page-smartmeal {
     flex-direction: column;
-  }
+    align-items: flex-start;
+    height: fit-content !important;
+  } */
 
   .tracking-image {
-    height: 600px;
+    height: 500px;
   }
 
   .tracking-sub-image {
-    width: 260px;
+    width: 210px;
     position: absolute;
-    left: 4.5rem;
-    top: 10.5rem;
+    left: 3.8rem;
+    top: 8.5rem;
     animation: slideInFromTop 1.5s ease-out forwards;
-  }
+}
 
   .landing-page-tracking-section {
-    width: 280px;
+    padding: 10px 20px;
   }
 
   .landing-page-tracking-rightcontent-span {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 30px !important;
   }
 
@@ -934,7 +957,12 @@ p.nutri-para {
   }
 
   .landing-page-foodLens-grpimage img {
-    height: 400px;
+    height: 350px;
+    width: 180px;
+  }
+
+  .foodlens2{
+    flex-direction: column-reverse !important;
   }
 
   .foodlens1,
