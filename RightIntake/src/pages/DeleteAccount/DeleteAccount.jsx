@@ -54,7 +54,7 @@ const DeleteAccount = () => {
         <div className="delete-account-header1">
           <Navbar.Brand className="navbar-brand justify-content-lg-start">
             <img src={realintakeslogo} alt="realintakeslogo" width={50} />
-            <h4 className="ms-2">Right Intake</h4>
+            <span className="navbar-brand-name">Right Intake</span>
           </Navbar.Brand>
           <div className="delete-account-header2">
             <div className="delete-account-header2-content">
@@ -109,7 +109,8 @@ const DeleteAccount = () => {
                 </div>
 
                 <p className="delete-account-note">
-                  *This action will permanently delete your account and all associated data. This cannot be undone.
+                  *This action will permanently delete your account and all
+                  associated data. This cannot be undone.
                 </p>
               </div>
 
