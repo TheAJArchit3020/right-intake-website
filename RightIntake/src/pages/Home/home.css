@@ -335,7 +335,6 @@ p.review-body-para {
 .scrollcard {
   display: flex;
   gap: 1rem;
-  overflow-y: hidden;
 }
 
 .landing-page-trackingWrapper,

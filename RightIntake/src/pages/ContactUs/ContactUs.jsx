@@ -45,7 +45,6 @@ const ContactUs = () => {
     } catch (error) {
       console.log(error);
     }
-
   };
 
   return (
@@ -54,12 +53,12 @@ const ContactUs = () => {
         <div className="contact-us-header1">
           <Navbar.Brand className="navbar-brand justify-content-lg-start">
             <img src={realintakeslogo} alt="realintakeslogo" width={50} />
-            <h4 className="ms-2">Right Intake</h4>
+            <span className="navbar-brand-name">Right Intake</span>
           </Navbar.Brand>
 
           <div className="contact-us-header2">
             <div className="contact-us-header2-content">
-              <Link to={'/'}>
+              <Link to={"/"}>
                 <img src={contactusimage2} alt="contactusimage2" width={50} />
               </Link>
               <p>Get in touch</p>
@@ -77,10 +76,6 @@ const ContactUs = () => {
           <div className="contact-us-card-section1">
             <p className="contact-us-card-section1-para">Contact information</p>
             <div className="contact-us-card-section1-wrapper">
-              <div className="contact-us-card-section1-groupcontent">
-                <img src={contactusimage3} alt="contactusimage3" width={16} />
-                <p></p>
-              </div>
               <div className="contact-us-card-section1-groupcontent">
                 <img src={contactusimage4} alt="contactusimage3" width={16} />
                 <p>contact@rightintake.com</p>
@@ -116,6 +111,7 @@ const ContactUs = () => {
                     name="emailId"
                     value={formData.emailId}
                     onChange={handleChange}
+                  
                     required
                   />
                 </div>
@@ -123,7 +119,7 @@ const ContactUs = () => {
 
               <div className="contact-form-group">
                 <label htmlFor="subject">Subject</label>
-                <textarea
+                <input
                   className="contact-input"
                   id="subject"
                   name="subject"
@@ -131,7 +127,8 @@ const ContactUs = () => {
                   onChange={handleChange}
                   placeholder="Enquiry"
                   required
-                ></textarea>
+                />
+                
               </div>
 
               <div className="contact-form-group">
@@ -142,7 +139,7 @@ const ContactUs = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Please  explain the issue briefly"
+                  placeholder="Please explain the issue briefly"
                   required
                 ></textarea>
               </div>

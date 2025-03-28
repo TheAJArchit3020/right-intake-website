@@ -17,40 +17,29 @@ const Footer = () => {
               <img src={realintakeslogo} alt="realintakeslogo" width={60} />
               <h4 className="ms-2">Right Intake</h4>
             </Navbar.Brand>
-            {/* <div
-              className="footer-cta mt-5"
-              onClick={() => navigateFooter("/dietplanform")}
-            >
-              <span className="footer-btn-Text">
-                Get your personalized plan now
+
+            <div className="address-container">
+              <span>
+                Address: Kineticscape Studios, plot no.64, Shivaji housing
+                society,
               </span>
-              <img src={fireemoji} alt="" />
-            </div> */}
-            <p className="mt-4 text-left text-lg-start">
-              Address: Kineticscape Studios, plot no.64, Shivaji housing
-              society,
-              <br />
-              near Shivaji stadium,
-              <br />
-              Karad, 415110.
-            </p>
-            <p className="text-sm-start text-lg-start">
-              contact@rightintake.com
-            </p>
+              <span> near Shivaji stadium,</span>
+              <span> Karad, 415110.</span>
+              <span> contact@rightintake.com</span>
+            </div>
           </div>
 
           {/* Right Section */}
           <div className="footer-section2">
             <Link to={"/termsandservices"}>
-              <p className="mb-2">Terms and Conditions</p>
+              <span className="footer-section-span">Terms and Conditions</span>
             </Link>
             <div className="footer-getappbutton">
-              <p className="footer-getappbutton-p">Get rightintake app</p>
+              <span className="footer-getappbutton-p">Get rightintake app</span>
             </div>
             <Link to={"/contactus"}>
-              <p>
-                <img src={contactusimage} alt="message" width={20} /> Contact Us
-              </p>
+              <img src={contactusimage} alt="message" width={20} />
+              <span className="footer-section-span">Contact Us</span>
             </Link>
           </div>
         </div>

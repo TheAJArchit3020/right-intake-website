@@ -7,6 +7,13 @@
   /* height: 100vh;  */
 }
 
+.navbar-brand-name{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 14px;
+  font-family: 'Plus Jakarta Sans'; 
+}
+
 .submitbutton-div {
   display: flex;
   justify-content: flex-end;
@@ -28,7 +35,7 @@
 }
 
 .contact-us-header2-content p {
-  font-size: 76px;
+  font-size: 4rem;
   font-family: 'Plus Jakarta Sans';
   font-weight: bold;
 }
@@ -38,6 +45,7 @@ p.contact-us-header-detail {
   text-align: center;
   font-family: 'Plus Jakarta Sans';
   font-weight: 500;
+  font-size: 1.2rem;
 
 }
 
@@ -109,17 +117,18 @@ p.contact-us-card-section1-para {
 .contact-input {
   border-bottom: 1px solid #B5B5B5 !important;
   outline: none !important;
-  /* padding: 8px 12px; */
   font-size: 14px;
   border: none;
   border-radius: 0px;
   font-weight: bold;
+  padding: 8px 0px;
 }
 
 .contact-us-card-section1 {
   background-color: #77A5B9;
   border-radius: 20px;
-  height: 575px;
+  height: 100%;
+  max-height: 500px;
   padding: 1rem;
   /* width: 350px; */
 }
@@ -149,7 +158,7 @@ p.contact-us-card-section1-para {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 2rem;
 }
 
 .contact-form-group label {
@@ -218,7 +227,7 @@ input[type="tel"] {
   }
 
   .contact-us-header2-content p {
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   .contact-us-card {
@@ -226,7 +235,8 @@ input[type="tel"] {
   }
 
   .contact-us-card-section1 {
-    height: 300px;
+    height: fit-content;
+    width: 100%;
     max-width: 500px;
   }
 
