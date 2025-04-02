@@ -1,0 +1,239 @@
+.main-section-container {
+  position: relative;
+  overflow: hidden;
+}
+.main-section-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.main-section-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(174, 233, 255, 1) 0%,
+    rgba(217, 245, 255, 0) 50%
+  );
+  padding: 50px;
+}
+.main-section-image-wrapper img {
+  width: 100%;
+  object-fit: contain;
+}
+.main-section-heading-wrapper {
+  padding: 0 35px;
+}
+.main-section-heading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-sec-head-content-1 {
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.main-sec-head-content-2 {
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #09325885;
+  align-self: flex-end;
+}
+.main-sec-head-content-3 {
+  font-size: 0.575rem;
+  font-weight: 300;
+  color: #686868;
+  text-align: center;
+}
+.download-app-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.playstore-logo {
+  width: 30.75px;
+  height: 33.44px;
+}
+.appstore-logo {
+  width: 27.67px;
+  height: 33.17px;
+}
+.playstore-logo img {
+  width: 100%;
+}
+
+.store-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.store-wrapper:hover {
+  border-radius: 20px;
+}
+
+.appstore-logo img {
+  width: 100%;
+}
+.store-name-wrapper {
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+@media (max-width: 330px) {
+  .store-name-wrapper {
+    font-size: 0.525rem;
+  }
+  .playstore-logo {
+    width: 20.75px;
+    height: 23.44px;
+  }
+  .appstore-logo {
+    width: 20.67px;
+    height: 23.17px;
+  }
+}
+
+@media (min-width: 760px) {
+  .main-section-image-wrapper {
+    padding: 50px 150px;
+  }
+  .main-section-heading-wrapper {
+    padding: 0 120px;
+  }
+  .main-sec-head-content-1 {
+    font-size: 1.5rem;
+  }
+  .main-sec-head-content-2 {
+    font-size: 1.5rem;
+  }
+  .main-sec-head-content-3 {
+    font-size: 1rem;
+  }
+  .store-name-wrapper {
+    font-size: 1rem;
+  }
+  .playstore-logo {
+    width: 20.75px;
+    height: 23.44px;
+  }
+  .appstore-logo {
+    width: 20.67px;
+    height: 23.17px;
+  }
+  .store-wrapper {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 1020px) {
+  .main-section-image-wrapper {
+    padding: 50px 250px;
+  }
+  .main-section-heading-wrapper {
+    padding: 0 220px;
+  }
+}
+@media (min-width: 1430px) {
+  .main-section-image-wrapper {
+    padding: 50px 400px;
+    background: radial-gradient(
+      circle,
+      rgba(174, 233, 255, 1) 0%,
+      rgba(217, 245, 255, 0) 40%
+    );
+  }
+  .main-section-heading-wrapper {
+    padding: 0 380px;
+  }
+  .main-sec-head-content-1 {
+    font-size: 1.8rem;
+  }
+  .main-sec-head-content-2 {
+    font-size: 1.8rem;
+  }
+  .main-sec-head-content-3 {
+    font-size: 1.2rem;
+  }
+  .store-name-wrapper {
+    font-size: 1.2rem;
+  }
+  .playstore-logo {
+    width: 20.75px;
+    height: 23.44px;
+  }
+  .appstore-logo {
+    width: 20.67px;
+    height: 23.17px;
+  }
+  .store-wrapper {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 1910px) {
+  .main-section-image-wrapper {
+    padding: 50px 600px;
+    background: radial-gradient(
+      circle,
+      rgba(174, 233, 255, 1) 0%,
+      rgba(217, 245, 255, 0) 35%
+    );
+  }
+  .main-section-heading-wrapper {
+    padding: 0 580px;
+  }
+  .main-sec-head-content-1 {
+    font-size: 2rem;
+  }
+  .main-sec-head-content-2 {
+    font-size: 2rem;
+  }
+  .main-sec-head-content-3 {
+    font-size: 1.4rem;
+  }
+  .store-name-wrapper {
+    font-size: 1.4rem;
+  }
+  .playstore-logo {
+    width: 20.75px;
+    height: 23.44px;
+  }
+  .appstore-logo {
+    width: 20.67px;
+    height: 23.17px;
+  }
+  .store-wrapper {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 2540px) {
+  .main-section-image-wrapper {
+    padding: 50px 800px;
+    background: radial-gradient(
+      circle,
+      rgba(174, 233, 255, 1) 0%,
+      rgba(217, 245, 255, 0) 35%
+    );
+  }
+  .main-section-heading-wrapper {
+    padding: 0 990px;
+  }
+  .main-sec-head-content-1 {
+    font-size: 2.4rem;
+  }
+  .main-sec-head-content-2 {
+    font-size: 2.4rem;
+  }
+  .main-sec-head-content-3 {
+    font-size: 1.8rem;
+  }
+}

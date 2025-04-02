@@ -1,0 +1,361 @@
+.review-section-container {
+  position: relative;
+}
+.review-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.review-head-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 70px;
+}
+.review-heading {
+  font-size: 0.875rem;
+  color: #093258;
+  font-weight: 600;
+}
+.review-para {
+  font-size: 0.625rem;
+  color: #686868;
+  text-align: center;
+}
+.review-card-carousel {
+  padding: 10px 0px;
+  overflow-x: hidden;
+}
+.review-card-slider {
+  width: 30%;
+}
+.review-card-container {
+  padding: 50px;
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 19.600000381469727px 6px rgba(0, 0, 0, 10%);
+  border-radius: 30px;
+}
+.review-user-container {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 100px;
+  align-items: center;
+}
+.review-user-profile-pic {
+  width: 15%;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.review-user-profile-pic img {
+  width: 100%;
+  object-fit: contain;
+}
+.review-user-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.review-user-rating {
+  font-size: 0.875rem;
+}
+.review-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.review-content-heading {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+.review-content-para {
+  font-weight: 400;
+  font-size: 0.625rem;
+}
+@media (max-width: 430px) {
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 20%;
+  }
+}
+@media (max-width: 380px) {
+  .review-card-slider {
+    width: 25%;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 30%;
+  }
+}
+@media (max-width: 320px) {
+  .review-heading {
+    text-align: center;
+  }
+  .review-card-slider {
+    width: 25%;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 30%;
+  }
+}
+@media (min-width: 750px) {
+  .review-head-wrapper {
+    gap: 20px;
+    padding: 0 70px;
+  }
+  .review-heading {
+    font-size: 1.5rem;
+  }
+  .review-para {
+    font-size: 1rem;
+  }
+  .review-card-carousel {
+    padding: 10px 0px;
+    overflow-x: hidden;
+  }
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-card-container {
+    padding: 50px;
+  }
+  .review-card {
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 30%;
+  }
+  .review-user-name {
+    font-size: 1.5rem;
+  }
+  .review-user-rating {
+    font-size: 1.5rem;
+  }
+  .review-content-container {
+    gap: 20px;
+  }
+  .review-content-heading {
+    font-size: 1.5rem;
+  }
+  .review-content-para {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .review-head-wrapper {
+    gap: 20px;
+    padding: 0 70px;
+  }
+  .review-heading {
+    font-size: 1.5rem;
+  }
+  .review-para {
+    font-size: 1rem;
+  }
+  .review-card-carousel {
+    padding: 10px 0px;
+    overflow-x: hidden;
+  }
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-card-container {
+    padding: 50px;
+  }
+  .review-card {
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 20%;
+  }
+  .review-user-name {
+    font-size: 1.5rem;
+  }
+  .review-user-rating {
+    font-size: 1.5rem;
+  }
+  .review-content-container {
+    gap: 20px;
+  }
+  .review-content-heading {
+    font-size: 1.5rem;
+  }
+  .review-content-para {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1430px) {
+  .review-head-wrapper {
+    gap: 20px;
+    padding: 0 70px;
+  }
+  .review-heading {
+    font-size: 1.8rem;
+  }
+  .review-para {
+    font-size: 1.2rem;
+  }
+  .review-card-carousel {
+    padding: 10px 0px;
+    overflow-x: hidden;
+  }
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-card-container {
+    padding: 50px;
+  }
+  .review-card {
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 20%;
+  }
+  .review-user-name {
+    font-size: 1.8rem;
+  }
+  .review-user-rating {
+    font-size: 1.8rem;
+  }
+  .review-content-container {
+    gap: 20px;
+  }
+  .review-content-heading {
+    font-size: 1.8rem;
+  }
+  .review-content-para {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1910px) {
+  .review-head-wrapper {
+    gap: 20px;
+    padding: 0 70px;
+  }
+  .review-heading {
+    font-size: 2rem;
+  }
+  .review-para {
+    font-size: 1.4rem;
+  }
+  .review-card-carousel {
+    padding: 10px 0px;
+    overflow-x: hidden;
+  }
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-card-container {
+    padding: 50px;
+  }
+  .review-card {
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 20%;
+  }
+  .review-user-name {
+    font-size: 2rem;
+  }
+  .review-user-rating {
+    font-size: 2rem;
+  }
+  .review-content-container {
+    gap: 20px;
+  }
+  .review-content-heading {
+    font-size: 2rem;
+  }
+  .review-content-para {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 2550px) {
+  .review-head-wrapper {
+    gap: 20px;
+    padding: 0 70px;
+  }
+  .review-heading {
+    font-size: 2.4rem;
+  }
+  .review-para {
+    font-size: 1.8rem;
+  }
+  .review-card-carousel {
+    padding: 10px 0px;
+    overflow-x: hidden;
+  }
+  .review-card-slider {
+    width: 30%;
+  }
+  .review-card-container {
+    padding: 50px;
+  }
+  .review-card {
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .review-user-container {
+    gap: 20px;
+  }
+  .review-user-profile-pic {
+    width: 20%;
+  }
+  .review-user-name {
+    font-size: 2.4rem;
+  }
+  .review-user-rating {
+    font-size: 2.4rem;
+  }
+  .review-content-container {
+    gap: 20px;
+  }
+  .review-content-heading {
+    font-size: 2rem;
+  }
+  .review-content-para {
+    font-size: 1.8rem;
+  }
+}

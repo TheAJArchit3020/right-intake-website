@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router";
 import { deleteAccount } from "../../components/apis";
 import axios from "axios";
+import Layout from "../layoutPage";
 
 const DeleteAccount = () => {
   const [formData, setFormData] = useState({
@@ -49,81 +50,79 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className="delete-account-container">
-      <div className="delete-account-header">
-        <div className="delete-account-header1">
-          <Navbar.Brand className="navbar-brand justify-content-lg-start">
-            <img src={realintakeslogo} alt="realintakeslogo" width={50} />
-            <span className="navbar-brand-name">Right Intake</span>
-          </Navbar.Brand>
-          <div className="delete-account-header2">
-            <div className="delete-account-header2-content">
-              <Link to={"/"}>
-                <img src={contactusimage2} alt="contactusimage2" width={50} />
-              </Link>
-              <p>Delete Account</p>
+    <Layout>
+      <div className="delete-account-container">
+        <div className="delete-account-header">
+          <div className="delete-account-header1">
+            <div className="delete-account-header2">
+              <div className="delete-account-header2-content">
+                <Link to={"/"}>
+                  <img src={contactusimage2} alt="contactusimage2" width={50} />
+                </Link>
+                <p>Delete Account</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="delete-account-wrapper">
+          <div className="delete-account-card">
+            <div className="delete-account-card-section2">
+              <form className="delete-account-form" onSubmit={handleSubmit}>
+                <div className="delete-account-form-wrapper1">
+                  {/* Email Field */}
+                  <div className="delete-account-form-group">
+                    <label htmlFor="email">Email Id</label>
+                    <input
+                      className="delete-account-input"
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  {/* Password Field with Toggle */}
+                  <div className="delete-account-form-group">
+                    <label htmlFor="password">Password</label>
+                    <div className="delete-account-password-wrapper">
+                      <input
+                        className="delete-account-input"
+                        type={showPassword ? "text" : "password"} // Toggle type
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                      />
+                      <img
+                        src={!showPassword ? eyeopen : eyeclosed} // Switch icon
+                        alt="Toggle Password"
+                        className="delete-account-toggle-eye"
+                        onClick={togglePasswordVisibility}
+                        style={{ cursor: "pointer" }}
+                      />
+                    </div>
+                  </div>
+
+                  <p className="delete-account-note">
+                    *This action will permanently delete your account and all
+                    associated data. This cannot be undone.
+                  </p>
+                </div>
+
+                <div className="delete-submitbutton-div">
+                  <button type="submit" className="submit-button">
+                    Delete
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div className="delete-account-wrapper">
-        <div className="delete-account-card">
-          <div className="delete-account-card-section2">
-            <form className="delete-account-form" onSubmit={handleSubmit}>
-              <div className="delete-account-form-wrapper1">
-                {/* Email Field */}
-                <div className="delete-account-form-group">
-                  <label htmlFor="email">Email Id</label>
-                  <input
-                    className="delete-account-input"
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                {/* Password Field with Toggle */}
-                <div className="delete-account-form-group">
-                  <label htmlFor="password">Password</label>
-                  <div className="delete-account-password-wrapper">
-                    <input
-                      className="delete-account-input"
-                      type={showPassword ? "text" : "password"} // Toggle type
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      required
-                    />
-                    <img
-                      src={!showPassword ? eyeopen : eyeclosed} // Switch icon
-                      alt="Toggle Password"
-                      className="delete-account-toggle-eye"
-                      onClick={togglePasswordVisibility}
-                      style={{ cursor: "pointer" }}
-                    />
-                  </div>
-                </div>
-
-                <p className="delete-account-note">
-                  *This action will permanently delete your account and all
-                  associated data. This cannot be undone.
-                </p>
-              </div>
-
-              <div className="delete-submitbutton-div">
-                <button type="submit" className="submit-button">
-                  Delete
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    </Layout>
   );
 };
 

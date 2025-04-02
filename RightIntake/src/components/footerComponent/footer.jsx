@@ -11,36 +11,33 @@ const Footer = () => {
     <>
       <div className="footer-container">
         <div className="footer-wrapper">
-          {/* Left Section */}
-          <div className="footer-section1">
-            <Navbar.Brand className="navbar-brand justify-content-lg-start">
-              <img src={realintakeslogo} alt="realintakeslogo" width={60} />
-              <h4 className="ms-2">Right Intake</h4>
-            </Navbar.Brand>
+          <div className="footer-line-wrapper"></div>
+          <div
+            className="footer-brand-wrapper"
+            onClick={() => navigateFooter("/")}
+          >
+            <div className="brand-logo-wrapper">
+              <img src="/images/RightintakeLogo_website.png" alt="" />
+            </div>
 
-            <div className="address-container">
-              <span>
-                Address: Kineticscape Studios, plot no.64, Shivaji housing
-                society,
-              </span>
-              <span> near Shivaji stadium,</span>
-              <span> Karad, 415110.</span>
-              <span> contact@rightintake.com</span>
+            <div className="brand-name-wrapper">
+              <span>Right Intake</span>
             </div>
           </div>
 
-          {/* Right Section */}
-          <div className="footer-section2">
-            <Link to={"/termsandservices"}>
-              <span className="footer-section-span">Terms and Conditions</span>
-            </Link>
-            <div className="footer-getappbutton">
-              <span className="footer-getappbutton-p">Get rightintake app</span>
+          <div
+            className="t-and-c-container"
+            onClick={() => navigateFooter("/termsandservices")}
+          >
+            <span>Terms and services</span>
+          </div>
+          <div className="contact-us-container">
+            <div className="contact-us-heading">
+              <span>Contact Us</span>
             </div>
-            <Link to={"/contactus"}>
-              <img src={contactusimage} alt="message" width={20} />
-              <span className="footer-section-span">Contact Us</span>
-            </Link>
+            <div className="contact-us-email">
+              <span>contact@rightitnake.com</span>
+            </div>
           </div>
         </div>
       </div>

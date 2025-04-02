@@ -1,152 +1,173 @@
 .footer-container {
-  /* background-color: #faeafc; */
-  padding: 2rem;
-  position: relative;
-  border-top: 0.5px solid #9E9E9E;
-  width: '90%';
-  font-family: 'Plus Jakarta Sans';
-
+  padding: 0px 20px 30px;
 }
-
 .footer-wrapper {
   display: flex;
-  justify-content: space-between;
-}
-
-
-.footer-section1{
-  display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 20px;
 }
-.address-container{
-  display: flex;
-  flex-direction: column;
+.footer-line-wrapper {
+  border-top: 1px solid #b4b4b4;
+  margin: 0 20px;
 }
-.footer-section1,
-.footer-section2 {
-  flex: 1 1 100%;
-  /* Default to full width */
-  max-width: 100%;
-  margin-bottom: 1rem;
-}
-
-.footer-section2 {
-  font-weight: bold;
-  font-size: 1.25rem;
-  font-family: 'Plus Jakarta Sans';
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: flex-end;
-}
-
-.footer-button {
-  background: linear-gradient(to right, #9feb9f 0%, #85cb85 100%);
-  color: #000000 !important;
-  font-weight: bold !important;
-  padding: 10px;
-  outline: none !important;
-  border: none !important;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
-  font-family: 'Plus Jakarta Sans';
-}
-
-.footer-cta {
-  background: linear-gradient(to right, #9feb9f 0%, #85cb85 100%);
-  width: 70%;
+.footer-brand-wrapper {
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 25%);
-  border-radius: 10px;
-  padding: 2% 5%;
 }
-
-.footer-cta:hover {
-  cursor: pointer;
-  background-color: #9feb9f;
-  background: #9feb9f;
-  transition: 200ms ease;
+.brand-logo-wrapper {
+  width: 24px;
+  height: 24px;
 }
-
-.footer-btn-Text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: 'Plus Jakarta Sans';
+.brand-logo-wrapper img {
+  width: 100%;
 }
-
-.fire-emoji {
-  width: 5px;
-  height: 5px;
-  margin-left: 8px;
-}
-
-.footer-section1 {
-  font-size: 1.25rem;
-  font-family: 'Plus Jakarta Sans';
-}
-
-.footer-section2 p {
-  cursor: pointer;
-}
-
-/* Larger screens */
-@media (min-width: 992px) {
- 
-  .footer-section1 {
-    flex: 1;
-    /* Left section takes equal space */
-    text-align: left;
-    margin-right: 2rem;
-  }
-
-  .footer-section2 {
-    flex: 1;
-    /* Right section adjusts automatically */
-    text-align: right;
-  }
-}
-
-/* Smaller screens */
-@media (max-width: 576px) {
-  .footer-container {
-    padding: 1rem;
-  }
-
-  .footer-button {
-    font-size: 0.9rem;
-    padding: 8px;
-    font-family: 'Plus Jakarta Sans';
-  }
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  font-family: 'Plus Jakarta Sans';
-}
-
-
-.footer-getappbutton {
-  background: linear-gradient(112.218deg, #B0BEC5 0%, #D6E3EA 100%);
-  padding: 4px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  width: max-content;
-  float: inline-end;
-  cursor: pointer;
-}
-
-.footer-getappbutton-p {
-  color: #095846;
+.brand-name-wrapper {
+  font-size: 0.625rem;
   font-weight: bold;
-  font-family: 'Plus Jakarta Sans';
-  font-size: 1rem;
+}
+.t-and-c-container {
+  text-decoration: underline;
+  font-size: 0.625rem;
+}
+.contact-us-heading {
+  font-size: 0.625rem;
+  font-weight: bold;
+}
+.contact-us-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-us-email {
+  font-size: 0.625rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
+.contact-us-email:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
-.footer-section-span {
-  font-size: 1.2rem;
+@media (min-width: 760px) {
+  .footer-container {
+    padding: 0px 20px 30px;
+  }
+  .footer-line-wrapper {
+    margin: 0 40px;
+  }
+  .brand-logo-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+  .brand-name-wrapper {
+    font-size: 1rem;
+  }
+  .t-and-c-container {
+    font-size: 1rem;
+  }
+  .contact-us-heading {
+    font-size: 1rem;
+  }
+  .get-the-app-btn {
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .contact-us-email {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1430px) {
+  .footer-container {
+    padding: 0px 40px 60px;
+  }
+  .footer-wrapper {
+    gap: 30px;
+  }
+  .footer-line-wrapper {
+    margin: 0 90px;
+  }
+  .brand-logo-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+  .brand-name-wrapper {
+    font-size: 1.2rem;
+  }
+  .t-and-c-container {
+    font-size: 1.2rem;
+  }
+  .contact-us-heading {
+    font-size: 1.2rem;
+  }
+  .get-the-app-btn {
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+  }
+  .contact-us-email {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1910px) {
+  .footer-wrapper {
+    gap: 30px;
+  }
+  .footer-line-wrapper {
+    margin: 0 90px;
+  }
+  .brand-logo-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  .brand-name-wrapper {
+    font-size: 1.4rem;
+  }
+  .t-and-c-container {
+    font-size: 1.4rem;
+  }
+  .contact-us-heading {
+    font-size: 1.4rem;
+  }
+  .get-the-app-btn {
+    font-size: 1.4rem;
+  }
+  .contact-us-email {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 2550px) {
+  .footer-container {
+    padding: 0px 60px 60px;
+  }
+  .footer-wrapper {
+    gap: 30px;
+  }
+  .footer-line-wrapper {
+    margin: 0 150px;
+  }
+  .brand-logo-wrapper {
+    width: 74px;
+    height: 74px;
+  }
+  .brand-name-wrapper {
+    font-size: 1.8rem;
+  }
+  .t-and-c-container {
+    font-size: 1.8rem;
+  }
+  .contact-us-heading {
+    font-size: 1.8rem;
+  }
+  .get-the-app-btn {
+    font-size: 1.8rem;
+  }
+  .contact-us-email {
+    font-size: 1.8rem;
+  }
 }
