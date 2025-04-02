@@ -3,7 +3,7 @@ const blogData = [
     slug: "weight-loss-mumbai",
     title: "5 Effective Weight Loss Programs for People Living in Mumbai",
     date: "April 2, 2025",
-    banner: "https://drive.google.com/uc?id=1YZODmcW64NkFV9uptXV8jPdkHZbdxOMq",
+    banner: "https://i.imgur.com/5yypwec.jpg",
     tags: ["Weight loss program", "Summer diet plan", "Mumbai"],
     preview:
       "Mumbai summers are intense — but your weight loss journey doesn’t have to be. Here are 5 programs tailored for the city heat...",
