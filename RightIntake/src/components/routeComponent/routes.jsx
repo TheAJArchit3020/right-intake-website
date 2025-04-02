@@ -15,6 +15,8 @@ import DeleteAccount from "../../pages/DeleteAccount/DeleteAccount";
 import ForgotPassword from "../../pages/ForgotPassword/ForgotPassword";
 import VerifyOtp from "../../pages/ForgotPassword/OtpPage";
 import ResetPassword from "../../pages/ForgotPassword/ResetPassword";
+import BlogList from "../../pages/BlogList/BlogList";
+import BlogPage from "../../pages/BlogPage/BlogPage";
 
 const RoutesComponent = () => {
   return (
@@ -29,6 +31,10 @@ const RoutesComponent = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-services" element={<TermsAndConditionsPage />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
+
+        {/* 🆕 Blog Routes */}
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );
