@@ -18,6 +18,7 @@
 .brand-logo-wrapper {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 .brand-logo-wrapper img {
   width: 100%;
@@ -29,6 +30,7 @@
 .t-and-c-container {
   text-decoration: underline;
   font-size: 0.625rem;
+  cursor: pointer;
 }
 .contact-us-heading {
   font-size: 0.625rem;
@@ -58,8 +60,8 @@
     margin: 0 40px;
   }
   .brand-logo-wrapper {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
   .brand-name-wrapper {
     font-size: 1rem;
@@ -121,8 +123,8 @@
     margin: 0 90px;
   }
   .brand-logo-wrapper {
-    width: 64px;
-    height: 64px;
+    width: 55px;
+    height: 55px;
   }
   .brand-name-wrapper {
     font-size: 1.4rem;

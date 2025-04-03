@@ -24,7 +24,12 @@ const Footer = () => {
               <span>Right Intake</span>
             </div>
           </div>
-
+          <div
+            className="t-and-c-container"
+            onClick={() => navigateFooter("/blog")}
+          >
+            <span>Blog</span>
+          </div>
           <div
             className="t-and-c-container"
             onClick={() => navigateFooter("/termsandservices")}

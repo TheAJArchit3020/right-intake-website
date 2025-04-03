@@ -16,31 +16,40 @@
   height: 250px;
   object-fit: cover;
 }
+.banner img {
+  width: 100%;
+}
 
 .blog-content {
   padding: 20px;
 }
 
 .blog-date {
-  font-size: 14px;
+  font-size: 1rem;
   color: gray;
   margin-bottom: 10px;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
 }
 
 .preview-text {
   margin: 10px 0;
   color: #333;
+  font-size: 1rem;
 }
 
 .tags {
-  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tag {
   background-color: #f0f0f0;
   color: #444;
-  font-size: 12px;
-  margin-right: 8px;
+  font-size: 0.8rem;
   padding: 4px 8px;
   border-radius: 20px;
 }
@@ -51,4 +60,42 @@
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.read-more {
+  font-size: 1rem;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+  color: #002955;
+}
+
+@media (max-width: 400px) {
+  .banner {
+    height: 150px;
+    object-fit: cover;
+  }
+  .blog-date {
+    font-size: 0.6rem;
+    color: gray;
+    margin-bottom: 10px;
+  }
+
+  .blog-content h2 {
+    font-size: 1rem;
+  }
+
+  .preview-text {
+    font-size: 0.8rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+  }
 }

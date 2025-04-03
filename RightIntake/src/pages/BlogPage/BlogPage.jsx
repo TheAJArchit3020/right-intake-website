@@ -16,26 +16,36 @@ const BlogPage = () => {
     <Layout>
       <div className="blog-detail">
         <img className="blog-banner" src={blog.banner} alt={blog.title} />
-        <div className="blog-header">
-          <button onClick={() => navigate(-1)} className="back-btn">
-            ← Back
-          </button>
-          <h1>{blog.title}</h1>
-        </div>
-        <div className="blog-body">
-          {blog.content.map((section, index) => (
-            <div key={index} className="blog-section">
-              {section.heading && <h2>{section.heading}</h2>}
-              {section.paragraph && <p>{section.paragraph}</p>}
-              {section.image && (
-                <img
-                  src={section.image}
-                  alt={section.imageAlt || ""}
-                  className="blog-image"
-                />
-              )}
+        <div className="blog-content-container">
+          <div className="blog-body">
+            <div className="blog-header">
+              <h1>{blog.title}</h1>
+              <p className="blog-date">{blog.date}</p>
             </div>
-          ))}
+
+            {blog.content.map((section, index) => (
+              <div key={index} className="blog-section">
+                {section.heading && <h2>{section.heading}</h2>}
+                {section.paragraph && (
+                  <p
+                    dangerouslySetInnerHTML={{ __html: section.paragraph }}
+                  ></p>
+                )}
+                {section.image && (
+                  <img
+                    src={section.image}
+                    alt={section.imageAlt || ""}
+                    className="blog-image"
+                  />
+                )}
+              </div>
+            ))}
+            {blog.cta && (
+              <div className="blog-cta-btn" onClick={() => navigate("/")}>
+                <span className="blog-cta-a">{blog.cta.text}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </Layout>

@@ -1,0 +1,19 @@
+.blog-create-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.blog-create-container input,
+.blog-create-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 0.5rem 0;
+}
+
+.section-block {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

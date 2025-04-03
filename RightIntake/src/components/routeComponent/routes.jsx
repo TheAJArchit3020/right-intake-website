@@ -1,13 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Layout from "../../pages/layoutPage";
 import HomePage from "../../pages/Home/home";
-import FormLayout from "../../pages/Forms/formLayout";
-import FormOverallSummary from "../../pages/Forms/formOverallSummary";
-import AboutUs from "../../pages/AboutUs/aboutus";
-import Loading from "../../pages/LoadingAnimation/Loading";
 import TermsandServices from "../../pages/TermsandServices/TermsandServices";
-import PaymentSuccess from "../../pages/Final/final";
 import PrivacyPolicyPage from "../../pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage/TermsAndConditionsPage";
 import RefundPolicyPage from "../../pages/RefundPolicyPage/RefundPolicyPage";
@@ -17,6 +11,7 @@ import VerifyOtp from "../../pages/ForgotPassword/OtpPage";
 import ResetPassword from "../../pages/ForgotPassword/ResetPassword";
 import BlogList from "../../pages/BlogList/BlogList";
 import BlogPage from "../../pages/BlogPage/BlogPage";
+import BlogCreate from "../../pages/Admin/BlogCreate/BlogCreate";
 
 const RoutesComponent = () => {
   return (
@@ -31,7 +26,7 @@ const RoutesComponent = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-services" element={<TermsAndConditionsPage />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
-
+        <Route path="/admin/blog/create" element={<BlogCreate />} />
         {/* 🆕 Blog Routes */}
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
