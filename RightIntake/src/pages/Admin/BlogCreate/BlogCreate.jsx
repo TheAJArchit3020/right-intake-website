@@ -1,6 +1,7 @@
 // src/pages/BlogCreate.jsx
 import React, { useState } from "react";
 import "./BlogCreate.css";
+import BaseURL from "../../../data/api";
 
 const BlogCreate = () => {
   const [form, setForm] = useState({
@@ -40,10 +41,41 @@ const BlogCreate = () => {
     setForm((prev) => ({ ...prev, content: updated }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting blog data:", form);
-    // TODO: Hook into backend
+
+    try {
+      const response = await fetch(`${BaseURL}/blogs/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("✅ Blog saved successfully!");
+        setForm({
+          title: "",
+          slug: "",
+          date: "",
+          banner: "",
+          tags: "",
+          preview: "",
+          ctaText: "",
+          ctaLink: "",
+          content: [{ heading: "", paragraph: "", image: "", imageAlt: "" }],
+        });
+      } else {
+        alert("❌ Failed to save blog: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error saving blog:", error);
+      alert("❌ Error saving blog. Check console.");
+    }
   };
 
   return (
@@ -108,11 +140,15 @@ const BlogCreate = () => {
                 updateContent(index, "paragraph", e.target.value)
               }
             />
+            <h2>Paragraph preview:</h2>
+            <p dangerouslySetInnerHTML={{ __html: section.paragraph }}></p>
             <input
               placeholder="Image URL"
               value={section.image}
               onChange={(e) => updateContent(index, "image", e.target.value)}
             />
+            <h2>Image preview:</h2>
+            <img src={section.image} alt="" width={"100%"} />
             <input
               placeholder="Image Alt Text"
               value={section.imageAlt}

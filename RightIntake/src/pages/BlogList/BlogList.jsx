@@ -1,11 +1,18 @@
 // pages/BlogList.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import blogData from "../../data/blogs";
 import "./BlogList.css";
 import Layout from "../layoutPage";
+import BaseURL from "../../data/api";
 
 const BlogList = () => {
+  const [blogData, setBlogData] = useState([]);
+  useEffect(() => {
+    fetch(`${BaseURL}/blogs/get-all-blogs`)
+      .then((res) => res.json())
+      .then((data) => setBlogData(data))
+      .catch((err) => console.error("Error fetching blogs", err));
+  }, []);
   return (
     <Layout>
       <div className="blog-list-container">
@@ -13,8 +20,8 @@ const BlogList = () => {
           <div className="blog-card" key={blog.slug}>
             <img src={blog.banner} alt={blog.title} className="banner" />
             <div className="blog-content">
-              <p className="blog-date">{blog.date}</p>
               <h2>{blog.title}</h2>
+              <p className="blog-date">{blog.date}</p>
               <p className="preview-text">{blog.preview}</p>
               <div className="tags">
                 {blog.tags.map((tag, idx) => (

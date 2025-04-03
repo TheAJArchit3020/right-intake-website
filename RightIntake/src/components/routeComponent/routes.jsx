@@ -12,6 +12,14 @@ import ResetPassword from "../../pages/ForgotPassword/ResetPassword";
 import BlogList from "../../pages/BlogList/BlogList";
 import BlogPage from "../../pages/BlogPage/BlogPage";
 import BlogCreate from "../../pages/Admin/BlogCreate/BlogCreate";
+import { Navigate } from "react-router";
+import AdminLogin from "../../pages/Admin/BlogAdmin/AdminLogin";
+
+const isAdminLoggedIn = () => {
+  if (localStorage.getItem("adminToken"))
+    console.log("got the admin token", localStorage.getItem("adminToken"));
+  return !!localStorage.getItem("adminToken");
+};
 
 const RoutesComponent = () => {
   return (
@@ -26,7 +34,13 @@ const RoutesComponent = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-services" element={<TermsAndConditionsPage />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
-        <Route path="/admin/blog/create" element={<BlogCreate />} />
+        <Route
+          path="/admin/blog/create"
+          element={
+            isAdminLoggedIn() ? <BlogCreate /> : <Navigate to="/admin/login" />
+          }
+        />
+        <Route path="/admin/login" element={<AdminLogin />} />
         {/* 🆕 Blog Routes */}
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPage />} />

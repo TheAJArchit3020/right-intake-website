@@ -1,15 +1,30 @@
 // pages/BlogPage.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import blogData from "../../data/blogs";
 import "./BlogPage.css";
 import Layout from "../layoutPage";
+import BaseURL from "../../data/api";
 
 const BlogPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const blog = blogData.find((b) => b.slug === slug);
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetch(`${BaseURL}/blogs/get-all-blogs/${slug}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBlog(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error loading blog:", err);
+        setLoading(false);
+      });
+  }, [slug]);
+
+  if (loading) return <div>Loading...</div>;
   if (!blog) return <div>Blog not found.</div>;
 
   return (
