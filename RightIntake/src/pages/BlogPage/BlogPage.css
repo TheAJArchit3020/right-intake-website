@@ -71,14 +71,14 @@
   align-self: center;
   cursor: pointer;
 }
-.blog-cta-btn span {
+.blog-cta-btn a {
   font-size: 1.3rem;
   font-weight: 600;
   color: #095846;
   text-decoration: none;
   transition: 0.5s ease;
 }
-.blog-cta-btn span:hover {
+.blog-cta-btn a:hover {
   color: #435a55;
 }
 .blog-section {

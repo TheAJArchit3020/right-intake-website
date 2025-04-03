@@ -57,7 +57,9 @@ const BlogPage = () => {
             ))}
             {blog.cta && (
               <div className="blog-cta-btn" onClick={() => navigate("/")}>
-                <span className="blog-cta-a">{blog.cta.text}</span>
+                <a href={blog.cta.link} className="blog-cta-a">
+                  {blog.cta.text}
+                </a>
               </div>
             )}
           </div>

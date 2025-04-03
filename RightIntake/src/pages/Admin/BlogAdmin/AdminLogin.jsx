@@ -18,6 +18,7 @@ const AdminLogin = () => {
 
     const data = await res.json();
     if (res.ok) {
+      console.log("the result is ok");
       localStorage.setItem("adminToken", data.token);
       navigate("/admin/blog/create");
     } else {
